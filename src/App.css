@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #0b0b0b; /* dark backdrop */
+  color: #fff;
+  padding: 40px 60px;
+  gap: 40px;
+  overflow: hidden; /* clip the yellow bars */
+  min-height: 300px;
+}
+
+.banner-left p {
+  flex: 1 1 55%;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  font-family: "Poppins", sans-serif;
+  font-style: italic;
+}
+
+.banner-left .highlight {
+  color: #ffcc18; /* yellow accent */
+  font-weight: 600;
+}
+
+.cta {
+  margin-top: 30px;
+  background: #ffae00; /* bright yellow */
+  border: none;
+  color: #fff; /* white text */
+  padding: 12px 28px;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 999px; /* full pill shape */
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  font-style: normal;
+
+  /* drop shadow */
+  box-shadow: 0 5px 10px rgba(255, 174, 0, 0.4);
+}
+
+.cta:hover {
+  transform: translateY(-3px);
+}
+
+.banner-right {
+  position: relative;
+  flex: 1 1 45%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 0;
+}
+
+.visual-wrapper {
+  position: relative;
+  width: 25rem; /* Or adjust as needed */
+  height: auto;
+  z-index: 1;
+}
+
+.polygon-bg {
+  width: 100%;
+  height: auto;
+}
+
+.speaker-img {
+  position: absolute;
+  top: -3.9rem;
+  left: 4rem;
+  width: 16.3rem;
+  height: auto;
+}
+
+.rect-back {
+  position: absolute;
+  top: -2.5rem;
+  right: -12rem; /* move off the edge a bit */
+  height: 160%; /* stretch vertically */
+  width: 100%;
+}
+
+.rect-front {
+  position: absolute;
+  top: -5.4rem;
+  right: -4rem; /* a bit inside the back one */
+  height: 150%;
+}

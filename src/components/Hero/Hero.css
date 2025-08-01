@@ -1,0 +1,63 @@
+.video-container {
+  position: fixed;             /* fixed to fill the viewport */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;               /* full viewport height */
+  overflow: hidden;
+  z-index: -1;                 /* sit behind content */
+}
+
+.bg-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;          /* allow free scaling */
+  height: 100%;
+  transform: translate(-50%, -50%);
+  object-fit: contain;  /* show the entire frame */
+  background: #000;     /* black letter‑box bars */
+}
+
+.video-overlay {
+  position: relative;
+  z-index: 1;
+  text-align: left;         /* keep left‑aligned */
+  padding: 15vh 4vw;        /* top & side breathing room */
+  color: #fff;
+}
+
+/* --------------- headline “YOU HAVE” --------------- */
+.tag-top {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;               /* Bold */
+  font-size: 65px;
+  line-height: 100%;              /* Line height = font size */
+  letter-spacing: 0.5%;           /* Slight spacing */
+  font-style: normal;             /* not italic */
+  margin: 0 0 1rem 0;
+}
+
+/* --------------- stroke + script text -------------- */
+.tag-bottom {
+  position: relative;
+  display: inline-block;    /* sizes to its content */
+}
+
+.brush {
+  width: clamp(16rem, 40vw, 40rem);   /* responsive width */
+  height: auto;
+  display: block;          /* remove inline gap */
+}
+
+.brush-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Pacifico', cursive;  /* or your script font */
+  font-size: clamp(2rem, 6vw, 5rem);
+  color: #fff;
+  white-space: nowrap;
+  pointer-events: none;    /* so img gets clicks if needed */
+}

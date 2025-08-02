@@ -1,3 +1,4 @@
+// banner.jsx
 import "../../App.css";
 import speakerImg from "../../assets/speaker.svg"; // replace with your actual PNG/JPG
 import polygonImg from "../../assets/Polygon 1.svg";

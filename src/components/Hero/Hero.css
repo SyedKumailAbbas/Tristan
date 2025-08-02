@@ -1,22 +1,20 @@
+/* hero.css */
 .video-container {
-  position: fixed;             /* fixed to fill the viewport */
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;               /* full viewport height */
-  overflow: hidden;
-  z-index: -1;                 /* sit behind content */
+  position: relative;      /* ✅ was fixed */
+  width: 100%;
+  height: 100vh;           /* still fills the first screen */
+  overflow: hidden;        /* keep it tidy */
 }
 
 .bg-video {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 100%;          /* allow free scaling */
-  height: 100%;
   transform: translate(-50%, -50%);
-  object-fit: contain;  /* show the entire frame */
-  background: #000;     /* black letter‑box bars */
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;       /* or contain if you prefer */
+  z-index: -1;             /* stays behind overlay & banner */
 }
 
 .video-overlay {
@@ -35,7 +33,7 @@
   line-height: 100%;              /* Line height = font size */
   letter-spacing: 0.5%;           /* Slight spacing */
   font-style: normal;             /* not italic */
-  margin: 0 0 1rem 0;
+  
 }
 
 /* --------------- stroke + script text -------------- */
@@ -48,6 +46,7 @@
   width: clamp(16rem, 40vw, 40rem);   /* responsive width */
   height: auto;
   display: block;          /* remove inline gap */
+  margin-top: -0.9rem;
 }
 
 .brush-text {
@@ -61,3 +60,94 @@
   white-space: nowrap;
   pointer-events: none;    /* so img gets clicks if needed */
 }
+
+.cta {
+  margin-top: 30px;
+  background: #ffae00; /* bright yellow */
+  border: none;
+  color: #fff; /* white text */
+  padding: 12px 28px;
+  font-size: 1rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  border-radius: 999px; /* full pill shape */
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  font-style: normal;
+
+  /* drop shadow */
+  box-shadow: 0 5px 10px rgba(255, 174, 0, 0.4);
+}
+
+/* --- PLAY CTA ----------------------------------- */
+.play-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+
+  background: transparent;
+  color: #f5c518;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 19px;
+  line-height: 100%;
+  letter-spacing: 0.4px;
+
+  padding: 0.55rem 1.4rem;
+  border: 2px solid transparent;
+  border-radius: 999px;
+  cursor: pointer;
+
+  transition: background 0.25s, color 0.25s, border-color 0.25s;
+  margin-left: 0rem;  /* move right */
+  margin-top: 2.1rem; /* move down slightly if stacked */
+}
+
+
+/* SVG icon size */
+.play-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  flex-shrink: 0;
+}
+
+/* Hover / keyboard focus */
+.play-cta:hover,
+.play-cta:focus-visible {
+  color: #fff;
+  border-color: transparent;               /* subtle outline */
+  outline: none;                    /* remove default outline */
+}
+
+/* optional underline on text only */
+.play-cta:hover span,
+.play-cta:focus-visible span {
+  text-decoration: underline;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem; /* space between items */
+  align-items: flex-start; /* keep left aligned */
+}
+
+.hero-text {
+  position: absolute;
+  top: 25rem;
+  left: 5rem;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.hero-buttons {
+  position: absolute;
+  top: 40rem;
+  left: 5rem;
+  display: flex;
+  gap: 1rem;
+}
+

@@ -142,12 +142,13 @@
   flex-direction: column;
   gap: 0.6rem;
 }
-
 .hero-buttons {
-  position: absolute;
-  top: 40rem;
-  left: 5rem;
   display: flex;
-  gap: 1rem;
+  gap: 1rem;              /* Space between buttons */
+  flex-direction: row;    /* Horizontal layout by default */
+  justify-content: flex-start; /* Align buttons to the left */
+  align-items: center;    /* Align buttons vertically */
+  margin-top: 25rem;      /* Adds space from the top */
+  margin-left: 3rem;      /* Adds space from the left */
 }
 

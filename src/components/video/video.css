@@ -1,0 +1,7 @@
+/* video.css */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+button:focus,
+button:hover {
+  outline: none;  /* Removes outline */
+  box-shadow: 0px 4px 4px 0px #FFBD52; /* Keeps your custom shadow */
+}

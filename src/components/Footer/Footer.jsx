@@ -1,7 +1,7 @@
 import React from "react";
 import { Youtube, Music, Linkedin, Instagram } from "lucide-react";
 import Tk from "../../assets/TK logo.png";
-import TopBorder from "../Testimonial/TopBorder";
+import TopBorder from "../Borders/TopBorder";
 const Footer = () => {
   return (
     <footer className="relative bg-gradient-to-b from-[#D4A017] to-[#6E530C] text-white overflow-hidden">

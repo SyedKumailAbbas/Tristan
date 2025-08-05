@@ -1,7 +1,7 @@
 import React from "react";
 import { Play } from "lucide-react";
-import RightBorder from "./RightBorder";
-import TopBorder from "./TopBorder";
+import RightBorder from "../Borders/RightBorder";
+import TopBorder from "../Borders/TopBorder";
 const Testimonials = () => {
   return (
     <section className="bg-black pt-20 pb-20 relative overflow-hidden">

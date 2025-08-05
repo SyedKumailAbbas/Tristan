@@ -1,6 +1,6 @@
 import React from "react";
 import { Play } from "lucide-react";
-
+import teaching from "../../assets/teaching.mp4"; // Assuming you have a teaching SVG icon
 export default function Teaching() {
   return (
     <div className="bg-gradient-to-br from-gray-900 via-gray-800 to-black p-8 rounded-lg relative overflow-hidden">
@@ -54,40 +54,27 @@ export default function Teaching() {
         </div>
 
         {/* Right video preview */}
-        <div className="flex-1 relative">
-          <div className="relative rounded-lg overflow-hidden shadow-2xl">
-            {/* Video frame with golden border */}
-            <div className="bg-gradient-to-r from-yellow-400 to-orange-400 p-1 rounded-lg">
-              <div className="bg-gray-800 rounded-lg overflow-hidden">
-                {/* Simulated video content */}
-                <div className="aspect-video bg-gradient-to-br from-blue-200 via-pink-200 to-purple-200 relative">
-                  {/* Simulated people in the video */}
-                  <div className="absolute inset-4 flex items-center justify-center">
-                    <div className="bg-red-400 rounded-full w-16 h-16 absolute left-1/4 top-1/3"></div>
-                    <div className="bg-blue-300 rounded-full w-12 h-12 absolute right-1/4 top-1/2"></div>
-                    <div className="bg-yellow-300 rounded-full w-10 h-10 absolute left-1/2 bottom-1/3"></div>
-                    <div className="bg-green-300 rounded-full w-14 h-14 absolute left-1/3 bottom-1/4"></div>
+    {/* Right video preview */}
+<div className="flex-1 relative">
+  <div className="relative rounded-lg overflow-hidden shadow-2xl">
+    {/* Video frame with golden border */}
+    <div className="bg-gradient-to-r from-yellow-400 to-orange-400 p-1 rounded-lg">
+      <div className="bg-gray-800 rounded-lg overflow-hidden">
+        <video
+          className="aspect-video w-full h-full object-cover rounded-lg"
+          src={teaching}
+          autoPlay
+          muted loop playsInline 
+          preload="metadata"
+        />
+      </div>
+    </div>
 
-                    {/* Simulated text overlay */}
-                    <div className="absolute top-4 left-4 bg-white bg-opacity-80 px-2 py-1 rounded text-xs text-gray-800 font-medium">
-                      LIVE
-                    </div>
-                  </div>
+    {/* Decorative corner accent */}
+    <div className="absolute -top-2 -right-2 w-8 h-8 bg-gradient-to-br from-yellow-400 to-orange-400 rounded-full opacity-80"></div>
+  </div>
+</div>
 
-                  {/* Play button overlay */}
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="bg-black bg-opacity-50 rounded-full p-4 hover:bg-opacity-70 transition-all cursor-pointer">
-                      <Play className="w-8 h-8 text-white fill-current" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Decorative corner accent */}
-            <div className="absolute -top-2 -right-2 w-8 h-8 bg-gradient-to-br from-yellow-400 to-orange-400 rounded-full opacity-80"></div>
-          </div>
-        </div>
       </div>
 
       {/* Background decorative elements */}

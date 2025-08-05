@@ -3,6 +3,8 @@ import { Play } from "lucide-react";
 import RightBorder from "../Borders/RightBorder";
 import TopBorder from "../Borders/TopBorder";
 import BottomBorder from "../Borders/BottomBorders";
+import Vid from "./Vid"; 
+
 const Testimonials = () => {
   return (
     <section className="bg-black pt-20 pb-20 relative overflow-hidden">
@@ -162,39 +164,15 @@ const Testimonials = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
           {/* Video 1 - YouTube Embed */}
           <div className="relative group">
-            <div className="relative bg-gray-800 rounded-lg overflow-hidden aspect-video">
-              <iframe
-                src="https://www.youtube.com/embed/s2qwHgwpnrA?controls=0&showinfo=0&modestbranding=1&rel=0&autohide=1"
-                title="Testimonial Video"
-                className="w-full h-full"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen
-              ></iframe>
+            <div className="relative bg-gray-800 rounded-lg overflow-hidden aspect-Video">
+<Vid videoId="s2qwHgwpnrA" />
             </div>
           </div>
 
           {/* Video 2 */}
-          <div className="relative group cursor-pointer">
-            <div className="relative bg-gray-800 rounded-lg overflow-hidden aspect-video">
-              {/* Placeholder for video thumbnail - replace with actual video thumbnail */}
-              <iframe
-                src="https://www.youtube.com/embed/s2qwHgwpnrA?controls=0&showinfo=0&modestbranding=1&rel=0&autohide=1"
-                title="Testimonial Video"
-                className="w-full h-full"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen
-              ></iframe>
-
-              
-
-              {/* Video info overlay */}
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
-                <p className="text-white text-sm opacity-90">
-                  Client Testimonial
-                </p>
-              </div>
+         <div className="relative group">
+            <div className="relative bg-gray-800 rounded-lg overflow-hidden aspect-Video">
+<Vid videoId="VUCJHNkDIhM" />
             </div>
           </div>
         </div>

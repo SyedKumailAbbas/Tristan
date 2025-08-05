@@ -2,6 +2,7 @@ import React from "react";
 import { Play } from "lucide-react";
 import RightBorder from "../Borders/RightBorder";
 import TopBorder from "../Borders/TopBorder";
+import BottomBorder from "../Borders/BottomBorders";
 const Testimonials = () => {
   return (
     <section className="bg-black pt-20 pb-20 relative overflow-hidden">
@@ -110,7 +111,7 @@ const Testimonials = () => {
 
             {/* Irregular bottom edge */}
             <div className="absolute bottom-0 left-0 w-full h-4">
-              <svg
+              {/* <svg
                 viewBox="0 0 1200 16"
                 className="w-full h-full"
                 preserveAspectRatio="none"
@@ -138,7 +139,10 @@ const Testimonials = () => {
                   fill="#1f2937"
                   opacity="0.4"
                 />
-              </svg>
+              </svg> */}
+
+              
+              {/* <BottomBorder/>  this border need to be fix */}
             </div>
 
             {/* Irregular right edge */}
@@ -183,16 +187,7 @@ const Testimonials = () => {
                 allowFullScreen
               ></iframe>
 
-              {/* Play button overlay */}
-              <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-30 group-hover:bg-opacity-20 transition-all duration-300">
-                <div className="w-16 h-16 bg-yellow-500 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                  <Play
-                    size={24}
-                    className="text-black ml-1"
-                    fill="currentColor"
-                  />
-                </div>
-              </div>
+              
 
               {/* Video info overlay */}
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">

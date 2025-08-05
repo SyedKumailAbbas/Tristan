@@ -81,12 +81,12 @@ const Footer = () => {
       <div className="relative z-10 max-w-6xl mx-auto px-6 py-12 ">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 pt-12 items-start border-t border-black">
           {/* Logo Section */}
-          <div className=" bg-black mt-[-10]">
+          <div className="  mt-[-10px]">
             <div className="">
               <img
                 src={Tk}
                 alt="TK Logo"
-                className="h-21 w-auto object-contain filter brightness-0 invert"
+                className="h-[150px] w-auto object-contain filter brightness-0 invert"
               />
             </div>
           </div>
@@ -199,43 +199,7 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Bottom irregular paint elements */}
-      <div className="absolute bottom-0 left-0 w-full h-12 opacity-40">
-        <svg
-          viewBox="0 0 1200 48"
-          className="w-full h-full"
-          preserveAspectRatio="none"
-        >
-          <path
-            d="M0,48 L0,35 C20,28 40,32 65,30 C90,28 110,25 135,27 C160,29 180,35 200,32 L250,48 Z"
-            fill="#000000"
-          />
-          <path
-            d="M950,48 L950,38 C970,30 990,35 1015,33 C1040,31 1065,28 1090,30 C1115,32 1140,38 1165,35 C1180,33 1190,30 1200,32 L1200,48 Z"
-            fill="#000000"
-          />
-          <ellipse
-            cx="100"
-            cy="25"
-            rx="15"
-            ry="4"
-            fill="#000000"
-            opacity="0.6"
-          />
-          <ellipse
-            cx="1100"
-            cy="30"
-            rx="20"
-            ry="5"
-            fill="#000000"
-            opacity="0.5"
-          />
-          <circle cx="75" cy="35" r="3" fill="#000000" opacity="0.7" />
-          <circle cx="180" cy="28" r="2" fill="#000000" opacity="0.6" />
-          <circle cx="1050" cy="32" r="2.5" fill="#000000" opacity="0.8" />
-          <circle cx="1150" cy="25" r="1.5" fill="#000000" opacity="0.5" />
-        </svg>
-      </div>
+      
     </footer>
   );
 };

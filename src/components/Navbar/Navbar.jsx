@@ -2,7 +2,7 @@ import React from 'react';
 import Tk from "../../assets/TK logo.png"
 export default function Navbar() {
   return (
-    <div className="sticky backdrop-blur-sm z-50 top-0 w-full h-20">
+    <div className="fixed backdrop-blur-sm z-50 top-0 w-full h-20">
             <div className="flex items-center justify-between h-full px-8 pt-10 max-w-7xl mx-auto">
         
         {/* Logo/Brand */}

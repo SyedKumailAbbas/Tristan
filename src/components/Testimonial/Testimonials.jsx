@@ -3,6 +3,7 @@ import { Play } from "lucide-react";
 import RightBorder from "../Borders/RightBorder";
 import TopBorder from "../Borders/TopBorder";
 import BottomBorder from "../Borders/BottomBorders";
+import playIcon from "../../assets/noto_play-button.svg"; // The play button
 import Vid from "./Vid"; 
 
 const Testimonials = () => {
@@ -179,9 +180,9 @@ const Testimonials = () => {
 
         {/* See More button */}
         <div className="flex justify-start">
-          <button className="bg-yellow-500 hover:bg-yellow-600 text-black font-semibold px-8 py-3 rounded-full transition-all duration-300 hover:scale-105 shadow-lg flex items-center space-x-2">
-            <span>SEE MORE</span>
-            <Play size={16} className="ml-1" fill="currentColor" />
+          <button className="px-6 py-2 rounded-full bg-[#6E530C] text-white flex items-center gap-3 shadow-[0px_4px_4px_0px_#FFBD52] hover:cursor-pointer focus:outline-none">
+                    <span className="font-[Montserrat] font-bold text-xs uppercase tracking-[0.5%]">SEE MORE</span>
+                    <img src={playIcon} alt="Play ICON" className="w-6 h-6" />
           </button>
         </div>
       </div>

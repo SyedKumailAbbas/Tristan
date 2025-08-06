@@ -1,6 +1,7 @@
 import React from "react";
 import { Play } from "lucide-react";
 import teaching from "../../assets/teaching.mp4"; // Assuming you have a teaching SVG icon
+import broadcast from "../../assets/simple-icons_readme.svg";
 export default function Teaching() {
   return (
     <div className="bg-gradient-to-br from-gray-900 via-gray-800 to-black p-8 rounded-lg relative overflow-hidden">
@@ -47,10 +48,11 @@ export default function Teaching() {
             because truly, your potential is limitless."
           </p>
 
-          <button className="bg-gradient-to-r from-yellow-400 to-orange-400 text-black px-6 py-3 rounded-lg font-semibold flex items-center gap-2 hover:from-yellow-300 hover:to-orange-300 transition-all duration-300 transform hover:scale-105 shadow-lg">
-            <Play className="w-5 h-5 fill-current" />
-            READ FULL BROADCAST
-          </button>
+          <button className="px-6 py-2 rounded-full bg-[#6E530C] text-white flex items-center gap-3 shadow-[0px_4px_4px_0px_#FFBD52] hover:cursor-pointer focus:outline-none">
+                <img src={broadcast} alt="Broadcast" className="w-6 h-6" />
+                <span className="font-[Montserrat] font-bold text-xs uppercase tracking-[0.5%]">Watch Full Podcast</span>
+            </button>
+
         </div>
 
         {/* Right video preview */}

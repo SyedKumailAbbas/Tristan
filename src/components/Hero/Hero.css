@@ -112,14 +112,6 @@
   flex-shrink: 0;
 }
 
-/* Hover / keyboard focus */
-.play-cta:hover,
-.play-cta:focus-visible {
-  color: #fff;
-  border-color: transparent;               /* subtle outline */
-  outline: none;                    /* remove default outline */
-}
-
 /* optional underline on text only */
 .play-cta:hover span,
 .play-cta:focus-visible span {

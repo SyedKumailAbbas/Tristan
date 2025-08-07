@@ -6,12 +6,13 @@ import Video from "../components/video/video";
 import Podcast from "../components/Podcast/Podcast";
 import Testimonials from "../components/Testimonial/Testimonials";
 import Teaching from "../components/Teaching/Teaching";
-
+import Keynotes from "../components/Keynotes/Keynotes"; // Importing Keynotes component
 export default function Home() {
   return (
     <>            
       <Hero />
       <Banner />  
+      <Keynotes />
       <Video/>
       <Podcast/>
      <Teaching />

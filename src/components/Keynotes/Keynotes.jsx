@@ -1,11 +1,78 @@
-import React from 'react';
-import { Play, Building, School, GraduationCap } from 'lucide-react';
+import React from "react";
+import { Play, Building, School, GraduationCap } from "lucide-react";
+import bg from "../../assets/Vector.png";
+import keynoteheader from "../../assets/Group 81.png";
+
+const Tag = ({ label }) => (
+  <span className="relative inline-flex items-center align-middle mx-1 my-1">
+    {/* background image */}
+    <span
+      aria-hidden
+      className="absolute inset-0"
+      style={{
+        backgroundImage: `url(${bg})`,
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "100% 100%",
+        // small lift and glow like the mock
+        filter: "drop-shadow(0 2px 6px rgba(0,0,0,.25))",
+        transform: "translateZ(0)",
+      }}
+    />
+    {/* label */}
+    <span className="relative z-10 px-3 py-1 font-semibold tracking-wide text-black whitespace-nowrap">
+      {label}
+    </span>
+  </span>
+);
+
+const Card = ({ icon: Icon, title, tags }) => (
+  <div
+    className="rounded-lg p-6 relative border shadow-2xl backdrop-blur-sm"
+    style={{
+      backgroundColor: "#6E530C",
+      borderColor: "#FFB800",
+      boxShadow:
+        "0 30px 60px rgba(0,0,0,.35), 0 0 0 2px rgba(255,184,0,.2) inset, 0 25px 80px rgba(255,174,0,.25)",
+    }}
+  >
+    <div className="flex items-center gap-3 mb-6">
+      <Icon className="w-7 h-7 text-yellow-300" strokeWidth={2.4} />
+      <h2 className="text-2xl font-semibold text-yellow-200">{title}</h2>
+    </div>
+
+    <div className="flex flex-wrap items-center mb-8">
+      {tags.map((t) => (
+        <Tag key={t} label={t} />
+      ))}
+    </div>
+
+    <button
+      className="group inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold"
+      style={{
+        background: "#FFB800",
+        color: "#1a1a1a",
+        boxShadow: "0 6px 18px rgba(255,184,0,.35)",
+      }}
+    >
+      <div className="grid place-items-center w-5 h-5 rounded-full bg-black/25">
+        <Play className="w-3.5 h-3.5" />
+      </div>
+      Click to learn more
+      <span className="translate-x-0 group-hover:translate-x-0.5 transition-transform">
+        ▸
+      </span>
+    </button>
+  </div>
+);
 
 export default function Keynotes() {
   return (
-    <div className="bg-gradient-to-r from-black via-gray-900 to-yellow-600 p-8 min-h-screen">
-      {/* Hand-drawn golden line at top */}
-      <div className="w-full h-2 mb-8">
+    <div
+      className="relative p-8 md:p-12 min-h-screen"
+      style={{ background: "linear-gradient(to right, #00000040, #FFAE00)" }}
+    >
+      {/* top hand-drawn golden line */}
+      <div className="w-full h-2 mb-6 md:mb-10">
         <svg viewBox="0 0 800 20" className="w-full h-full">
           <path
             d="M0,10 Q50,5 100,12 Q150,8 200,11 Q250,6 300,13 Q350,9 400,10 Q450,7 500,12 Q550,8 600,11 Q650,6 700,10 Q750,8 800,10"
@@ -18,237 +85,39 @@ export default function Keynotes() {
         </svg>
       </div>
 
-      {/* Keynotes Title */}
-      <div className="mb-12 relative">
-        <h1 className="text-5xl font-serif italic text-yellow-400 mb-4 relative inline-block">
-          Keynotes
-          {/* Hand-drawn circle around title */}
-          <svg 
-            className="absolute inset-0 w-full h-full" 
-            viewBox="0 0 200 60" 
-            style={{ transform: 'scale(1.3)', transformOrigin: 'center' }}
-          >
-            <ellipse
-              cx="100"
-              cy="30"
-              rx="90"
-              ry="25"
-              fill="none"
-              stroke="#fbbf24"
-              strokeWidth="2.5"
-              strokeLinecap="round"
-              opacity="0.7"
-            />
-          </svg>
-        </h1>
-        {/* Arrow pointing to keynotes */}
-        <div className="absolute -top-8 right-0">
-          <svg width="40" height="40" viewBox="0 0 40 40" className="text-yellow-400">
-            <path
-              d="M30,15 L25,5 L20,15 M25,5 L25,25"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-        </div>
+      {/* Keynotes heading image */}
+      <div className="mb-10 relative flex justify-center">
+        <img
+          src={keynoteheader}
+          alt="Keynotes"
+          className="max-h-16 md:max-h-20 object-contain"
+        />
       </div>
 
-      {/* Three Keynote Cards */}
+      {/* cards */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-        
-        {/* Corporations Card */}
-        <div className="bg-gradient-to-br from-yellow-600 to-yellow-700 rounded-lg p-6 relative border-2 border-yellow-500 shadow-2xl">
-          <div className="flex items-center gap-3 mb-6">
-            <Building className="w-8 h-8 text-black" />
-            <h2 className="text-2xl font-bold text-black">Corporations</h2>
-          </div>
-          
-          <div className="space-y-4 mb-8">
-            {/* Hand-drawn style text badges */}
-            <div className="relative inline-block">
-              <span className="text-black font-semibold bg-yellow-300 px-3 py-1 rounded-full relative z-10">
-                Resilience
-              </span>
-              <svg className="absolute inset-0 w-full h-full" viewBox="0 0 100 30">
-                <path
-                  d="M5,15 Q15,8 25,12 Q35,6 45,10 Q55,8 65,12 Q75,6 85,10 Q90,8 95,15"
-                  fill="none"
-                  stroke="#fbbf24"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  opacity="0.6"
-                />
-              </svg>
-            </div>
-            
-            <div className="relative inline-block">
-              <span className="text-black font-semibold bg-yellow-300 px-3 py-1 rounded-full relative z-10">
-                Mindset
-              </span>
-              <svg className="absolute inset-0 w-full h-full" viewBox="0 0 100 30">
-                <path
-                  d="M5,15 Q15,22 25,18 Q35,24 45,20 Q55,22 65,18 Q75,24 85,20 Q90,22 95,15"
-                  fill="none"
-                  stroke="#fbbf24"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  opacity="0.6"
-                />
-              </svg>
-            </div>
-            
-            <div className="relative inline-block">
-              <span className="text-black font-semibold bg-yellow-300 px-3 py-1 rounded-full relative z-10">
-                Momentum
-              </span>
-              <svg className="absolute inset-0 w-full h-full" viewBox="0 0 100 30">
-                <path
-                  d="M5,15 Q15,10 25,14 Q35,8 45,12 Q55,10 65,14 Q75,8 85,12 Q90,10 95,15"
-                  fill="none"
-                  stroke="#fbbf24"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  opacity="0.6"
-                />
-              </svg>
-            </div>
-          </div>
-          
-          <button className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-4 py-2 rounded-full flex items-center gap-2 hover:from-orange-400 hover:to-red-400 transition-all duration-300 transform hover:scale-105 text-sm font-semibold">
-            <Play className="w-4 h-4 fill-current" />
-            Click to learn more
-          </button>
-        </div>
-
-        {/* High Schools Card */}
-        <div className="bg-gradient-to-br from-yellow-600 to-yellow-700 rounded-lg p-6 relative border-2 border-yellow-500 shadow-2xl">
-          <div className="flex items-center gap-3 mb-6">
-            <School className="w-8 h-8 text-black" />
-            <h2 className="text-2xl font-bold text-black">High Schools</h2>
-          </div>
-          
-          <div className="space-y-4 mb-8">
-            <div className="relative inline-block">
-              <span className="text-black font-semibold bg-yellow-300 px-3 py-1 rounded-full relative z-10">
-                Identity
-              </span>
-              <svg className="absolute inset-0 w-full h-full" viewBox="0 0 100 30">
-                <path
-                  d="M5,15 Q15,8 25,12 Q35,6 45,10 Q55,8 65,12 Q75,6 85,10 Q90,8 95,15"
-                  fill="none"
-                  stroke="#fbbf24"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  opacity="0.6"
-                />
-              </svg>
-            </div>
-            
-            <div className="relative inline-block">
-              <span className="text-black font-semibold bg-yellow-300 px-3 py-1 rounded-full relative z-10">
-                Courage
-              </span>
-              <svg className="absolute inset-0 w-full h-full" viewBox="0 0 100 30">
-                <path
-                  d="M5,15 Q15,22 25,18 Q35,24 45,20 Q55,22 65,18 Q75,24 85,20 Q90,22 95,15"
-                  fill="none"
-                  stroke="#fbbf24"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  opacity="0.6"
-                />
-              </svg>
-            </div>
-            
-            <div className="relative inline-block">
-              <span className="text-black font-semibold bg-yellow-300 px-3 py-1 rounded-full relative z-10">
-                Connection
-              </span>
-              <svg className="absolute inset-0 w-full h-full" viewBox="0 0 100 30">
-                <path
-                  d="M5,15 Q15,10 25,14 Q35,8 45,12 Q55,10 65,14 Q75,8 85,12 Q90,10 95,15"
-                  fill="none"
-                  stroke="#fbbf24"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  opacity="0.6"
-                />
-              </svg>
-            </div>
-          </div>
-          
-          <button className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-4 py-2 rounded-full flex items-center gap-2 hover:from-orange-400 hover:to-red-400 transition-all duration-300 transform hover:scale-105 text-sm font-semibold">
-            <Play className="w-4 h-4 fill-current" />
-            Click to learn more
-          </button>
-        </div>
-
-        {/* University Card */}
-        <div className="bg-gradient-to-br from-yellow-600 to-yellow-700 rounded-lg p-6 relative border-2 border-yellow-500 shadow-2xl">
-          <div className="flex items-center gap-3 mb-6">
-            <GraduationCap className="w-8 h-8 text-black" />
-            <h2 className="text-2xl font-bold text-black">University</h2>
-          </div>
-          
-          <div className="space-y-4 mb-8">
-            <div className="relative inline-block">
-              <span className="text-black font-semibold bg-yellow-300 px-3 py-1 rounded-full relative z-10">
-                Purpose
-              </span>
-              <svg className="absolute inset-0 w-full h-full" viewBox="0 0 100 30">
-                <path
-                  d="M5,15 Q15,8 25,12 Q35,6 45,10 Q55,8 65,12 Q75,6 85,10 Q90,8 95,15"
-                  fill="none"
-                  stroke="#fbbf24"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  opacity="0.6"
-                />
-              </svg>
-            </div>
-            
-            <div className="relative inline-block">
-              <span className="text-black font-semibold bg-yellow-300 px-3 py-1 rounded-full relative z-10">
-                Presence
-              </span>
-              <svg className="absolute inset-0 w-full h-full" viewBox="0 0 100 30">
-                <path
-                  d="M5,15 Q15,22 25,18 Q35,24 45,20 Q55,22 65,18 Q75,24 85,20 Q90,22 95,15"
-                  fill="none"
-                  stroke="#fbbf24"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  opacity="0.6"
-                />
-              </svg>
-            </div>
-            
-            <div className="relative inline-block">
-              <span className="text-black font-semibold bg-yellow-300 px-3 py-1 rounded-full relative z-10">
-                Possibilities
-              </span>
-              <svg className="absolute inset-0 w-full h-full" viewBox="0 0 100 30">
-                <path
-                  d="M5,15 Q15,10 25,14 Q35,8 45,12 Q55,10 65,14 Q75,8 85,12 Q90,10 95,15"
-                  fill="none"
-                  stroke="#fbbf24"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  opacity="0.6"
-                />
-              </svg>
-            </div>
-          </div>
-          
-          <button className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-4 py-2 rounded-full flex items-center gap-2 hover:from-orange-400 hover:to-red-400 transition-all duration-300 transform hover:scale-105 text-sm font-semibold">
-            <Play className="w-4 h-4 fill-current" />
-            Click to learn more
-          </button>
-        </div>
+        <Card
+          icon={Building}
+          title="Corporations"
+          tags={["Resilience", "Mindset", "Momentum"]}
+        />
+        <Card
+          icon={School}
+          title="High Schools"
+          tags={["Identity", "Courage", "Connection"]}
+        />
+        <Card
+          icon={GraduationCap}
+          title="University"
+          tags={["Purpose", "Presence", "Possibilities"]}
+        />
       </div>
+
+      {/* subtle vignette like pic1 */}
+      <div
+        className="pointer-events-none absolute inset-0"
+        style={{ boxShadow: "inset 0 120px 160px rgba(0,0,0,.25)" }}
+      />
     </div>
   );
 }

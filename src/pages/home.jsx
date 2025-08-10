@@ -12,10 +12,10 @@ export default function Home() {
     <>            
       <Hero />
       <Banner />  
-      <Keynotes />
       <Video/>
-      <Podcast/>
+      <Keynotes />
      <Teaching />
+     <Podcast/>
       <Testimonials />
       <Footer />
     </>

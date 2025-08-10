@@ -2,6 +2,7 @@ import React from "react";
 import { Play } from "lucide-react";
 import teaching from "../../assets/teaching.mp4"; // Assuming you have a teaching SVG icon
 import broadcast from "../../assets/simple-icons_readme.svg";
+import border from "../../assets/Frame 16.svg";
 export default function Teaching() {
   return (
     <div className="bg-gradient-to-br from-gray-900 via-gray-800 to-black p-8 rounded-lg relative overflow-hidden">
@@ -57,27 +58,33 @@ export default function Teaching() {
 
         {/* Right video preview */}
     {/* Right video preview */}
-<div className="flex-1 relative">
-  <div className="relative rounded-lg overflow-hidden shadow-2xl">
-    {/* Video frame with golden border */}
-    <div className="bg-gradient-to-r from-yellow-400 to-orange-400 p-1 rounded-lg">
-      <div className="bg-gray-800 rounded-lg overflow-hidden">
-        <video
-          className="aspect-video w-full h-full object-cover rounded-lg"
-          src={teaching}
-          autoPlay
-          muted loop playsInline 
-          preload="metadata"
-        />
-      </div>
-    </div>
+{/* Right video preview */}
+{/* Right video preview */}
+<div className="flex-1">
+  {/* Frame box: fixed size via aspect ratio */}
+  <div className="relative w-full aspect-[16/9] overflow-hidden shadow-2xl">
+    {/* Border stays full-size */}
+    <img
+      src={border}
+      alt=""
+      className="absolute inset-0 w-full h-full z-10 pointer-events-none"
+    />
 
-    {/* Decorative corner accent */}
-    <div className="absolute -top-2 -right-2 w-8 h-8 bg-gradient-to-br from-yellow-400 to-orange-400 rounded-full opacity-80"></div>
+    {/* Video fills the box, then we shrink it visually */}
+    <video
+      className="absolute top-1/2 left-1/2 w-[80%] h-[90%] -translate-x-1/2 -translate-y-1/2 object-contain"
+      style={{ transformOrigin: "center" }}
+      src={teaching}
+      autoPlay
+      muted
+      loop
+      playsInline
+      preload="metadata"
+    />
   </div>
 </div>
 
-      </div>
+</div>
 
       {/* Background decorative elements */}
       <div className="absolute top-1/4 right-1/4 w-32 h-32 bg-yellow-400 rounded-full opacity-5 blur-xl"></div>

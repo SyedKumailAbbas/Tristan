@@ -14,6 +14,7 @@ import resilence from "../../assets/Group 28.svg";
 import mindset from "../../assets/Group 27.svg";
 import momentum from "../../assets/Group 26.svg";
 import courage from "../../assets/Group 27 (1).png";
+import playIcon from "../../assets/noto_play-button(2).svg";
 const Card = ({ iconsrc: iconsrc, title, tags }) => (
   <div
     className="pt-5 relative shadow-2xl backdrop-blur-sm flex flex-col items-center "
@@ -90,21 +91,16 @@ const Card = ({ iconsrc: iconsrc, title, tags }) => (
         )}
       </li>
     </ul>
-    <button
-      className="group inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold"
+        <button
+      className="group inline-flex items-center gap-2 rounded-full px-4 py-2 font-['Montserrat'] text-[18px] font-bold tracking-[0.5px]"
       style={{
-        background: "#FF9800",
-        color: "#1a1a1a",
+        background: "#ffae00",
+        color: "#ffffff",
         boxShadow: "0 6px 18px rgba(247,126,0,.35)",
       }}
     >
-      <div className="grid place-items-center w-5 h-5 rounded-full bg-black/25">
-        <Play className="w-3.5 h-3.5" />
-      </div>
-      Click to learn more
-      <span className="translate-x-0 group-hover:translate-x-0.5 transition-transform">
-        ▸
-      </span>
+      <span>Click to learn more</span>
+      <img src={playIcon} alt="Play Icon" className="w-6 h-6" />
     </button>
   </div>
 );

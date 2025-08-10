@@ -76,7 +76,7 @@
   font-style: normal;
 
   /* drop shadow */
-  box-shadow: 0 5px 10px rgba(255, 174, 0, 0.4);
+  box-shadow: 0 5px 10px rgb(245, 245, 245);
 }
 
 /* --- PLAY CTA ----------------------------------- */
@@ -104,7 +104,9 @@
   margin-top: 2.1rem; /* move down slightly if stacked */
 }
 
-
+.play-cta:hover {
+  box-shadow: none;
+}
 /* SVG icon size */
 .play-icon {
   width: 1.5rem;
@@ -117,6 +119,7 @@
 .play-cta:focus-visible span {
   text-decoration: underline;
 }
+
 
 .hero-content {
   display: flex;

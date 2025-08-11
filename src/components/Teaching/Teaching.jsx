@@ -5,10 +5,7 @@ import broadcast from "../../assets/simple-icons_readme.svg";
 import border from "../../assets/Frame 16.svg";
 export default function Teaching() {
   return (
-    <div className="bg-gradient-to-br from-gray-900 via-gray-800 to-black p-8 rounded-lg relative overflow-hidden">
-      {/* Golden accent bar at top */}
-      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-yellow-400 to-orange-400"></div>
-
+    <div className="bg-black p-8 rounded-lg relative overflow-hidden">
       <div className="flex flex-col lg:flex-row items-center ">
         {/* Left content */}
         <div className="flex-1 ml-8 text-white">

@@ -4,11 +4,11 @@ import RightBorder from "../Borders/RightBorder";
 import TopBorder from "../Borders/TopBorder";
 import BottomBorder from "../Borders/BottomBorders";
 import playIcon from "../../assets/noto_play-button.svg"; // The play button
-import Vid from "./Vid"; 
+import Vid from "./Vid";
 
 const Testimonials = () => {
   return (
-    <section className="bg-black pt-20 pb-20 relative overflow-hidden">
+    <section className="bg-black pt-5 pb-20 relative overflow-hidden">
       {/* Paint brush header */}
       <div className="relative w-full mb-12">
         <div className="relative">
@@ -144,7 +144,6 @@ const Testimonials = () => {
                 />
               </svg> */}
 
-              
               {/* <BottomBorder/>  this border need to be fix */}
             </div>
 
@@ -166,14 +165,14 @@ const Testimonials = () => {
           {/* Video 1 - YouTube Embed */}
           <div className="relative group">
             <div className="relative bg-gray-800 rounded-lg overflow-hidden aspect-Video">
-<Vid videoId="s2qwHgwpnrA" />
+              <Vid videoId="s2qwHgwpnrA" />
             </div>
           </div>
 
           {/* Video 2 */}
-         <div className="relative group">
+          <div className="relative group">
             <div className="relative bg-gray-800 rounded-lg overflow-hidden aspect-Video">
-<Vid videoId="VUCJHNkDIhM" />
+              <Vid videoId="VUCJHNkDIhM" />
             </div>
           </div>
         </div>
@@ -181,8 +180,10 @@ const Testimonials = () => {
         {/* See More button */}
         <div className="flex justify-start">
           <button className="px-6 py-2 rounded-full bg-[#6E530C] text-white flex items-center gap-3 shadow-[0px_4px_4px_0px_#FFBD52] hover:cursor-pointer focus:outline-none">
-                    <span className="font-[Montserrat] font-bold text-xs uppercase tracking-[0.5%]">SEE MORE</span>
-                    <img src={playIcon} alt="Play ICON" className="w-6 h-6" />
+            <span className="font-[Montserrat] font-bold text-xs uppercase tracking-[0.5%]">
+              SEE MORE
+            </span>
+            <img src={playIcon} alt="Play ICON" className="w-6 h-6" />
           </button>
         </div>
       </div>

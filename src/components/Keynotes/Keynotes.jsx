@@ -9,7 +9,7 @@ import identity from "../../assets/Group 28 (1).svg";
 import connection from "../../assets/Group 26 (1).svg";
 import purpose from "../../assets/Group 28 (2).svg";
 import possiblity from "../../assets/Group 26 (2).svg";
-import presence from "../../assets/Group 26 (1).svg";
+import presence from "../../assets/Group 27 (2).svg";
 import resilence from "../../assets/Group 28.svg";
 import mindset from "../../assets/Group 27.svg";
 import momentum from "../../assets/Group 26.svg";
@@ -17,7 +17,7 @@ import courage from "../../assets/Group 27 (1).png";
 import playIcon from "../../assets/noto_play-button(2).svg";
 const Card = ({ iconsrc: iconsrc, title, tags }) => (
   <div
-    className="pt-5 relative shadow-2xl backdrop-blur-sm flex flex-col items-center "
+    className="pt-5 pb-5 relative shadow-2xl backdrop-blur-sm flex flex-col items-center "
     style={{
       backgroundColor: "#6E530C",
       boxShadow:
@@ -35,17 +35,17 @@ const Card = ({ iconsrc: iconsrc, title, tags }) => (
             <img
               src={identity}
               alt="Polygon background"
-              className="polygon-bg"
+              
             />
             <img
               src={courage}
               alt="Polygon background"
-              className="polygon-bg"
+              
             />
             <img
               src={connection}
               alt="Polygon background"
-              className="polygon-bg"
+              
             />
           </>
         )}
@@ -55,17 +55,18 @@ const Card = ({ iconsrc: iconsrc, title, tags }) => (
             <img
               src={purpose}
               alt="Polygon background"
-              className="polygon-bg"
+              
             />
             <img
               src={presence}
               alt="Polygon background"
-              className="polygon-bg"
+              
             />
             <img
               src={possiblity}
               alt="Polygon background"
-              className="polygon-bg"
+              className="w-[180px]"
+              
             />
           </>
         )}
@@ -75,17 +76,17 @@ const Card = ({ iconsrc: iconsrc, title, tags }) => (
             <img
               src={resilence}
               alt="Polygon background"
-              className="polygon-bg"
+              
             />
             <img
               src={mindset}
               alt="Polygon background"
-              className="polygon-bg"
+              
             />
             <img
               src={momentum}
               alt="Polygon background"
-              className="polygon-bg"
+              
             />
           </>
         )}

@@ -3,7 +3,7 @@ import "./Hero.css";
 import bgVideo from "../../assets/C0660.mp4";
 import brushBg from "../../assets/Group 51 (1).svg";
 import playIcon from "../../assets/noto_play-button.svg";
-
+import overlaySvg from "../../assets/Rectangle 13.svg"; 
 export default function Hero() {
   return (
     <div className="video-container">
@@ -29,7 +29,9 @@ export default function Hero() {
           </button>
         </div>
       </div>
-
+      <div className="svg-overlay">
+        <img src={overlaySvg} alt="Overlay" className="overlay-svg" />
+      </div>
 
     </div>
   );

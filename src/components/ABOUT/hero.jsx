@@ -19,13 +19,14 @@ export default function Hero() {
             Unlock Your Purpose
           </button>
 
-          <button className="group inline-flex items-center gap-[0.65rem] bg-transparent text-[#f5c518] [font-family:'Montserrat',_sans-serif] font-medium not-italic text-[19px] leading-[1] tracking-[0.4px] py-[0.55rem] px-[1.4rem] border-2 border-transparent rounded-full cursor-pointer transition-colors duration-200 mt-[2.1rem]">
+          <button className="group inline-flex items-center gap-[0.65rem] bg-transparent text-[#f5c518] [font-family:'Montserrat',_sans-serif] font-medium not-italic text-[19px] leading-[1] tracking-[0.4px] py-[0.55rem] px-[1.4rem] border-2 border-transparent rounded-full cursor-pointer transition-colors duration-200">
             <img src={playIcon} alt="" className="w-6 h-6 flex-shrink-0" />
             <span className="group-hover:underline">
               <strong>Watch&nbsp;Tristan&nbsp;In&nbsp;Action</strong>
             </span>
           </button>
         </div>
+
       </div>
     </div>
   );

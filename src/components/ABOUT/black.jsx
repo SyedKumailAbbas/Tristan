@@ -1,16 +1,16 @@
 // src/components/ABOUT/black.jsx
 export default function Black() {
   return (
-    // full-bleed black band
-    <section className="w-full bg-black text-white px-6 sm:px-10 lg:px-16 py-10">
+    <section className="w-full bg-black text-white px-6 sm:px-10 lg:px-16 py-16 min-h-[250px] flex items-center justify-center">
       <p
         className="
           italic
-          text-[33px]
-          leading-[1.45]
-          tracking-[0]
+          text-[22px] sm:text-[24px] lg:text-[26px] 
+          leading-relaxed
+          text-center
+          max-w-[70ch]   /* consistent line length column */
+          mx-auto   
           [font-family:'Poppins',sans-serif]
-          max-w-none
         "
       >
         Many are just scratching the surface of what is possible for their life,
@@ -24,15 +24,14 @@ export default function Black() {
         from within.
       </p>
 
-      {/* local styles for thick underline */}
       <style>{`
         .gold-word {
-          color: #CFAF35;                 /* word color */
-          background-image: linear-gradient(#FFAE00, #FFAE00); /* underline stroke */
+          color: #CFAF35;
+          background-image: linear-gradient(#FFAE00, #FFAE00);
           background-position: 0 100%;
           background-repeat: no-repeat;
-          background-size: 100% 0.24em;   /* thickness of the stroke */
-          padding-bottom: 0.08em;         /* tiny gap above the stroke */
+          background-size: 100% 0.24em;
+          padding-bottom: 0.08em;
         }
       `}</style>
     </section>

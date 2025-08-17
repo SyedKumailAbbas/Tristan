@@ -1,4 +1,4 @@
-//import components here
+//about page
 import Hero from "../components/ABOUT/Hero";
 import Black from "../components/ABOUT/black.jsx";
 export default function about() {

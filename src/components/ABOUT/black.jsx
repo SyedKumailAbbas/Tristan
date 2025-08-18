@@ -1,7 +1,7 @@
 // src/components/ABOUT/black.jsx
 export default function Black() {
   return (
-    <section className="w-full bg-black text-white px-6 sm:px-10 lg:px-16 py-16 min-h-[250px] flex items-center justify-center">
+    <section className="w-full bg-black text-white  sm:px-10 lg:px-16 py-16 min-h-[250px] flex items-center justify-center">
       <p
         className="
           italic

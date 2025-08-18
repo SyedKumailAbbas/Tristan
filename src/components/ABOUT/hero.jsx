@@ -13,7 +13,7 @@ export default function Hero() {
       />
 
       {/* Buttons over image */}
-      <div className="relative z-10 text-left pt-[15vh] px-[4vw] text-white">
+      <div className="relative z-10 text-left pt-[15vh]  text-white">
         <div className="flex flex-row gap-4 justify-start items-center mt-[25rem] ml-[3rem]">
           <button className="rounded-full bg-[#ffae00] text-white py-3 px-7 text-base [font-family:'Montserrat',_sans-serif] font-medium cursor-pointer transition-transform duration-200 ease-linear shadow-[0_5px_10px_rgb(245,245,245)]">
             Unlock Your Purpose

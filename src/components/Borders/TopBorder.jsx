@@ -1,6 +1,6 @@
 import React from "react";
 
-const TopBorder = ({ width = 9000, height = 30, steps = 700 }) => {
+const TopBorder = ({ width = 4000, height = 25, steps = 300 }) => {
   const segmentWidth = width / steps;
   const pathCommands = [`M0,0`]; // Start from top-left
   const shapes = [];

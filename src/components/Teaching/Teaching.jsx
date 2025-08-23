@@ -36,7 +36,7 @@ export default function Teaching() {
             </span>
           </h1>
 
-          <p className="text-gray-300 mb-8 text-lg leading-relaxed max-w-md">
+          <p className="text-gray-300 mb-8 w-[410px] text-lg leading-relaxed">
             "It's important to carry the knowledge and wisdom of someone older
             but to dream like a child who doesn't yet know what they can't do,
             because truly, your potential is limitless."

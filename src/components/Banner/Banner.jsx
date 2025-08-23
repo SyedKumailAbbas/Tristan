@@ -9,7 +9,7 @@ export default function Banner() {
     <div className="banner">
       {/* LEFT half */}
       <div className="banner-left">
-        <p>
+        <p className="pt-10 pl-20 pr-60">
           Many are just scratching the surface of what is possible for their
           life, but I believe everyone is called to something greater than
           themselves… My <span className="highlight">mission</span> is to

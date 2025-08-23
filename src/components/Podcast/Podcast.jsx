@@ -7,9 +7,16 @@ export default function Podcast() {
     <div className="bg-gradient-to-r from-[#FFAE00] to-[#000000] text-white p-10">
       <div className="flex justify-between items-center max-w-7xl mx-auto">
         <div className="space-y-4 max-w-md">
-          <h1 className="text-3xl  [word-spacing:0.3em] leading-normal	 font-bold tracking-[0.5%] uppercase" style={{ fontFamily: "Montserrat", fontWeight: 700 }}>
+          <h1
+            className="text-3xl  [word-spacing:0.3em] leading-normal	 font-bold tracking-[0.5%] uppercase"
+            style={{ fontFamily: "Montserrat", fontWeight: 700 }}
+          >
             Tristan’s Podcast That Helps You Step Into Your{" "}
-            <img src={LimitlessLogo} alt="LimitLess Logo" className="inline h-13 ml-[95px] mt-[-70px]" />
+            <img
+              src={LimitlessLogo}
+              alt="LimitLess Logo"
+              className="inline h-13 ml-[95px] mt-[-70px]"
+            />
           </h1>
           {/* First normal line */}
           <p className="text-[13px] font-[Montserrat] font-semibold text-white leading-normal">
@@ -17,30 +24,33 @@ export default function Podcast() {
           </p>
 
           {/* Bold + Normal */}
-          <p className="text-md text-white font-[Montserrat]">
-            <span className="font-bold">Enhancing Awareness:</span> The Power of Stories
-            creates a safe space for honest, emotional conversations that bring out
-            the resilience, wisdom, and strength in each guest. These episodes are
-            more than interviews—they’re a reminder that we are never alone, and
-            that every challenge holds the power to help us grow.
+          <p className="text-sm w-[550px] text-white font-[Montserrat]">
+            <span className="font-bold">Enhancing Awareness:</span> The Power of
+            Stories creates a safe space for honest, emotional conversations
+            that bring out the resilience, wisdom, and strength in each guest.
+            These episodes are more than interviews—they’re a reminder that we
+            are never alone, and that every challenge holds the power to help us
+            grow.
           </p>
 
           {/* Italic emphasis */}
-          <p className="text-sm italic text-white font-[Montserrat]">
-            <span className="font-bold">Tune in and see how this podcast drives the heart of the{" "}Limitless Potential Movement.</span>
+          <p className="text-sm  text-white font-[Montserrat]">
+            <span className="font-bold ">
+              Tune in and see how this podcast drives the heart of the Limitless
+              Potential Movement.
+            </span>
           </p>
           <div className="flex justify-center pt-10">
             <button className="transform -translate-x-1/2 -translate-y-1/2 px-6 py-2 rounded-full bg-[#6E530C] text-white flex items-center gap-3 shadow-[0px_4px_4px_0px_#FFBD52] hover:cursor-pointer focus:outline-none">
-              <span className="font-[Montserrat] font-bold text-xs uppercase tracking-[0.5%]">Watch Full Podcast</span>
+              <span className="font-[Montserrat] font-bold text-xs uppercase tracking-[0.5%]">
+                Watch Full Podcast
+              </span>
               <img src={playIcon} alt="Play Icon" className="w-6 h-6" />
             </button>
           </div>
         </div>
         <div className="relative">
-          <img
-            src={Cover}
-            alt="Podcast Cover"
-          />
+          <img src={Cover} alt="Podcast Cover" />
         </div>
       </div>
     </div>

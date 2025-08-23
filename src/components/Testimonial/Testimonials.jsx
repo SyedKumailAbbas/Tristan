@@ -8,7 +8,7 @@ import Vid from "./Vid";
 
 const Testimonials = () => {
   return (
-    <section className="bg-black pt-5 pb-20 relative overflow-hidden">
+    <section className="bg-black pt-0 pb-20 relative overflow-hidden">
       {/* Paint brush header */}
       <div className="relative w-full mb-12">
         <div className="relative">

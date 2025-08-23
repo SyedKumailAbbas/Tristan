@@ -1,9 +1,13 @@
 import React from "react";
-import { Youtube, Music, Linkedin, Instagram } from "lucide-react";
 import Tk from "../../assets/TK logo.png";
 import TopBorder from "../Borders/TopBorder";
 import navigate from "../../assets/Group 29.svg";
 import contactInfo from "../../assets/Group 42.svg";
+import insta from "../../assets/insta.png";
+import linkedin from "../../assets/linkedin.png";
+import spotify from "../../assets/spotify.png";
+import youtube from "../../assets/youtube.png";
+import medium from "../../assets/medium.png";
 
 const Footer = () => {
   return (
@@ -105,31 +109,31 @@ const Footer = () => {
             href="#youtube"
             className="w-12 h-12 bg-yellow-500 rounded-full flex items-center justify-center hover:bg-orange-600 transition-colors duration-200 hover:scale-110 transform"
           >
-            <Youtube size={24} className="text-black" />
+            <img src={youtube} alt="YouTube" className="w-6 h-6" />
           </a>
           <a
             href="#spotify"
             className="w-12 h-12 bg-yellow-500 rounded-full flex items-center justify-center hover:bg-orange-600 transition-colors duration-200 hover:scale-110 transform"
           >
-            <Music size={24} className="text-black" />
+            <img src={spotify} alt="Spotify" className="w-6 h-6" />
           </a>
           <a
             href="#linkedin"
             className="w-12 h-12 bg-yellow-500 rounded-full flex items-center justify-center hover:bg-orange-600 transition-colors duration-200 hover:scale-110 transform"
           >
-            <Linkedin size={24} className="text-black" />
+            <img src={linkedin} alt="LinkedIn" className="w-6 h-6" />
           </a>
           <a
             href="#instagram"
             className="w-12 h-12 bg-yellow-500 rounded-full flex items-center justify-center hover:bg-orange-600 transition-colors duration-200 hover:scale-110 transform"
           >
-            <Instagram size={24} className="text-black" />
+            <img src={insta} alt="Instagram" className="w-6 h-6" />
           </a>
           <a
             href="#medium"
-            className="w-12 h-12 bg-yellow-500 rounded-full flex items-center justify-center hover:bg-orange-600 transition-colors duration-200 hover:scale-110 transform"
+            className="w-15 h-10 bg-yellow-500 rounded-full flex items-center justify-center hover:bg-orange-600 transition-colors duration-200 hover:scale-110 transform"
           >
-            <div className="text-black font-bold text-sm">M</div>
+            <img src={medium} alt="Medium" className="w-15 h-4" />
           </a>
         </div>
       </div>

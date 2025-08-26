@@ -1,7 +1,7 @@
 import React from "react";
 import { Play } from "lucide-react";
-import img from "../../assets/Frame 17.png";
-import heading from "../../assets/Group 173.svg";
+import img from "../../assets/Frame 18.png";
+import heading from "../../assets/Group 120.png";
 
 export default function Marathon() {
   return (
@@ -17,26 +17,27 @@ export default function Marathon() {
           </div>
 
           {/* Achievement Details */}
-          <div className="space-y-4 ml-6  w-[450px] mb-8">
+          <div className="space-y-4 ml-20  w-[450px] mb-8">
             <div className="flex items-start space-x-3">
               <div className="w-2 h-2 bg-yellow-400 rounded-full mt-2 flex-shrink-0"></div>
               <p className="font-bold text-gray-300 text-lg leading-relaxed">
-                1st in age group at the 42 km Limberlost Challenge.
+                Built a handcrafted jewelry brand from passion to profit.{" "}
               </p>
             </div>
 
             <div className="flex items-start space-x-3">
               <div className="w-2 h-2 bg-yellow-400 rounded-full mt-2 flex-shrink-0"></div>
               <p className="font-bold text-gray-300 text-lg leading-relaxed">
-                Overcame 1500m elevation in 35°C heat.
+                Designed and sold 200+ gemstone bracelets at markets and
+                university events..
               </p>
             </div>
 
             <div className="flex items-start space-x-3">
               <div className="w-2 h-2 bg-yellow-400 rounded-full mt-2 flex-shrink-0"></div>
               <p className="font-bold text-gray-300 text-lg leading-relaxed">
-                Powered through with relentless drive through mental and
-                physical endurance.
+                Earned customer loyalty through quality craftsmanship and
+                authentic storytelling.{" "}
               </p>
             </div>
 

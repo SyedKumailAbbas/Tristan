@@ -131,7 +131,7 @@ export default function Keynotes() {
           iconsrc={corp}
           title="Corporations"
           tags={["Resilience", "Mindset", "Momentum"]}
-        />
+        />  
         <Card
           iconsrc={school}
           title="High Schools"

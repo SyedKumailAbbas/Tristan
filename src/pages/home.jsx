@@ -21,8 +21,6 @@ export default function Home() {
      <Podcast/>
       <Testimonials />
       <Footer />
-      <Corp/>
-      <JANU/>
     </>
   );
 }

@@ -29,9 +29,6 @@ export default function Hero() {
           </button>
         </div>
       </div>
-      <div className="svg-overlay">
-        <img src={overlaySvg} alt="Overlay" className="overlay-svg" />
-      </div>
 
     </div>
   );

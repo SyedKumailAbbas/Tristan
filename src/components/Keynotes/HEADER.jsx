@@ -78,15 +78,15 @@ const Card = ({ iconsrc, title }) => (
 
 export default function JANU() {
     return (
-        <div className="relative isolate min-h-screen w-full overflow-hidden">
+        <div style={{ maxHeight: '140vh' }} className="janu-div relative isolate min-h-screen w-full overflow-hidden">
             {/* Background */}
             <img
                 src={background}
                 alt=""
                 aria-hidden="true"
-                className="pointer-events-none absolute inset-0 -z-10 h-full w-full object-cover"
+                className="pointer-events-none inset-0 -z-10 h-full w-full object-cover"
             />
-            <div className="hero-text">
+            <div className="hero-text" style={{ marginTop: '-15vh' }}>
                 <h2 className="font-[Montserrat] font-bold text-[65px] leading-none tracking-[0.5%] not-italic">
                     THE LIMITLESS POTENTIAL
                 </h2>
@@ -101,7 +101,7 @@ export default function JANU() {
             </div>
 
             {/* Cards only */}
-            <div className="mx-auto max-w-7xl px-6 py-12">
+            <div className="mx-auto max-w-7xl px-6 py-12" style={{ marginTop: '-75vh' }}>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-20">
                     <Card iconsrc={corp} title="Corporations" />
                     <Card iconsrc={school} title="High Schools" />
@@ -112,7 +112,7 @@ export default function JANU() {
             {/* Optional subtle vignette */}
             <div
                 className="pointer-events-none absolute inset-0"
-                style={{ boxShadow: "inset 0 120px 160px rgba(0,0,0,.25)" }}
+                style={{  boxShadow: "inset 0 120px 160px rgba(0,0,0,.25)" }}
             />
         </div>
     );

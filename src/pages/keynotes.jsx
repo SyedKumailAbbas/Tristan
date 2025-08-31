@@ -13,16 +13,8 @@ import JANU from "../components/Keynotes/HEADER";
 export default function Keynote() {
   return (
     <>
-      <Hero />
-      <Banner />
-      <Video />
-      <Keynotes />
-      <Teaching />
-      <Podcast />
-      <Testimonials />
-      <Footer />
-      <Corp />
       <JANU />
+      <Corp />
     </>
   );
 }

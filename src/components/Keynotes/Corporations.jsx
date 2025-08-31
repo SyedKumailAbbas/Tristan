@@ -7,8 +7,10 @@ export default function Corp() {
   return (
     <div className="relative min-h-screen overflow-hidden">
       <div
-        className="absolute inset-0 -z-10 bg-center bg-cover"
-        style={{ backgroundImage: `url(${bg})` }}
+        className="absolute inset-0 -z-10 bg-cover"
+        style={{
+          backgroundImage: `url(${bg})`
+        }}
       />
 
       {/* Top header */}

@@ -4,7 +4,10 @@ import Tk from "../../assets/TK logo.png";
 export default function Navbar() {
   return (
     <div className="fixed backdrop-blur-sm z-50 top-0 w-full h-20">
-      <div style={{ overflow: 'hidden' }} className="flex items-center justify-between h-full px-8 pt-10 max-w-7xl mx-auto">
+      <div
+        style={{ overflow: "hidden" }}
+        className="flex items-center justify-between h-full px-8 pt-10 max-w-7xl mx-auto"
+      >
         {/* Logo/Brand */}
         <div className="flex items-center">
           <div className="h-15">
@@ -34,12 +37,14 @@ export default function Navbar() {
           >
             Media
           </a>
-          <a
-            href="#"
-            className="text-white text-xl hover:text-gray-300 transition-colors duration-200 text-sm font-bold"
-          >
-            Keynotes
-          </a>
+          <Link to="/keynotes">
+            <a
+              href="#"
+              className="text-white text-xl hover:text-gray-300 transition-colors duration-200 text-sm font-bold"
+            >
+              Keynotes
+            </a>
+          </Link>
           <a
             href="#"
             className="text-white text-xl hover:text-gray-300 transition-colors duration-200 text-sm font-bold"

@@ -5,7 +5,7 @@ import heading from "../../assets/Group 173.svg";
 
 export default function Marathon() {
   return (
-    <div className="w-full p-5 bg-gradient-to-br from-gray-900 to-black rounded-lg overflow-hidden">
+    <div className="w-full p-5 bg-black to-black overflow-hidden">
       <div className="flex flex-col lg:flex-row">
         {/* Left Content Section */}
         <div className="flex-1 p-8 lg:p-10">

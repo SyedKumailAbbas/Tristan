@@ -5,7 +5,7 @@ import heading from "../../assets/Group 117.png";
 
 export default function Marathon() {
   return (
-    <div className="w-full p-5 bg-gradient-to-br from-gray-900 to-black rounded-lg overflow-hidden">
+    <div className="w-full p-5 bg-black  overflow-hidden">
       <div className="flex flex-col lg:flex-row">
         {/* Left Content Section */}
         <div className="w-[50%] m-10 flex items-center justify-center">

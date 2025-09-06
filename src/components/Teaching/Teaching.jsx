@@ -4,13 +4,14 @@ import teaching from "../../assets/teaching.mp4"; // Assuming you have a teachin
 import broadcast from "../../assets/simple-icons_readme.svg";
 import border from "../../assets/Frame 16.svg";
 import Heartbg from "../../assets/Vector 9.png";
+import "./Teaching.css";
 export default function Teaching() {
   return (
     <div className="bg-black p-8 rounded-lg relative overflow-hidden">
       <div className="flex flex-col lg:flex-row items-center ">
         {/* Left content */}
         <div className="flex-1 ml-8 text-white">
-          <h1 className="text-4xl lg:text-5xl font-bold mb-6 leading-tight">
+          <h1 className="text-6xl lg:text-5xl font-bold mb-6 leading-tight">
             HOW TEACHING
             <br />
             CHILDREN CHANGED
@@ -20,7 +21,6 @@ export default function Teaching() {
               <span
                 className="text-yellow-400 relative z-10 font-serif italic text-5xl"
                 style={{
-                  fontFamily: "cursive",
                   backgroundImage: `url(${Heartbg})`,
                   backgroundSize: "cover",
                   backgroundPosition: "center",
@@ -36,10 +36,12 @@ export default function Teaching() {
             </span>
           </h1>
 
-          <p className="text-gray-300 mb-8 w-[410px] text-lg leading-relaxed">
-            "It's important to carry the knowledge and wisdom of someone older
+          <p className="mb-8 w-[410px] text-xl leading-relaxed italic-text">
+            <span className="quote-color">"</span>
+            It's important to carry the knowledge and wisdom of someone older
             but to dream like a child who doesn't yet know what they can't do,
-            because truly, your potential is limitless."
+            because truly, your potential is limitless.
+            <span className="quote-color">"</span>
           </p>
 
           <button className="px-6 py-2 rounded-full bg-[#6E530C] text-white flex items-center gap-3 shadow-[0px_4px_4px_0px_#FFBD52] hover:cursor-pointer focus:outline-none">
@@ -61,12 +63,12 @@ export default function Teaching() {
             <img
               src={border}
               alt=""
-              className="absolute inset-0 w-full h-[96%] z-10 pointer-events-none"
+              className="absolute inset-0 w-[686] h-[452] z-10 pointer-events-none"
             />
 
             {/* Video fills the box, then we shrink it visually */}
             <video
-              className="absolute top-1/2 left-1/2 w-[80%] h-[100%] -translate-x-1/2 -translate-y-1/2 object-contain"
+              className="absolute top-1/2 left-1/2 w-[686px] h-[452px] -translate-x-1/2 -translate-y-1/2 object-contain"
               style={{ transformOrigin: "center" }}
               src={teaching}
               autoPlay

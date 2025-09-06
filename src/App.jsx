@@ -5,7 +5,7 @@ import About from "./pages/about.jsx";
 import "./index.css";
 import Keynote from "./pages/keynotes.jsx";
 import BookTristan from "./pages/bookTristan.jsx";
-
+import Footer from "./components/Footer/Footer.jsx";
 function App() {
   return (
     <Router>
@@ -16,6 +16,7 @@ function App() {
         <Route path="/keynotes" element={<Keynote />} />
         <Route path="/book-tristan" element={<BookTristan />} />
       </Routes>
+      <Footer />
     </Router>
   );
 }

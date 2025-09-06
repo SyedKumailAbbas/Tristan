@@ -6,9 +6,7 @@ import Podcast from "../components/Podcast/Podcast";
 import Testimonials from "../components/Testimonial/Testimonials";
 import Teaching from "../components/Teaching/Teaching";
 import Keynotes from "../components/Keynotes/Keynotes"; // Importing Keynotes component
-import Corp from "../components/Keynotes/Corporations";
-import Header from "../components/Keynotes/HEADER";
-import JANU from "../components/Keynotes/HEADER";
+
 export default function Home() {
   return (
     <>
@@ -19,8 +17,7 @@ export default function Home() {
       <Teaching />
       <Podcast />
       <Testimonials />
-      <Corp />
-      <JANU />
+
     </>
   );
 }

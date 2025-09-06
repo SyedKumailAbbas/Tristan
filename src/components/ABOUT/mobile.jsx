@@ -90,12 +90,7 @@ export default function Mobile() {
                             playsInline
                             className="object-contain"
                         />
-                        {/* Overlay Border */}
-                        <img
-                            src={border}
-                            alt="Mobile Border"
-                            className="absolute top-0 left-0 w-full h-full object-contain pointer-events-none"
-                        />
+            
                     </div>
                 </div>
             </div>

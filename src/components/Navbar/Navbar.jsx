@@ -6,7 +6,7 @@ export default function Navbar() {
     <div className="fixed backdrop-blur-sm z-50 top-0 w-full h-25">
       <div
         style={{ overflow: "hidden" }}
-        className="flex items-center justify-between h-full px-8 pt-10 max-w-7xl mx-auto"
+        className="flex items-center justify-between h-full px-8 pt-10 w-full mx-auto"
       >
         {/* Logo/Brand */}
         <div className="flex items-center">
@@ -30,13 +30,14 @@ export default function Navbar() {
               About
             </a>
           </Link>
-
-          <a
-            href="#"
-            className="text-white text-xl hover:text-gray-300 transition-colors duration-200 text-sm font-bold"
-          >
-            Media
-          </a>
+          <Link to="/media">
+            <a
+              href="#"
+              className="text-white text-xl hover:text-gray-300 transition-colors duration-200 text-sm font-bold"
+            >
+              Media
+            </a>
+          </Link>
           <Link to="/keynotes">
             <a
               href="#"
@@ -45,17 +46,22 @@ export default function Navbar() {
               Keynotes
             </a>
           </Link>
-          <a
-            href="#"
-            className="text-white text-xl hover:text-gray-300 transition-colors duration-200 text-sm font-bold"
-          >
-            Testimonials
-          </a>
 
-          {/* CTA Button */}
-          <button className="bg-gradient-to-r text-xl from-yellow-400 to-orange-400 text-black px-6 py-2 rounded-full font-bold text-sm hover:from-yellow-300 hover:to-orange-300 transition-all duration-300 transform hover:scale-105 shadow-lg">
-            Book Tristan
-          </button>
+          <Link to="/testimonial">
+            <a
+              href="#"
+              className="text-white text-xl hover:text-gray-300 transition-colors duration-200 text-sm font-bold"
+            >
+              Testimonials
+            </a>
+          </Link>
+
+          <Link to="/book-Tristan">
+            {/* CTA Button */}
+            <button className="bg-gradient-to-r text-xl from-yellow-400 to-orange-400 text-black px-6 py-2 rounded-full font-bold text-sm hover:from-yellow-300 hover:to-orange-300 transition-all duration-300 transform hover:scale-105 shadow-lg">
+              Book Tristan
+            </button>
+          </Link>
         </div>
 
         {/* Mobile menu button */}

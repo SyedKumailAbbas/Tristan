@@ -11,13 +11,13 @@ import medium from "../../assets/medium.png";
 
 const Footer = () => {
   return (
-    <footer className="relative bg-gradient-to-b from-[#D4A017] to-[#6E530C] text-white overflow-hidden">
+    <footer className="relative w-full bg-gradient-to-b from-[#D4A017] to-[#6E530C] text-white overflow-hidden">
       {/* Top irregular paint stroke effect */}
       <div className="absolute top-0 left-0 w-full h-8">
         <TopBorder />
       </div>
 
-      <div className="relative z-10 max-w-6xl mx-auto px-6 py-12 ">
+      <div className="relative z-10 w-full mx-auto px-6 py-12 ">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 pt-12 items-start border-t border-black">
           {/* Logo Section */}
           <div className="mt-[-10px]">
@@ -105,36 +105,23 @@ const Footer = () => {
 
         {/* Social Media Icons */}
         <div className="flex justify-center space-x-6 mb-12 mt-12 pb-8 border-b border-black">
-          <a
-            href="#youtube"
-            className="w-12 h-12 bg-yellow-500 rounded-full flex items-center justify-center hover:bg-orange-600 transition-colors duration-200 hover:scale-110 transform"
-          >
-            <img src={youtube} alt="YouTube" className="w-6 h-6" />
-          </a>
-          <a
-            href="#spotify"
-            className="w-12 h-12 bg-yellow-500 rounded-full flex items-center justify-center hover:bg-orange-600 transition-colors duration-200 hover:scale-110 transform"
-          >
-            <img src={spotify} alt="Spotify" className="w-6 h-6" />
-          </a>
-          <a
-            href="#linkedin"
-            className="w-12 h-12 bg-yellow-500 rounded-full flex items-center justify-center hover:bg-orange-600 transition-colors duration-200 hover:scale-110 transform"
-          >
-            <img src={linkedin} alt="LinkedIn" className="w-6 h-6" />
-          </a>
-          <a
-            href="#instagram"
-            className="w-12 h-12 bg-yellow-500 rounded-full flex items-center justify-center hover:bg-orange-600 transition-colors duration-200 hover:scale-110 transform"
-          >
-            <img src={insta} alt="Instagram" className="w-6 h-6" />
-          </a>
-          <a
-            href="#medium"
-            className="w-15 h-10 bg-yellow-500 rounded-full flex items-center justify-center hover:bg-orange-600 transition-colors duration-200 hover:scale-110 transform"
-          >
-            <img src={medium} alt="Medium" className="w-15 h-4" />
-          </a>
+          <div className="flex space-x-4 mt-4 ">
+            <a href="#youtube" className="w-12 h-12 ">
+              <img src={youtube} alt="YouTube" className="w-15 h-15" />
+            </a>
+            <a href="#spotify" className="w-12 h-12 ">
+              <img src={spotify} alt="Spotify" className="w-15 h-15" />
+            </a>
+            <a href="#linkedin" className="w-12 h-12 ">
+              <img src={linkedin} alt="LinkedIn" className="w-15 h-15" />
+            </a>
+            <a href="#instagram" className="w-12 h-12 ">
+              <img src={insta} alt="Instagram" className="w-15 h-15" />
+            </a>
+            <a href="#medium" className="w-15 h-10 ">
+              <img src={medium} alt="Medium" className="w-15 h-15" />
+            </a>
+          </div>
         </div>
       </div>
     </footer>

@@ -1,5 +1,11 @@
 import React, { useState } from "react";
 import formimg from "../../../assets/contactform.png";
+import insta from "../../../assets/insta.png";
+import linkedin from "../../../assets/linkedin.png";
+import spotify from "../../../assets/spotify.png";
+import youtube from "../../../assets/youtube.png";
+import medium from "../../../assets/medium.png";
+import arrow from "../../../assets/arrow.png";
 import "./Form.css";
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -24,6 +30,9 @@ const ContactForm = () => {
     <section className="bg-black relative isolate ">
       <div className="px-4  sm:px-6">
         {/* CARD — only this is visually pulled up */}
+        <div className="flex justify-end arrow">
+          <img src={arrow} alt="Spotify" className="" />
+        </div>
         <div
           className="
             relative z-10 
@@ -31,11 +40,11 @@ const ContactForm = () => {
             rounded-sm overflow-hidden shadow-2xl
             ring-1 ring-amber-400/20
             bg-[radial-gradient(circle_at_center,_#FFAE00,_#875D01)]
-            -translate-y-[40px]
+            -translate-y-[150px]
           "
         >
           {/* Inner content spacing */}
-          <div className="relative z-10 pl-5 pt-20 pr-5  ">
+          <div className="relative z-10 pl-5 pt-[120px] pb-10 pr-5  ">
             <div className="flex flex-col  lg:flex-row items-start justify-between gap-8">
               {/* Left - Person Image */}
               <div className="flex-shrink-0 ">
@@ -46,27 +55,27 @@ const ContactForm = () => {
                 />
 
                 <div className="mt-6 space-y-2 text-white text-sm">
-                  <p>📞 (XXX) XXX-XXXX</p>
-                  <p>✉️ info@emailexample.com</p>
+                  <p className="detail">P: (647) 324-8747</p>
+                  <p className="detail">E: tristanjoshuakim@gmail.com</p>
                 </div>
 
                 {/* Socials */}
-                <div className="flex gap-3 mt-4">
-                  <div className="w-8 h-8 bg-black rounded-full flex items-center justify-center cursor-pointer hover:bg-gray-800 transition-colors">
-                    <span className="text-white text-xs">📺</span>
-                  </div>
-                  <div className="w-8 h-8 bg-black rounded-full flex items-center justify-center cursor-pointer hover:bg-gray-800 transition-colors">
-                    <span className="text-white text-xs">📷</span>
-                  </div>
-                  <div className="w-8 h-8 bg-black rounded-full flex items-center justify-center cursor-pointer hover:bg-gray-800 transition-colors">
-                    <span className="text-white text-xs">🎵</span>
-                  </div>
-                  <div className="w-8 h-8 bg-black rounded-full flex items-center justify-center cursor-pointer hover:bg-gray-800 transition-colors">
-                    <span className="text-white text-xs">📧</span>
-                  </div>
-                  <div className="w-8 h-8 bg-yellow-400 rounded-full flex items-center justify-center cursor-pointer hover:bg-yellow-300 transition-colors">
-                    <span className="text-black text-xs font-bold">M</span>
-                  </div>
+                <div className="flex space-x-1 mt-4 ">
+                  <a href="#youtube" className="w-12 h-12 ">
+                    <img src={youtube} alt="YouTube" className="w-10 h-10" />
+                  </a>
+                  <a href="#spotify" className="w-12 h-12 ">
+                    <img src={spotify} alt="Spotify" className="w-10 h-10" />
+                  </a>
+                  <a href="#linkedin" className="w-12 h-12 ">
+                    <img src={linkedin} alt="LinkedIn" className="w-10 h-10" />
+                  </a>
+                  <a href="#instagram" className="w-12 h-12 ">
+                    <img src={insta} alt="Instagram" className="w-10 h-10" />
+                  </a>
+                  <a href="#medium" className="w-15 h-10 ">
+                    <img src={medium} alt="Medium" className="w-15 h-10" />
+                  </a>
                 </div>
               </div>
 
@@ -115,7 +124,7 @@ const ContactForm = () => {
                         value={formData.eventDetails}
                         onChange={handleInputChange}
                         rows="4"
-                        className="form-input"
+                        className="text-area"
                         placeholder=""
                       />
                     </div>
@@ -129,7 +138,7 @@ const ContactForm = () => {
                         value={formData.eventDetails}
                         onChange={handleInputChange}
                         rows="4"
-                        className="form-input"
+                        className="text-area"
                         placeholder=""
                       />
                     </div>
@@ -144,15 +153,17 @@ const ContactForm = () => {
                         value={formData.additionalInfo}
                         onChange={handleInputChange}
                         rows="3"
-                        className="form-input"
+                        className="text-area"
                         placeholder="Share what you envision..."
                       />
                     </div>
 
                     {/* Submit */}
-                    <button onClick={handleSubmit} className="sub-btn">
-                      Submit
-                    </button>
+                    <div className=" flex justify-center">
+                      <button onClick={handleSubmit} className="mb-5 sub-btn">
+                        Submit
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>

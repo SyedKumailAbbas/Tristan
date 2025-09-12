@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import yellowFormBg from "../../../assets/image.png";
+import yellowFormBg from "../../../assets/bgform.svg";
 import styledText from "../../../assets/powerfull.png"; // or .png
 import "./Newsletter.css";
 export default function Newsletter() {
@@ -25,8 +25,8 @@ export default function Newsletter() {
     <div className="min-h-screen bg-black text-white flex items-center justify-center px-4">
       <div className="w-[70%] ">
         {/* Main heading */}
-        <div className="text-center mb-8">
-          <h1 className="text-4xl font-bold leading-relaxed mb-6">
+        <div className="text-center mb-20">
+          <h1 className="text-4xl font-semibold leading-relaxed mb-6">
             I believe every person has something{" "}
             <span className="font-semibold underline-thick">extraordinary</span>{" "}
             within them, and every event is a chance to{" "}
@@ -39,7 +39,7 @@ export default function Newsletter() {
         <img
           src={styledText}
           alt="Let's make it powerful, real, and unforgettable"
-          className="mx-auto w-50"
+          className="mx-auto w-50 mb-20"
         />
         {/* Fallback text in case image doesn't load */}
         {/* <div className="sr-only">
@@ -48,69 +48,62 @@ export default function Newsletter() {
 
         {/* Contact form with your yellow background image */}
 
-        <div className="relative">
-          {/* Form container with gradient + bg image */}
-          <div
-            className="gold-form rounded-lg p-8 shadow-2xl w-[929px] h-[348] "
-            style={{ backgroundImage: `url(${yellowFormBg})` }}
-          >
-            {" "}
-            {/* Overlay */}
-            {/* Decorative vectors */}
-            <i className="gold-form__vec gold-form__vec--8"></i>
-            <i className="gold-form__vec gold-form__vec--9"></i>
-            <i className="gold-form__vec gold-form__vec--7"></i>
-            {/* Form content */}
-            <div className="relative z-10 space-y-6">
-              {/* Name field */}
-              <div>
-                <div className="block text-black font-medium mb-2">
-                  Name (Required)
+        {/* Form container with gradient + bg image */}
+        <div
+          className="gold-form ml-5 rounded-lg p-8 shadow-2xl w-[929px] h-[348] "
+          style={{ backgroundImage: `url(${yellowFormBg})` }}
+        >
+          {" "}
+          {/* Overlay */}
+          {/* Decorative vectors */}
+          <i className="gold-form__vec gold-form__vec--8"></i>
+          <i className="gold-form__vec gold-form__vec--9"></i>
+          <i className="gold-form__vec gold-form__vec--7"></i>
+          {/* Form content */}
+          <div className="relative z-10 space-y-2 p-5">
+            <div className="form-container">
+              <form className="form-inner" onSubmit={handleSubmit}>
+                <label className="form-label">Name (required)</label>
+                <div className="name-row">
+                  <input
+                    type="text"
+                    name="fname"
+                    value={formData.fname}
+                    onChange={handleInputChange}
+                    placeholder="First Name*"
+                    required
+                    className="news-input"
+                  />
+                  <input
+                    type="text"
+                    name="lname"
+                    value={formData.lname}
+                    onChange={handleInputChange}
+                    placeholder="Last Name*"
+                    required
+                    className="news-input"
+                  />
                 </div>
-                <input
-                  type="text"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleInputChange}
-                  className="w-full px-4 py-3 bg-white bg-opacity-70 border-2 border-yellow-600 rounded-md text-black placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-700 focus:border-transparent focus:bg-opacity-90 transition-all duration-200"
-                  placeholder="Your name"
-                />
-              </div>
 
-              {/* Email field */}
-              <div>
-                <div className="block text-black font-medium mb-2">
-                  Email (Required)
-                </div>
+                <label className="form-label">Email (required)</label>
                 <input
                   type="email"
                   name="email"
                   value={formData.email}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 bg-white bg-opacity-70 border-2 border-yellow-600 rounded-md text-black placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-700 focus:border-transparent focus:bg-opacity-90 transition-all duration-200"
-                  placeholder="your.email@example.com"
+                  placeholder="Your Email*"
+                  required
+                  className="news-email-input"
                 />
-              </div>
 
-              {/* Submit button */}
-              <button
-                onClick={handleSubmit}
-                className="w-full bg-yellow-600 hover:bg-yellow-700 text-black font-bold py-3 px-6 rounded-md transition duration-300 transform hover:scale-105 shadow-lg"
-              >
-                Start Your Transformation
-              </button>
+                <button type="submit" className="custom-btn ">
+                  Join the Newsletter
+                </button>
+              </form>
             </div>
           </div>
-
           {/* Blue accent border effect */}
           <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 to-cyan-400 rounded-lg opacity-20 blur-sm -z-10"></div>
-        </div>
-
-        {/* Bottom decorative text */}
-        <div className="text-center mt-8">
-          <p className="text-sm text-gray-400 italic">
-            Ready to unlock your extraordinary potential?
-          </p>
         </div>
       </div>
     </div>

@@ -22,7 +22,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: url("/your-image.jpg") center center no-repeat;
   background-size: cover;
 }
 

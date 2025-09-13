@@ -1,6 +1,6 @@
 import React from "react";
 import { Play } from "lucide-react";
-import teaching from "../../assets/teaching.mp4"; // Assuming you have a teaching SVG icon
+import teaching from "../../assets/Main Video.mp4"; // Assuming you have a teaching SVG icon
 import broadcast from "../../assets/simple-icons_readme.svg";
 import border from "../../assets/Frame 16.svg";
 import Heartbg from "../../assets/Vector 9.png";

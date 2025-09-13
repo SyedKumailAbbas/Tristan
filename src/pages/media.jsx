@@ -11,8 +11,6 @@ export default function Media() {
   return (
     <>
       <Hero />
-
-      <Testimonials />
     </>
   );
 }

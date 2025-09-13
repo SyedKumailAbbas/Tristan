@@ -10,12 +10,7 @@ import "../App.css";
 export default function Testimonial() {
   return (
     <>
-      <Hero />
-      {/* <Banner /> */}
-      <Video />
-      <Keynotes />
-      <Teaching />
-      <Podcast />
+
       <Testimonials />
     </>
   );

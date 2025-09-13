@@ -22,7 +22,6 @@ export default function Navbar() {
         {/* Navigation Menu */}
         <div className="hidden md:flex items-center space-x-10">
           <Link to="/about">
-            {" "}
             <a
               href="#"
               className="text-white text-xl hover:text-gray-300 transition-colors duration-200 text-sm font-bold"

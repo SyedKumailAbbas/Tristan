@@ -1,24 +1,53 @@
 import React, { useState } from "react";
 import yellowFormBg from "../../../assets/bgform.svg";
-import styledText from "../../../assets/powerfull.png"; // or .png
+import styledText from "../../../assets/powerfull.png";
 import "./Newsletter.css";
+import { submitNewsletter } from "../../../services/form";
+
 export default function Newsletter() {
   const [formData, setFormData] = useState({
-    name: "",
+    fname: "",
+    lname: "",
     email: "",
   });
+  const [submitting, setSubmitting] = useState(false);
 
   const handleInputChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
+    const { name, value } = e.target;
+    setFormData((s) => ({ ...s, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  // Simple client-side validation
+  const isValidEmail = (email) =>
+    /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(email).toLowerCase());
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    // Handle form submission here
+
+    const fname = formData.fname.trim();
+    const lname = formData.lname.trim();
+    const email = formData.email.trim().toLowerCase();
+
+    if (!fname || !lname || !email) {
+      alert("Please fill out all the required fields.");
+      return;
+    }
+    if (!isValidEmail(email)) {
+      alert("Please enter a valid email address.");
+      return;
+    }
+
+    setSubmitting(true);
+    try {
+      await submitNewsletter({ fname, lname, email });
+      alert("✅ Newsletter signup submitted!");
+      setFormData({ fname: "", lname: "", email: "" });
+    } catch (err) {
+      console.error("Error submitting newsletter:", err);
+      alert("❌ Something went wrong. Please try again.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -34,36 +63,28 @@ export default function Newsletter() {
           </h1>
         </div>
 
-        {/* Stylized tagline using your image */}
-        {/* Replace this with your styled text image */}
+        {/* Stylized tagline image */}
         <img
           src={styledText}
           alt="Let's make it powerful, real, and unforgettable"
           className="mx-auto w-50 mb-20"
         />
-        {/* Fallback text in case image doesn't load */}
-        {/* <div className="sr-only">
-            Let's make it powerful, real, and unforgettable.
-          </div> */}
 
-        {/* Contact form with your yellow background image */}
-
-        {/* Form container with gradient + bg image */}
+        {/* Form container */}
         <div
-          className="gold-form ml-5 rounded-lg p-8 shadow-2xl w-[929px] h-[348] "
+          className="gold-form ml-5 rounded-lg p-8 shadow-2xl w-[929px] h-[348] relative overflow-hidden"
           style={{ backgroundImage: `url(${yellowFormBg})` }}
         >
-          {" "}
-          {/* Overlay */}
-          {/* Decorative vectors */}
           <i className="gold-form__vec gold-form__vec--8"></i>
           <i className="gold-form__vec gold-form__vec--9"></i>
           <i className="gold-form__vec gold-form__vec--7"></i>
-          {/* Form content */}
+
           <div className="relative z-10 space-y-2 p-5">
             <div className="form-container">
-              <form className="form-inner" onSubmit={handleSubmit}>
-                <label className="form-label">Name (required)</label>
+              <form className="form-inner" onSubmit={handleSubmit} noValidate>
+                <label className="form-label required">
+                  Name <span aria-hidden="true">*</span>
+                </label>
                 <div className="name-row">
                   <input
                     type="text"
@@ -72,7 +93,10 @@ export default function Newsletter() {
                     onChange={handleInputChange}
                     placeholder="First Name*"
                     required
+                    aria-required="true"
                     className="news-input"
+                    autoComplete="given-name"
+                    disabled={submitting}
                   />
                   <input
                     type="text"
@@ -81,11 +105,16 @@ export default function Newsletter() {
                     onChange={handleInputChange}
                     placeholder="Last Name*"
                     required
+                    aria-required="true"
                     className="news-input"
+                    autoComplete="family-name"
+                    disabled={submitting}
                   />
                 </div>
 
-                <label className="form-label">Email (required)</label>
+                <label className="form-label required">
+                  Email <span aria-hidden="true">*</span>
+                </label>
                 <input
                   type="email"
                   name="email"
@@ -93,15 +122,23 @@ export default function Newsletter() {
                   onChange={handleInputChange}
                   placeholder="Your Email*"
                   required
+                  aria-required="true"
                   className="news-email-input"
+                  autoComplete="email"
+                  disabled={submitting}
                 />
 
-                <button type="submit" className="custom-btn ">
-                  Join the Newsletter
+                <button
+                  type="submit"
+                  className="custom-btn"
+                  disabled={submitting}
+                >
+                  {submitting ? "Submitting..." : "Join the Newsletter"}
                 </button>
               </form>
             </div>
           </div>
+
           {/* Blue accent border effect */}
           <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 to-cyan-400 rounded-lg opacity-20 blur-sm -z-10"></div>
         </div>
@@ -109,29 +146,3 @@ export default function Newsletter() {
     </div>
   );
 }
-
-/* 
-INSTRUCTIONS FOR USING YOUR IMAGES:
-
-1. For the styled text image:
-   - Replace '/path-to-your-styled-text.svg' with the actual path to your image
-   - If it's a PNG, change the extension accordingly
-   - The image will be centered and responsive
-
-2. For the yellow form background:
-   - Replace '/path-to-your-yellow-form-background.png' with the actual path to your image
-   - The background will cover the entire form area
-   - Adjust the bg-opacity-20 overlay if needed for text readability
-
-3. If you're using a bundler like Webpack/Vite:
-   - Import the images at the top of the file
-   - Use the imported variables instead of string paths
-   
-   Example:
-   import yellowFormBg from './assets/yellow-form-bg.png';
-   import styledText from './assets/styled-text.svg';
-   
-   Then use:
-   src={styledText}
-   backgroundImage: `url(${yellowFormBg})`
-*/

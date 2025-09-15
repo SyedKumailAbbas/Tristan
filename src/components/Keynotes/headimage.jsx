@@ -4,7 +4,7 @@ import playIcon from "../../assets/noto_play-button(2).svg";
 export default function Headtristan() {
     return (
         <div style={{ position: 'relative' }}>
-            <img src={image} alt="" style={{ width: '100%' }} />
+            <img src={image} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
             
             {/* Button 1 - Positioned on top left */}
             <button

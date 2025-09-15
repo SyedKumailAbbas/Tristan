@@ -33,6 +33,21 @@ body {
   min-height: 100vh;
 }
 
+/* Hide scrollbar visuals only */
+html {
+  -ms-overflow-style: none; /* old IE/Edge */
+  scrollbar-width: none; /* Firefox */
+}
+html::-webkit-scrollbar {
+  display: none; /* Chrome/Safari/Opera/Edge */
+}
+
+/* Let the browser manage vertical overflow normally */
+body {
+  margin: 0; /* remove default top gap */
+  overflow-y: auto; /* <-- not 'scroll' */
+}
+
 h1 {
   font-size: 3.2em;
   line-height: 1.1;

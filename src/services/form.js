@@ -1,32 +1,28 @@
-// src/services/forms.js
-import { collection, addDoc } from "firebase/firestore";
-import { db } from "../firebase/firebase-config.js";
-import { serverTimestamp } from "firebase/firestore";
-export async function submitForm(data) {
-  const ref = collection(db, "Form");
-  const docRef = await addDoc(ref, { ...data, createdAt: Date.now() });
-  return docRef.id;
+import { supabase } from "../supabase/supabase";
+
+export async function submitNewsletter({ fname, lname, email }) {
+  const { error } = await supabase
+    .from("newsletter_signups")
+    .insert({ fname, lname, email });
+  if (error) throw error;
 }
 
-export async function submitNewsletter(data) {
-  // Trim & normalize before sending
-  const payload = {
-    fname: data.fname?.trim(),
-    lname: data.lname?.trim(),
-    email: data.email?.trim().toLowerCase(),
-    createdAt: serverTimestamp(),
-  };
+export async function submitContact({
+  fname,
+  lname,
+  email,
+  eventDetails, // textarea #1
+  serviceDetails, // textarea #2
+  audienceGoal, // textarea #3
+}) {
+  const { error } = await supabase.from("contact_requests").insert({
+    fname,
+    lname,
+    email,
+    event_details: eventDetails || null,
+    service_details: serviceDetails || null,
+    audience_goal: audienceGoal || null,
+  });
 
-  // Basic guard (all fields required)
-  if (!payload.fname || !payload.lname || !payload.email) {
-    throw new Error("All fields are required.");
-  }
-
-  const ref = collection(db, "NewsLetter");
-  try {
-    const docRef = await addDoc(ref, payload);
-  } catch (e) {
-    console.error("Firestore write failed:", e.code, e.message);
-  }
-  return docRef.id;
+  if (error) throw error;
 }

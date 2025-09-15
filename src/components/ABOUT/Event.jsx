@@ -5,10 +5,10 @@ import heading from "../../assets/Group 117.png";
 
 export default function Marathon() {
   return (
-    <div className="w-full p-5 bg-black  overflow-hidden">
+    <div className="w-full p-5 bg-black  ">
       <div className="flex flex-col lg:flex-row">
         {/* Left Content Section */}
-        <div className="w-[50%] m-10 flex items-center justify-center">
+        <div className="w-[47%] m-10 flex items-center justify-center">
           <img
             src={img}
             alt="Marathon achievement"

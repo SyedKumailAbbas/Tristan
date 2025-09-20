@@ -16,8 +16,11 @@ export default function Home() {
       <Keynotes />
       <Teaching />
       <Podcast />
-      <Testimonials />
-
+      <Testimonials
+        title="testimonial"
+        videoIds={["s2qwHgwpnrA", "VUCJHNkDIhM"]}
+        seeMore={{ label: "See All", href: "/testimonials" }}
+      />
     </>
   );
 }

@@ -1,0 +1,237 @@
+:root {
+  --footer-from: #d4a017;
+  --footer-to: #6e530c;
+  --footer-text: #ffffff;
+  --footer-border: #000000;
+  --footer-link-hover: #ffe680; /* subtle yellow tint */
+  --container-max: 1200px;
+
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+
+  --social-size: 48px; /* icon square */
+  --logo-height: 150px;
+}
+
+/* Footer wrapper */
+.footer {
+  position: relative;
+  width: 100%;
+  color: var(--footer-text);
+  background: linear-gradient(to bottom, var(--footer-from), var(--footer-to));
+  overflow: hidden;
+}
+
+/* Top paint-stroke container */
+.footer__topstroke {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 32px; /* h-8 */
+  pointer-events: none;
+}
+
+/* Inner container */
+.footer__container {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: var(--space-6);
+  padding-top: var(--space-12);
+  padding-bottom: var(--space-12);
+}
+
+/* Grid layout */
+.footer__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-8);
+  padding-top: var(--space-12);
+  border-top: 1px solid var(--footer-border);
+  align-items: start;
+}
+
+@media (min-width: 768px) {
+  .footer__grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+/* Logo */
+.footer__logoWrap {
+  margin-top: -10px;
+}
+
+.footer__logo {
+  height: var(--logo-height);
+  width: auto;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+}
+
+/* Headings (svg/png labels) */
+.footer__headingImgWrap {
+  position: relative;
+  display: inline-block;
+}
+
+.footer__headingImg {
+  position: relative;
+  z-index: 10;
+  margin-bottom: var(--space-5);
+  height: 60px; /* approximates 'h-15' */
+  width: auto;
+}
+
+.footer__headingImg--navigate {
+  margin-left: -25px;
+}
+
+.footer__headingImg--contact {
+  margin-left: -20px;
+}
+
+/* Navigation links */
+.footer__navWrap {
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .footer__navWrap {
+    text-align: left;
+  }
+}
+
+.footer__nav {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.footer__link {
+  display: block;
+  text-decoration: underline;
+  transition: color 200ms ease-in-out;
+}
+
+.footer__link:hover,
+.footer__link:focus {
+  color: var(--footer-link-hover);
+  outline: none;
+}
+
+/* Media section */
+.footer__mediaWrap {
+  margin-top: var(--space-10);
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .footer__mediaWrap {
+    text-align: left;
+    margin-top: 0;
+  }
+}
+
+.footer__headingImgSpacer {
+  display: inline-block;
+  margin-bottom: var(--space-6);
+}
+
+.footer__mediaLinks {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+/* Contact section */
+.footer__contactWrap {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .footer__contactWrap {
+    text-align: left;
+  }
+}
+
+.footer__contact {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.footer__label {
+  font-weight: 600;
+}
+
+/* Social row */
+.footer__social {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--space-12);
+  margin-bottom: var(--space-12);
+  padding-bottom: var(--space-8);
+  border-bottom: 1px solid var(--footer-border);
+}
+
+.footer__socialRow {
+  display: flex;
+  gap: var(--space-4);
+  margin-top: var(--space-4);
+}
+
+.footer__socialLink {
+  width: var(--social-size);
+  height: var(--social-size);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 160ms ease-in-out, opacity 160ms ease-in-out;
+}
+
+.footer__socialLink:hover,
+.footer__socialLink:focus {
+  transform: translateY(-2px) scale(1.03);
+  opacity: 0.95;
+  outline: none;
+}
+
+.footer__socialIcon {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Accessibility: reduce motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .footer__socialLink {
+    transition: none;
+  }
+}
+
+/* Small tweaks for very narrow screens */
+@media (max-width: 360px) {
+  .footer__headingImg {
+    height: 48px;
+  }
+  .footer__logo {
+    height: 120px;
+  }
+  .footer__socialLink {
+    width: 40px;
+    height: 40px;
+  }
+}

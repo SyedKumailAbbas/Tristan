@@ -10,8 +10,11 @@ import "../App.css";
 export default function Testimonial() {
   return (
     <>
-
-      <Testimonials />
+      <Testimonials
+        title="keynotes"
+        videoIds={["s2qwHgwpnrA", "VUCJHNkDIhM"]}
+      />
+      <Testimonials title="podcast" videoIds={["s2qwHgwpnrA", "VUCJHNkDIhM"]} />
     </>
   );
 }

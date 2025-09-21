@@ -1,6 +1,6 @@
 :root {
-  --navbar-height: 100px;
-  --navbar-bg-blur: blur(6px);
+  --navbar-height: 115px;
+  --navbar-bg-blur: blur(2px);
   --navbar-text: #ffffff;
   --navbar-hover: #d1d5db; /* gray-300 */
   --cta-from: #facc15; /* yellow-400 */

@@ -13,6 +13,7 @@ export default function about() {
       <Hero />
       <Black />
       <Mobile />
+      <Heading imgSrc={headingImg} altText={"Text img"} />
       <Marathon />
       <Event />
       <Gemstone />

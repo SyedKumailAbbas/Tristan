@@ -120,7 +120,7 @@ const Footer = () => {
               className="footer__socialLink"
               aria-label="Medium"
             >
-              <img src={medium} alt="" className="footer__socialIcon" />
+              <img src={medium} alt="" className="footer-medium" />
             </a>
           </div>
         </div>

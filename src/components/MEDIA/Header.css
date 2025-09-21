@@ -1,0 +1,280 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+.header-container {
+  display: flex;
+  min-height: 80vh;
+  width: 100vw;
+  position: relative;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  left: 0;
+  right: 0;
+  top: 0;
+  background: linear-gradient(to left, #FFAE00 0%, rgba(114, 77, 0, 0.58) 49%, rgba(0, 0, 0, 0.25) 100%);
+}
+
+/* Left side styling */
+.header-left {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  position: relative;
+  z-index: 2;
+  min-height: 80vh;
+  box-sizing: border-box;
+}
+
+.header-content {
+  max-width: 500px;
+  color: white;
+}
+
+.main-headline {
+  font-size: 3.5rem;
+  font-weight: 400;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+
+.find-text-image {
+  max-width: 100%;
+  height: auto;
+  max-height: 200px;
+}
+
+.script-text {
+  font-family: 'Dancing Script', 'Brush Script MT', cursive;
+  font-style: italic;
+  font-weight: 400;
+}
+
+.highlight-name {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  color: #FFAE00;
+  font-size: 4rem;
+  display: inline-block;
+  margin: 0 0.2rem;
+  -webkit-text-stroke: 1px #E5B80B;
+  text-shadow: 0 0 0 #E5B80B;
+}
+
+.sub-headline {
+  font-size: 1.4rem;
+  font-weight: 300;
+  line-height: 1.4;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.sub-text {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+}
+
+.highlight-help {
+  color: #FFAE00;
+  font-weight: 700;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Button styles are now handled by Tailwind classes */
+
+/* Right side styling */
+.header-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+  min-height: 80vh;
+  box-sizing: border-box;
+}
+
+.tristan-image-container {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 122px; /* pushes it 50px down */
+
+}
+
+.tristan-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  z-index: 2;
+  position: relative;
+}
+
+/* Media icons styling */
+.media-icon {
+  position: absolute;
+  color: #FFD700;
+  stroke-width: 2.5;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+  z-index: 3;
+  animation: float 3s ease-in-out infinite;
+}
+
+.media-icon:nth-child(odd) {
+  animation-delay: 1s;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.camera-icon {
+  top: 15%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.microphone-icon {
+  top: 20%;
+  right: 15%;
+  animation-delay: 0.5s;
+}
+
+.video-icon {
+  top: 45%;
+  left: 5%;
+  animation-delay: 1.5s;
+}
+
+.clapperboard-icon {
+  top: 60%;
+  left: 8%;
+  animation-delay: 2s;
+}
+
+.diploma-icon {
+  top: 10%;
+  right: 10%;
+  animation-delay: 2.5s;
+}
+
+.music-icon {
+  bottom: 15%;
+  right: 12%;
+  animation-delay: 3s;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    min-height: auto;
+    width: 100vw;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .header-left,
+  .header-right {
+    flex: none;
+    min-height: 50vh;
+    width: 100vw;
+    padding: 1rem;
+    margin: 0;
+  }
+  
+  .main-headline {
+    font-size: 2.5rem;
+  }
+  
+  .highlight-name {
+    font-size: 3rem;
+  }
+  
+  .sub-headline {
+    font-size: 1.2rem;
+  }
+  
+  .tristan-image-container {
+    height: 400px;
+    position: relative;
+    top: 122px;
+    width: 100%;
+    max-width: none;
+  }
+  
+  .media-icon {
+    display: none; /* Hide icons on mobile for cleaner look */
+  }
+  
+  .header-content {
+    max-width: 100%;
+    padding: 1rem;
+    width: 100%;
+  }
+  
+  .find-text-image {
+    max-height: 150px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-headline {
+    font-size: 2rem;
+  }
+  
+  .highlight-name {
+    font-size: 2.5rem;
+  }
+  
+  .sub-headline {
+    font-size: 1rem;
+  }
+  
+  .cta-button {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+  }
+  
+  .header-left,
+  .header-right {
+    padding: 0.5rem;
+    width: 100vw;
+  }
+  
+  .header-content {
+    padding: 0.5rem;
+    width: 100%;
+  }
+  
+  .find-text-image {
+    max-height: 120px;
+    width: 100%;
+  }
+  
+  .tristan-image-container {
+    height: 300px;
+    position: relative;
+    top: 122px;
+    width: 100%;
+    max-width: none;
+  }
+}

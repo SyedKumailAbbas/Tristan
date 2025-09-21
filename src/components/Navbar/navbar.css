@@ -1,0 +1,122 @@
+:root {
+  --navbar-height: 115px;
+  --navbar-bg-blur: blur(2px);
+  --navbar-text: #ffffff;
+  --navbar-hover: #d1d5db; /* gray-300 */
+  --cta-from: #facc15; /* yellow-400 */
+  --cta-to: #fb923c; /* orange-400 */
+  --cta-hover-from: #fde047; /* yellow-300 */
+  --cta-hover-to: #fdba74; /* orange-300 */
+}
+
+/* Wrapper */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: var(--navbar-height);
+  backdrop-filter: var(--navbar-bg-blur);
+  z-index: 50;
+}
+
+/* Inner container */
+.navbar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  width: 100%;
+  padding: 2.5rem 2rem 0 2rem; /* pt-10 px-8 */
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+/* Brand */
+.navbar__brand {
+  display: flex;
+  align-items: center;
+}
+
+.navbar__logo {
+  height: 100px;
+  width: 100px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+}
+
+/* Menu */
+.navbar__menu {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .navbar__menu {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem; /* space-x-10 */
+  }
+}
+
+.navbar__link {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--navbar-text);
+  text-decoration: none;
+  transition: color 200ms ease-in-out;
+}
+
+.navbar__link:hover,
+.navbar__link:focus {
+  color: var(--navbar-hover);
+  outline: none;
+}
+
+/* CTA Button */
+.navbar__cta {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #000000;
+  padding: 0.5rem 1.5rem;
+  border-radius: 9999px;
+  background: linear-gradient(to right, var(--cta-from), var(--cta-to));
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: all 300ms ease-in-out;
+}
+
+.navbar__cta:hover {
+  background: linear-gradient(
+    to right,
+    var(--cta-hover-from),
+    var(--cta-hover-to)
+  );
+  transform: scale(1.05);
+}
+
+/* Mobile button */
+.navbar__mobileBtn {
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .navbar__mobileBtn {
+    display: none;
+  }
+}
+
+.navbar__hamburger {
+  color: var(--navbar-text);
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 200ms ease-in-out;
+}
+
+.navbar__hamburger:hover {
+  color: var(--navbar-hover);
+}
+
+.navbar__hamburgerIcon {
+  width: 24px;
+  height: 24px;
+}

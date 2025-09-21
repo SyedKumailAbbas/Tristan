@@ -78,7 +78,7 @@ const Card = ({ iconsrc, title }) => (
 
 export default function JANU() {
     return (
-        <div style={{ maxHeight: '140vh' }} className="janu-div relative isolate min-h-screen w-full overflow-hidden">
+        <div style={{ maxHeight: '153vh' }} className="janu-div relative isolate min-h-screen w-full overflow-hidden">
             {/* Background */}
             <img
                 src={background}
@@ -101,7 +101,7 @@ export default function JANU() {
             </div>
 
             {/* Cards only */}
-            <div className="mx-auto max-w-7xl px-6 py-12" style={{ marginTop: '-75vh' }}>
+            <div className="mx-auto max-w-7xl px-6 py-12" style={{ marginTop: '-80vh' }}>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-20">
                     <Card iconsrc={corp} title="Corporations" />
                     <Card iconsrc={school} title="High Schools" />

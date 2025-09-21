@@ -1,0 +1,139 @@
+/* Base card (Rectangle 26) */
+.gold-card {
+  position: relative;
+  width: 929;
+  height: 348;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 0.5rem; /* match your rounded-lg */
+  overflow: visible; /* allow the “vectors” to stick out if needed */
+}
+
+/* Optional: keep your inner padding/shadow utility feel purely in CSS */
+.gold-card__content {
+  position: relative;
+  padding: 2rem; /* p-8 */
+}
+.underline-thick {
+  position: relative;
+  font-weight: 600;
+}
+/* Container centered with bg no-repeat */
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+}
+
+/* Inner form */
+.form-inner {
+  max-width: 700px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* First & Last name side by side */
+.name-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+/* Button style */
+.custom-btn {
+  width: 233px;
+  height: 38px;
+  opacity: 1;
+  padding: 10px;
+  gap: 12px;
+  background: #ffae00;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 700;
+  font-style: Bold;
+  font-size: 19px;
+  line-height: 100%;
+  letter-spacing: 0.5%;
+
+  box-shadow: 0px 4px 4px 0px #f77e004d;
+
+  transition: background 0.2s, transform 0.2s;
+}
+.news-input {
+  width: 265px;
+  height: 40px;
+  opacity: 1;
+  border: 2px solid #ffae00;
+  background: transparent;
+}
+.news-email-input {
+  width: 719px;
+  height: 40px;
+  border: 2px solid #ffae00;
+  opacity: 1;
+  background: transparent;
+}
+.custom-btn:hover {
+  background-color: #d97706; /* darker yellow */
+  transform: translateY(-2px);
+}
+
+.underline-thick::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 1px; /* adjust to sit nicely */
+  width: 100%;
+  height: 5px; /* thickness */
+  background-color: #ffae00;
+  z-index: 1;
+}
+
+/* Shared vector styles */
+.gold-card__vec {
+  position: absolute;
+  border: 88px solid #0e0e0e;
+  pointer-events: none;
+}
+
+/* Vector 8 (bottom-ish, rotated 180°) */
+.gold-card__vec--8 {
+  width: 965.79px;
+  height: 32px;
+  transform: rotate(179.9deg);
+  /* Positioning: align near bottom edge of the card */
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  bottom: -44px; /* tweak as needed */
+}
+
+/* Vector 9 (top-ish, almost horizontal) */
+.gold-card__vec--9 {
+  width: 965.79px;
+  height: 32px;
+  transform: rotate(-0.06deg);
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  top: -44px; /* tweak as needed */
+}
+
+/* Vector 7 (right vertical bar) */
+.gold-card__vec--7 {
+  width: 798px;
+  height: 42.18px;
+  transform: rotate(89.34deg);
+  top: 50%;
+  right: -44px; /* sits outside the right edge; tweak as needed */
+  transform-origin: center;
+  translate: 0 -50%;
+}
+
+/* --- If you literally want the original Figma page coordinates, use these instead ---
+.gold-card__vec--8 { left: 263px; top: 2407.7px; }
+.gold-card__vec--9 { left: 372px; top: 2036px; }
+.gold-card__vec--7 { left: 1178px; top: 1959px; }
+(Keep the widths/heights/borders/rotations the same.)
+*/

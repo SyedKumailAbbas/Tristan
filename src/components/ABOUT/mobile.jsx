@@ -29,7 +29,7 @@ export default function Mobile() {
         </div>
 
         {/* Keynote Speaking + Came About */}
-        <div className="relative mt-4 inline-flex items-baseline">
+        <div className="relative -mt-4 inline-flex items-baseline">
           <span className="relative text-[45px] font-bold font-[Montserrat] leading-tight tracking-wide text-white mr-4">
             Keynote Speaking
             <span className="absolute left-0 -bottom-1 w-full h-[7px] bg-[#FFAE00]" />

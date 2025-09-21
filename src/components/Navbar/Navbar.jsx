@@ -1,73 +1,44 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "./navbar.css";
+
 import Tk from "../../assets/TK logo.png";
+
 export default function Navbar() {
   return (
-    <div className="fixed backdrop-blur-sm z-50 top-0 w-full h-25">
-      <div
-        style={{ overflow: "hidden" }}
-        className="flex items-center justify-between h-full px-8 pt-10 w-full mx-auto"
-      >
+    <div className="navbar">
+      <div className="navbar__inner">
         {/* Logo/Brand */}
-        <div className="flex items-center">
-          <div className="h-15">
-            <img
-              src={Tk}
-              alt="TK Logo"
-              className="h-[100px] w-[100px] object-contain filter brightness-0 invert"
-            />
-          </div>
+        <div className="navbar__brand">
+          <img src={Tk} alt="TK Logo" className="navbar__logo" />
         </div>
 
         {/* Navigation Menu */}
-        <div className="hidden md:flex items-center space-x-10">
-          <Link to="/about">
-            <a
-              href="#"
-              className="text-white text-xl hover:text-gray-300 transition-colors duration-200 text-sm font-bold"
-            >
-              About
-            </a>
+        <div className="navbar__menu">
+          <Link to="/about" className="navbar__link">
+            About
           </Link>
-          <Link to="/media">
-            <a
-              href="#"
-              className="text-white text-xl hover:text-gray-300 transition-colors duration-200 text-sm font-bold"
-            >
-              Media
-            </a>
+          <Link to="/media" className="navbar__link">
+            Media
           </Link>
-          <Link to="/keynotes">
-            <a
-              href="#"
-              className="text-white text-xl hover:text-gray-300 transition-colors duration-200 text-sm font-bold"
-            >
-              Keynotes
-            </a>
+          <Link to="/keynotes" className="navbar__link">
+            Keynotes
+          </Link>
+          <Link to="/testimonial" className="navbar__link">
+            Testimonials
           </Link>
 
-          <Link to="/testimonial">
-            <a
-              href="#"
-              className="text-white text-xl hover:text-gray-300 transition-colors duration-200 text-sm font-bold"
-            >
-              Testimonials
-            </a>
-          </Link>
-
+          {/* CTA */}
           <Link to="/book-Tristan">
-            {/* CTA Button */}
-            <button className="bg-gradient-to-r text-xl from-yellow-400 to-orange-400 text-black px-6 py-2 rounded-full font-bold text-sm hover:from-yellow-300 hover:to-orange-300 transition-all duration-300 transform hover:scale-105 shadow-lg">
-              Book Tristan
-            </button>
+            <button className="navbar__cta">Book Tristan</button>
           </Link>
         </div>
 
-        {/* Mobile menu button */}
-        <div className="md:hidden">
-          <button className="text-white hover:text-gray-300">
+        {/* Mobile Menu Button */}
+        <div className="navbar__mobileBtn">
+          <button aria-label="Menu" className="navbar__hamburger">
             <svg
-              className="w-6 h-6"
+              className="navbar__hamburgerIcon"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"

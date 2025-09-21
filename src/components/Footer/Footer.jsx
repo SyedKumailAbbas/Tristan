@@ -1,4 +1,6 @@
 import React from "react";
+import "./footer.css";
+
 import Tk from "../../assets/TK logo.png";
 import TopBorder from "../Borders/TopBorder";
 import navigate from "../../assets/Group 29.svg";
@@ -11,92 +13,71 @@ import medium from "../../assets/medium.png";
 
 const Footer = () => {
   return (
-    <footer className="relative w-full bg-gradient-to-b from-[#D4A017] to-[#6E530C] text-white overflow-hidden">
+    <footer className="footer">
       {/* Top irregular paint stroke effect */}
-      <div className="absolute top-0 left-0 w-full h-8">
+      <div className="footer__topstroke">
         <TopBorder />
       </div>
 
-      <div className="relative z-10 w-full mx-auto px-6 py-12 ">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 pt-12 items-start border-t border-black">
+      <div className="footer__container">
+        <div className="footer__grid">
           {/* Logo Section */}
-          <div className="mt-[-10px]">
-            <img
-              src={Tk}
-              alt="TK Logo"
-              className="h-[150px] w-auto object-contain filter brightness-0 invert"
-            />
+          <div className="footer__logoWrap">
+            <img src={Tk} alt="TK Logo" className="footer__logo" />
           </div>
 
           {/* Navigation Section */}
-          <div className="text-center md:text-left">
-            <div className="relative inline-block ">
+          <div className="footer__navWrap">
+            <div className="footer__headingImgWrap">
               <img
                 src={navigate}
                 alt="Navigate"
-                className="h-15 w-auto relative z-10 mb-5 ml-[-25px] "
+                className="footer__headingImg footer__headingImg--navigate"
               />
             </div>
 
-            <nav className="space-y-3">
-              <a
-                href="#about"
-                className="block hover:text-yellow-200 transition-colors duration-200 underline"
-              >
+            <nav className="footer__nav">
+              <a href="#about" className="footer__link">
                 About
               </a>
-              <a
-                href="#keynotes"
-                className="block hover:text-yellow-200 transition-colors duration-200 underline"
-              >
+              <a href="#keynotes" className="footer__link">
                 Keynotes
               </a>
-              <a
-                href="#testimonials"
-                className="block hover:text-yellow-200 transition-colors duration-200 underline"
-              >
+              <a href="#testimonials" className="footer__link">
                 Testimonials
               </a>
             </nav>
           </div>
 
           {/* Media Section */}
-          <div className="text-center mt-10 md:text-left">
-            <div className="relative inline-block mb-6"></div>
-            <div className="mt-4">
-              <a
-                href="#media"
-                className="underline hover:text-yellow-200 transition-colors duration-200"
-              >
+          <div className="footer__mediaWrap">
+            <div className="footer__headingImgSpacer" />
+            <div className="footer__mediaLinks">
+              <a href="#media" className="footer__link">
                 Media
               </a>
-            </div>
-            <div>
-              <a
-                href="#book"
-                className="underline hover:text-yellow-200 transition-colors duration-200"
-              >
+              <a href="#book" className="footer__link">
                 Book Tristan
               </a>
             </div>
           </div>
 
           {/* Contact Section */}
-          <div className="text-center flex flex-col md:text-left">
-            <div className="relative inline-block">
+          <div className="footer__contactWrap">
+            <div className="footer__headingImgWrap">
               <img
                 src={contactInfo}
                 alt="Contact Information"
-                className="h-15 w-auto relative z-10 mb-5 ml-[-20px] "
+                className="footer__headingImg footer__headingImg--contact"
               />
             </div>
 
-            <div className="space-y-3">
+            <div className="footer__contact">
               <div>
-                <span className="font-semibold">P:</span> (647) 324-8747
+                <span className="footer__label">P:</span> (647) 324-8747
               </div>
               <div>
-                <span className="font-semibold">E:</span>{" "}
+                <span className="footer__label">E:</span>{" "}
                 tristanjoshuakim@gmail.com
               </div>
             </div>
@@ -104,22 +85,42 @@ const Footer = () => {
         </div>
 
         {/* Social Media Icons */}
-        <div className="flex justify-center space-x-6 mb-12 mt-12 pb-8 border-b border-black">
-          <div className="flex space-x-4 mt-4 ">
-            <a href="#youtube" className="w-12 h-12 ">
-              <img src={youtube} alt="YouTube" className="w-15 h-15" />
+        <div className="footer__social">
+          <div className="footer__socialRow">
+            <a
+              href="#youtube"
+              className="footer__socialLink"
+              aria-label="YouTube"
+            >
+              <img src={youtube} alt="" className="footer__socialIcon" />
             </a>
-            <a href="#spotify" className="w-12 h-12 ">
-              <img src={spotify} alt="Spotify" className="w-15 h-15" />
+            <a
+              href="#spotify"
+              className="footer__socialLink"
+              aria-label="Spotify"
+            >
+              <img src={spotify} alt="" className="footer__socialIcon" />
             </a>
-            <a href="#linkedin" className="w-12 h-12 ">
-              <img src={linkedin} alt="LinkedIn" className="w-15 h-15" />
+            <a
+              href="#linkedin"
+              className="footer__socialLink"
+              aria-label="LinkedIn"
+            >
+              <img src={linkedin} alt="" className="footer__socialIcon" />
             </a>
-            <a href="#instagram" className="w-12 h-12 ">
-              <img src={insta} alt="Instagram" className="w-15 h-15" />
+            <a
+              href="#instagram"
+              className="footer__socialLink"
+              aria-label="Instagram"
+            >
+              <img src={insta} alt="" className="footer__socialIcon" />
             </a>
-            <a href="#medium" className="w-15 h-10 ">
-              <img src={medium} alt="Medium" className="w-15 h-15" />
+            <a
+              href="#medium"
+              className="footer__socialLink"
+              aria-label="Medium"
+            >
+              <img src={medium} alt="" className="footer-medium" />
             </a>
           </div>
         </div>

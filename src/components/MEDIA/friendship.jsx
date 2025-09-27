@@ -1,7 +1,7 @@
 import React, { useState, useMemo } from "react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import FINDBOX from "../../assets/Frame 24.svg";
-import playIcon from "../../assets/noto_play-button.svg";
+import playIcon from "../../assets/noto_play-button(2).svg";
 import "./friendship.css";
 
 const slidesData = [
@@ -14,7 +14,7 @@ const slidesData = [
       </>
     ),
     quote:
-      "If a man does not keep pace with his companions, perhaps it is because he hears a different drummer. Let him step to the music which he hears, however measured or far away (Henry David Thoreau).",
+      "\"If a man does not keep pace with his companions, perhaps it is because he hears a different drummer. Let him step to the music which he hears, however measured or far away (Henry David Thoreau).\"",
     cta: "Read more",
     link: "#",
   },
@@ -41,14 +41,18 @@ const FriendshipCarousel = () => {
   const [direction, setDirection] = useState(null); // 'next' | 'prev' | null
 
   const slides = useMemo(() => slidesData, []);
+  // lalaoooo
+  const [pendingIndex, setPendingIndex] = useState(null);
+
 
   const prev = () => {
-    setDirection('prev');
-    setIndex((i) => (i - 1 + slides.length) % slides.length);
+    setDirection("prev");
+    setPendingIndex((i) => (index - 1 + slides.length) % slides.length);
   };
+
   const next = () => {
-    setDirection('next');
-    setIndex((i) => (i + 1) % slides.length);
+    setDirection("next");
+    setPendingIndex((i) => (index + 1) % slides.length);
   };
 
 
@@ -68,17 +72,29 @@ const FriendshipCarousel = () => {
         </article>
 
         {/* Active card with content */}
-        <article className={`card active ${direction === 'next' ? 'to-right' : ''} ${direction === 'prev' ? 'to-left' : ''}`} onAnimationEnd={() => setDirection(null)}>
+        <article
+          className={`card active ${direction === "next" ? "to-right" : ""} ${direction === "prev" ? "to-left" : ""
+            }`}
+          onAnimationEnd={() => {
+            if (pendingIndex !== null) {
+              setIndex(pendingIndex);
+              setPendingIndex(null);
+            }
+            setDirection(null);
+          }}
+        >
+
           <img src={FINDBOX} alt="frame" className="frame-bg" />
           <div className="content">
             <h3 className="title">
-            {slides[index].title}
+              {slides[index].title}
             </h3>
             <p className="quote">{slides[index].quote}</p>
             <a className="cta keynotes-btn" href={slides[index].link}>
               <span>Read more</span>
-              <img src={playIcon} alt="Play Icon" className="play-icon" />
+              <img src={playIcon} alt="Play Icon" className="w-9 h-9" />
             </a>
+
           </div>
         </article>
 

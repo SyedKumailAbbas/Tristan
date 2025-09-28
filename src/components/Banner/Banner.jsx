@@ -9,7 +9,7 @@ export default function Banner() {
     <div className="banner">
       {/* LEFT half */}
       <div className="banner-left">
-        <p className="pt-10 pl-20 pr-60">
+        <p className="pt-10 pl-10 pr-60">
           Many are just scratching the surface of what is possible for their
           life, but I believe everyone is called to something greater than
           themselves… My <span className="highlight">mission</span> is to
@@ -18,7 +18,7 @@ export default function Banner() {
           <span className="highlight"> purpose</span> from within.
         </p>
 
-        <button className="cta">Book Tristan</button>
+        <button className="hero-cta">Book Tristan</button>
       </div>
 
       {/* RIGHT half */}

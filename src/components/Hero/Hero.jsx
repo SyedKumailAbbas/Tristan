@@ -7,10 +7,12 @@ import overlaySvg from "../../assets/Rectangle 13.svg";
 export default function Hero() {
   return (
     <div className="video-container">
-      <video autoPlay muted loop playsInline className="bg-video">
-        <source src={bgVideo} type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
+       {/* ✅ Background GIF instead of video */}
+      <img
+        src="https://pub-94f7f5d00cd94150915de158d63cafdd.r2.dev/Homepage%20(Background%20Black%20Opacity)%20Speaker%20Reel%20%20(1).gif"
+        alt="Background animation"
+        className="bg-video"
+      />
 
       {/* ───── overlay text ───── */}
       <div className="video-overlay">
@@ -22,7 +24,7 @@ export default function Hero() {
         </div>
 
         <div className="hero-buttons">
-          <button className="cta">Unlock Your Purpose</button>
+          <button className="hero-cta">Unlock Your Purpose</button>
           <button className="play-cta">
             <img src={playIcon} alt="" className=" w-8 h-8" />
             <span><strong>Watch&nbsp;Tristan&nbsp;In&nbsp;Action</strong></span>

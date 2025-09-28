@@ -2,6 +2,7 @@ import React, { useState, useMemo } from "react";
 import { ArrowLeft, ArrowRight, Play, Pause } from "lucide-react";
 import heading from "../../../assets/Group 196.png";
 import "./podcastcarousel.css";
+import playIcon from "../../../assets/noto_play-button(2).svg";
 
 const slidesData = [
   {
@@ -201,7 +202,8 @@ const PodcastCarousel = () => {
 
               <button className="listenFullBtn">
                 <span>LISTEN TO FULL PODCAST</span>
-                <Play className="listenBtnIcon" />
+
+                <img src={playIcon} alt="Play Icon" className="w-6 h-6" />
               </button>
             </div>
           </article>

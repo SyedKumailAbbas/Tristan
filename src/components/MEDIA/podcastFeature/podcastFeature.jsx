@@ -97,16 +97,15 @@ const PodcastFeature = () => {
               </button>
 
               <div className="audio-player">
-                <span onClick={togglePlay} className="play-icon">
-                  {isPlaying ? "⏸" : "▶"}
-                </span>
-
                 <div className="player-info">
                   <div className="episode-title">
                     80. Transforming Anxiety into Confidence with Tristan Kim.
                   </div>
 
                   <div className="progress-section">
+                    <span onClick={togglePlay} className="play-icon">
+                      {isPlaying ? "⏸" : "▶"}
+                    </span>
                     <span className="time-current">
                       {formatTime(currentTime)}
                     </span>

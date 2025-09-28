@@ -1,0 +1,425 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&family=Poppins:ital,wght@0,400;0,600;1,500&display=swap");
+
+/* Main carousel container */
+/* Outer section just gives vertical breathing room */
+.podcastSection {
+  background: transparent;
+  position: relative;
+}
+
+/* Heading row sits above the carousel and aligns with it */
+.podcastHeading {
+  /* border: none; */
+  padding-top: 20px;
+  padding-left: 40px;
+  background: #0f0f0f;
+  display: flex;
+  align-items: center;
+}
+
+.friendshipCarousel {
+  position: relative;
+  width: 100vw;
+  max-width: 100%;
+  height: auto;
+  display: grid;
+  grid-template-columns: 100px 1fr 100px;
+  align-items: center;
+  justify-items: center;
+  background: #0f0f0f;
+  overflow: hidden;
+  padding: 30px 0;
+}
+
+/* Deck container */
+.carouselDeck {
+  position: relative;
+  width: min(800px, 80vw);
+  height: 500px;
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  justify-items: center;
+}
+
+/* Card base styles */
+.carouselCard {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 6px;
+  display: grid;
+  place-items: center;
+  transition: transform 450ms cubic-bezier(0.22, 1, 0.36, 1), opacity 450ms ease;
+}
+
+/* Card positioning */
+.carouselCard.isActive {
+  transform: scale(1) translateX(0);
+  z-index: 3;
+}
+
+.carouselCard.isPrev {
+  transform: scale(0.8) translateX(-60%);
+  z-index: 2;
+  opacity: 0.8;
+  filter: blur(30px);
+}
+
+.carouselCard.isNext {
+  transform: scale(0.8) translateX(60%);
+  z-index: 2;
+  opacity: 0.8;
+  filter: blur(30px);
+}
+
+/* Card animations */
+.carouselCard.isActive.toRight {
+  animation: activeToRight 420ms ease both;
+}
+
+.carouselCard.isActive.toLeft {
+  animation: activeToLeft 420ms ease both;
+}
+
+.carouselCard.isPrev.becomingActive {
+  animation: previewToCenterFromRight 420ms ease both;
+  filter: none;
+}
+
+.carouselCard.isNext.becomingActive {
+  animation: previewToCenterFromLeft 420ms ease both;
+  filter: none;
+}
+
+@keyframes activeToRight {
+  from {
+    transform: translateX(0) scale(1);
+  }
+  to {
+    transform: translateX(60%) scale(0.8);
+  }
+}
+
+@keyframes activeToLeft {
+  from {
+    transform: translateX(0) scale(1);
+  }
+  to {
+    transform: translateX(-60%) scale(0.8);
+  }
+}
+
+@keyframes previewToCenterFromRight {
+  from {
+    transform: translateX(60%) scale(0.8);
+  }
+  to {
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes previewToCenterFromLeft {
+  from {
+    transform: translateX(-60%) scale(0.8);
+  }
+  to {
+    transform: translateX(0) scale(1);
+  }
+}
+
+/* Navigation buttons */
+.carouselNav {
+  display: grid;
+  place-items: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: #6e530c;
+  box-shadow: 0px 4px 4px 0px #ffae00;
+  border: none;
+  color: #ffae00;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.carouselNav.isLeft {
+  justify-self: start;
+  margin-left: 24px;
+}
+
+.carouselNav.isRight {
+  justify-self: end;
+  margin-right: 24px;
+}
+
+.carouselNav svg {
+  width: 32px;
+  height: 32px;
+}
+
+/* Active podcast card - 274px x 416px */
+.activePodcastCard {
+  width: 274px;
+  height: 416px;
+  position: relative;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Podcast host image - 270px x 251px with orange border */
+.podcastImageContainer {
+  width: 270px;
+  height: 251px;
+  position: relative;
+  margin: 0 auto;
+}
+
+.podcastHostImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 14px solid #ffae00;
+  box-shadow: 0px 4px 4px 0px rgba(247, 126, 0, 0.25);
+  border-radius: 16px;
+}
+
+/* Podcast details section */
+.podcastDetails {
+  padding: 9px 13px 0;
+  flex: 1;
+}
+
+/* Season heading - Montserrat Bold 16px */
+.seasonHeader {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0.5%;
+  color: white;
+  margin-bottom: 10px;
+}
+
+/* Episode text - Montserrat Bold 14px */
+.episodeText {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: white;
+  margin-bottom: 35px;
+}
+
+/* Audio player section - 224.65px x 45px with white border */
+.audioPlayer {
+  width: 224.65px;
+  height: 45px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  padding: 8px 12px;
+}
+
+/* Play button - 29.4px x 28px green - positioned on left */
+.audioPlayBtn {
+  width: 29.4px;
+  height: 28px;
+  background: #1bd760;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.audioPlayIcon {
+  width: 14px;
+  height: 14px;
+  color: white;
+  margin-left: 1px;
+}
+
+/* Audio progress section */
+.audioProgress {
+  margin-top: 10px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.progressTrack {
+  width: 159.17px;
+  height: 1px;
+  background: transparent;
+  border: 1px solid #ffffff;
+  border-radius: 0;
+  overflow: visible;
+  transform: rotate(0.36deg);
+  margin-bottom: 8px;
+}
+
+.progressBarFill {
+  height: 1px;
+  background: white;
+  border-radius: 0;
+  transition: width 0.3s ease;
+}
+
+/* Time display - positioned below the progress line */
+.timeDisplay {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  width: 159.17px;
+}
+
+/* Listen to full podcast button - 274px x 36px */
+.listenFullBtn {
+  width: 274px;
+  height: 36px;
+  background: #ff9800;
+  border: none;
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 14px 10px 10px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0px 4px 4px 0px rgba(169, 134, 40, 0.25);
+  margin-top: auto;
+}
+
+.listenBtnIcon {
+  width: 18px;
+  height: 18px;
+}
+
+/* Preview cards - 194.5px x 310px with blur */
+.previewPodcastCard {
+  width: 194.5px;
+  height: 310px;
+  position: relative;
+}
+
+.previewBackdrop {
+  width: 100%;
+  height: 100%;
+  background: #8f730e;
+  backdrop-filter: blur(32px);
+  border-radius: 16px;
+  opacity: 1;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .friendshipCarousel {
+    height: 420px;
+    grid-template-columns: 72px 1fr 72px;
+  }
+
+  .carouselNav {
+    width: 56px;
+    height: 56px;
+  }
+
+  .activePodcastCard {
+    width: 240px;
+    height: 360px;
+  }
+
+  .podcastImageContainer {
+    width: 230px;
+    height: 200px;
+  }
+}
+
+@media (max-width: 768px) {
+  .friendshipCarousel {
+    height: 380px;
+    grid-template-columns: 56px 1fr 56px;
+  }
+
+  .activePodcastCard {
+    width: 200px;
+    height: 320px;
+  }
+
+  .podcastImageContainer {
+    width: 190px;
+    height: 160px;
+  }
+
+  .seasonHeader {
+    font-size: 14px;
+  }
+
+  .episodeText {
+    font-size: 12px;
+  }
+
+  .audioPlayer {
+    width: 180px;
+    height: 40px;
+  }
+
+  .listenFullBtn {
+    width: 200px;
+    height: 32px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .friendshipCarousel {
+    height: 340px;
+    grid-template-columns: 48px 1fr 48px;
+  }
+
+  .carouselNav {
+    width: 46px;
+    height: 46px;
+  }
+
+  .activePodcastCard {
+    width: 180px;
+    height: 280px;
+  }
+
+  .podcastImageContainer {
+    width: 170px;
+    height: 140px;
+  }
+
+  .seasonHeader {
+    font-size: 12px;
+  }
+
+  .episodeText {
+    font-size: 11px;
+  }
+
+  .audioPlayer {
+    width: 160px;
+    height: 35px;
+  }
+
+  .listenFullBtn {
+    width: 180px;
+    height: 28px;
+    font-size: 11px;
+  }
+}

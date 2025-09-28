@@ -3,7 +3,7 @@ import { Play } from "lucide-react";
 import teaching from "../../assets/Main Video.mp4"; // Assuming you have a teaching SVG icon
 import broadcast from "../../assets/simple-icons_readme.svg";
 import border from "../../assets/Frame 16.svg";
-import Heartbg from "../../assets/Vector 9.png";
+import Heart from "../../assets/Group 243 (1).svg";
 import "./Teaching.css";
 export default function Teaching() {
   return (
@@ -17,22 +17,8 @@ export default function Teaching() {
             CHILDREN CHANGED
             <br />
             MY{" "}
-            <span className="relative inline-block">
-              <span
-                className="text-yellow-400 relative z-10 font-serif italic text-5xl"
-                style={{
-                  backgroundImage: `url(${Heartbg})`,
-                  backgroundSize: "cover",
-                  backgroundPosition: "center",
-                  backgroundRepeat: "no-repeat",
-                  padding: "0.25em 0.5em", // Add more padding to create space for the background image
-                  border: "6px solid transparent", // Maintain space for the border
-                  display: "inline-block", // Ensure the background fills properly
-                }}
-              >
-                Heart
-              </span>
-              {/* More authentic sketchy circle */}
+            <span className="inline-block align-middle">
+              <img src={Heart} alt="Heart" />
             </span>
           </h1>
 

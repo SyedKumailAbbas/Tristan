@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./navbar.css";
+import { NavLink } from "react-router-dom";
+
 
 import Tk from "../../assets/TK logo.png";
 
@@ -16,25 +18,25 @@ export default function Navbar() {
         </div>
 
         {/* Navigation Menu */}
-        <div className="navbar__menu">
-          <Link to="/about" className="navbar__link">
-            About
-          </Link>
-          <Link to="/media" className="navbar__link">
-            Media
-          </Link>
-          <Link to="/keynotes" className="navbar__link">
-            Keynotes
-          </Link>
-          <Link to="/testimonial" className="navbar__link">
-            Testimonials
-          </Link>
+       <div className="navbar__menu">
+  <NavLink to="/about" className="navbar__link">
+    About
+  </NavLink>
+  <NavLink to="/media" className="navbar__link">
+    Media
+  </NavLink>
+  <NavLink to="/keynotes" className="navbar__link">
+    Keynotes
+  </NavLink>
+  <NavLink to="/testimonial" className="navbar__link">
+    Testimonials
+  </NavLink>
 
-          {/* CTA */}
-          <Link to="/book-Tristan">
-            <button className="navbar__cta">Book Tristan</button>
-          </Link>
-        </div>
+  {/* CTA */}
+  <NavLink to="/book-Tristan">
+    <button className="navbar__cta">Book Tristan</button>
+  </NavLink>
+</div>
 
         {/* Mobile Menu Button */}
         <div className="navbar__mobileBtn">

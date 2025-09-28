@@ -24,7 +24,7 @@ export default function Hero() {
         <div className="hero-buttons">
           <button className="cta">Unlock Your Purpose</button>
           <button className="play-cta">
-            <img src={playIcon} alt="" className="play-icon" />
+            <img src={playIcon} alt="" className=" w-8 h-8" />
             <span><strong>Watch&nbsp;Tristan&nbsp;In&nbsp;Action</strong></span>
           </button>
         </div>

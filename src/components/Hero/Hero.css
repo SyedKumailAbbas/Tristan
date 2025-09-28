@@ -108,11 +108,7 @@
   box-shadow: none;
 }
 /* SVG icon size */
-.play-icon {
-  width: 1.5rem;
-  height: 1.5rem;
-  flex-shrink: 0;
-}
+
 
 /* optional underline on text only */
 .play-cta:hover span,

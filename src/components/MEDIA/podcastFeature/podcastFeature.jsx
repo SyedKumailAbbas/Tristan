@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import leftimg from "../../../assets/Rectangle 20.png";
+import playIcon from "../../../assets/noto_play-button(2).svg";
 import "./podcastFeature.css";
 
 const PodcastFeature = () => {
@@ -92,7 +93,7 @@ const PodcastFeature = () => {
             <div className="player-controls">
               <button className="listen-btn">
                 LISTEN TO FULL PODCAST
-                <span className="play-icon-btn">▶</span>
+                <img src={playIcon} alt="Play Icon" className="w-6 h-6" />
               </button>
 
               <div className="audio-player">

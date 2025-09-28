@@ -10,7 +10,9 @@ export default function Navbar() {
       <div className="navbar__inner">
         {/* Logo/Brand */}
         <div className="navbar__brand">
-          <img src={Tk} alt="TK Logo" className="navbar__logo" />
+          <Link to="/">
+            <img src={Tk} alt="TK Logo" className="navbar__logo" />
+          </Link>
         </div>
 
         {/* Navigation Menu */}

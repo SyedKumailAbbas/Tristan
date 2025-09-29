@@ -12,7 +12,7 @@ const PanelistSection = () => {
       {/* Left side: YouTube video */}
       <div className="flex justify-center">
         <div className="w-full max-w-xl aspect-video rounded-xl overflow-hidden shadow-lg">
-          <Vid videoId="dQw4w9WgXcQ" />{" "}
+          <Vid videoId="Dh7ojRbxCFA" />{" "}
           {/* Replace with your actual YouTube videoId */}
         </div>
       </div>
@@ -27,12 +27,20 @@ const PanelistSection = () => {
           through a YouTube video, aimed at helping students across campuses.
         </p>
 
-        <button className="self-center inline-flex px-8 py-3 rounded-full bg-[#6E530C] text-white items-center gap-3 shadow-[0px_4px_4px_0px_#FFBD52] hover:cursor-pointer focus:outline-none">
+        <a
+          href="https://youtu.be/Dh7ojRbxCFA?feature=shared"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="self-center inline-flex px-8 py-3 rounded-full bg-[#6E530C] text-white items-center gap-3 shadow-[0px_4px_4px_0px_#FFBD52] focus:outline-none 
+              hover:text-[#FFAE00] transition-colors duration-300"
+        >
           <span className="font-[Montserrat] font-bold text-sm uppercase tracking-wide">
             Watch FULL VIDEO HERE
           </span>
           <img src={playIcon} alt="Play Icon" className="w-6 h-6" />
-        </button>
+        </a>
+
+
       </div>
     </section>
   );

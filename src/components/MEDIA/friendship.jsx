@@ -9,30 +9,51 @@ const slidesData = [
     id: 1,
     title: (
       <>
-        5 WAYS TO KNOW WHEN TO LET GO OF{" "}
+        5 WAYS TO KNOW WHEN TO LET GO OF {" "}
         <span className="underline-gold">FRIENDSHIPS</span>
       </>
     ),
     quote:
       "\"If a man does not keep pace with his companions, perhaps it is because he hears a different drummer. Let him step to the music which he hears, however measured or far away (Henry David Thoreau).\"",
     cta: "Read more",
-    link: "#",
+    link: "https://medium.com/@tristanjoshuakim/5-ways-to-know-when-to-let-go-of-friendships-that-no-longer-serve-you-and-keep-walking-toward-your-0e5ff732d4c0",
   },
   {
     id: 2,
-    title: "HOW TO STAY CONSISTENT WHEN NO ONE IS WATCHING",
+    title: (
+      <>
+        The Power of {" "}
+        <span className="underline-gold">Smiling</span>
+      </>
+    ),
     quote:
-      "Discipline is choosing what you want most over what you want now.",
+      "“Let us always meet each other with a smile, for the smile is the beginning of love” (Mother Teresa).",
     cta: "Read more",
-    link: "#",
+    link: "https://medium.com/@tristanjoshuakim/the-power-of-smiling-why-a-simple-smile-can-change-everything-0b622b2e07af",
   },
   {
     id: 3,
-    title: "BUILD CONFIDENCE WITHOUT THE HYPE",
+    title: "Believe in Their Belief in You",
     quote:
-      "Confidence comes from keeping the promises you make to yourself.",
+      "“Sometimes you need to believe in someone else’s belief in you until your own belief system kicks in” (Les Brown).",
     cta: "Read more",
-    link: "#",
+    link: "https://medium.com/@tristanjoshuakim/believe-in-their-belief-in-you-0888b84c6399",
+  },
+  {
+    id: 4,
+    title: "The Path of Loneliness and Calling",
+    quote:
+      "“Along the way, you may encounter secret competitors, quiet critics, or people who smile in public but doubt you in private. Let them be. The way you live, the actions you take, and the love you give will speak louder than any words they can say” (Tristan J. Kim).",
+    cta: "Read more",
+    link: "https://medium.com/@tristanjoshuakim/the-path-of-loneliness-and-calling-a6043e81c288",
+  },
+  {
+    id: 5,
+    title: "What Are You Trying to Hide from Others?",
+    quote:
+      "“A person can say many things... But watch their actions, for they will speak for themselves. Look at the fruit they produce, for what they sow, so shall they reap. Listen to their speech, as it reveals what’s in their heart. And pay attention to who they surround themselves with because that will tell you who they truly are” (Tristan J. Kim).",
+    cta: "Read more",
+    link: "https://medium.com/@tristanjoshuakim/what-are-you-trying-to-hide-from-others-7b8259310bfb",
   },
 ];
 

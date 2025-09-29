@@ -110,7 +110,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  top: 122px; /* pushes it 50px down */
+  top: 80px; /* pushes it 50px down */
 
 }
 
@@ -164,20 +164,20 @@
 }
 
 .clapperboard-icon {
-  top: 60%;
-  left: 8%;
+  top: 70%;
+  left: -15%;
   animation-delay: 2s;
 }
 
 .diploma-icon {
-  top: 10%;
-  right: 10%;
+  top: 40%;
+  right: 4%;
   animation-delay: 2.5s;
 }
 
 .music-icon {
   bottom: 15%;
-  right: 12%;
+  right: 2%;
   animation-delay: 3s;
 }
 

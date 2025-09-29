@@ -89,35 +89,35 @@ const Footer = () => {
         <div className="footer__social">
           <div className="footer__socialRow">
             <a
-              href="#youtube"
+              href="https://www.youtube.com/@tristanjoshuakim"
               className="footer__socialLink"
               aria-label="YouTube"
             >
               <img src={youtube} alt="" className="footer__socialIcon" />
             </a>
             <a
-              href="#spotify"
+              href="https://open.spotify.com/show/1vBg44ZWW4mstqVCJD2oio?si=95a112a26aae42ac"
               className="footer__socialLink"
               aria-label="Spotify"
             >
               <img src={spotify} alt="" className="footer__socialIcon" />
             </a>
             <a
-              href="#linkedin"
+              href="https://www.linkedin.com/in/tristanjoshuakim/"
               className="footer__socialLink"
               aria-label="LinkedIn"
             >
               <img src={linkedin} alt="" className="footer__socialIcon" />
             </a>
             <a
-              href="#instagram"
+              href="https://www.instagram.com/tdawgtalks/"
               className="footer__socialLink"
               aria-label="Instagram"
             >
               <img src={insta} alt="" className="footer__socialIcon" />
             </a>
             <a
-              href="#medium"
+              href="https://medium.com/@tristanjoshuakim"
               className="footer__socialLink"
               aria-label="Medium"
             >

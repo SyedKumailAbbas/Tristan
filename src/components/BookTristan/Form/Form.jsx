@@ -93,19 +93,19 @@ const ContactForm = () => {
                   <p className="detail">E: tristanjoshuakim@gmail.com</p>
                 </div>
                 <div className="flex space-x-1 mt-4">
-                  <a href="#youtube" className="w-12 h-12">
+                  <a href="https://www.youtube.com/@tristanjoshuakim" className="w-12 h-12">
                     <img src={youtube} alt="YouTube" className="w-10 h-10" />
                   </a>
-                  <a href="#spotify" className="w-12 h-12">
+                  <a href="https://open.spotify.com/show/1vBg44ZWW4mstqVCJD2oio?si=95a112a26aae42ac" className="w-12 h-12">
                     <img src={spotify} alt="Spotify" className="w-10 h-10" />
                   </a>
-                  <a href="#linkedin" className="w-12 h-12">
+                  <a href="https://www.linkedin.com/in/tristanjoshuakim/" className="w-12 h-12">
                     <img src={linkedin} alt="LinkedIn" className="w-10 h-10" />
                   </a>
-                  <a href="#instagram" className="w-12 h-12">
+                  <a href="https://www.instagram.com/tdawgtalks/" className="w-12 h-12">
                     <img src={insta} alt="Instagram" className="w-10 h-10" />
                   </a>
-                  <a href="#medium" className="w-15 h-10">
+                  <a href="https://medium.com/@tristanjoshuakim" className="w-15 h-10">
                     <img src={medium} alt="Medium" className="w-15 h-10" />
                   </a>
                 </div>
@@ -120,20 +120,20 @@ const ContactForm = () => {
                     <input
                       type="text"
                       name="fname"
-                      placeholder="Firstname"
+                      placeholder="First Name*"
                       value={formData.fname}
                       onChange={handleInputChange}
-                      className="name-input margin-right"
+                      className="name-input margin-right placeholder-black placeholder-opacity-40"
                       required
                       disabled={submitting}
                     />
                     <input
                       type="text"
                       name="lname"
-                      placeholder="Lastname"
+                      placeholder="Last Name*"
                       value={formData.lname}
                       onChange={handleInputChange}
-                      className="name-input"
+                      className="name-input placeholder-black placeholder-opacity-40"
                       required
                       disabled={submitting}
                     />
@@ -188,16 +188,20 @@ const ContactForm = () => {
                     <label className="form-label">
                       What do you hope your audience feels empowered to do after
                       hearing from me?
+                      <span className="optional-text">(Optional, but encouraged)</span>
+
                     </label>
+                    
                     <textarea
                       name="audienceGoal"
                       value={formData.audienceGoal}
                       onChange={handleInputChange}
                       rows="3"
-                      className="text-area"
+                      className="text-area placeholder-black placeholder-opacity-40"
                       placeholder="Share what you envision..."
                       disabled={submitting}
                     />
+                    
                   </div>
 
                   {/* Submit */}

@@ -12,7 +12,7 @@ export default function Hero() {
 
         <div className="flex-1 text-white">
           <img src={heading} alt="" className="" />
-          <p className="text-[25px] mr-40 font-semibold  text-center text-white leading-relaxed mt-8 break-words">
+          <p className="text-[20px] mr-40 font-semibold  text-center text-white leading-relaxed mt-8 break-words">
             Thank you for being here! If you're looking to book a speaker who
             moves with purpose (as stage soul in life) you're in the right
             place. I speak, perform, and serve to help audiences realize their

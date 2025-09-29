@@ -46,23 +46,23 @@ export default function Teaching() {
           {/* Frame box: fixed size via aspect ratio */}
           <div className="relative w-full aspect-[16/9] overflow-hidden shadow-2xl">
             {/* Border stays full-size */}
-            <img
-              src={border}
-              alt=""
-              className="absolute inset-0 w-[686] h-[452] z-10 pointer-events-none"
-            />
 
             {/* Video fills the box, then we shrink it visually */}
             <video
               className="absolute top-1/2 left-1/2 w-[686px] h-[452px] -translate-x-1/2 -translate-y-1/2 object-contain"
               style={{ transformOrigin: "center" }}
-              src={teaching}
+              src="https://pub-94f7f5d00cd94150915de158d63cafdd.r2.dev/Limitless%20Potential.mp4"
               autoPlay
               muted
               loop
               playsInline
               preload="metadata"
             />
+            {/* <img
+              src={border}
+              alt="Video Border"
+              className="absolute inset-0 w-full h-full z-20 pointer-events-none"
+            /> */}
           </div>
         </div>
       </div>

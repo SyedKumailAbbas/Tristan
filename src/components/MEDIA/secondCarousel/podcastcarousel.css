@@ -1,48 +1,70 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&family=Poppins:ital,wght@0,400;0,600;1,500&display=swap");
 
-/* Main carousel container */
-/* Outer section just gives vertical breathing room */
+:root {
+  --bg: #0f0f0f;
+  --brand: #ffae00;
+  --brand-2: #6e530c;
+  --brand-3: #ff9800;
+  --text: #ffffff;
+  --radius: 16px;
+  --nav-size: clamp(44px, 6vw, 64px);
+  --deck-max-w: min(1100px, 92vw);
+  --card-w: clamp(220px, 28vw, 320px);
+  --card-gap: clamp(12px, 3vw, 24px);
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Outer */
 .podcastSection {
   background: transparent;
   position: relative;
 }
 
-/* Heading row sits above the carousel and aligns with it */
+/* Heading */
 .podcastHeading {
-  /* border: none; */
-  padding-top: 20px;
-  padding-left: 40px;
-  background: #0f0f0f;
+  padding: 20px clamp(16px, 3vw, 40px);
+  background: var(--bg);
   display: flex;
   align-items: center;
 }
-
-.friendshipCarousel {
-  position: relative;
-  width: 100vw;
+.podcastHeadingImg {
   max-width: 100%;
   height: auto;
-  display: grid;
-  grid-template-columns: 100px 1fr 100px;
-  align-items: center;
-  justify-items: center;
-  background: #0f0f0f;
-  overflow: hidden;
-  padding: 30px 0;
 }
 
-/* Deck container */
+/* Carousel frame */
+.friendshipCarousel {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  display: flex; /* switched from grid */
+  align-items: center;
+  justify-content: center;
+  background: var(--bg);
+  overflow: hidden;
+  padding: clamp(12px, 3vw, 30px) 0;
+}
+
+/* Deck */
 .carouselDeck {
   position: relative;
-  width: min(800px, 80vw);
-  height: 500px;
+  width: var(--deck-max-w);
+  height: clamp(420px, 52vw, 520px);
   display: grid;
   grid-template-columns: 1fr;
   align-items: center;
   justify-items: center;
 }
 
-/* Card base styles */
+/* Cards base */
 .carouselCard {
   position: absolute;
   inset: 0;
@@ -51,43 +73,37 @@
   border-radius: 6px;
   display: grid;
   place-items: center;
-  transition: transform 450ms cubic-bezier(0.22, 1, 0.36, 1), opacity 450ms ease;
+  transition: transform 450ms cubic-bezier(0.22, 1, 0.36, 1), opacity 450ms ease,
+    filter 450ms ease;
 }
-
-/* Card positioning */
 .carouselCard.isActive {
   transform: scale(1) translateX(0);
   z-index: 3;
 }
-
 .carouselCard.isPrev {
-  transform: scale(0.8) translateX(-60%);
+  transform: scale(0.9) translateX(-40%);
   z-index: 2;
   opacity: 0.8;
-  filter: blur(30px);
+  filter: blur(28px);
 }
-
 .carouselCard.isNext {
-  transform: scale(0.8) translateX(60%);
+  transform: scale(0.9) translateX(40%);
   z-index: 2;
   opacity: 0.8;
-  filter: blur(30px);
+  filter: blur(28px);
 }
 
-/* Card animations */
+/* Animations */
 .carouselCard.isActive.toRight {
   animation: activeToRight 420ms ease both;
 }
-
 .carouselCard.isActive.toLeft {
   animation: activeToLeft 420ms ease both;
 }
-
 .carouselCard.isPrev.becomingActive {
   animation: previewToCenterFromRight 420ms ease both;
   filter: none;
 }
-
 .carouselCard.isNext.becomingActive {
   animation: previewToCenterFromLeft 420ms ease both;
   filter: none;
@@ -98,203 +114,196 @@
     transform: translateX(0) scale(1);
   }
   to {
-    transform: translateX(60%) scale(0.8);
+    transform: translateX(40%) scale(0.9);
   }
 }
-
 @keyframes activeToLeft {
   from {
     transform: translateX(0) scale(1);
   }
   to {
-    transform: translateX(-60%) scale(0.8);
+    transform: translateX(-40%) scale(0.9);
   }
 }
-
 @keyframes previewToCenterFromRight {
   from {
-    transform: translateX(60%) scale(0.8);
+    transform: translateX(40%) scale(0.9);
   }
   to {
     transform: translateX(0) scale(1);
   }
 }
-
 @keyframes previewToCenterFromLeft {
   from {
-    transform: translateX(-60%) scale(0.8);
+    transform: translateX(-40%) scale(0.9);
   }
   to {
     transform: translateX(0) scale(1);
   }
 }
 
-/* Navigation buttons */
+/* Nav buttons (absolute positioning so they don’t crop) */
 .carouselNav {
-  display: grid;
-  place-items: center;
-  width: 64px;
-  height: 64px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: var(--nav-size);
+  height: var(--nav-size);
   border-radius: 50%;
-  background: #6e530c;
-  box-shadow: 0px 4px 4px 0px #ffae00;
+  background: var(--brand-2);
+  box-shadow: 0px 4px 4px 0px var(--brand);
   border: none;
-  color: #ffae00;
+  color: var(--brand);
   cursor: pointer;
   z-index: 10;
 }
-
-.carouselNav.isLeft {
-  justify-self: start;
-  margin-left: 24px;
+.carouselNav:is(:hover, :focus-visible) {
+  filter: brightness(1.1);
+  outline: 2px solid color-mix(in oklab, var(--brand) 70%, white);
 }
-
-.carouselNav.isRight {
-  justify-self: end;
-  margin-right: 24px;
-}
-
 .carouselNav svg {
-  width: 32px;
-  height: 32px;
+  width: clamp(22px, 3.2vw, 32px);
+  height: clamp(22px, 3.2vw, 32px);
+}
+.carouselNav.isLeft {
+  left: clamp(8px, 2vw, 24px);
+}
+.carouselNav.isRight {
+  right: clamp(8px, 2vw, 24px);
 }
 
-/* Active podcast card - 274px x 416px */
+/* Row that holds the active cards */
+.cardsRow {
+  display: flex;
+  gap: var(--card-gap);
+  align-items: stretch;
+  justify-content: center;
+  flex-wrap: wrap; /* allows stacking on small screens */
+  width: 100%;
+  padding: 0 clamp(8px, 2vw, 16px);
+}
+
+/* Active podcast card */
 .activePodcastCard {
-  width: 274px;
-  height: 416px;
-  position: relative;
+  width: var(--card-w);
+  min-width: 220px;
+  max-width: 95vw;
+  height: auto;
   background: transparent;
   display: flex;
   flex-direction: column;
 }
 
-/* Podcast host image - 270px x 251px with orange border */
+/* Image */
 .podcastImageContainer {
-  width: 270px;
-  height: 251px;
+  width: 100%;
+  aspect-ratio: 4 / 3;
   position: relative;
   margin: 0 auto;
 }
-
 .podcastHostImage {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border: 14px solid #ffae00;
+  border: clamp(8px, 1.2vw, 14px) solid var(--brand);
   box-shadow: 0px 4px 4px 0px rgba(247, 126, 0, 0.25);
-  border-radius: 16px;
+  border-radius: var(--radius);
 }
 
-/* Podcast details section */
+/* Details */
 .podcastDetails {
-  padding: 9px 13px 0;
+  padding: clamp(8px, 1.4vw, 14px) clamp(10px, 1.6vw, 16px) 0;
   flex: 1;
 }
-
-/* Season heading - Montserrat Bold 16px */
 .seasonHeader {
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
-  font-size: 16px;
-  line-height: 100%;
-  letter-spacing: 0.5%;
-  color: white;
-  margin-bottom: 10px;
+  font-size: clamp(13px, 1.3vw, 16px);
+  line-height: 1.1;
+  color: var(--text);
+  margin-bottom: 8px;
 }
-
-/* Episode text - Montserrat Bold 14px */
 .episodeText {
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
-  font-size: 14px;
-  line-height: 100%;
-  letter-spacing: 0%;
-  color: white;
-  margin-bottom: 35px;
+  font-size: clamp(12px, 1.2vw, 14px);
+  line-height: 1.2;
+  color: var(--text);
+  margin-bottom: clamp(14px, 2.5vw, 20px);
 }
 
-/* Audio player section - 224.65px x 45px with white border */
+/* Player */
 .audioPlayer {
-  width: 224.65px;
-  height: 45px;
   display: flex;
   align-items: flex-start;
   gap: 12px;
-  margin-bottom: 20px;
+  margin-bottom: clamp(12px, 2vw, 20px);
   border-radius: 8px;
-  padding: 8px 12px;
+  padding: 6px 8px;
 }
-
-/* Play button - 29.4px x 28px green - positioned on left */
 .audioPlayBtn {
-  width: 29.4px;
-  height: 28px;
+  width: clamp(28px, 3.2vw, 32px);
+  height: clamp(28px, 3.2vw, 32px);
   background: #1bd760;
   border: none;
   border-radius: 50%;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   flex-shrink: 0;
 }
-
+.audioPlayBtn:focus-visible {
+  outline: 2px solid #1bd760;
+  outline-offset: 2px;
+}
 .audioPlayIcon {
-  width: 14px;
-  height: 14px;
+  width: clamp(12px, 1.4vw, 16px);
+  height: clamp(12px, 1.4vw, 16px);
   color: white;
   margin-left: 1px;
 }
 
-/* Audio progress section */
 .audioProgress {
-  margin-top: 10px;
+  margin-top: 8px;
   flex: 1;
   display: flex;
   flex-direction: column;
 }
-
 .progressTrack {
-  width: 159.17px;
-  height: 1px;
+  width: 100%;
+  height: 2px;
   background: transparent;
   border: 1px solid #ffffff;
-  border-radius: 0;
-  overflow: visible;
-  transform: rotate(0.36deg);
+  border-radius: 1px;
   margin-bottom: 8px;
 }
-
 .progressBarFill {
-  height: 1px;
+  height: 2px;
   background: white;
-  border-radius: 0;
-  transition: width 0.3s ease;
+  border-radius: 1px;
+  transition: width 0.25s ease;
 }
-
-/* Time display - positioned below the progress line */
 .timeDisplay {
   display: flex;
   justify-content: space-between;
-  font-size: 12px;
-  color: white;
+  font-size: clamp(11px, 1vw, 12px);
+  color: var(--text);
   font-family: "Montserrat", sans-serif;
-  width: 159.17px;
 }
 
-/* Listen to full podcast button - 274px x 36px */
+/* CTA */
 .listenFullBtn {
-  width: 274px;
-  height: 36px;
-  background: #ff9800;
+  width: 100%;
+  height: clamp(32px, 4vw, 40px);
+  background: var(--brand-3);
   border: none;
   color: white;
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
-  font-size: 14px;
-  padding: 14px 10px 10px 10px;
-  border-radius: 8xpx;
+  font-size: clamp(12px, 1.3vw, 14px);
+  padding: 0 clamp(10px, 1.4vw, 14px);
+  border-radius: 8px;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -302,124 +311,79 @@
   box-shadow: 0px 4px 4px 0px rgba(169, 134, 40, 0.25);
   margin-top: auto;
 }
-
+.listenFullBtn:is(:hover, :focus-visible) {
+  filter: brightness(1.05);
+}
 .listenBtnIcon {
-  width: 18px;
-  height: 18px;
+  width: clamp(16px, 1.8vw, 20px);
+  height: clamp(16px, 1.8vw, 20px);
 }
 
-/* Preview cards - 194.5px x 310px with blur */
+/* Previews */
 .previewPodcastCard {
-  width: 194.5px;
-  height: 310px;
+  width: clamp(160px, 18vw, 220px);
+  height: clamp(240px, 30vw, 310px);
   position: relative;
 }
-
 .previewBackdrop {
   width: 100%;
   height: 100%;
   background: #8f730e;
   backdrop-filter: blur(32px);
-  border-radius: 16px;
+  border-radius: var(--radius);
   opacity: 1;
 }
 
-/* Responsive Design */
+/* Responsive tweaks */
 @media (max-width: 1024px) {
-  .friendshipCarousel {
-    height: 420px;
-    grid-template-columns: 72px 1fr 72px;
+  .carouselDeck {
+    height: clamp(380px, 60vw, 480px);
   }
-
-  .carouselNav {
-    width: 56px;
-    height: 56px;
+  .carouselCard.isPrev {
+    transform: scale(0.92) translateX(-30%);
   }
-
-  .activePodcastCard {
-    width: 240px;
-    height: 360px;
-  }
-
-  .podcastImageContainer {
-    width: 230px;
-    height: 200px;
+  .carouselCard.isNext {
+    transform: scale(0.92) translateX(30%);
   }
 }
 
 @media (max-width: 768px) {
-  .friendshipCarousel {
-    height: 380px;
-    grid-template-columns: 56px 1fr 56px;
+  .carouselDeck {
+    height: clamp(360px, 70vw, 460px);
   }
-
+  .cardsRow {
+    justify-content: center;
+  }
   .activePodcastCard {
-    width: 200px;
-    height: 320px;
+    width: clamp(240px, 80vw, 360px);
+    margin: 0 auto;
   }
-
-  .podcastImageContainer {
-    width: 190px;
-    height: 160px;
-  }
-
-  .seasonHeader {
-    font-size: 14px;
-  }
-
-  .episodeText {
-    font-size: 12px;
-  }
-
-  .audioPlayer {
-    width: 180px;
-    height: 40px;
-  }
-
-  .listenFullBtn {
-    width: 200px;
-    height: 32px;
-    font-size: 12px;
+  /* hide previews on mobile */
+  .carouselCard.isPrev,
+  .carouselCard.isNext {
+    display: none !important;
   }
 }
 
 @media (max-width: 480px) {
-  .friendshipCarousel {
-    height: 340px;
-    grid-template-columns: 48px 1fr 48px;
-  }
-
-  .carouselNav {
-    width: 46px;
-    height: 46px;
-  }
-
   .activePodcastCard {
-    width: 180px;
-    height: 280px;
+    width: clamp(200px, 90vw, 320px);
   }
+  .carouselDeck {
+    height: auto;
+    min-height: 340px;
+    padding: 8px 0 16px;
+  }
+  .carouselCard {
+    position: relative;
+    filter: none !important;
+    opacity: 1;
+    transform: none !important;
+  }
+}
 
-  .podcastImageContainer {
-    width: 170px;
-    height: 140px;
-  }
-
-  .seasonHeader {
-    font-size: 12px;
-  }
-
-  .episodeText {
-    font-size: 11px;
-  }
-
-  .audioPlayer {
-    width: 160px;
-    height: 35px;
-  }
-
-  .listenFullBtn {
-    width: 180px;
-    height: 28px;
-    font-size: 11px;
-  }
+/* Prevent body overflow due to 100vw quirks (scrollbars) */
+html,
+body {
+  overflow-x: hidden;
 }

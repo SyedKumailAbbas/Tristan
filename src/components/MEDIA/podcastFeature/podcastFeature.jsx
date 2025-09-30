@@ -1,6 +1,8 @@
 import React, { useState, useRef, useEffect } from "react";
 import leftimg from "../../../assets/Rectangle 20.png";
 import playIcon from "../../../assets/noto_play-button(2).svg";
+import { Play, Pause } from "lucide-react";
+
 import "./podcastFeature.css";
 
 const PodcastFeature = () => {
@@ -103,9 +105,14 @@ const PodcastFeature = () => {
                   </div>
 
                   <div className="progress-section">
-                    <span onClick={togglePlay} className="play-icon">
-                      {isPlaying ? "⏸" : "▶"}
-                    </span>
+                    <button onClick={togglePlay} className="play-icon">
+                      {isPlaying ? (
+                        <Pause fill="black" stroke="none" size={30} />
+                      ) : (
+                        <Play fill="black" stroke="none" size={30} />
+                      )}
+                    </button>
+
                     <span className="time-current">
                       {formatTime(currentTime)}
                     </span>

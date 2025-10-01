@@ -1,18 +1,16 @@
 import React, {
+  useState,
+  useEffect,
   useMemo,
   useRef,
-  useState,
   useCallback,
-  useEffect,
 } from "react";
-import { ArrowLeft, ArrowRight, Play, Pause } from "lucide-react";
-import heading from "../../../assets/Group 196.png";
-import "./podcastcarousel.css";
+import { ArrowLeft, ArrowRight } from "lucide-react";
+import FINDBOX from "../../../assets/Rectangle 9.png";
 import playIcon from "../../../assets/noto_play-button(2).svg";
-/**
- * Treat each object as a single podcast episode.
- * The carousel shows TWO at a time (a "slide" = a pair).
- */
+import "./podcastcarousel.css";
+import { Play, Pause } from "lucide-react";
+
 const episodes = [
   {
     id: "s1e1",
@@ -47,7 +45,6 @@ const episodes = [
       "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=800&h=800&fit=crop&face",
     bgColor: "#7c3aed",
   },
-  // add as many as you like…
   {
     id: "s1e2",
     season: "SEASON 1",
@@ -70,33 +67,46 @@ const episodes = [
       "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=800&h=800&fit=crop&face",
     bgColor: "#334155",
   },
+  {
+    id: "s2e8",
+    season: "SEASON 2",
+    title: "EP 69. The Craft of Listening:",
+    subtitle: "Less Noise, More Signal",
+    durationLabel: "21:03",
+    audioUrl: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3",
+    hostImage:
+      "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=800&h=800&fit=crop&face",
+    bgColor: "#334155",
+  },
 ];
+
 const useMediaQuery = (query) => {
   const [matches, setMatches] = useState(
     () => window.matchMedia(query).matches
   );
-
   useEffect(() => {
     const media = window.matchMedia(query);
     const listener = () => setMatches(media.matches);
     media.addEventListener("change", listener);
     return () => media.removeEventListener("change", listener);
   }, [query]);
-
   return matches;
 };
 
-const PodcastCarousel = () => {
-  const isMobile = useMediaQuery("(max-width: 768px)"); // treat <=768px as mobile
-  const VISIBLE = isMobile ? 1 : 2; // ✅ switch between 1 or 2 cards per slide
+const FriendshipCarousel = () => {
+  const [index, setIndex] = useState(0);
+  const [direction, setDirection] = useState(null); // 'next' | 'prev' | null
+
+  // lalaoooo
+  const [pendingIndex, setPendingIndex] = useState(null);
+
+  const isMobile = useMediaQuery("(max-width: 768px)");
+  const VISIBLE = isMobile ? 1 : 2;
 
   const slides = useMemo(() => episodes, []);
   const [startIndex, setStartIndex] = useState(0);
-  const [direction, setDirection] = useState(null);
-  const [pendingIndex, setPendingIndex] = useState(null);
 
-  // audio management
-
+  // Audio
   const formatTime = (time) => {
     if (!Number.isFinite(time)) return "00:00";
     const minutes = Math.floor(time / 60);
@@ -106,9 +116,10 @@ const PodcastCarousel = () => {
       "0"
     )}`;
   };
-  const audioRefs = useRef(new Map()); // id -> HTMLAudioElement
+
+  const audioRefs = useRef(new Map());
   const [playingId, setPlayingId] = useState(null);
-  const [times, setTimes] = useState({}); // { [id]: { current: 0, duration: 0 } }
+  const [times, setTimes] = useState({});
 
   const visibleIds = useMemo(() => {
     let ids = [];
@@ -141,7 +152,6 @@ const PodcastCarousel = () => {
       const audio = audioRefs.current.get(id);
       if (!audio) return;
 
-      // pause any other playing audio
       if (playingId && playingId !== id) {
         const prev = audioRefs.current.get(playingId);
         if (prev) prev.pause();
@@ -160,7 +170,6 @@ const PodcastCarousel = () => {
     [playingId]
   );
 
-  // Pause if the currently playing ID scrolls off the slide
   useEffect(() => {
     if (playingId && !visibleIds.includes(playingId)) {
       const prev = audioRefs.current.get(playingId);
@@ -168,28 +177,25 @@ const PodcastCarousel = () => {
       setPlayingId(null);
     }
   }, [playingId, visibleIds]);
-
   const prev = () => {
     setDirection("prev");
-    const nextIdx = (startIndex - VISIBLE + slides.length) % slides.length;
-    setPendingIndex(nextIdx);
+    setPendingIndex((index - 1 + slides.length) % slides.length);
   };
 
   const next = () => {
     setDirection("next");
-    const nextIdx = (startIndex + VISIBLE) % slides.length;
-    setPendingIndex(nextIdx);
+    setPendingIndex((index + 1) % slides.length);
   };
-
   const onAnimEnd = () => {
     if (pendingIndex !== null) {
       setStartIndex(pendingIndex);
+      setIndex(pendingIndex); // ✅ keep index in sync
       setPendingIndex(null);
     }
     setDirection(null);
   };
 
-  // Which episodes are visible?
+  // Visible episodes
   const visibleEpisodes = useMemo(() => {
     let list = [];
     for (let i = 0; i < VISIBLE; i++) {
@@ -197,16 +203,13 @@ const PodcastCarousel = () => {
     }
     return list;
   }, [slides, startIndex, VISIBLE]);
+
   const renderCard = (ep) => {
     const t = times[ep.id] || { current: 0, duration: 0 };
     const progressPct = t.duration ? (t.current / t.duration) * 100 : 0;
 
     return (
-      <div
-        key={ep.id}
-        className="activePodcastCard"
-        style={{ "--card-accent": ep.bgColor }}
-      >
+      <div key={ep.id} className="activePodcastCard">
         <div className="podcastImageContainer">
           <img
             src={ep.hostImage}
@@ -223,7 +226,7 @@ const PodcastCarousel = () => {
             {ep.subtitle}
           </div>
 
-          {/* Audio Player */}
+          {/* Player */}
           <div className="audioPlayer">
             <button className="audioPlayBtn" onClick={() => togglePlay(ep.id)}>
               {playingId === ep.id ? (
@@ -267,49 +270,51 @@ const PodcastCarousel = () => {
     );
   };
 
+  const leftIdx = (index - 1 + slides.length) % slides.length;
+  const rightIdx = (index + 1) % slides.length;
+
   return (
-    <section className="podcastSection">
-      <div className="podcastHeading">
-        <img
-          src={heading}
-          alt="Podcast Episodes"
-          className="podcastHeadingImg"
-        />
+    <div className="friendship-carousel">
+      <button className="nav left" onClick={prev} aria-label="Previous">
+        <ArrowLeft />
+      </button>
+
+      <div className="deck">
+        {/* Prev preview */}
+        <article
+          className={`card prev ${
+            direction === "prev" ? "becoming-active" : ""
+          }`}
+        >
+          <img src={FINDBOX} alt="frame preview" className="ghost-frame" />
+        </article>
+
+        {/* Active card with content */}
+        <article
+          className={`carouselCard isActive ${
+            direction === "next" ? "toRight" : ""
+          } ${direction === "prev" ? "toLeft" : ""}`}
+          onAnimationEnd={onAnimEnd}
+        >
+          <div className="cardsRow">
+            {visibleEpisodes.map((ep) => renderCard(ep))}
+          </div>
+        </article>
+        {/* Next preview */}
+        <article
+          className={`card next ${
+            direction === "next" ? "becoming-active" : ""
+          }`}
+        >
+          <img src={FINDBOX} alt="frame preview" className="ghost-frame" />
+        </article>
       </div>
 
-      <div className="friendshipCarousel">
-        <button
-          className="carouselNav isLeft"
-          onClick={prev}
-          aria-label="Previous"
-        >
-          <ArrowLeft />
-        </button>
-
-        <div className="carouselDeck">
-          {/* Active */}
-          <article
-            className={`carouselCard isActive ${
-              direction === "next" ? "toRight" : ""
-            } ${direction === "prev" ? "toLeft" : ""}`}
-            onAnimationEnd={onAnimEnd}
-          >
-            <div className="cardsRow">
-              {visibleEpisodes.map((ep) => renderCard(ep))}
-            </div>
-          </article>
-        </div>
-
-        <button
-          className="carouselNav isRight"
-          onClick={next}
-          aria-label="Next"
-        >
-          <ArrowRight />
-        </button>
-      </div>
-    </section>
+      <button className="nav right" onClick={next} aria-label="Next">
+        <ArrowRight />
+      </button>
+    </div>
   );
 };
 
-export default PodcastCarousel;
+export default FriendshipCarousel;

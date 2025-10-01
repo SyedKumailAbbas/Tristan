@@ -157,8 +157,6 @@ body {
   display: flex;
   align-items: center;
   gap: 20px;
-  border-radius: 12px;
-  background: rgba(255, 255, 255, 0.05);
 }
 
 .play-icon {
@@ -179,8 +177,9 @@ body {
   font-family: "Poppins", sans-serif;
   font-size: clamp(14px, 2vw, 20px); /* ✅ scales */
   font-weight: 700;
+
   color: white;
-  margin-left: 10px;
+  margin-left: 70px;
 }
 
 .progress-section {

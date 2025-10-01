@@ -88,7 +88,6 @@
 }
 
 /* Button styles are now handled by Tailwind classes */
-
 /* Right side styling */
 .header-right {
   flex: 1;
@@ -110,8 +109,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  top: 80px; /* pushes it 50px down */
-
+  top: 80px;
+  /* pushes it 50px down */
 }
 
 .tristan-image {
@@ -137,47 +136,50 @@
 }
 
 @keyframes float {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0px);
   }
+
   50% {
     transform: translateY(-10px);
   }
 }
 
 .camera-icon {
-  top: 15%;
-  left: 10%;
+  top: 35%;
+  left: -15%;
   animation-delay: 0s;
 }
 
 .microphone-icon {
-  top: 20%;
-  right: 15%;
+  top: 15%;
+  left: 0%;
   animation-delay: 0.5s;
 }
 
 .video-icon {
-  top: 45%;
-  left: 5%;
+  top: 55%;
+  left: -10%;
   animation-delay: 1.5s;
 }
 
 .clapperboard-icon {
-  top: 70%;
-  left: -15%;
+  top: 20%;
+  right: 4%;
   animation-delay: 2s;
 }
 
 .diploma-icon {
-  top: 40%;
-  right: 4%;
+  top: 60%;
+  right: -10%;
   animation-delay: 2.5s;
 }
 
 .music-icon {
-  bottom: 15%;
-  right: 2%;
+  bottom: 10%;
+  left: -15%;
   animation-delay: 3s;
 }
 
@@ -190,7 +192,7 @@
     padding: 0;
     margin: 0;
   }
-  
+
   .header-left,
   .header-right {
     flex: none;
@@ -199,19 +201,19 @@
     padding: 1rem;
     margin: 0;
   }
-  
+
   .main-headline {
     font-size: 2.5rem;
   }
-  
+
   .highlight-name {
     font-size: 3rem;
   }
-  
+
   .sub-headline {
     font-size: 1.2rem;
   }
-  
+
   .tristan-image-container {
     height: 400px;
     position: relative;
@@ -219,17 +221,18 @@
     width: 100%;
     max-width: none;
   }
-  
+
   .media-icon {
-    display: none; /* Hide icons on mobile for cleaner look */
+    display: none;
+    /* Hide icons on mobile for cleaner look */
   }
-  
+
   .header-content {
     max-width: 100%;
     padding: 1rem;
     width: 100%;
   }
-  
+
   .find-text-image {
     max-height: 150px;
     width: 100%;
@@ -240,36 +243,36 @@
   .main-headline {
     font-size: 2rem;
   }
-  
+
   .highlight-name {
     font-size: 2.5rem;
   }
-  
+
   .sub-headline {
     font-size: 1rem;
   }
-  
+
   .cta-button {
     padding: 0.8rem 1.5rem;
     font-size: 1rem;
   }
-  
+
   .header-left,
   .header-right {
     padding: 0.5rem;
     width: 100vw;
   }
-  
+
   .header-content {
     padding: 0.5rem;
     width: 100%;
   }
-  
+
   .find-text-image {
     max-height: 120px;
     width: 100%;
   }
-  
+
   .tristan-image-container {
     height: 300px;
     position: relative;

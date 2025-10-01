@@ -58,11 +58,11 @@ export default function Teaching() {
               playsInline
               preload="metadata"
             />
-            {/* <img
+            <img
               src={border}
               alt="Video Border"
               className="absolute inset-0 w-full h-full z-20 pointer-events-none"
-            /> */}
+            />
           </div>
         </div>
       </div>

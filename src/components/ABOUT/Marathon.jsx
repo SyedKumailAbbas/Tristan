@@ -4,6 +4,7 @@ import img from "../../assets/Frame 17.png";
 import heading from "../../assets/Group 173.svg";
 import playIcon from "../../assets/noto_play-button.svg";
 import Vid from "../Testimonial/Vid";
+import border from "../../assets/Frame 16.svg";
 export default function Marathon() {
   return (
     <div className="w-full p-5 bg-black to-black overflow-hidden">
@@ -61,14 +62,16 @@ export default function Marathon() {
         </div>
 
         {/* Right Image Section */}
-        <div className="w-[50%] m-10 flex items-center justify-center">
-          {/* <img
-            src={img}
-            alt="Marathon achievement"
-            className="w-full h-auto rounded-lg shadow-lg"
-          /> */}
-          <Vid videoId="eHXo2rTlchM" />
-        </div>
+        <div className="w-[50%] m-10 flex items-center justify-center relative">
+  <Vid videoId="eHXo2rTlchM" />
+
+  <img
+    src={border}
+    alt="Video Border"
+    className="absolute inset-0 w-full h-full z-20 pointer-events-none"
+  />
+</div>
+
       </div>
     </div>
   );

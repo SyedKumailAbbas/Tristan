@@ -13,26 +13,25 @@
   --card-gap: clamp(12px, 3vw, 24px);
 }
 
-/* Outer */
-.podcastSection {
-  background: transparent;
-  position: relative;
+/* General Layout */
+.maindiv-med {
+  background: var(--bg);
+  padding-top: 20px; /* Add space at the top if needed */
 }
 
-/* Heading */
-.podcastHeading {
-  padding: 20px clamp(16px, 3vw, 40px);
-  background: var(--bg);
-  display: flex;
-  align-items: center;
-}
-.podcastHeadingImg {
-  max-width: 100%;
-  height: auto;
+/* Heading styling */
+.heading-med {
+  padding-left: 40px;
+  margin-top: 0; /* Remove default margin */
+  display: block; /* Ensures heading takes up full line */
+  text-align: center; /* Centers the heading text */
+  font-size: 24px; /* Adjust the font size */
+  font-weight: bold; /* Make the heading bold */
+  color: var(--text); /* Ensure text is readable */
 }
 
 /* Carousel frame */
-.friendshipCarousel {
+.friendship-carousel {
   position: relative;
   width: 100%;
   max-width: 100%;
@@ -41,20 +40,27 @@
   justify-content: center;
   background: var(--bg);
   overflow: hidden;
+  margin-top: 20px; /* Add some margin between heading and carousel */
   padding: clamp(12px, 3vw, 30px) 0;
 }
 
 /* Deck */
-.carouselDeck {
+.deck {
   position: relative;
   width: var(--deck-max-w);
   height: clamp(420px, 52vw, 520px);
-  display: grid;
-  grid-template-columns: 1fr;
-  align-items: center;
-  justify-items: center;
+  display: flex;
+  justify-content: center; /* Center align cards horizontally */
+  align-items: center; /* Center align cards vertically */
 }
 
+.ghostBlock {
+  width: 70%;
+  height: 80%;
+  border-radius: var(--radius);
+  background: rgba(255, 174, 0, 0.25);
+  box-shadow: 0 0 40px 12px rgba(255, 174, 0, 0.6);
+}
 /* Cards base */
 .carouselCard {
   position: absolute;
@@ -64,73 +70,127 @@
   border-radius: 6px;
   display: grid;
   place-items: center;
-  transition: transform 450ms cubic-bezier(0.22, 1, 0.36, 1), opacity 450ms ease;
+  transition: transform 600ms cubic-bezier(0.25, 0.8, 0.25, 1),
+    opacity 600ms ease;
 }
 
 .carouselCard.isActive {
+  position: relative;
   transform: scale(1) translateX(0);
+  opacity: 1;
   z-index: 3;
+}
+.audioProgress {
+  position: relative;
+  width: 50%;
+  margin-top: 8px;
+}
+
+.progressTrack {
+  background-color: transparent;
+  height: 1px; /* Thin line */
+  width: 100%;
+  border-radius: 2px;
+  border: 1px solid #ffffff; /* White border for the line */
+  position: relative;
+}
+
+.progressBarDot {
+  position: absolute;
+  top: -3px; /* Center the dot vertically in the line */
+  width: 8px; /* Size of the white dot */
+  height: 8px;
+  background-color: #ffffff; /* White color for the dot */
+  border-radius: 50%; /* Makes it a circle */
+  transform: translateX(-50%); /* Center the dot horizontally */
+}
+
+.timeDisplay {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 4px;
+  font-size: 12px;
+}
+
+.timeDisplay span {
+  color: #ffffff; /* White text for the time */
 }
 
 /* Prev/Next ghost cards */
-.carouselCard.isPrev,
-.carouselCard.isNext {
+.card.prev,
+.card.next {
   transform: scale(0.85);
   opacity: 0.85;
   z-index: 2;
-}
-.ghostBlock {
-  width: 70%;
-  height: 80%;
-  border-radius: var(--radius);
-  background: rgba(255, 174, 0, 0.25);
-  box-shadow: 0 0 40px 12px rgba(255, 174, 0, 0.6);
+  margin-top: -100px;
 }
 
-/* Animations */
+.card.next {
+  margin-left: 100px;
+}
+
+.card.prev {
+  margin-left: -100px;
+}
+
+/* Animations for smoother transitions */
 .carouselCard.isActive.toRight {
-  animation: activeToRight 420ms ease both;
+  animation: activeToRight 600ms ease both;
 }
+
 .carouselCard.isActive.toLeft {
-  animation: activeToLeft 420ms ease both;
+  animation: activeToLeft 600ms ease both;
 }
+
 .carouselCard.isPrev.becomingActive {
-  animation: previewToCenterFromRight 420ms ease both;
+  animation: previewToCenterFromLeft 600ms ease both;
 }
+
 .carouselCard.isNext.becomingActive {
-  animation: previewToCenterFromLeft 420ms ease both;
+  animation: previewToCenterFromRight 600ms ease both;
 }
 
 @keyframes activeToRight {
   from {
     transform: translateX(0) scale(1);
+    opacity: 1;
   }
   to {
-    transform: translateX(40%) scale(0.85);
+    transform: translateX(-100%) scale(0.9); /* Move current card to the left */
+    opacity: 0;
   }
 }
+
 @keyframes activeToLeft {
   from {
     transform: translateX(0) scale(1);
+    opacity: 1;
   }
   to {
-    transform: translateX(-40%) scale(0.85);
+    transform: translateX(100%) scale(0.9); /* Move current card to the right */
+    opacity: 0;
   }
 }
-@keyframes previewToCenterFromRight {
-  from {
-    transform: translateX(40%) scale(0.85);
-  }
-  to {
-    transform: translateX(0) scale(1);
-  }
-}
+
 @keyframes previewToCenterFromLeft {
   from {
-    transform: translateX(-40%) scale(0.85);
+    transform: translateX(-100%) scale(0.9); /* New card coming from left */
+    opacity: 0;
   }
   to {
-    transform: translateX(0) scale(1);
+    transform: translateX(0) scale(1); /* New card moves to center */
+    opacity: 1;
+  }
+}
+
+@keyframes previewToCenterFromRight {
+  from {
+    transform: translateX(100%) scale(0.9); /* New card coming from right */
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0) scale(1); /* New card moves to center */
+    opacity: 1;
   }
 }
 
@@ -152,12 +212,15 @@
   align-items: center;
   justify-content: center;
 }
+
 .carouselNav.isLeft {
   left: 12px;
 }
+
 .carouselNav.isRight {
   right: 12px;
 }
+
 .carouselNav svg {
   width: clamp(22px, 3.2vw, 32px);
   height: clamp(22px, 3.2vw, 32px);
@@ -182,11 +245,13 @@
   display: flex;
   flex-direction: column;
 }
+
 .podcastImageContainer {
   width: 100%;
   aspect-ratio: 4/3;
   margin: 0 auto;
 }
+
 .podcastHostImage {
   width: 100%;
   height: 100%;
@@ -200,6 +265,7 @@
   flex: 1;
   background: linear-gradient(180deg, #ffae00 0%, #996900 100%);
 }
+
 .seasonHeader {
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
@@ -207,6 +273,7 @@
   color: var(--text);
   margin-bottom: 8px;
 }
+
 .episodeText {
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
@@ -222,6 +289,7 @@
   gap: 12px;
   margin-bottom: clamp(12px, 2vw, 20px);
 }
+
 .audioPlayBtn {
   width: clamp(28px, 3.2vw, 32px);
   height: clamp(28px, 3.2vw, 32px);
@@ -231,6 +299,7 @@
   align-items: center;
   justify-content: center;
 }
+
 .audioPlayIcon {
   width: clamp(12px, 1.4vw, 16px);
   height: clamp(12px, 1.4vw, 16px);
@@ -251,6 +320,7 @@
   align-items: center;
   padding: 0 clamp(10px, 1.4vw, 14px);
 }
+
 .listenBtnIcon {
   width: clamp(16px, 1.8vw, 20px);
   height: clamp(16px, 1.8vw, 20px);

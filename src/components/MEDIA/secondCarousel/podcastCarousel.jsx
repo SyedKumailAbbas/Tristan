@@ -10,7 +10,7 @@ import FINDBOX from "../../../assets/Rectangle 9.png";
 import playIcon from "../../../assets/noto_play-button(2).svg";
 import "./podcastcarousel.css";
 import { Play, Pause } from "lucide-react";
-
+import Heading from "../../../assets/Group 196.png";
 const episodes = [
   {
     id: "s1e1",
@@ -95,9 +95,8 @@ const useMediaQuery = (query) => {
 
 const FriendshipCarousel = () => {
   const [index, setIndex] = useState(0);
-  const [direction, setDirection] = useState(null); // 'next' | 'prev' | null
+  const [direction, setDirection] = useState(null);
 
-  // lalaoooo
   const [pendingIndex, setPendingIndex] = useState(null);
 
   const isMobile = useMediaQuery("(max-width: 768px)");
@@ -106,7 +105,6 @@ const FriendshipCarousel = () => {
   const slides = useMemo(() => episodes, []);
   const [startIndex, setStartIndex] = useState(0);
 
-  // Audio
   const formatTime = (time) => {
     if (!Number.isFinite(time)) return "00:00";
     const minutes = Math.floor(time / 60);
@@ -226,7 +224,6 @@ const FriendshipCarousel = () => {
             {ep.subtitle}
           </div>
 
-          {/* Player */}
           <div className="audioPlayer">
             <button className="audioPlayBtn" onClick={() => togglePlay(ep.id)}>
               {playingId === ep.id ? (
@@ -239,8 +236,8 @@ const FriendshipCarousel = () => {
             <div className="audioProgress">
               <div className="progressTrack">
                 <div
-                  className="progressBarFill"
-                  style={{ width: `${progressPct}%` }}
+                  className="progressBarDot"
+                  style={{ left: `${progressPct}%` }} // Moves the dot based on the progress
                 />
               </div>
               <div className="timeDisplay">
@@ -274,46 +271,51 @@ const FriendshipCarousel = () => {
   const rightIdx = (index + 1) % slides.length;
 
   return (
-    <div className="friendship-carousel">
-      <button className="nav left" onClick={prev} aria-label="Previous">
-        <ArrowLeft />
-      </button>
+    <>
+      <div className="maindiv-med">
+        <img className="heading-med" src={Heading} />
+        <div className="friendship-carousel">
+          <button className="nav left" onClick={prev} aria-label="Previous">
+            <ArrowLeft />
+          </button>
 
-      <div className="deck">
-        {/* Prev preview */}
-        <article
-          className={`card prev ${
-            direction === "prev" ? "becoming-active" : ""
-          }`}
-        >
-          <img src={FINDBOX} alt="frame preview" className="ghost-frame" />
-        </article>
+          <div className="deck">
+            {/* Prev preview */}
+            <article
+              className={`card prev ${
+                direction === "prev" ? "becoming-active" : ""
+              }`}
+            >
+              <img src={FINDBOX} alt="frame preview" className="ghost-frame" />
+            </article>
 
-        {/* Active card with content */}
-        <article
-          className={`carouselCard isActive ${
-            direction === "next" ? "toRight" : ""
-          } ${direction === "prev" ? "toLeft" : ""}`}
-          onAnimationEnd={onAnimEnd}
-        >
-          <div className="cardsRow">
-            {visibleEpisodes.map((ep) => renderCard(ep))}
+            {/* Active card with content */}
+            <article
+              className={`carouselCard isActive ${
+                direction === "next" ? "toRight" : ""
+              } ${direction === "prev" ? "toLeft" : ""}`}
+              onAnimationEnd={onAnimEnd}
+            >
+              <div className="cardsRow">
+                {visibleEpisodes.map((ep) => renderCard(ep))}
+              </div>
+            </article>
+            {/* Next preview */}
+            <article
+              className={`card next ${
+                direction === "next" ? "becoming-active" : ""
+              }`}
+            >
+              <img src={FINDBOX} alt="frame preview" className="ghost-frame" />
+            </article>
           </div>
-        </article>
-        {/* Next preview */}
-        <article
-          className={`card next ${
-            direction === "next" ? "becoming-active" : ""
-          }`}
-        >
-          <img src={FINDBOX} alt="frame preview" className="ghost-frame" />
-        </article>
-      </div>
 
-      <button className="nav right" onClick={next} aria-label="Next">
-        <ArrowRight />
-      </button>
-    </div>
+          <button className="nav right" onClick={next} aria-label="Next">
+            <ArrowRight />
+          </button>
+        </div>
+      </div>
+    </>
   );
 };
 

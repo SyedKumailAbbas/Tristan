@@ -239,30 +239,37 @@
 
 /* Podcast card */
 .activePodcastCard {
-  width: var(--card-w);
-  min-width: 220px;
-  max-width: 95vw;
+  width: 274.20941162109375;
+  height: 416;
+
   display: flex;
   flex-direction: column;
 }
 
 .podcastImageContainer {
   width: 100%;
-  aspect-ratio: 4/3;
+  /* aspect-ratio: 4/3; */
   margin: 0 auto;
 }
 
 .podcastHostImage {
-  width: 100%;
-  height: 100%;
+  width: 270.0069885253906;
+  height: 251;
   object-fit: cover;
-  border: clamp(8px, 1.2vw, 14px) solid var(--brand);
+  margin-bottom: 0;
+  padding-bottom: 0;
+  box-shadow: 0px 4px 4px 0px #f77e0040;
 }
 
 /* Details */
 .podcastDetails {
+  max-width: 274px;
+  height: 190;
+  margin-left: 5px;
   padding: clamp(8px, 1.4vw, 14px) clamp(10px, 1.6vw, 16px) 0;
   flex: 1;
+  z-index: -100;
+  margin-top: -10px;
   background: linear-gradient(180deg, #ffae00 0%, #996900 100%);
 }
 
@@ -308,7 +315,9 @@
 
 /* CTA */
 .listenFullBtn {
-  width: 100%;
+  max-width: 274px;
+  margin-left: 5px;
+
   height: clamp(32px, 4vw, 40px);
   background: var(--brand-3);
   border-radius: 0px;
@@ -378,19 +387,65 @@
 }
 
 .friendship-carousel .card.prev,
-.friendship-carousel .card.next { z-index: 2; filter: blur(30px); opacity: 0.9; }
-.friendship-carousel .card.prev { transform: translateX(-50%) scale(0.37); }
-.friendship-carousel .card.next { transform: translateX(50%) scale(0.37); }
+.friendship-carousel .card.next {
+  z-index: 2;
+  filter: blur(30px);
+  opacity: 0.9;
+}
+.friendship-carousel .card.prev {
+  transform: translateX(-50%) scale(0.37);
+}
+.friendship-carousel .card.next {
+  transform: translateX(50%) scale(0.37);
+}
 
-.friendship-carousel .card.active.to-right { animation: friendship-activeToLeft 420ms ease both; }
-.friendship-carousel .card.active.to-left { animation: friendship-activeToRight 420ms ease both; }
-.friendship-carousel .card.prev.becoming-active { animation: friendship-previewToCenterFromLeft 420ms ease both; filter: none; }
-.friendship-carousel .card.next.becoming-active { animation: friendship-previewToCenterFromRight 420ms ease both; filter: none; }
+.friendship-carousel .card.active.to-right {
+  animation: friendship-activeToLeft 420ms ease both;
+}
+.friendship-carousel .card.active.to-left {
+  animation: friendship-activeToRight 420ms ease both;
+}
+.friendship-carousel .card.prev.becoming-active {
+  animation: friendship-previewToCenterFromLeft 420ms ease both;
+  filter: none;
+}
+.friendship-carousel .card.next.becoming-active {
+  animation: friendship-previewToCenterFromRight 420ms ease both;
+  filter: none;
+}
 
-@keyframes friendship-activeToRight { from { transform: translateX(0) scale(0.6); } to { transform: translateX(50%) scale(0.37); } }
-@keyframes friendship-activeToLeft { from { transform: translateX(0) scale(0.6); } to { transform: translateX(-50%) scale(0.37); } }
-@keyframes friendship-previewToCenterFromRight { from { transform: translateX(50%) scale(0.37); } to { transform: translateX(0) scale(0.6); } }
-@keyframes friendship-previewToCenterFromLeft { from { transform: translateX(-50%) scale(0.37); } to { transform: translateX(0) scale(0.6); } }
+@keyframes friendship-activeToRight {
+  from {
+    transform: translateX(0) scale(0.6);
+  }
+  to {
+    transform: translateX(50%) scale(0.37);
+  }
+}
+@keyframes friendship-activeToLeft {
+  from {
+    transform: translateX(0) scale(0.6);
+  }
+  to {
+    transform: translateX(-50%) scale(0.37);
+  }
+}
+@keyframes friendship-previewToCenterFromRight {
+  from {
+    transform: translateX(50%) scale(0.37);
+  }
+  to {
+    transform: translateX(0) scale(0.6);
+  }
+}
+@keyframes friendship-previewToCenterFromLeft {
+  from {
+    transform: translateX(-50%) scale(0.37);
+  }
+  to {
+    transform: translateX(0) scale(0.6);
+  }
+}
 
 .friendship-carousel .frame-bg {
   position: absolute;
@@ -451,8 +506,13 @@
   display: inline-block;
 }
 
-.friendship-carousel .keynotes-btn { box-shadow: 0 6px 18px rgba(247,126,0,.35); }
-.friendship-carousel .play-icon { width: 32px; height: 32px; }
+.friendship-carousel .keynotes-btn {
+  box-shadow: 0 6px 18px rgba(247, 126, 0, 0.35);
+}
+.friendship-carousel .play-icon {
+  width: 32px;
+  height: 32px;
+}
 
 .friendship-carousel .underline-gold {
   position: relative;
@@ -487,7 +547,10 @@
   height: 80%;
 }
 
-.friendship-carousel .ghost-inner { width: 100%; height: 100%; }
+.friendship-carousel .ghost-inner {
+  width: 100%;
+  height: 100%;
+}
 .friendship-carousel .ghost-frame {
   width: 100%;
   height: 100%;
@@ -510,29 +573,63 @@
   z-index: 10;
 }
 
-.friendship-carousel .nav.left { justify-self: start; margin-left: 24px; }
-.friendship-carousel .nav.right { justify-self: end; margin-right: 24px; }
+.friendship-carousel .nav.left {
+  justify-self: start;
+  margin-left: 24px;
+}
+.friendship-carousel .nav.right {
+  justify-self: end;
+  margin-right: 24px;
+}
 
-.friendship-carousel .nav svg { width: 32px; height: 32px; }
+.friendship-carousel .nav svg {
+  width: 32px;
+  height: 32px;
+}
 
 @media (max-width: 1024px) {
-  .friendship-carousel { height: 420px; grid-template-columns: 72px 1fr 72px; }
-  .nav { width: 56px; height: 56px; }
+  .friendship-carousel {
+    height: 420px;
+    grid-template-columns: 72px 1fr 72px;
+  }
+  .nav {
+    width: 56px;
+    height: 56px;
+  }
 }
 
 @media (max-width: 768px) {
-  .friendship-carousel { height: 380px; grid-template-columns: 56px 1fr 56px; }
-  .title { font-size: 26px; }
-  .quote { font-size: 14px; }
-  .ghost.left { left: -70%; }
-  .ghost.right { right: -70%; }
+  .friendship-carousel {
+    height: 380px;
+    grid-template-columns: 56px 1fr 56px;
+  }
+  .title {
+    font-size: 26px;
+  }
+  .quote {
+    font-size: 14px;
+  }
+  .ghost.left {
+    left: -70%;
+  }
+  .ghost.right {
+    right: -70%;
+  }
 }
 
 @media (max-width: 480px) {
-  .friendship-carousel { height: 340px; grid-template-columns: 48px 1fr 48px; }
-  .title { font-size: 20px; }
-  .quote { font-size: 12px; }
-  .nav { width: 46px; height: 46px; }
+  .friendship-carousel {
+    height: 340px;
+    grid-template-columns: 48px 1fr 48px;
+  }
+  .title {
+    font-size: 20px;
+  }
+  .quote {
+    font-size: 12px;
+  }
+  .nav {
+    width: 46px;
+    height: 46px;
+  }
 }
-
-

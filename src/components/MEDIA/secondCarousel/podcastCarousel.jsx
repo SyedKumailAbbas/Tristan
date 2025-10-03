@@ -11,6 +11,8 @@ import playIcon from "../../../assets/noto_play-button(2).svg";
 import "./podcastcarousel.css";
 import { Play, Pause } from "lucide-react";
 import Heading from "../../../assets/Group 196.png";
+import img1 from "../../../assets/Frame 25.png";
+import img2 from "../../../assets/Frame 26.png";
 const episodes = [
   {
     id: "s1e1",
@@ -19,8 +21,7 @@ const episodes = [
     subtitle: "Unfiltered Conversation",
     durationLabel: "15:44",
     audioUrl: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
-    hostImage:
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=800&fit=crop&face",
+    hostImage: img2,
     bgColor: "#2563eb",
   },
   {
@@ -30,8 +31,7 @@ const episodes = [
     subtitle: "World Changers",
     durationLabel: "25:07",
     audioUrl: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3",
-    hostImage:
-      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=800&h=800&fit=crop&face",
+    hostImage: img1,
     bgColor: "#1f2937",
   },
   {
@@ -41,8 +41,7 @@ const episodes = [
     subtitle: "Relationships That Last",
     durationLabel: "18:32",
     audioUrl: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3",
-    hostImage:
-      "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=800&h=800&fit=crop&face",
+    hostImage: img2,
     bgColor: "#7c3aed",
   },
   {
@@ -52,8 +51,7 @@ const episodes = [
     subtitle: "Owning the Room",
     durationLabel: "12:10",
     audioUrl: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3",
-    hostImage:
-      "https://images.unsplash.com/photo-1527980965255-d3b416303d12?w=800&h=800&fit=crop&face",
+    hostImage: img1,
     bgColor: "#0ea5e9",
   },
   {
@@ -63,8 +61,7 @@ const episodes = [
     subtitle: "Less Noise, More Signal",
     durationLabel: "21:03",
     audioUrl: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3",
-    hostImage:
-      "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=800&h=800&fit=crop&face",
+    hostImage: img2,
     bgColor: "#334155",
   },
   {
@@ -74,8 +71,7 @@ const episodes = [
     subtitle: "Less Noise, More Signal",
     durationLabel: "21:03",
     audioUrl: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3",
-    hostImage:
-      "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=800&h=800&fit=crop&face",
+    hostImage: img1,
     bgColor: "#334155",
   },
 ];
@@ -208,13 +204,11 @@ const FriendshipCarousel = () => {
 
     return (
       <div key={ep.id} className="activePodcastCard">
-        <div className="podcastImageContainer">
-          <img
-            src={ep.hostImage}
-            alt={`${ep.title} ${ep.subtitle}`}
-            className="podcastHostImage"
-          />
-        </div>
+        <img
+          src={ep.hostImage}
+          alt={`${ep.title} ${ep.subtitle}`}
+          className="podcastHostImage"
+        />
 
         <div className="podcastDetails">
           <div className="seasonHeader">{ep.season}</div>

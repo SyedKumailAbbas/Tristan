@@ -1,0 +1,244 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&family=Poppins:ital,wght@0,400;0,600;1,500&display=swap");
+
+.friendshipCarousel {
+  position: relative;
+  width: 100vw;
+  max-width: 100%;
+  background: #0f0f0f;
+  display: grid;
+  grid-template-columns: 100px 1fr 100px;
+  align-items: center;
+  justify-items: center;
+  padding: 30px 0;
+  overflow: hidden;
+}
+
+/* Deck */
+.deck {
+  position: relative;
+  width: min(920px, 92vw);
+  aspect-ratio: 559 / 395;
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  justify-items: center;
+}
+
+/* Card States */
+.card {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 6px;
+  display: grid;
+  place-items: center;
+  transform: scale(0.6);
+  transition: transform 450ms cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 450ms ease;
+}
+
+.prev,
+.next {
+  z-index: 2;
+  filter: blur(30px);
+  opacity: 0.9;
+}
+.prev {
+  transform: translateX(-50%) scale(0.37);
+}
+.next {
+  transform: translateX(50%) scale(0.37);
+}
+.active {
+  z-index: 3;
+}
+
+/* Animations */
+.active.toRight {
+  animation: friendship-activeToLeft 420ms ease both;
+}
+.active.toLeft {
+  animation: friendship-activeToRight 420ms ease both;
+}
+.prev.becomingActive {
+  animation: friendship-previewToCenterFromLeft 420ms ease both;
+  filter: none;
+}
+.next.becomingActive {
+  animation: friendship-previewToCenterFromRight 420ms ease both;
+  filter: none;
+}
+
+@keyframes friendship-activeToRight {
+  from {
+    transform: translateX(0) scale(0.6);
+  }
+  to {
+    transform: translateX(50%) scale(0.37);
+  }
+}
+@keyframes friendship-activeToLeft {
+  from {
+    transform: translateX(0) scale(0.6);
+  }
+  to {
+    transform: translateX(-50%) scale(0.37);
+  }
+}
+@keyframes friendship-previewToCenterFromRight {
+  from {
+    transform: translateX(50%) scale(0.37);
+  }
+  to {
+    transform: translateX(0) scale(0.6);
+  }
+}
+@keyframes friendship-previewToCenterFromLeft {
+  from {
+    transform: translateX(-50%) scale(0.37);
+  }
+  to {
+    transform: translateX(0) scale(0.6);
+  }
+}
+
+/* Frame */
+.frameBg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Content */
+.content {
+  position: relative;
+  z-index: 2;
+  width: 78%;
+  color: #ffffff;
+  font-family: "Montserrat", sans-serif;
+}
+.title {
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 1.2;
+  margin: 8px 0 14px;
+}
+.quote {
+  font-family: "Poppins", sans-serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 25px;
+  line-height: 1.6;
+  opacity: 0.95;
+  max-width: 860px;
+}
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 18px;
+  padding: 14px 20px;
+  background: #ff9800;
+  color: #ffffff;
+  border-radius: 999px;
+  text-decoration: none;
+  box-shadow: 0 6px 18px rgba(247, 126, 0, 0.35);
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+}
+.playIcon {
+  width: 32px;
+  height: 32px;
+}
+
+/* Gold underline */
+.underlineGold {
+  position: relative;
+  font-weight: 700;
+}
+.underlineGold::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -6px;
+  height: 7px;
+  background: #ffae00;
+}
+
+/* Ghost frames */
+.ghostFrame {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0.75;
+  filter: blur(8px) saturate(0.9) brightness(0.9);
+}
+
+/* Navigation */
+.nav {
+  display: grid;
+  place-items: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: #6e530c;
+  box-shadow: 0px 4px 4px 0px #ffae00;
+  border: none;
+  color: #ffae00;
+  cursor: pointer;
+  z-index: 10;
+}
+.left {
+  justify-self: start;
+  margin-left: 24px;
+}
+.right {
+  justify-self: end;
+  margin-right: 24px;
+}
+.nav svg {
+  width: 32px;
+  height: 32px;
+}
+
+/* Responsiveness */
+@media (max-width: 1024px) {
+  .friendshipCarousel {
+    grid-template-columns: 72px 1fr 72px;
+  }
+  .nav {
+    width: 56px;
+    height: 56px;
+  }
+}
+@media (max-width: 768px) {
+  .friendshipCarousel {
+    grid-template-columns: 56px 1fr 56px;
+  }
+  .title {
+    font-size: 26px;
+  }
+  .quote {
+    font-size: 14px;
+  }
+}
+@media (max-width: 480px) {
+  .friendshipCarousel {
+    grid-template-columns: 48px 1fr 48px;
+  }
+  .title {
+    font-size: 20px;
+  }
+  .quote {
+    font-size: 12px;
+  }
+  .nav {
+    width: 46px;
+    height: 46px;
+  }
+}

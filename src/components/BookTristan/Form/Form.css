@@ -16,13 +16,13 @@
   z-index: 10000;
 }
 .sub-btn {
-  width: 150;
-  height: 42;
+  width: 250;
+  height: 100;
   font-family: Montserrat;
   color: white;
   font-weight: 700;
   font-style: Bold;
-  font-size: 21px;
+  font-size: 19px;
   line-height: 100%;
   letter-spacing: 0.5%;
 
@@ -32,9 +32,9 @@
   opacity: 1;
   border-radius: 200px;
   padding-top: 10px;
-  padding-right: 10px;
-  padding-bottom: 13px;
-  padding-left: 10px;
+  padding-right: 28px;
+  padding-bottom: 10px;
+  padding-left: 28px;
   gap: 12px;
 }
 .name-input {
@@ -71,4 +71,12 @@
   leading-trim: NONE;
   line-height: 100%;
   letter-spacing: 0.5%;
+}
+
+.optional-text {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;  /* Regular */
+  font-size: 17px;
+  color: #ffffff;    /* adjust if background is light */
+  opacity: 0.8;
 }

@@ -1,0 +1,635 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&family=Poppins:ital,wght@0,400;0,600;1,500&display=swap");
+
+:root {
+  --bg: #0f0f0f;
+  --brand: #ffae00;
+  --brand-2: #6e530c;
+  --brand-3: #ff9800;
+  --text: #ffffff;
+  --radius: 16px;
+  --nav-size: clamp(44px, 6vw, 64px);
+  --deck-max-w: min(1100px, 92vw);
+  --card-w: clamp(220px, 28vw, 320px);
+  --card-gap: clamp(12px, 3vw, 24px);
+}
+
+/* General Layout */
+.maindiv-med {
+  background: var(--bg);
+  padding-top: 20px; /* Add space at the top if needed */
+}
+
+/* Heading styling */
+.heading-med {
+  padding-left: 40px;
+  margin-top: 0; /* Remove default margin */
+  display: block; /* Ensures heading takes up full line */
+  text-align: center; /* Centers the heading text */
+  font-size: 24px; /* Adjust the font size */
+  font-weight: bold; /* Make the heading bold */
+  color: var(--text); /* Ensure text is readable */
+}
+
+/* Carousel frame */
+.friendship-carousel {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg);
+  overflow: hidden;
+  margin-top: 20px; /* Add some margin between heading and carousel */
+  padding: clamp(12px, 3vw, 30px) 0;
+}
+
+/* Deck */
+.deck {
+  position: relative;
+  width: var(--deck-max-w);
+  height: clamp(420px, 52vw, 520px);
+  display: flex;
+  justify-content: center; /* Center align cards horizontally */
+  align-items: center; /* Center align cards vertically */
+}
+
+.ghostBlock {
+  width: 70%;
+  height: 80%;
+  border-radius: var(--radius);
+  background: rgba(255, 174, 0, 0.25);
+  box-shadow: 0 0 40px 12px rgba(255, 174, 0, 0.6);
+}
+/* Cards base */
+.carouselCard {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 6px;
+  display: grid;
+  place-items: center;
+  transition: transform 600ms cubic-bezier(0.25, 0.8, 0.25, 1),
+    opacity 600ms ease;
+}
+
+.carouselCard.isActive {
+  position: relative;
+  transform: scale(1) translateX(0);
+  opacity: 1;
+  z-index: 3;
+}
+.audioProgress {
+  position: relative;
+  width: 50%;
+  margin-top: 8px;
+}
+
+.progressTrack {
+  background-color: transparent;
+  height: 1px; /* Thin line */
+  width: 100%;
+  border-radius: 2px;
+  border: 1px solid #ffffff; /* White border for the line */
+  position: relative;
+}
+
+.progressBarDot {
+  position: absolute;
+  top: -3px; /* Center the dot vertically in the line */
+  width: 8px; /* Size of the white dot */
+  height: 8px;
+  background-color: #ffffff; /* White color for the dot */
+  border-radius: 50%; /* Makes it a circle */
+  transform: translateX(-50%); /* Center the dot horizontally */
+}
+
+.timeDisplay {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 4px;
+  font-size: 12px;
+}
+
+.timeDisplay span {
+  color: #ffffff; /* White text for the time */
+}
+
+/* Prev/Next ghost cards */
+.card.prev,
+.card.next {
+  transform: scale(0.85);
+  opacity: 0.85;
+  z-index: 2;
+  margin-top: -100px;
+}
+
+.card.next {
+  margin-left: 100px;
+}
+
+.card.prev {
+  margin-left: -100px;
+}
+
+/* Animations for smoother transitions */
+.carouselCard.isActive.toRight {
+  animation: activeToRight 600ms ease both;
+}
+
+.carouselCard.isActive.toLeft {
+  animation: activeToLeft 600ms ease both;
+}
+
+.carouselCard.isPrev.becomingActive {
+  animation: previewToCenterFromLeft 600ms ease both;
+}
+
+.carouselCard.isNext.becomingActive {
+  animation: previewToCenterFromRight 600ms ease both;
+}
+
+@keyframes activeToRight {
+  from {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(-100%) scale(0.9); /* Move current card to the left */
+    opacity: 0;
+  }
+}
+
+@keyframes activeToLeft {
+  from {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(100%) scale(0.9); /* Move current card to the right */
+    opacity: 0;
+  }
+}
+
+@keyframes previewToCenterFromLeft {
+  from {
+    transform: translateX(-100%) scale(0.9); /* New card coming from left */
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0) scale(1); /* New card moves to center */
+    opacity: 1;
+  }
+}
+
+@keyframes previewToCenterFromRight {
+  from {
+    transform: translateX(100%) scale(0.9); /* New card coming from right */
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0) scale(1); /* New card moves to center */
+    opacity: 1;
+  }
+}
+
+/* Nav buttons */
+.carouselNav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: var(--nav-size);
+  height: var(--nav-size);
+  border-radius: 50%;
+  background: var(--brand-2);
+  box-shadow: 0px 4px 4px 0px var(--brand);
+  border: none;
+  color: var(--brand);
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carouselNav.isLeft {
+  left: 12px;
+}
+
+.carouselNav.isRight {
+  right: 12px;
+}
+
+.carouselNav svg {
+  width: clamp(22px, 3.2vw, 32px);
+  height: clamp(22px, 3.2vw, 32px);
+}
+
+/* Row holding active podcasts */
+.cardsRow {
+  display: flex;
+  gap: var(--card-gap);
+  align-items: stretch;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 0 clamp(8px, 2vw, 16px);
+}
+
+/* Podcast card */
+.activePodcastCard {
+  width: 274.20941162109375;
+  height: 416;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.podcastImageContainer {
+  width: 100%;
+  /* aspect-ratio: 4/3; */
+  margin: 0 auto;
+}
+
+.podcastHostImage {
+  width: 270.0069885253906;
+  height: 251;
+  object-fit: cover;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  box-shadow: 0px 4px 4px 0px #f77e0040;
+}
+
+/* Details */
+.podcastDetails {
+  max-width: 274px;
+  height: 190;
+  margin-left: 5px;
+  padding: clamp(8px, 1.4vw, 14px) clamp(10px, 1.6vw, 16px) 0;
+  flex: 1;
+  z-index: -100;
+  margin-top: -10px;
+  background: linear-gradient(180deg, #ffae00 0%, #996900 100%);
+}
+
+.seasonHeader {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: clamp(13px, 1.3vw, 16px);
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+.episodeText {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: clamp(12px, 1.2vw, 14px);
+  color: var(--text);
+  margin-bottom: clamp(14px, 2.5vw, 20px);
+}
+
+/* Player */
+.audioPlayer {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: clamp(12px, 2vw, 20px);
+}
+
+.audioPlayBtn {
+  width: clamp(28px, 3.2vw, 32px);
+  height: clamp(28px, 3.2vw, 32px);
+  background: #1bd760;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.audioPlayIcon {
+  width: clamp(12px, 1.4vw, 16px);
+  height: clamp(12px, 1.4vw, 16px);
+  color: white;
+}
+
+/* CTA */
+.listenFullBtn {
+  max-width: 274px;
+  margin-left: 5px;
+
+  height: clamp(32px, 4vw, 40px);
+  background: var(--brand-3);
+  border-radius: 0px;
+  font-weight: 700;
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 clamp(10px, 1.4vw, 14px);
+}
+
+.listenBtnIcon {
+  width: clamp(16px, 1.8vw, 20px);
+  height: clamp(16px, 1.8vw, 20px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .carouselCard.isPrev,
+  .carouselCard.isNext {
+    display: none !important;
+  }
+}
+
+.friendship-carousel {
+  position: relative;
+  width: 100vw;
+  max-width: 100%;
+  height: auto;
+  display: grid;
+  grid-template-columns: 100px 1fr 100px;
+  align-items: center;
+  justify-items: center;
+  background: #0f0f0f;
+  overflow: hidden;
+  padding: 30px 0;
+}
+
+.friendship-carousel .deck {
+  position: relative;
+  width: min(920px, 92vw);
+  height: auto;
+  aspect-ratio: 559 / 395; /* exact ratio of Frame 24 */
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  justify-items: center;
+}
+
+.friendship-carousel .card {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 6px;
+}
+
+.friendship-carousel .card.prev,
+.friendship-carousel .card.next,
+.friendship-carousel .card.active {
+  z-index: 3;
+  display: grid;
+  place-items: center;
+  transform: scale(0.6); /* scale down inside the deck */
+  transition: transform 450ms cubic-bezier(0.22, 1, 0.36, 1), opacity 450ms ease;
+}
+
+.friendship-carousel .card.prev,
+.friendship-carousel .card.next {
+  z-index: 2;
+  filter: blur(30px);
+  opacity: 0.9;
+}
+.friendship-carousel .card.prev {
+  transform: translateX(-50%) scale(0.37);
+}
+.friendship-carousel .card.next {
+  transform: translateX(50%) scale(0.37);
+}
+
+.friendship-carousel .card.active.to-right {
+  animation: friendship-activeToLeft 420ms ease both;
+}
+.friendship-carousel .card.active.to-left {
+  animation: friendship-activeToRight 420ms ease both;
+}
+.friendship-carousel .card.prev.becoming-active {
+  animation: friendship-previewToCenterFromLeft 420ms ease both;
+  filter: none;
+}
+.friendship-carousel .card.next.becoming-active {
+  animation: friendship-previewToCenterFromRight 420ms ease both;
+  filter: none;
+}
+
+@keyframes friendship-activeToRight {
+  from {
+    transform: translateX(0) scale(0.6);
+  }
+  to {
+    transform: translateX(50%) scale(0.37);
+  }
+}
+@keyframes friendship-activeToLeft {
+  from {
+    transform: translateX(0) scale(0.6);
+  }
+  to {
+    transform: translateX(-50%) scale(0.37);
+  }
+}
+@keyframes friendship-previewToCenterFromRight {
+  from {
+    transform: translateX(50%) scale(0.37);
+  }
+  to {
+    transform: translateX(0) scale(0.6);
+  }
+}
+@keyframes friendship-previewToCenterFromLeft {
+  from {
+    transform: translateX(-50%) scale(0.37);
+  }
+  to {
+    transform: translateX(0) scale(0.6);
+  }
+}
+
+.friendship-carousel .frame-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* show full frame with edges visible */
+  filter: drop-shadow(0 0 0 #000);
+}
+
+.friendship-carousel .content {
+  position: relative;
+  z-index: 2;
+  width: 78%;
+  color: #ffffff;
+  font-family: "Montserrat", sans-serif;
+}
+
+.friendship-carousel .title {
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 1.2;
+  letter-spacing: 0.4px;
+  margin: 8px 0 14px 0;
+}
+
+.friendship-carousel .quote {
+  font-family: "Poppins", sans-serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 25px;
+  line-height: 1.6;
+  opacity: 0.95;
+  max-width: 860px;
+}
+
+.friendship-carousel .cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 18px;
+  padding: 14px 20px;
+  background: #ff9800; /* requested button color */
+  color: #ffffff;
+  border-radius: 999px;
+  text-decoration: none;
+  box-shadow: 0px 4px 4px 0px #ffbd52;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700; /* bold */
+  font-size: 20px; /* size 16 */
+}
+
+.friendship-carousel .cta-dot {
+  width: 12px;
+  height: 12px;
+  background: #ffae00;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.friendship-carousel .keynotes-btn {
+  box-shadow: 0 6px 18px rgba(247, 126, 0, 0.35);
+}
+.friendship-carousel .play-icon {
+  width: 32px;
+  height: 32px;
+}
+
+.friendship-carousel .underline-gold {
+  position: relative;
+  font-weight: 700;
+}
+
+.friendship-carousel .underline-gold::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -6px;
+  height: 7px;
+  background: #ffae00;
+}
+
+/* Ghost side cards */
+.friendship-carousel .ghost {
+  filter: blur(2px);
+  background: transparent;
+}
+
+.friendship-carousel .ghost.left {
+  left: -62%;
+  width: 62%;
+  height: 80%;
+}
+
+.friendship-carousel .ghost.right {
+  right: -62%;
+  width: 62%;
+  height: 80%;
+}
+
+.friendship-carousel .ghost-inner {
+  width: 100%;
+  height: 100%;
+}
+.friendship-carousel .ghost-frame {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0.75;
+  filter: blur(8px) saturate(0.9) brightness(0.9);
+}
+
+.friendship-carousel .nav {
+  display: grid;
+  place-items: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: #6e530c;
+  box-shadow: 0px 4px 4px 0px #ffae00;
+  border: none;
+  color: #ffae00;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.friendship-carousel .nav.left {
+  justify-self: start;
+  margin-left: 24px;
+}
+.friendship-carousel .nav.right {
+  justify-self: end;
+  margin-right: 24px;
+}
+
+.friendship-carousel .nav svg {
+  width: 32px;
+  height: 32px;
+}
+
+@media (max-width: 1024px) {
+  .friendship-carousel {
+    height: 420px;
+    grid-template-columns: 72px 1fr 72px;
+  }
+  .nav {
+    width: 56px;
+    height: 56px;
+  }
+}
+
+@media (max-width: 768px) {
+  .friendship-carousel {
+    height: 380px;
+    grid-template-columns: 56px 1fr 56px;
+  }
+  .title {
+    font-size: 26px;
+  }
+  .quote {
+    font-size: 14px;
+  }
+  .ghost.left {
+    left: -70%;
+  }
+  .ghost.right {
+    right: -70%;
+  }
+}
+
+@media (max-width: 480px) {
+  .friendship-carousel {
+    height: 340px;
+    grid-template-columns: 48px 1fr 48px;
+  }
+  .title {
+    font-size: 20px;
+  }
+  .quote {
+    font-size: 12px;
+  }
+  .nav {
+    width: 46px;
+    height: 46px;
+  }
+}

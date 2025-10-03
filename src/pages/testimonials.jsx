@@ -13,10 +13,10 @@ export default function Testimonial() {
     <>
       <Testimonials
         title="keynotes"
-        videoIds={["s2qwHgwpnrA", "VUCJHNkDIhM"]}
+        videoIds={["VuWUFknHzQo", "yYDFslKVzAw"]}
       />
       <TestimonialSlider />
-      <Testimonials title="podcast" videoIds={["s2qwHgwpnrA", "VUCJHNkDIhM"]} />
+      <Testimonials title="podcast" videoIds={["VuWUFknHzQo", "yYDFslKVzAw"]} />
     </>
   );
 }

@@ -27,6 +27,7 @@
   color: var(--footer-text);
   background: linear-gradient(to bottom, var(--footer-from), var(--footer-to));
   overflow: hidden;
+  
 }
 
 /* Top paint-stroke container */
@@ -122,6 +123,10 @@
   display: block;
   text-decoration: underline;
   transition: color 200ms ease-in-out;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;   /* bold */
+  font-size: 17px;
+  line-height: 1.5;   
 }
 
 .footer__link:hover,
@@ -171,10 +176,17 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-3);
+   font-family: "Montserrat", sans-serif;
+  font-weight: 700;   /* bold */
+  font-size: 17px;
+  line-height: 1.5;   
 }
-
+/* 
 .footer__label {
   font-weight: 600;
+} */
+.footer__contactValue {
+  text-decoration: underline;
 }
 
 /* Social row */

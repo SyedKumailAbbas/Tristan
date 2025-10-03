@@ -47,6 +47,26 @@
 .cta:hover {
   transform: translateY(-3px);
 }
+.hero-cta {
+  margin-top: 30px;
+  background: #ffae00; /* bright yellow */
+  border: none;
+  color: #fff; /* white text */
+  padding: 12px 28px;
+  font-size: 1rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  border-radius: 999px; /* full pill shape */
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  font-style: normal;
+
+  /* drop shadow */
+  box-shadow: 0 5px 10px rgba(255, 174, 0, 0.4);
+}
+.hero-cta:hover {
+  transform: translateY(-3px);
+}
 
 .banner-right {
   position: relative;

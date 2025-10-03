@@ -1,16 +1,21 @@
-// home.jsx
-import Hero from "../components/Hero/Hero";
-import Banner from "../components/Banner/Banner";
-import Video from "../components/video/video";
-import Podcast from "../components/Podcast/Podcast";
-import Testimonials from "../components/Testimonial/Testimonials";
-import Teaching from "../components/Teaching/Teaching";
-import Keynotes from "../components/Keynotes/Keynotes"; // Importing Keynotes component
-import "../App.css";
+// media page
+
+import Header from "../components/MEDIA/Header";
+import { Heading } from "../components/Heading/heading";
+import Img from "../assets/Group 126 (1).png";
+import PodcastFeature from "../components/MEDIA/podcastFeature/podcastFeature";
+import FriendshipCarousel from "../components/MEDIA/friendship";
+import PanelistSection from "../components/MEDIA/Yt";
+import PodcastCarousel from "../components/MEDIA/secondCarousel/podcastCarousel";
 export default function Media() {
   return (
     <>
-      <Hero />
+      <Header />
+      <FriendshipCarousel />
+      <PanelistSection />
+      <Heading imgSrc={Img} altText="heading imgs" />
+      <PodcastFeature />
+      <PodcastCarousel />
     </>
   );
 }

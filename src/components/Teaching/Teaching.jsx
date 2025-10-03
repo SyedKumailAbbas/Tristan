@@ -3,7 +3,7 @@ import { Play } from "lucide-react";
 import teaching from "../../assets/Main Video.mp4"; // Assuming you have a teaching SVG icon
 import broadcast from "../../assets/simple-icons_readme.svg";
 import border from "../../assets/Frame 16.svg";
-import Heartbg from "../../assets/Vector 9.png";
+import Heart from "../../assets/Group 243 (1).svg";
 import "./Teaching.css";
 export default function Teaching() {
   return (
@@ -17,22 +17,8 @@ export default function Teaching() {
             CHILDREN CHANGED
             <br />
             MY{" "}
-            <span className="relative inline-block">
-              <span
-                className="text-yellow-400 relative z-10 font-serif italic text-5xl"
-                style={{
-                  backgroundImage: `url(${Heartbg})`,
-                  backgroundSize: "cover",
-                  backgroundPosition: "center",
-                  backgroundRepeat: "no-repeat",
-                  padding: "0.25em 0.5em", // Add more padding to create space for the background image
-                  border: "6px solid transparent", // Maintain space for the border
-                  display: "inline-block", // Ensure the background fills properly
-                }}
-              >
-                Heart
-              </span>
-              {/* More authentic sketchy circle */}
+            <span className="inline-block align-middle">
+              <img src={Heart} alt="Heart" />
             </span>
           </h1>
 
@@ -60,22 +46,22 @@ export default function Teaching() {
           {/* Frame box: fixed size via aspect ratio */}
           <div className="relative w-full aspect-[16/9] overflow-hidden shadow-2xl">
             {/* Border stays full-size */}
-            <img
-              src={border}
-              alt=""
-              className="absolute inset-0 w-[686] h-[452] z-10 pointer-events-none"
-            />
 
             {/* Video fills the box, then we shrink it visually */}
             <video
               className="absolute top-1/2 left-1/2 w-[686px] h-[452px] -translate-x-1/2 -translate-y-1/2 object-contain"
               style={{ transformOrigin: "center" }}
-              src={teaching}
+              src="https://pub-94f7f5d00cd94150915de158d63cafdd.r2.dev/Limitless%20Potential.mp4"
               autoPlay
               muted
               loop
               playsInline
               preload="metadata"
+            />
+            <img
+              src={border}
+              alt="Video Border"
+              className="absolute inset-0 w-full h-full z-20 pointer-events-none"
             />
           </div>
         </div>

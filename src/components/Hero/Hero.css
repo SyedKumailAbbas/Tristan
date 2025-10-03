@@ -61,7 +61,7 @@
   pointer-events: none;    /* so img gets clicks if needed */
 }
 
-.cta {
+.hero-cta {
   margin-top: 30px;
   background: #ffae00; /* bright yellow */
   border: none;
@@ -69,16 +69,18 @@
   padding: 12px 28px;
   font-size: 1rem;
   font-family: 'Montserrat', sans-serif;
-  font-weight: 500;
+  font-weight: 700;
   border-radius: 999px; /* full pill shape */
   cursor: pointer;
   transition: transform 0.2s ease;
   font-style: normal;
 
   /* drop shadow */
-  box-shadow: 0 5px 10px rgb(245, 245, 245);
+  box-shadow: 0 5px 10px rgba(255, 174, 0, 0.4);
 }
-
+.hero-cta:hover {
+  transform: translateY(-3px);
+}
 /* --- PLAY CTA ----------------------------------- */
 .play-cta {
   display: inline-flex;
@@ -108,11 +110,7 @@
   box-shadow: none;
 }
 /* SVG icon size */
-.play-icon {
-  width: 1.5rem;
-  height: 1.5rem;
-  flex-shrink: 0;
-}
+
 
 /* optional underline on text only */
 .play-cta:hover span,

@@ -1,19 +1,17 @@
-// home.jsx
-import JANU from "../components/Keynotes/HEADER";
-//import High from "../components/Keynotes/HighSchool";
-import High from "../components/Keynotes/HighImage";
-import Secondary from "../components/Keynotes/secondaryimage";
-import CORPORATION from "../components/Keynotes/CorpImage";
-import Headtristan from "../components/Keynotes/headimage";
+import React, { Suspense, lazy } from "react";
+
+const High = lazy(() => import("../components/Keynotes/HighImage"));
+const Secondary = lazy(() => import("../components/Keynotes/secondaryimage"));
+const CORPORATION = lazy(() => import("../components/Keynotes/CorpImage"));
+const Headtristan = lazy(() => import("../components/Keynotes/headimage"));
+
 export default function Keynote() {
   return (
-    <>
-      <Headtristan/>
-      {/* <JANU /> */}
-      <High/>
-      <Secondary/>
-      {/* <Corp /> */}
-      <CORPORATION/>
-    </>
+    <Suspense fallback={<div>Loading...</div>}>
+      <Headtristan />
+      <High />
+      <Secondary />
+      <CORPORATION />
+    </Suspense>
   );
 }

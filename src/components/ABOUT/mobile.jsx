@@ -96,7 +96,7 @@ export default function Mobile() {
           </div>
 
           {/* Video Section */}
-          <div className="flex justify-center items-start">
+          <div className="flex flex-col items-center ">
             <video
               src={video}
               controls={false}
@@ -106,6 +106,11 @@ export default function Mobile() {
               playsInline
               className="object-contain"
             />
+
+            {/* Caption below video */}
+            <p className="mt-3 text-center font-[Poppins] font-semibold italic text-[18px] text-white max-w-md">
+              “Live footage of the defining moment which changed everything.”
+            </p>
           </div>
         </div>
       </div>

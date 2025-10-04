@@ -1,5 +1,5 @@
 // Hero.jsx
-import heroBg from "../../assets/About.svg"; // ← change to your image file
+import heroBg from "../../assets/About.svg";
 import playIcon from "../../assets/noto_play-button.svg";
 
 export default function Hero() {
@@ -12,21 +12,28 @@ export default function Hero() {
         className="absolute inset-0 w-full h-full object-cover z-0"
       />
 
-      {/* Buttons over image */}
-      <div className="relative z-10 text-left pt-[15vh]  text-white">
-        <div className="flex flex-row gap-4 justify-start items-center mt-[25rem] ml-[3rem]">
-          <button className="rounded-full bg-[#ffae00] text-white py-3 px-7 [font-family:'Montserrat'] font-bold text-[17px] not-italic  cursor-pointer transition-transform duration-200 ease-linear ">
+      {/* Foreground content */}
+      <div className="relative z-10 flex items-end justify-start h-full p-4 sm:p-6 md:p-10">
+        {/* Buttons container */}
+        <div className="flex flex-col sm:flex-row gap-4">
+          <button className="rounded-full bg-[#ffae00] text-white py-2.5 px-6 sm:py-3 sm:px-7 font-[Montserrat] font-bold text-[clamp(14px,3vw,17px)] cursor-pointer transition-transform duration-200 ease-linear hover:scale-105">
             Unlock Your Purpose
           </button>
 
-          <button className="group inline-flex items-center gap-[0.65rem] bg-transparent text-[#f5c518] [font-family:'Montserrat',_sans-serif] font-medium not-italic text-[19px] leading-[1] tracking-[0.4px] py-[0.55rem] px-[1.4rem] border-transparent rounded-full cursor-pointer transition-colors duration-200 hover:shadow-none hover:border-none">
-            <img src={playIcon} alt="" className="w-6 h-6 flex-shrink-0" />
-            <span className="group-hover:underline">
+          <button
+            className="group inline-flex items-center gap-2 sm:gap-[0.65rem] 
+             bg-transparent text-[#f5c518] font-[Montserrat] font-medium 
+             text-[clamp(14px,3vw,19px)] leading-[1] tracking-[0.4px] 
+             py-2 sm:py-[0.55rem] px-4 sm:px-[1.4rem] border border-transparent 
+             rounded-full cursor-pointer transition-colors duration-200 
+             hover:underline shadow-none outline-none focus:outline-none focus:ring-0"
+          >
+            <img src={playIcon} alt="" className="w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0" />
+            <span>
               <strong>Watch&nbsp;Tristan&nbsp;In&nbsp;Action</strong>
             </span>
           </button>
         </div>
-
       </div>
     </div>
   );

@@ -12,38 +12,33 @@ export default function Mobile() {
       />
 
       {/* Foreground content */}
-      <div className="relative z-10 min-h-screen w-full p-8 flex flex-col items-start">
+      <div className="relative z-10 min-h-screen w-full p-6 sm:p-8 flex flex-col items-start">
         {/* Top Heading */}
-        <div className="flex items-baseline">
-          <h1 className="text-[45px] font-bold font-[Montserrat] leading-tight tracking-wide text-white">
+        <div className="flex flex-wrap items-baseline">
+          <h1 className="text-[clamp(2rem,6vw,3.5rem)] font-bold font-[Montserrat] leading-tight tracking-wide text-white">
             How
           </h1>
-          <h1 className="ml-3 text-[75px] font-bold font-[Caveat] leading-tight tracking-wide text-[#FFAE00]">
+          <h1 className="ml-2 sm:ml-3 text-[clamp(2.5rem,8vw,4.5rem)] font-bold font-[Caveat] leading-tight tracking-wide text-[#FFAE00]">
             Performance-Motivational
           </h1>
-          {/* <img
-                        src={performance}
-                        alt="Performance-Motivational"
-                        className="ml-3 h-[55px] object-contain inline-block align-baseline"
-                    /> */}
         </div>
 
         {/* Keynote Speaking + Came About */}
-        <div className="relative -mt-4 inline-flex items-baseline">
-          <span className="relative text-[45px] font-bold font-[Montserrat] leading-tight tracking-wide text-white mr-4">
+        <div className="relative -mt-3 sm:-mt-4 inline-flex flex-wrap items-baseline">
+          <span className="relative mr-3 text-[clamp(1.8rem,5vw,3rem)] font-bold font-[Montserrat] leading-tight tracking-wide text-white">
             Keynote Speaking
-            <span className="absolute left-0 -bottom-1 w-full h-[7px] bg-[#FFAE00]" />
+            <span className="absolute left-0 -bottom-1 w-full h-[6px] bg-[#FFAE00]" />
           </span>
 
-          <span className="text-[45px] font-bold font-[Montserrat] leading-tight tracking-wide text-white">
+          <span className="text-[clamp(1.8rem,5vw,3rem)] font-bold font-[Montserrat] leading-tight tracking-wide text-white">
             Came About:
           </span>
         </div>
 
         {/* Paragraph + Video side by side */}
-        <div className="mt-6 flex flex-col lg:flex-row gap-8 w-full">
+        <div className="mt-6 flex flex-col lg:flex-row gap- w-full">
           {/* Paragraph Text Section */}
-          <div className="max-w-4xl text-white font-[Montserrat] text-[17px] font-semibold leading-relaxed tracking-normal">
+          <div className="max-w-3xl text-white font-[Montserrat] text-[clamp(1rem,2vw,1.1rem)] font-semibold leading-relaxed tracking-normal">
             <p className="mb-4">
               “Tristan’s journey began in high school, during one of the darkest
               chapters of his life. The pandemic left him battling anxiety,
@@ -79,24 +74,26 @@ export default function Mobile() {
               conversations around growth, resilience, and rediscovering what’s
               possible.”
             </p>
+
             <style>{`
-        .gold-word {
-          color: #ffffffff;
-          background-image: linear-gradient(#FFAE00, #FFAE00);
-          background-position: 0 100%;
-          background-repeat: no-repeat;
-          background-size: 100% 0.20em;
-          padding-bottom: 0.08em;
-        }
-      `}</style>
+              .gold-word {
+                color: #fff;
+                background-image: linear-gradient(#FFAE00, #FFAE00);
+                background-position: 0 100%;
+                background-repeat: no-repeat;
+                background-size: 100% 0.20em;
+                padding-bottom: 0.08em;
+              }
+            `}</style>
+
             {/* Button below paragraphs */}
-            <button className="mt-8 bg-[#ffae00] text-white font-bold text-base px-7 py-3 rounded-full shadow-[0_5px_10px_rgba(255,174,0,0.4)] transition-transform duration-200 ease-in-out hover:-translate-y-1">
+            <button className="mt-8 bg-[#ffae00] text-white font-bold text-base sm:text-lg px-6 sm:px-7 py-2.5 sm:py-3 rounded-full shadow-[0_5px_10px_rgba(255,174,0,0.4)] transition-transform duration-200 ease-in-out hover:-translate-y-1">
               Book Tristan
             </button>
           </div>
 
           {/* Video Section */}
-          <div className="flex flex-col items-center ">
+          <div className="flex flex-col items-center w-full lg:w-1/2">
             <video
               src={video}
               controls={false}
@@ -104,11 +101,11 @@ export default function Mobile() {
               autoPlay
               loop
               playsInline
-              className="object-contain"
+              className="w-full h-auto max-h-[500px] object-contain"
             />
 
             {/* Caption below video */}
-            <p className="mt-3 text-center font-[Poppins] font-semibold italic text-[18px] text-white max-w-md">
+            <p className="mt-3 text-center font-[Poppins] font-semibold italic text-[clamp(1rem,2.5vw,1.125rem)] text-white max-w-md">
               “Live footage of the defining moment which changed everything.”
             </p>
           </div>

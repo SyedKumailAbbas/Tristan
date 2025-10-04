@@ -137,14 +137,16 @@
 }
 
 .hero-buttons {
+  position: absolute;
+  bottom: -25rem;   /* distance from bottom */
+  left: 4rem;     /* distance from left */
   display: flex;
-  gap: 1rem;              /* Space between buttons */
-  flex-direction: row;    /* Horizontal layout by default */
-  justify-content: flex-start; /* Align buttons to the left */
-  align-items: center;    /* Align buttons vertically */
-  margin-top: 25rem;      /* Adds space from the top */
-  margin-left: 3rem;      /* Adds space from the left */
+  gap: 1rem;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
 }
+
 
 .svg-overlay {
   position: absolute;

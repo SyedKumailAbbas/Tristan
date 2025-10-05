@@ -1,8 +1,9 @@
 import image from "../../assets/Group 168.svg";
+import { Heading } from "../Heading/heading";
 export default function CORPORATION() {
-    return (
-        <div>
-            <img src={image} alt="corp" />
-        </div>
-    );
+  return (
+    <div>
+      <Heading imgSrc={image} altText={"Text img"} />
+    </div>
+  );
 }

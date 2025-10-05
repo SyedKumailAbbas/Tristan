@@ -43,7 +43,7 @@ export default function Podcast() {
           <div className="flex justify-center pt-10">
             <button className="transform -translate-x-1/2 -translate-y-1/2 px-6 py-2 rounded-full bg-[#6E530C] text-white flex items-center gap-3 shadow-[0px_4px_4px_0px_#FFBD52] hover:cursor-pointer focus:outline-none">
               <span className="font-[Montserrat] font-bold text-xs uppercase tracking-[0.5%]">
-                Watch Full Podcast
+                Listen to Full Podcast
               </span>
               <img src={playIcon} alt="Play Icon" className="w-6 h-6" />
             </button>

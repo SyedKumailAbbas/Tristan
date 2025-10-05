@@ -43,10 +43,18 @@ export default function Marathon() {
             </div>
 
             {/* Watch Video Button */}
-            <button className="inline-flex px-6 py-2 rounded-full bg-[#6E530C] text-white flex items-center gap-3 shadow-[0px_4px_4px_0px_#FFBD52] hover:cursor-pointer focus:outline-none relative top-7 -left-4" >
-              <span className="font-[Montserrat] font-bold text-[10 px] uppercase tracking-[0.5%]">Read Article HERE</span>
+            <a
+              href="https://medium.com/@tristanjoshuakim/how-i-turned-a-high-school-hobby-into-a-university-business-and-pulled-an-all-nighter-to-make-it-b4bfaaf7a40d"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex px-6 py-2 rounded-full bg-[#6E530C] text-white flex items-center gap-3 shadow-[0px_4px_4px_0px_#FFBD52] hover:cursor-pointer focus:outline-none relative top-7 -left-4"
+            >
+              <span className="font-[Montserrat] font-bold text-[15px] uppercase tracking-[0.5%]">
+                Read Article HERE
+              </span>
               <img src={playIcon} alt="Play Icon" className="w-6 h-6" />
-            </button>
+            </a>
+
           </div>
         </div>
 

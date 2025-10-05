@@ -16,11 +16,19 @@ export default function Hero() {
       <div className="relative z-10 flex items-end justify-start h-full p-4 sm:p-6 md:p-10">
         {/* Buttons container */}
         <div className="flex flex-col sm:flex-row gap-4">
-          <button className="rounded-full bg-[#ffae00] text-white py-2.5 px-6 sm:py-3 sm:px-7 font-[Montserrat] font-bold text-[clamp(14px,3vw,17px)] cursor-pointer transition-transform duration-200 ease-linear hover:scale-105">
+          <a
+            href="/book-Tristan"
+            className="rounded-full bg-[#ffae00] text-white py-2.5 px-6 sm:py-3 sm:px-7 
+             font-[Montserrat] font-bold text-[clamp(14px,3vw,17px)] 
+             cursor-pointer transition-transform duration-200 ease-linear hover:scale-105 inline-block"
+          >
             Unlock Your Purpose
-          </button>
+          </a>
 
-          <button
+          <a
+            href="https://vimeo.com/1099140601"
+            target="_blank"
+            rel="noopener noreferrer"
             className="group inline-flex items-center gap-2 sm:gap-[0.65rem] 
              bg-transparent text-[#f5c518] font-[Montserrat] font-medium 
              text-[clamp(14px,3vw,19px)] leading-[1] tracking-[0.4px] 
@@ -28,11 +36,16 @@ export default function Hero() {
              rounded-full cursor-pointer transition-colors duration-200 
              hover:underline shadow-none outline-none focus:outline-none focus:ring-0"
           >
-            <img src={playIcon} alt="" className="w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0" />
+            <img
+              src={playIcon}
+              alt=""
+              className="w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0"
+            />
             <span>
               <strong>Watch&nbsp;Tristan&nbsp;In&nbsp;Action</strong>
             </span>
-          </button>
+          </a>
+
         </div>
       </div>
     </div>

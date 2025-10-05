@@ -28,7 +28,7 @@ const PanelistSection = () => {
         </p>
 
         <a
-          href="https://youtu.be/Dh7ojRbxCFA?feature=shared"
+          href="https://youtu.be/VUCJHNkDIhM"
           target="_blank"
           rel="noopener noreferrer"
           className="self-center inline-flex px-8 py-3 rounded-full bg-[#6E530C] text-white items-center gap-3 shadow-[0px_4px_4px_0px_#FFBD52] focus:outline-none 

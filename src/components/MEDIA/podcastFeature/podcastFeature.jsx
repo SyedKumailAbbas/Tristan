@@ -93,10 +93,16 @@ const PodcastFeature = () => {
           {/* Player Section */}
           <div className="player-section">
             <div className="player-controls">
-              <button className="listen-btn">
+              <a
+                href="https://open.spotify.com/episode/2sblTWkIcoPz6S9P0uQe8s?si=ec2bfeff0c364c71"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="listen-btn inline-flex items-center gap-3"
+              >
                 LISTEN TO FULL PODCAST
                 <img src={playIcon} alt="Play Icon" className="w-6 h-6" />
-              </button>
+              </a>
+
 
               <div className="audio-player">
                 <div className="player-info">

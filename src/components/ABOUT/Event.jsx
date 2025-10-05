@@ -52,11 +52,17 @@ export default function Marathon() {
               </p>
             </div>
 
-            {/* Watch Video Button */}
-            <button className="inline-flex px-6 py-2 rounded-full bg-[#6E530C] text-white flex items-center gap-3 shadow-[0px_4px_4px_0px_#FFBD52] hover:cursor-pointer focus:outline-none relative top-7 " >
+            <a
+              href="https://medium.com/@tristanjoshuakim/how-i-accidentally-launched-my-own-dance-entertainment-business-without-realizing-it-d114ac2fcb00"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex px-6 py-2 rounded-full bg-[#6E530C] text-white flex items-center gap-3 shadow-[0px_4px_4px_0px_#FFBD52] hover:cursor-pointer focus:outline-none relative top-7"
+            >
               <img src={playIcon} alt="Play Icon" className="w-6 h-6" />
-              <span className="font-[Montserrat] font-bold text-[10 px] uppercase tracking-[0.5%]">Read Article HERE</span>
-            </button>
+              <span className="font-[Montserrat] font-bold text-[15px] uppercase tracking-[0.5%]">
+                Read Article Here
+              </span>
+            </a>
           </div>
         </div>
       </div>

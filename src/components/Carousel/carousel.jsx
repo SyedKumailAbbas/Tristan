@@ -12,25 +12,34 @@ const TestimonialSlider = () => {
 
   const testimonials = [
     {
-      id: 1,
-      text: `Hearing Tristan speak in person was honestly amazing. The way he spoke really hit me
-and made me think about my own life. It inspired me to want to start my own journey of
-growth and see how far I can go`,
+      id: 2,
+      text: `There’s a joy in everything [Tristan] shares, and it’s contagious. When he speaks, you don’t just feel inspired... you walk away carrying hope you didn’t even know you needed. I genuinely believe the world needs to hear him on more stages, in more rooms, touching more hearts`,
       author: "",
-      role: "(Yaseen El-Khadary, Grade 12 Student)",
+      role: "Aditi Jain, 2nd Year Post-Secondary Student",
       avatar:
         "https://images.unsplash.com/photo-1494790108755-2616b612b1c5?w=150&h=150&fit=crop&crop=face",
       background: image1,
     },
     {
       id: 2,
+      text: `Hearing Tristan speak in person was honestly amazing. The way he spoke really hit me
+and made me think about my own life. It inspired me to want to start my own journey of
+growth and see how far I can go`,
+      author: "",
+      role: "Yaseen El-Khadary, Grade 12 Student",
+      avatar:
+        "https://images.unsplash.com/photo-1494790108755-2616b612b1c5?w=150&h=150&fit=crop&crop=face",
+      background: image1,
+    },
+    {
+      id: 3,
       text: `Tristan’s blog posts and podcast have been life-changing for me. Every time I listen or
 read, I feel encouraged, motivated, and reminded never to give up on myself. The way
 Tristan speaks feels so genuine, like he’s talking straight to my soul, and his writing is
 just as real and inspiring. Both have pushed me to grow, believe in myself, and see
 challenges as opportunities. I’m truly grateful for the impact they’ve had on my journey`,
       author: "Sarah Mitchell",
-      role: "(Mariam Maswadeh, 3rd Year York University Student)",
+      role: "Mariam Maswadeh, 3rd Year York University Student",
       avatar:
         "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face",
       background: image1,

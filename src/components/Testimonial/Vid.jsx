@@ -1,82 +1,87 @@
+"use client"; // <- keep this if you're in Next.js 13+
+
 import React, { useEffect, useRef, useState } from "react";
 
-// Utility to load YouTube API only once
-let youtubeAPIReady = false;
-let youtubeAPILoadCallbacks = [];
-
-function loadYouTubeAPI(callback) {
-  if (youtubeAPIReady) {
-    callback();
-  } else {
-    youtubeAPILoadCallbacks.push(callback);
-
-    if (!window.onYouTubeIframeAPIReady) {
-      const tag = document.createElement("script");
-      tag.src = "https://www.youtube.com/iframe_api";
-      document.body.appendChild(tag);
-
-      window.onYouTubeIframeAPIReady = () => {
-        youtubeAPIReady = true;
-        youtubeAPILoadCallbacks.forEach(cb => cb());
-        youtubeAPILoadCallbacks = [];
-      };
-    }
-  }
-}
-
-const Vid = ({ videoId }) => {
+export default function Vid({ videoId, className = "" }) {
   const playerRef = useRef(null);
-  const uniqueId = useRef(`yt-player-${Math.random().toString(36).substr(2, 9)}`);
-  const [isMuted, setIsMuted] = useState(true);
+  const containerRef = useRef(null);
+  const [showIframe, setShowIframe] = useState(false);
 
+  // Load YouTube API dynamically (client-only)
   useEffect(() => {
-    loadYouTubeAPI(() => {
-      playerRef.current = new window.YT.Player(uniqueId.current, {
-        videoId,
-        playerVars: {
-          autoplay: 1,
-          mute: 1,
-          controls: 0,
-          modestbranding: 1,
-          rel: 0,
-          loop: 1,
-          playlist: videoId,
-          iv_load_policy: 3, // hide annotations
-          fs: 0,
-        },
-        events: {
-          onReady: (event) => {
-            event.target.playVideo();
-          },
-        },
-      });
-    });
-  }, [videoId]);
+    if (typeof window === "undefined") return; // ✅ guard for SSR
 
-  const handleToggleMute = () => {
-    if (playerRef.current) {
-      if (isMuted) {
-        playerRef.current.unMute();
-      } else {
-        playerRef.current.mute();
+    if (window.YT && window.YT.Player) return;
+
+    const script = document.createElement("script");
+    script.src = "https://www.youtube.com/iframe_api";
+    document.body.appendChild(script);
+  }, []);
+
+  // Create YouTube Player after click
+  useEffect(() => {
+    if (!showIframe) return;
+    if (typeof window === "undefined") return;
+
+    const checkReady = setInterval(() => {
+      if (window.YT && window.YT.Player) {
+        clearInterval(checkReady);
+
+        playerRef.current = new window.YT.Player(containerRef.current, {
+          videoId,
+          playerVars: {
+            autoplay: 1,
+            controls: 1,
+            modestbranding: 1,
+            rel: 0,
+            playsinline: 1,
+            fs: 1,
+          },
+        });
       }
-      setIsMuted(!isMuted);
-    }
-  };
+    }, 200);
+
+    return () => clearInterval(checkReady);
+  }, [showIframe, videoId]);
 
   return (
     <div
-      onClick={handleToggleMute}
-      className="relative aspect-video w-full h-full cursor-pointer"
+      className={`relative w-full overflow-hidden rounded-lg ${className}`}
+      style={{ aspectRatio: "16 / 9" }}
     >
-      <div
-        id={uniqueId.current}
-        className="w-full h-full rounded-lg overflow-hidden"
-        style={{ pointerEvents: "none" }} // disables title hover
-      />
-      <div className="absolute inset-0 z-10" />
+      {/* Thumbnail + Play Button */}
+      {!showIframe && (
+        <button
+          type="button"
+          onClick={() => setShowIframe(true)}
+          className="absolute inset-0 grid place-items-center focus:outline-none"
+          aria-label="Play video"
+        >
+          <img
+            src={`https://img.youtube.com/vi/${videoId}/hqdefault.jpg`}
+            alt="Video thumbnail"
+            className="absolute inset-0 w-full h-full object-cover rounded-lg"
+          />
+          <span className="z-10 flex items-center justify-center w-16 h-16 rounded-full bg-black/60 transition hover:bg-black/40">
+            <svg
+              viewBox="0 0 24 24"
+              width="64"
+              height="64"
+              style={{ padding: 16 }}
+            >
+              <path fill="#fff" d="M8 5v14l11-7z" />
+            </svg>
+          </span>
+        </button>
+      )}
+
+      {/* YouTube iframe container */}
+      {showIframe && (
+        <div
+          ref={containerRef}
+          className="absolute inset-0 w-full h-full rounded-lg overflow-hidden"
+        />
+      )}
     </div>
   );
-};
-
-export default Vid;
+}

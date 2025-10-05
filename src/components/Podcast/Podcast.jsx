@@ -1,7 +1,7 @@
 import Cover from "../../assets/Frame 14.svg"; // The podcast cover image
 import playIcon from "../../assets/noto_play-button.svg"; // The play button
 import LimitlessLogo from "../../assets/Group 50.svg"; // Assuming LimitLess is an SVG
-
+import { Link } from "react-router-dom";
 export default function Podcast() {
   return (
     <div className="bg-gradient-to-r from-[#FFAE00] to-[#000000] text-white p-10">
@@ -42,9 +42,15 @@ export default function Podcast() {
           </p>
           <div className="flex justify-center pt-10">
             <button className="transform -translate-x-1/2 -translate-y-1/2 px-6 py-2 rounded-full bg-[#6E530C] text-white flex items-center gap-3 shadow-[0px_4px_4px_0px_#FFBD52] hover:cursor-pointer focus:outline-none">
-              <span className="font-[Montserrat] font-bold text-xs uppercase tracking-[0.5%]">
-                Listen to Full Podcast
-              </span>
+              <Link
+                to="/media#podcast-carousel-section"
+                // className="transform -translate-x-1/2 -translate-y-1/2 px-6 py-2 rounded-full bg-[#6E530C] text-white flex items-center gap-3 shadow-[0px_4px_4px_0px_#FFBD52] hover:cursor-pointer focus:outline-none"
+                style={{ transition: "background 0.4s, color 0.4s" }}
+              >
+                <span className="font-[Montserrat] font-bold text-xs uppercase tracking-[0.5%]">
+                  Listen to Full Podcast
+                </span>
+              </Link>
               <img src={playIcon} alt="Play Icon" className="w-6 h-6" />
             </button>
           </div>

@@ -9,9 +9,11 @@ import BookTristan from "./pages/bookTristan.jsx";
 import Footer from "./components/Footer/Footer.jsx";
 import Testimonial from "./pages/testimonials.jsx";
 import Media from "./pages/media.jsx";
+import ScrollToTop from "./services/scrollToTop.js";
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />

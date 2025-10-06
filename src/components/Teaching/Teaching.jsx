@@ -54,16 +54,27 @@ export default function Teaching() {
             {/* Border stays full-size */}
 
             {/* Video fills the box, then we shrink it visually */}
-            <video
-              className="absolute top-1/2 left-1/2 w-[686px] h-[452px] -translate-x-1/2 -translate-y-1/2 object-contain"
-              style={{ transformOrigin: "center" }}
-              src="https://pub-94f7f5d00cd94150915de158d63cafdd.r2.dev/Limitless%20Potential.mp4"
-              autoPlay
-              muted
-              loop
-              playsInline
-              preload="metadata"
-            />
+           <video
+  ref={(video) => {
+    if (video) {
+      video.pause(); // ensure it doesn’t autoplay on load
+    }
+  }}
+  className="absolute top-1/2 left-1/2 w-[686px] h-[452px] -translate-x-1/2 -translate-y-1/2 object-contain"
+  style={{ transformOrigin: "center" }}
+  src="https://pub-94f7f5d00cd94150915de158d63cafdd.r2.dev/Limitless%20Potential.mp4"
+  playsInline
+  preload="metadata"
+  onMouseEnter={(e) => {
+    e.currentTarget.muted = false;
+    e.currentTarget.currentTime = 0;
+    e.currentTarget.play().catch(() => {});
+  }}
+  onMouseLeave={(e) => {
+    e.currentTarget.pause();
+  }}
+/>
+
             <img
               src={border}
               alt="Video Border"

@@ -61,6 +61,9 @@ body,
   max-width: 100%;
   overflow-x: hidden; /* prevent right-side whitespace on large screens */
 }
+html {
+  scroll-behavior: smooth;
+}
 
 button {
   border-radius: 8px;

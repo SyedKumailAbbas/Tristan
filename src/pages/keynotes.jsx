@@ -9,9 +9,15 @@ export default function Keynote() {
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <Headtristan />
-      <High />
-      <Secondary />
-      <CORPORATION />
+      <div id="highschool">
+        <High />
+      </div>
+      <div id="university">
+        <Secondary />
+      </div>
+      <div id="corp">
+        <CORPORATION />
+      </div>
     </Suspense>
   );
 }

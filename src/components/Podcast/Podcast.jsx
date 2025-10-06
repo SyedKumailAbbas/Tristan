@@ -24,8 +24,13 @@ export default function Podcast() {
           </p>
 
           {/* Bold + Normal */}
+<<<<<<< Updated upstream
           <p className="text-sm w-[550px] text-white font-[Montserrat]">
             <span className="font-extrabold">Enhancing Awareness:</span> The Power of
+=======
+          <p className="text-md w-[550px] text-white font-[Montserrat]">
+            <span className="font-bold">Enhancing Awareness:</span> The Power of
+>>>>>>> Stashed changes
             Stories creates a safe space for honest, emotional conversations
             that bring out the resilience, wisdom, and strength in each guest.
             These episodes are more than interviews—they’re a reminder that we
@@ -41,6 +46,7 @@ export default function Podcast() {
               Potential Movement.
             </span>
           </p>
+<<<<<<< Updated upstream
           <div className="pt-5">
             <button className="inline-flex items-center gap-3 px-6 py-2 rounded-full bg-[#6E530C] text-white shadow-[0px_4px_4px_0px_#FFBD52] hover:cursor-pointer focus:outline-none">
               <Link
@@ -49,11 +55,21 @@ export default function Podcast() {
                 style={{ transition: "background 0.4s, color 0.4s" }}
               >
                 <span className="font-[Montserrat] font-bold text-xs uppercase tracking-[0.5%] relative -top-[2px] ">
+=======
+          <div className="flex justify-center pt-10">
+            <Link
+              to="/media#podcast-carousel-section"
+              // className="transform -translate-x-1/2 -translate-y-1/2 px-6 py-2 rounded-full bg-[#6E530C] text-white flex items-center gap-3 shadow-[0px_4px_4px_0px_#FFBD52] hover:cursor-pointer focus:outline-none"
+              style={{ transition: "background 0.4s, color 0.4s" }}
+            >
+              <button className="transform -translate-x-1/2 -translate-y-1/2 px-6 py-2 rounded-full bg-[#6E530C] text-white flex items-center gap-3 shadow-[0px_4px_4px_0px_#FFBD52] hover:cursor-pointer focus:outline-none">
+                <span className="font-[Montserrat] font-bold text-xs uppercase tracking-[0.5%]">
+>>>>>>> Stashed changes
                   Listen to Full Podcast
                 </span>
-              </Link>
-              <img src={playIcon} alt="Play Icon" className="w-6 h-6" />
-            </button>
+                <img src={playIcon} alt="Play Icon" className="w-6 h-6" />
+              </button>
+            </Link>
           </div>
         </div>
         <div className="relative">

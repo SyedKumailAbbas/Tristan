@@ -23,7 +23,7 @@ export default function Marathon() {
             <div className="flex items-start space-x-3">
               <div className="w-2 h-2 bg-[#FFAE00] rounded-full mt-3 flex-shrink-0"></div>
               <p
-                className="font-montserrat font-semibold  "
+                className="font-montserrat font-semibold text-white   "
                 style={{ fontSize: "20px" }}
               >
                 1st in age group at the 42 km Limberlost Challenge.
@@ -33,7 +33,7 @@ export default function Marathon() {
             <div className="flex items-start space-x-3">
               <div className="w-2 h-2 bg-[#FFAE00] rounded-full mt-3 flex-shrink-0"></div>
               <p
-                className="font-montserrat font-semibold  "
+                className="font-montserrat font-semibold text-white  "
                 style={{ fontSize: "20px" }}
               >
                 Overcame 1500m elevation in 35°C heat.
@@ -43,7 +43,7 @@ export default function Marathon() {
             <div className="flex items-start space-x-3">
               <div className="w-2 h-2 bg-[#FFAE00] rounded-full mt-3 flex-shrink-0"></div>
               <p
-                className="font-montserrat font-semibold  "
+                className="font-montserrat font-semibold text-white  "
                 style={{ fontSize: "20px" }}
               >
                 Powered through with relentless drive through mental and
@@ -52,25 +52,31 @@ export default function Marathon() {
             </div>
 
             {/* Watch Video Button */}
-            <button className="inline-flex px-6 py-2 rounded-full bg-[#6E530C] text-white flex items-center gap-3 shadow-[0px_4px_4px_0px_#FFBD52] hover:cursor-pointer focus:outline-none relative top-7 ">
-              <span className="font-[Montserrat] font-bold text-[10 px] uppercase tracking-[0.5%]">
+            <a
+              href="https://www.youtube.com/watch?v=syX9Sfv0aLQ&feature=youtu.be"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex px-6 py-2 rounded-full bg-[#6E530C] text-white items-center gap-3 shadow-[0px_4px_4px_0px_#FFBD52] hover:cursor-pointer focus:outline-none relative top-7 no-underline"
+            >
+              <span className="font-[Montserrat] font-bold text-[15px] uppercase tracking-[0.5%]">
                 WATCH FULL VIDEO HERE
               </span>
               <img src={playIcon} alt="Play Icon" className="w-6 h-6" />
-            </button>
+            </a>
+
           </div>
         </div>
 
         {/* Right Image Section */}
         <div className="w-[50%] m-10 flex items-center justify-center relative">
-  <Vid videoId="eHXo2rTlchM" />
+          <Vid videoId="eHXo2rTlchM" />
 
-  <img
-    src={border}
-    alt="Video Border"
-    className="absolute inset-0 w-full h-full z-20 pointer-events-none"
-  />
-</div>
+          <img
+            src={border}
+            alt="Video Border"
+            className="absolute inset-0 w-full h-full z-20 pointer-events-none"
+          />
+        </div>
 
       </div>
     </div>

@@ -35,17 +35,17 @@ const Card = ({ iconsrc: iconsrc, title, tags }) => (
             <img
               src={identity}
               alt="Polygon background"
-              
+
             />
             <img
               src={courage}
               alt="Polygon background"
-              
+
             />
             <img
               src={connection}
               alt="Polygon background"
-              
+
             />
           </>
         )}
@@ -55,18 +55,18 @@ const Card = ({ iconsrc: iconsrc, title, tags }) => (
             <img
               src={purpose}
               alt="Polygon background"
-              
+
             />
             <img
               src={presence}
               alt="Polygon background"
-              
+
             />
             <img
               src={possiblity}
               alt="Polygon background"
               className="w-[180px]"
-              
+
             />
           </>
         )}
@@ -76,23 +76,24 @@ const Card = ({ iconsrc: iconsrc, title, tags }) => (
             <img
               src={resilence}
               alt="Polygon background"
-              
+
             />
             <img
               src={mindset}
               alt="Polygon background"
-              
+
             />
             <img
               src={momentum}
               alt="Polygon background"
-              
+
             />
           </>
         )}
       </li>
     </ul>
-        <button
+    <a
+      href="/keynotes"
       className="group inline-flex items-center gap-2 rounded-full px-4 py-2 font-['Montserrat'] text-[18px] font-bold tracking-[0.5px]"
       style={{
         background: "#ffae00",
@@ -102,7 +103,8 @@ const Card = ({ iconsrc: iconsrc, title, tags }) => (
     >
       <span>Click to learn more</span>
       <img src={playIcon} alt="Play Icon" className="w-6 h-6" />
-    </button>
+    </a>
+
   </div>
 );
 
@@ -131,7 +133,7 @@ export default function Keynotes() {
           iconsrc={corp}
           title="Corporations"
           tags={["Resilience", "Mindset", "Momentum"]}
-        />  
+        />
         <Card
           iconsrc={school}
           title="High Schools"

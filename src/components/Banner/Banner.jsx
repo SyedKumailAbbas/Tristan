@@ -18,7 +18,10 @@ export default function Banner() {
           <span className="highlight"> purpose</span> from within.
         </p>
 
-        <button className="hero-cta">Book Tristan</button>
+        <a href="/book-Tristan" className="hero-cta inline-block text-center">
+  Book Tristan
+</a>
+
       </div>
 
       {/* RIGHT half */}

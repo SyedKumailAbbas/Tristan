@@ -30,12 +30,18 @@ export default function Teaching() {
             <span className="quote-color">"</span>
           </p>
 
-          <button className="px-6 py-2 rounded-full bg-[#6E530C] text-white flex items-center gap-3 shadow-[0px_4px_4px_0px_#FFBD52] hover:cursor-pointer focus:outline-none">
+          <a
+            href="https://medium.com/@tristanjoshuakim/how-teaching-children-changed-my-heart-3bad081eba8f"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-3 px-6 py-2 rounded-full bg-[#6E530C] text-white shadow-[0px_4px_4px_0px_#FFBD52] hover:cursor-pointer focus:outline-none"
+          >
             <img src={broadcast} alt="Broadcast" className="w-6 h-6" />
             <span className="font-[Montserrat] font-bold text-xs uppercase tracking-[0.5%]">
-              Watch Full Podcast
+              Read Full Blog Post
             </span>
-          </button>
+          </a>
+
         </div>
 
         {/* Right video preview */}
@@ -48,16 +54,27 @@ export default function Teaching() {
             {/* Border stays full-size */}
 
             {/* Video fills the box, then we shrink it visually */}
-            <video
-              className="absolute top-1/2 left-1/2 w-[686px] h-[452px] -translate-x-1/2 -translate-y-1/2 object-contain"
-              style={{ transformOrigin: "center" }}
-              src="https://pub-94f7f5d00cd94150915de158d63cafdd.r2.dev/Limitless%20Potential.mp4"
-              autoPlay
-              muted
-              loop
-              playsInline
-              preload="metadata"
-            />
+           <video
+  ref={(video) => {
+    if (video) {
+      video.pause(); // ensure it doesn’t autoplay on load
+    }
+  }}
+  className="absolute top-1/2 left-1/2 w-[686px] h-[452px] -translate-x-1/2 -translate-y-1/2 object-contain"
+  style={{ transformOrigin: "center" }}
+  src="https://pub-94f7f5d00cd94150915de158d63cafdd.r2.dev/Limitless%20Potential.mp4"
+  playsInline
+  preload="metadata"
+  onMouseEnter={(e) => {
+    e.currentTarget.muted = false;
+    e.currentTarget.currentTime = 0;
+    e.currentTarget.play().catch(() => {});
+  }}
+  onMouseLeave={(e) => {
+    e.currentTarget.pause();
+  }}
+/>
+
             <img
               src={border}
               alt="Video Border"

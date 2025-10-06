@@ -38,13 +38,13 @@ export default function Mobile() {
         {/* Paragraph + Video side by side */}
         <div className="mt-6 flex flex-col lg:flex-row gap- w-full">
           {/* Paragraph Text Section */}
-          <div className="max-w-3xl text-white font-[Montserrat] text-[clamp(1rem,2vw,1.1rem)] font-semibold leading-relaxed tracking-normal">
+          <div className="max-w-3xl text-white font-[Montserrat] text-[clamp(1rem,2vw,1.1rem)] font-semibold leading-tight tracking-normal">
             <p className="mb-4">
               “Tristan’s journey began in high school, during one of the darkest
               chapters of his life. The pandemic left him battling anxiety,
               depression, intense emotions, and constant overthinking. He hit
               rock bottom. But in that struggle, he discovered something
-              unexpected: <span className="gold-word">hope</span>—and a quiet
+              unexpected: <span className="gold-word">hope</span> and a quiet
               refusal to let things stay the same.
             </p>
 
@@ -52,7 +52,7 @@ export default function Mobile() {
               That moment sparked his personal development journey. Through
               journaling for 1,088 days (and counting), meditating daily for
               over 1,000 days, and consistently pushing beyond his comfort zone,
-              Tristan began to rebuild—not just his mindset, but his sense of{" "}
+              Tristan began to rebuild not just his mindset, but his sense of{" "}
               <span className="gold-word">purpose</span>.
             </p>
 
@@ -61,14 +61,18 @@ export default function Mobile() {
               discovered he was a dancer and invited him to perform for the
               class. Tristan was terrified, but said yes. That performance
               changed everything. For the first time, he connected with what he
-              was meant to do—not just perform, but truly connect. To move
+              was meant to do not just perform, but truly connect. To move
               people through movement, and then through message.
+            </p>
+
+            <p className="mb-4">
+              That spark is what he now carries into every stage he steps onto.
             </p>
 
             <p>
               Since then, Tristan has blended performance with motivational
               keynote speaking, delivering talks at schools, conferences, and
-              events of all sizes. Dance became more than movement—it became a{" "}
+              events of all sizes. Dance became more than movement it became a{" "}
               <span className="gold-word">bridge</span>. A way to open hearts
               before opening minds. It’s how he creates space for meaningful
               conversations around growth, resilience, and rediscovering what’s
@@ -87,9 +91,16 @@ export default function Mobile() {
             `}</style>
 
             {/* Button below paragraphs */}
-            <button className="mt-8 bg-[#ffae00] text-white font-bold text-base sm:text-lg px-6 sm:px-7 py-2.5 sm:py-3 rounded-full shadow-[0_5px_10px_rgba(255,174,0,0.4)] transition-transform duration-200 ease-in-out hover:-translate-y-1">
+            <a
+              href="/book-Tristan"
+              className="mt-8 inline-block bg-[#ffae00] text-white font-bold text-base sm:text-lg 
+             px-6 sm:px-7 py-2.5 sm:py-3 rounded-full 
+             shadow-[0_5px_10px_rgba(255,174,0,0.4)] 
+             transition-transform duration-200 ease-in-out hover:-translate-y-1"
+            >
               Book Tristan
-            </button>
+            </a>
+
           </div>
 
           {/* Video Section */}

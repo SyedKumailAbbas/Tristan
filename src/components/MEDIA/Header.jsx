@@ -34,14 +34,18 @@ const Header = () => {
             </span>
           </h2>
 
-          <button
+          <a
+            href="https://vimeo.com/1099140601?fl=pl&fe=sh"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex px-6 py-2 rounded-full bg-[#6E530C] text-white flex items-center gap-3 shadow-[0px_4px_4px_0px_#FFBD52] hover:cursor-pointer focus:outline-none relative top-[9.5rem]"
           >
-            <span className="font-[Montserrat] font-bold text-[10px] uppercase tracking-[0.5%]">
+            <span className="font-[Montserrat] font-bold text-[15px] uppercase tracking-[0.5%]">
               Watch his journey
             </span>
             <img src={playIcon} alt="Play Icon" className="w-6 h-6" />
-          </button>
+          </a>
+
         </div>
       </div>
 

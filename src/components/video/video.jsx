@@ -18,12 +18,18 @@ export default function Hero() {
       />
 
         <div className="absolute inset-0 flex items-end justify-start p-6 sm:p-9 md:p-12 z-20 z-20">
-        <button className="px-6 py-2 rounded-full bg-[#6E530C] text-white flex items-center gap-3 shadow-[0px_4px_4px_0px_#FFBD52] hover:cursor-pointer focus:outline-none">
-          <span className="font-[Montserrat] font-bold text-xs md:text-sm uppercase tracking-wide">
-            Watch Tristan in Action
-          </span>
-          <img src={playIcon} alt="Play Icon" className="w-6 h-6" />
-        </button>
+        <a
+  href="https://vimeo.com/1099140601"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="px-6 py-2 rounded-full bg-[#6E530C] text-white flex items-center gap-3 shadow-[0px_4px_4px_0px_#FFBD52] hover:cursor-pointer focus:outline-none"
+>
+  <span className="font-[Montserrat] font-bold text-xs md:text-sm uppercase tracking-wide">
+    Watch Tristan in Action
+  </span>
+  <img src={playIcon} alt="Play Icon" className="w-6 h-6" />
+</a>
+
       </div>
     </div>
   );

@@ -23,7 +23,7 @@ export default function Marathon() {
             <div className="flex items-start space-x-3">
               <div className="w-2 h-2 bg-[#FFAE00] rounded-full mt-3 flex-shrink-0"></div>
               <p
-                className="font-montserrat font-semibold  "
+                className="font-montserrat font-semibold text-white   "
                 style={{ fontSize: "20px" }}
               >
                 1st in age group at the 42 km Limberlost Challenge.
@@ -33,7 +33,7 @@ export default function Marathon() {
             <div className="flex items-start space-x-3">
               <div className="w-2 h-2 bg-[#FFAE00] rounded-full mt-3 flex-shrink-0"></div>
               <p
-                className="font-montserrat font-semibold  "
+                className="font-montserrat font-semibold text-white  "
                 style={{ fontSize: "20px" }}
               >
                 Overcame 1500m elevation in 35°C heat.
@@ -43,7 +43,7 @@ export default function Marathon() {
             <div className="flex items-start space-x-3">
               <div className="w-2 h-2 bg-[#FFAE00] rounded-full mt-3 flex-shrink-0"></div>
               <p
-                className="font-montserrat font-semibold  "
+                className="font-montserrat font-semibold text-white  "
                 style={{ fontSize: "20px" }}
               >
                 Powered through with relentless drive through mental and

@@ -21,14 +21,14 @@ export default function Marathon() {
           <div className="space-y-4 ml-20  w-[450px] mb-8">
             <div className="flex items-start space-x-3">
               <div className="w-2 h-2 bg-[#FFAE00] rounded-full mt-4 flex-shrink-0"></div>
-              <p className="font-montserrat font-semibold  " style={{ fontSize: '20px' }}>
+              <p className="font-montserrat font-semibold text-white  " style={{ fontSize: '20px' }}>
                 Built a handcrafted jewelry brand from passion to profit.{" "}
               </p>
             </div>
 
             <div className="flex items-start space-x-3">
               <div className="w-2 h-2 bg-[#FFAE00] rounded-full mt-4 flex-shrink-0"></div>
-              <p className="font-montserrat font-semibold  text-lg leading-relaxed" style={{ fontSize: '20px' }}>
+              <p className="font-montserrat font-semibold  text-lg leading-relaxed text-white " style={{ fontSize: '20px' }}>
                 Designed and sold 200+ gemstone bracelets at markets and
                 university events..
               </p>
@@ -36,7 +36,7 @@ export default function Marathon() {
 
             <div className="flex items-start space-x-3">
               <div className="w-2 h-2 bg-[#FFAE00] rounded-full mt-3 flex-shrink-0"></div>
-              <p className="font-montserrat font-semibold " style={{ fontSize: '20px' }}>
+              <p className="font-montserrat font-semibold text-white " style={{ fontSize: '20px' }}>
                 Earned customer loyalty through quality craftsmanship and
                 authentic storytelling.{" "}
               </p>

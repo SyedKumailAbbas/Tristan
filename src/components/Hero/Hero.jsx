@@ -7,7 +7,7 @@ export default function Hero() {
     <div className="video-container">
       {/* ✅ Background GIF */}
       <img
-        src="https://pub-94f7f5d00cd94150915de158d63cafdd.r2.dev/Homepage%20(Background%20Black%20Opacity)%20Speaker%20Reel%20%20(1).gif"
+        src="https://pub-94f7f5d00cd94150915de158d63cafdd.r2.dev/Runnning%20(1).gif"
         alt="Background animation"
         className="bg-video"
       />

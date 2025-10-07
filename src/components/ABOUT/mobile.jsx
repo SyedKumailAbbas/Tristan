@@ -38,7 +38,7 @@ export default function Mobile() {
         {/* Paragraph + Video side by side */}
         <div className="mt-6 flex flex-col lg:flex-row gap- w-full">
           {/* Paragraph Text Section */}
-          <div className=" w-full lg:w-[55%] text-white font-[Montserrat] text-[clamp(1rem,2vw,1.1rem)] font-semibold leading-tight tracking-normal  mt-10 lg:mt-20">
+          <div className=" w-full lg:w-[75%] text-white font-[Montserrat] text-[clamp(1rem,2vw,1.1rem)] font-semibold leading-tight tracking-normal  mt-5 lg:mt-10">
             <p className="mb-5">
               “Tristan’s journey began in high school, during one of the darkest
               chapters of his life. The pandemic left him battling anxiety,
@@ -90,15 +90,14 @@ export default function Mobile() {
               }
             `}</style>
 
-      <div className="h-16 lg:h-24"></div> {/* 👈 pushes button downward */}
-
-  <a
-    href="/book-Tristan"
-    className="inline-block bg-[#ffae00] text-white font-bold text-base sm:text-lg 
-    px-6 sm:px-7 py-2.5 sm:py-3 rounded-full 
-    shadow-[0_5px_10px_rgba(255,174,0,0.4)] 
-    transition-transform duration-200 ease-in-out hover:-translate-y-1"
-  >
+            {/* Button below paragraphs */}
+            <a
+              href="/book-Tristan"
+              className="mt-10 inline-block bg-[#ffae00] text-white font-bold text-base sm:text-lg 
+             px-6 sm:px-7 py-2.5 sm:py-3 rounded-full 
+             shadow-[0_5px_10px_rgba(255,174,0,0.4)] 
+             transition-transform duration-200 ease-in-out hover:-translate-y-1"
+            >
               Book Tristan
             </a>
 

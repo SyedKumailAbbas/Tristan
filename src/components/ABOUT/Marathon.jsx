@@ -63,13 +63,12 @@ export default function Marathon() {
               </span>
               <img src={playIcon} alt="Play Icon" className="w-6 h-6" />
             </a>
-
           </div>
         </div>
 
         {/* Right Image Section */}
         <div className="w-[50%] m-10 flex items-center justify-center relative">
-          <Vid videoId="eHXo2rTlchM" />
+          <Vid videoId="eHXo2rTlchM" vidpause={false} />
 
           <img
             src={border}
@@ -77,7 +76,6 @@ export default function Marathon() {
             className="absolute inset-0 w-full h-full z-20 pointer-events-none"
           />
         </div>
-
       </div>
     </div>
   );

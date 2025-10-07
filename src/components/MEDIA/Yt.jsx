@@ -12,7 +12,7 @@ const PanelistSection = () => {
       {/* Left side: YouTube video */}
       <div className="flex justify-center">
         <div className="w-full max-w-xl aspect-video rounded-xl overflow-hidden shadow-lg">
-          <Vid videoId="Dh7ojRbxCFA" />{" "}
+          <Vid videoId="Dh7ojRbxCFA" vidpause={false} />{" "}
           {/* Replace with your actual YouTube videoId */}
         </div>
       </div>
@@ -39,8 +39,6 @@ const PanelistSection = () => {
           </span>
           <img src={playIcon} alt="Play Icon" className="w-6 h-6" />
         </a>
-
-
       </div>
     </section>
   );

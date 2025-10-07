@@ -1,16 +1,15 @@
-"use client"; // <- keep this if you're in Next.js 13+
+"use client";
 
 import React, { useEffect, useRef, useState } from "react";
 
-export default function Vid({ videoId, className = "" }) {
+export default function Vid({ videoId, className = "", vidpause = true }) {
   const playerRef = useRef(null);
   const containerRef = useRef(null);
-  const [showIframe, setShowIframe] = useState(false);
+  const [showIframe, setShowIframe] = useState(!vidpause ? true : false);
 
   // Load YouTube API dynamically (client-only)
   useEffect(() => {
-    if (typeof window === "undefined") return; // ✅ guard for SSR
-
+    if (typeof window === "undefined") return;
     if (window.YT && window.YT.Player) return;
 
     const script = document.createElement("script");
@@ -18,7 +17,8 @@ export default function Vid({ videoId, className = "" }) {
     document.body.appendChild(script);
   }, []);
 
-  // Create YouTube Player after click
+  // Create YouTube Player after click or auto
+  // ...existing code...
   useEffect(() => {
     if (!showIframe) return;
     if (typeof window === "undefined") return;
@@ -31,26 +31,27 @@ export default function Vid({ videoId, className = "" }) {
           videoId,
           playerVars: {
             autoplay: 1,
-            controls: 1,
+            controls: vidpause ? 1 : 1, // Hide controls if autoplay
             modestbranding: 1,
             rel: 0,
             playsinline: 1,
             fs: 1,
+            mute: vidpause ? 1 : 1, // Mute if autoplay
           },
         });
       }
     }, 200);
 
     return () => clearInterval(checkReady);
-  }, [showIframe, videoId]);
-
+  }, [showIframe, videoId, vidpause]);
+  // ...existing code...
   return (
     <div
       className={`relative w-full overflow-hidden rounded-lg ${className}`}
       style={{ aspectRatio: "16 / 9" }}
     >
-      {/* Thumbnail + Play Button */}
-      {!showIframe && (
+      {/* Thumbnail + Play Button (only if vidpause is true) */}
+      {vidpause === true && !showIframe && (
         <button
           type="button"
           onClick={() => setShowIframe(true)}

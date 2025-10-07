@@ -15,64 +15,162 @@ import img1 from "../../../assets/Frame 25.png";
 import img2 from "../../../assets/Frame 26.png";
 const episodes = [
   {
-    id: "s1e1",
-    season: "SEASON 1",
-    title: "EP 1. Seeking Parental Approval:",
+    id: "s2e1",
+    season: "SEASON 2",
+    title: "EP 1. Rhythm of Resilience: How Dance Became a Lifeline",
     subtitle: "Unfiltered Conversation",
     durationLabel: "15:44",
     audioUrl: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
     hostImage: img2,
     bgColor: "#2563eb",
+    fullDuration: 1507, // Full length of audio in seconds (25:07 = 1507 seconds)
+    fullPodcastUrl: "https://www.example.com/full-episode-2",
   },
   {
-    id: "s2e5",
+    id: "s2e2",
     season: "SEASON 2",
-    title: "EP 5. Inside the Mindset of",
+    title: "EP 2. Organized Living: Less Stress to More Success",
     subtitle: "World Changers",
     durationLabel: "25:07",
     audioUrl: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3",
-    hostImage: img1,
+    hostImage: img2,
     bgColor: "#1f2937",
+    fullDuration: 1507, // Full length of audio in seconds (25:07 = 1507 seconds)
+    fullPodcastUrl: "https://www.example.com/full-episode-2",
   },
   {
-    id: "s3e8",
-    season: "SEASON 3",
-    title: "EP 8. Building Authentic",
+    id: "s2e3",
+    season: "SEASON 2",
+    title:
+      "EP 3. Becoming Your Whole Self: Finding Balance Between Tradition and Freedom ",
     subtitle: "Relationships That Last",
     durationLabel: "18:32",
     audioUrl: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3",
     hostImage: img2,
     bgColor: "#7c3aed",
+    fullDuration: 1507, // Full length of audio in seconds (25:07 = 1507 seconds)
+    fullPodcastUrl: "https://www.example.com/full-episode-2",
+  },
+  {
+    id: "s2e4",
+    season: "SEASON 2",
+    title: "EP 4. The Truth About Friendship Nobody Talks About",
+    subtitle: "Owning the Room",
+    durationLabel: "12:10",
+    audioUrl: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3",
+    hostImage: img2,
+    bgColor: "#0ea5e9",
+    fullDuration: 1507, // Full length of audio in seconds (25:07 = 1507 seconds)
+    fullPodcastUrl: "https://www.example.com/full-episode-2",
   },
   {
     id: "s1e2",
     season: "SEASON 1",
-    title: "EP 2. Finding Your Voice:",
+    title: "EP 2. Leaving Your Comfort Zone: Unfiltered Conversation",
+    subtitle: "Less Noise, More Signal",
+    durationLabel: "21:03",
+    audioUrl: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3",
+    hostImage: img1,
+    bgColor: "#334155",
+    fullDuration: 1507, // Full length of audio in seconds (25:07 = 1507 seconds)
+    fullPodcastUrl: "https://www.example.com/full-episode-2",
+  },
+  {
+    id: "s1e3",
+    season: "SEASON 1",
+    title: `EP 3. How Adversity Shapes Leadership: Unfiltered Conversation`,
+    subtitle: "Less Noise, More Signal",
+    durationLabel: "21:03",
+    audioUrl: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3",
+    hostImage: img1,
+    bgColor: "#334155",
+    fullDuration: 1507, // Full length of audio in seconds (25:07 = 1507 seconds)
+    fullPodcastUrl: "https://www.example.com/full-episode-2",
+  },
+  {
+    id: "s1e4",
+    season: "SEASON 1",
+    title: "EP 4. Overcoming Other’s Perceptions: Unfiltered Conversation",
+    subtitle: "Unfiltered Conversation",
+    durationLabel: "15:44",
+    audioUrl: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
+    hostImage: img1,
+    bgColor: "#2563eb",
+    fullDuration: 1507, // Full length of audio in seconds (25:07 = 1507 seconds)
+    fullPodcastUrl: "https://www.example.com/full-episode-2",
+  },
+  {
+    id: "s1e5",
+    season: "SEASON 1",
+    title: "EP 5. Perseverance: Unfiltered Conversation",
+    subtitle: "World Changers",
+    durationLabel: "25:07",
+    audioUrl: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3",
+    hostImage: img1,
+    bgColor: "#1f2937",
+    fullDuration: 1507, // Full length of audio in seconds (25:07 = 1507 seconds)
+    fullPodcastUrl: "https://www.example.com/full-episode-2",
+  },
+  {
+    id: "s1e6",
+    season: "SEASON 1",
+    title:
+      "EP 6. Finding Happiness by Raising Awareness: Unfiltered Conversation",
+    subtitle: "Relationships That Last",
+    durationLabel: "18:32",
+    audioUrl: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3",
+    hostImage: img1,
+    bgColor: "#7c3aed",
+    fullDuration: 1507, // Full length of audio in seconds (25:07 = 1507 seconds)
+    fullPodcastUrl: "https://www.example.com/full-episode-2",
+  },
+  {
+    id: "s1e7",
+    season: "SEASON 1",
+    title: "EP 7. Overcoming Self-Criticism: Unfiltered Conversation",
     subtitle: "Owning the Room",
     durationLabel: "12:10",
     audioUrl: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3",
     hostImage: img1,
     bgColor: "#0ea5e9",
+    fullDuration: 1507, // Full length of audio in seconds (25:07 = 1507 seconds)
+    fullPodcastUrl: "https://www.example.com/full-episode-2",
   },
   {
-    id: "s2e6",
-    season: "SEASON 2",
-    title: "EP 6. The Craft of Listening:",
-    subtitle: "Less Noise, More Signal",
-    durationLabel: "21:03",
-    audioUrl: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3",
-    hostImage: img2,
-    bgColor: "#334155",
-  },
-  {
-    id: "s2e8",
-    season: "SEASON 2",
-    title: "EP 69. The Craft of Listening:",
+    id: "s1e8",
+    season: "SEASON 1",
+    title: "EP 8. It’s Lonely at the Top: Unfiltered Conversation",
     subtitle: "Less Noise, More Signal",
     durationLabel: "21:03",
     audioUrl: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3",
     hostImage: img1,
     bgColor: "#334155",
+    fullDuration: 1507, // Full length of audio in seconds (25:07 = 1507 seconds)
+    fullPodcastUrl: "https://www.example.com/full-episode-2",
+  },
+  {
+    id: "s1e9",
+    season: "SEASON 1",
+    title: "EP 9. Being Your Authentic Self: Unfiltered Conversation",
+    subtitle: "Less Noise, More Signal",
+    durationLabel: "21:03",
+    audioUrl: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3",
+    hostImage: img1,
+    bgColor: "#334155",
+    fullDuration: 1507, // Full length of audio in seconds (25:07 = 1507 seconds)
+    fullPodcastUrl: "https://www.example.com/full-episode-2",
+  },
+  {
+    id: "s1e10",
+    season: "SEASON 1",
+    title: "EP 10. Seeking Wisdom: Unfiltered Conversation",
+    subtitle: "Less Noise, More Signal",
+    durationLabel: "21:03",
+    audioUrl: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3",
+    hostImage: img1,
+    bgColor: "#334155",
+    fullDuration: 1507, // Full length of audio in seconds (25:07 = 1507 seconds)
+    fullPodcastUrl: "https://www.example.com/full-episode-2",
   },
 ];
 
@@ -199,7 +297,7 @@ const FriendshipCarousel = () => {
   }, [slides, startIndex, VISIBLE]);
 
   const renderCard = (ep) => {
-    const t = times[ep.id] || { current: 0, duration: 0 };
+    const t = times[ep.id] || { current: 0, duration: ep.fullDuration }; // Use fullDuration for preview
     const progressPct = t.duration ? (t.current / t.duration) * 100 : 0;
 
     return (
@@ -236,7 +334,8 @@ const FriendshipCarousel = () => {
               </div>
               <div className="timeDisplay">
                 <span>{formatTime(t.current)}</span>
-                <span>{formatTime(t.duration)}</span>
+                <span>{formatTime(t.duration)}</span>{" "}
+                {/* Use fullDuration here */}
               </div>
             </div>
           </div>
@@ -253,10 +352,11 @@ const FriendshipCarousel = () => {
           />
         </div>
 
-        <button className="listenFullBtn">
+        {/* Listen to full podcast button with href */}
+        <a href={ep.fullPodcastUrl} className="listenFullBtn">
           <span>LISTEN TO FULL PODCAST</span>
           <img src={playIcon} alt="Play Icon" className="listenBtnIcon" />
-        </button>
+        </a>
       </div>
     );
   };

@@ -1,14 +1,38 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { Play } from "lucide-react";
-import teaching from "../../assets/Main Video.mp4"; // Assuming you have a teaching SVG icon
+import teaching from "../../assets/Main Video.mp4";
 import broadcast from "../../assets/simple-icons_readme.svg";
 import border from "../../assets/Frame 16.svg";
 import Heart from "../../assets/Group 243 (1).svg";
 import "./Teaching.css";
+
 export default function Teaching() {
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          // 👀 When section is visible, play with audio
+          video.muted = false;
+          video.play().catch(() => {});
+        } else {
+          // ⏸️ Pause when scrolled out of view
+          video.pause();
+        }
+      },
+      { threshold: 0.3 } // trigger when 30% of video is visible
+    );
+
+    if (video) observer.observe(video);
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <div className="bg-black p-8 rounded-lg relative overflow-hidden">
-      <div className="flex flex-col lg:flex-row items-center ">
+      <div className="flex flex-col lg:flex-row items-center">
         {/* Left content */}
         <div className="flex-1 ml-8 text-white">
           <h1 className="text-6xl lg:text-5xl font-bold mb-6 leading-tight">
@@ -41,40 +65,23 @@ export default function Teaching() {
               Read Full Blog Post
             </span>
           </a>
-
         </div>
 
         {/* Right video preview */}
-        {/* Right video preview */}
-        {/* Right video preview */}
-        {/* Right video preview */}
         <div className="flex-1">
-          {/* Frame box: fixed size via aspect ratio */}
           <div className="relative w-full aspect-[16/9] overflow-hidden shadow-2xl">
-            {/* Border stays full-size */}
+            {/* Video (auto play only when visible) */}
+            <video
+              ref={videoRef}
+              className="absolute top-1/2 left-1/2 w-[686px] h-[452px] -translate-x-1/2 -translate-y-1/2 object-contain"
+              style={{ transformOrigin: "center" }}
+              src="https://pub-94f7f5d00cd94150915de158d63cafdd.r2.dev/Limitless%20Potential.mp4"
+              playsInline
+              preload="metadata"
+              controls={false}
+            />
 
-            {/* Video fills the box, then we shrink it visually */}
-           <video
-  ref={(video) => {
-    if (video) {
-      video.pause(); // ensure it doesn’t autoplay on load
-    }
-  }}
-  className="absolute top-1/2 left-1/2 w-[686px] h-[452px] -translate-x-1/2 -translate-y-1/2 object-contain"
-  style={{ transformOrigin: "center" }}
-  src="https://pub-94f7f5d00cd94150915de158d63cafdd.r2.dev/Limitless%20Potential.mp4"
-  playsInline
-  preload="metadata"
-  onMouseEnter={(e) => {
-    e.currentTarget.muted = false;
-    e.currentTarget.currentTime = 0;
-    e.currentTarget.play().catch(() => {});
-  }}
-  onMouseLeave={(e) => {
-    e.currentTarget.pause();
-  }}
-/>
-
+            {/* Border overlay */}
             <img
               src={border}
               alt="Video Border"

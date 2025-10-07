@@ -1,8 +1,33 @@
+import { useEffect, useRef } from "react";
 import performance from "../../assets/Performance-Motivational.svg";
 import video from "../../assets/Dance Video .MP4";
 import border from "../../assets/mobile border.svg";
 
 export default function Mobile() {
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    const videoElement = videoRef.current;
+    if (!videoElement) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            videoElement.play().catch(() => {});
+          } else {
+            videoElement.pause();
+          }
+        });
+      },
+      { threshold: 0.5 } // plays when at least 50% visible
+    );
+
+    observer.observe(videoElement);
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <>
       {/* Background layer reversed: black to #FFAE00 */}
@@ -38,7 +63,7 @@ export default function Mobile() {
         {/* Paragraph + Video side by side */}
         <div className="mt-6 flex flex-col lg:flex-row gap- w-full">
           {/* Paragraph Text Section */}
-          <div className=" w-full lg:w-[75%] text-white font-[Montserrat] text-[clamp(1rem,2vw,1.1rem)] font-semibold leading-tight tracking-normal  mt-5 lg:mt-10">
+          <div className="w-full lg:w-[75%] text-white font-[Montserrat] text-[clamp(1rem,2vw,1.1rem)] font-semibold leading-tight tracking-normal mt-5 lg:mt-10">
             <p className="mb-5">
               “Tristan’s journey began in high school, during one of the darkest
               chapters of his life. The pandemic left him battling anxiety,
@@ -72,7 +97,7 @@ export default function Mobile() {
             <p>
               Since then, Tristan has blended performance with motivational
               keynote speaking, delivering talks at schools, conferences, and
-              events of all sizes. Dance became more than movement it became a{" "}
+              events of all sizes. Dance became more than movement—it became a{" "}
               <span className="gold-word">bridge</span>. A way to open hearts
               before opening minds. It’s how he creates space for meaningful
               conversations around growth, resilience, and rediscovering what’s
@@ -90,32 +115,27 @@ export default function Mobile() {
               }
             `}</style>
 
-            {/* Button below paragraphs */}
             <a
               href="/book-Tristan"
               className="mt-10 inline-block bg-[#ffae00] text-white font-bold text-base sm:text-lg 
-             px-6 sm:px-7 py-2.5 sm:py-3 rounded-full 
-             shadow-[0_5px_10px_rgba(255,174,0,0.4)] 
-             transition-transform duration-200 ease-in-out hover:-translate-y-1"
+              px-6 sm:px-7 py-2.5 sm:py-3 rounded-full 
+              shadow-[0_5px_10px_rgba(255,174,0,0.4)] 
+              transition-transform duration-200 ease-in-out hover:-translate-y-1"
             >
               Book Tristan
             </a>
-
           </div>
 
           {/* Video Section */}
           <div className="flex flex-col items-center w-[25%]">
             <video
+              ref={videoRef}
               src={video}
-              controls={false}
-              muted
-              autoPlay
               loop
               playsInline
               className="w-full h-auto max-h-[500px] object-contain"
             />
 
-            {/* Caption below video */}
             <p className="mt-3 text-center font-[Poppins] font-semibold italic text-[clamp(1rem,2.5vw,1.125rem)] text-white max-w-md">
               “Live footage of the defining moment which changed everything.”
             </p>

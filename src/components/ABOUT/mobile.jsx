@@ -12,7 +12,7 @@ export default function Mobile() {
       />
 
       {/* Foreground content */}
-      <div className="relative z-10 min-h-screen w-full p-6 sm:p-8 flex flex-col items-start">
+      <div className="relative z-10 w-full p-6 sm:p-8 flex flex-col items-start">
         {/* Top Heading */}
         <div className="flex flex-wrap items-baseline">
           <h1 className="text-[clamp(2rem,6vw,3.5rem)] font-bold font-[Montserrat] leading-tight tracking-wide text-white">
@@ -38,8 +38,8 @@ export default function Mobile() {
         {/* Paragraph + Video side by side */}
         <div className="mt-6 flex flex-col lg:flex-row gap- w-full">
           {/* Paragraph Text Section */}
-          <div className="max-w-3xl text-white font-[Montserrat] text-[clamp(1rem,2vw,1.1rem)] font-semibold leading-tight tracking-normal">
-            <p className="mb-4">
+          <div className=" w-full lg:w-[55%] text-white font-[Montserrat] text-[clamp(1rem,2vw,1.1rem)] font-semibold leading-tight tracking-normal  mt-10 lg:mt-20">
+            <p className="mb-5">
               “Tristan’s journey began in high school, during one of the darkest
               chapters of his life. The pandemic left him battling anxiety,
               depression, intense emotions, and constant overthinking. He hit
@@ -48,7 +48,7 @@ export default function Mobile() {
               refusal to let things stay the same.
             </p>
 
-            <p className="mb-4">
+            <p className="mb-5">
               That moment sparked his personal development journey. Through
               journaling for 1,088 days (and counting), meditating daily for
               over 1,000 days, and consistently pushing beyond his comfort zone,
@@ -56,7 +56,7 @@ export default function Mobile() {
               <span className="gold-word">purpose</span>.
             </p>
 
-            <p className="mb-4">
+            <p className="mb-5">
               One of the turning points came in Grade 11, when a teacher
               discovered he was a dancer and invited him to perform for the
               class. Tristan was terrified, but said yes. That performance
@@ -65,7 +65,7 @@ export default function Mobile() {
               people through movement, and then through message.
             </p>
 
-            <p className="mb-4">
+            <p className="mb-5">
               That spark is what he now carries into every stage he steps onto.
             </p>
 
@@ -90,21 +90,22 @@ export default function Mobile() {
               }
             `}</style>
 
-            {/* Button below paragraphs */}
-            <a
-              href="/book-Tristan"
-              className="mt-8 inline-block bg-[#ffae00] text-white font-bold text-base sm:text-lg 
-             px-6 sm:px-7 py-2.5 sm:py-3 rounded-full 
-             shadow-[0_5px_10px_rgba(255,174,0,0.4)] 
-             transition-transform duration-200 ease-in-out hover:-translate-y-1"
-            >
+      <div className="h-16 lg:h-24"></div> {/* 👈 pushes button downward */}
+
+  <a
+    href="/book-Tristan"
+    className="inline-block bg-[#ffae00] text-white font-bold text-base sm:text-lg 
+    px-6 sm:px-7 py-2.5 sm:py-3 rounded-full 
+    shadow-[0_5px_10px_rgba(255,174,0,0.4)] 
+    transition-transform duration-200 ease-in-out hover:-translate-y-1"
+  >
               Book Tristan
             </a>
 
           </div>
 
           {/* Video Section */}
-          <div className="flex flex-col items-center w-full lg:w-1/2">
+          <div className="flex flex-col items-center w-[25%]">
             <video
               src={video}
               controls={false}

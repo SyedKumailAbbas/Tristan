@@ -86,7 +86,7 @@ export default function Mobile() {
               discovered he was a dancer and invited him to perform for the
               class. Tristan was terrified, but said yes. That performance
               changed everything. For the first time, he connected with what he
-              was meant to do not just perform, but truly connect. To move
+              was meant to do... not just perform, but truly connect. To move
               people through movement, and then through message.
             </p>
 
@@ -97,7 +97,7 @@ export default function Mobile() {
             <p>
               Since then, Tristan has blended performance with motivational
               keynote speaking, delivering talks at schools, conferences, and
-              events of all sizes. Dance became more than movement—it became a{" "}
+              events of all sizes. Dance became more than movement: it became a{" "}
               <span className="gold-word">bridge</span>. A way to open hearts
               before opening minds. It’s how he creates space for meaningful
               conversations around growth, resilience, and rediscovering what’s

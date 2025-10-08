@@ -8,6 +8,7 @@ import Img from "../assets/Group 126 (1).png";
 import PodcastFeature from "../components/MEDIA/podcastFeature/podcastFeature";
 import FriendshipCarousel from "../components/MEDIA/friendship";
 import PanelistSection from "../components/MEDIA/Yt";
+import Podcast from "../components/Podcast/Podcast";
 import "./media.css";
 import PodcastCarousel from "../components/MEDIA/secondCarousel/podcastCarousel";
 export default function Media() {
@@ -31,6 +32,7 @@ export default function Media() {
       <PanelistSection />
       <Heading imgSrc={Img} altText="heading imgs" />
       <PodcastFeature />
+       <Podcast />
       <div id="podcast-carousel-section">
         <PodcastCarousel />
       </div>

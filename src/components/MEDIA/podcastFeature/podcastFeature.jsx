@@ -103,11 +103,13 @@ const PodcastFeature = () => {
                 <img src={playIcon} alt="Play Icon" className="w-6 h-6" />
               </a>
 
-
               <div className="audio-player">
                 <div className="player-info">
                   <div className="episode-title">
-                    80. Transforming Anxiety into Confidence with Tristan Kim.
+                    <span className="-ml-14 ">80.</span>{" "}
+                    <span className="ml-4">
+                      Transforming Anxiety into Confidence with Tristan Kim.
+                    </span>
                   </div>
 
                   <div className="progress-section">

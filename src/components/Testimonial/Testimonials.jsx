@@ -47,7 +47,7 @@ const Testimonials = ({ title = "TESTIMONIALS", videoIds = [], seeMore }) => {
     <section className="bg-black w-full pt-0 pb-20 relative overflow-clip">
       {/* Paint brush header (clamped) */}
       <div
-        className={`relative w-full mb-12 overflow-x-hidden ${
+        className={`relative bg-black w-full mb-12 overflow-x-hidden ${
           title === "keynotes" ? "mt-40" : "mt-10"
         }`}
       >

@@ -13,66 +13,165 @@ import { Play, Pause } from "lucide-react";
 import Heading from "../../../assets/Group 196.png";
 import img1 from "../../../assets/Frame 25.png";
 import img2 from "../../../assets/Frame 26.png";
+import aud12 from "../../../../public/podcast.mp3";
 const episodes = [
   {
-    id: "s1e1",
-    season: "SEASON 1",
-    title: "EP 1. Seeking Parental Approval:",
+    id: "s2e1",
+    season: "SEASON 2",
+    title: "EP 1. Rhythm of Resilience: How Dance Became a Lifeline",
     subtitle: "Unfiltered Conversation",
-    durationLabel: "15:44",
-    audioUrl: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
+    durationLabel: "35:05",
+    audioUrl: `/audios/Season 2, Episode 1.mp3`,
     hostImage: img2,
     bgColor: "#2563eb",
+    fullDuration: 2105, // Full length of audio in seconds (25:07 = 1507 seconds)
+    fullPodcastUrl: "https://open.spotify.com/episode/6OLAOHumBR9PrJpaH08uUm?si=1cf4fbfd955247d0",
   },
   {
-    id: "s2e5",
+    id: "s2e2",
     season: "SEASON 2",
-    title: "EP 5. Inside the Mindset of",
+    title: "EP 2. Organized Living: Less Stress to More Success",
     subtitle: "World Changers",
-    durationLabel: "25:07",
-    audioUrl: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3",
-    hostImage: img1,
+    durationLabel: "22:03",
+    audioUrl: `/audios/Season 2, Episode 2.mp3`,
+    hostImage: img2,
     bgColor: "#1f2937",
+    fullDuration: 1323, // Full length of audio in seconds (25:07 = 1507 seconds)
+    fullPodcastUrl: "https://open.spotify.com/episode/4gOnl4yMUgbjsFbcqk2GDy?si=8239f0594aeb4f66",
   },
   {
-    id: "s3e8",
-    season: "SEASON 3",
-    title: "EP 8. Building Authentic",
+    id: "s2e3",
+    season: "SEASON 2",
+    title:
+      "EP 3. Becoming Your Whole Self: Finding Balance Between Tradition and Freedom ",
     subtitle: "Relationships That Last",
-    durationLabel: "18:32",
-    audioUrl: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3",
+    durationLabel: "21:44",
+    audioUrl: `/audios/Season 2, Episode 3.mp3`,
     hostImage: img2,
     bgColor: "#7c3aed",
+    fullDuration: 1304, // Full length of audio in seconds (25:07 = 1507 seconds)
+    fullPodcastUrl: "https://open.spotify.com/episode/1czRPzO5eQoBk0rfBgMn7i?si=b60c8caf8a4f4ba7",
+  },
+  {
+    id: "s2e4",
+    season: "SEASON 2",
+    title: "EP 4. The Truth About Friendship Nobody Talks About",
+    subtitle: "Owning the Room",
+    durationLabel: "18:30",
+    audioUrl: `/audios/Season 2, Episode 4.mp3`,
+    hostImage: img2,
+    bgColor: "#0ea5e9",
+    fullDuration: 1110, // Full length of audio in seconds (25:07 = 1507 seconds)
+    fullPodcastUrl: "https://open.spotify.com/episode/11l2UOJvuexmsrLhxbvzxO?si=700cf568dd0f46dd",
   },
   {
     id: "s1e2",
     season: "SEASON 1",
-    title: "EP 2. Finding Your Voice:",
+    title: "EP 2. Leaving Your Comfort Zone: Unfiltered Conversation",
+    subtitle: "Less Noise, More Signal",
+    durationLabel: "14:19",
+    audioUrl: `/audios/Season 1, Episode 2.mp3`,
+    hostImage: img1,
+    bgColor: "#334155",
+    fullDuration: 1304, // Full length of audio in seconds (25:07 = 1507 seconds)
+    fullPodcastUrl: "https://open.spotify.com/episode/2ZB03lcIdrIHGFpYlc1niM?si=cb0fe3972ad34214",
+  },
+  {
+    id: "s1e3",
+    season: "SEASON 1",
+    title: `EP 3. How Adversity Shapes Leadership: Unfiltered Conversation`,
+    subtitle: "Less Noise, More Signal",
+    durationLabel: "27:38",
+    audioUrl: `/audios/Season 1, Episode 3.mp3`,
+    hostImage: img1,
+    bgColor: "#334155",
+    fullDuration: 1507, // Full length of audio in seconds (25:07 = 1507 seconds)
+    fullPodcastUrl: "https://open.spotify.com/episode/44txdsT3CwRh6UZXqDCExL?si=9db64947bfc944de",
+  },
+  {
+    id: "s1e4",
+    season: "SEASON 1",
+    title: "EP 4. Overcoming Other’s Perceptions: Unfiltered Conversation",
+    subtitle: "Unfiltered Conversation",
+    durationLabel: "20:30",
+    audioUrl: `/audios/Season 1, Episode 4.mp3`,
+    hostImage: img1,
+    bgColor: "#2563eb",
+    fullDuration: 1507, // Full length of audio in seconds (25:07 = 1507 seconds)
+    fullPodcastUrl: "https://open.spotify.com/episode/1iWq67TD1WdMaTBtvdIBbi?si=4cc36f065fea42ba",
+  },
+  {
+    id: "s1e5",
+    season: "SEASON 1",
+    title: "EP 5. Perseverance: Unfiltered Conversation",
+    subtitle: "World Changers",
+    durationLabel: "20:12",
+    audioUrl: `/audios/Season 1, Episode 5.mp3`,
+    hostImage: img1,
+    bgColor: "#1f2937",
+    fullDuration: 1507, // Full length of audio in seconds (25:07 = 1507 seconds)
+    fullPodcastUrl: "https://open.spotify.com/episode/74yWSrA17OL18V6mPUWFtC?si=8e6f1ac686024aac",
+  },
+  {
+    id: "s1e6",
+    season: "SEASON 1",
+    title:
+      "EP 6. Finding Happiness by Raising Awareness: Unfiltered Conversation",
+    subtitle: "Relationships That Last",
+    durationLabel: "24:12",
+    audioUrl: `/audios/Season 1, Episode 6.mp3`,
+    hostImage: img1,
+    bgColor: "#7c3aed",
+    fullDuration: 1507, // Full length of audio in seconds (25:07 = 1507 seconds)
+    fullPodcastUrl: "https://open.spotify.com/episode/5YGQgfxAlGpS5bUVTY6MxB?si=00e5e71cf21549de",
+  },
+  {
+    id: "s1e7",
+    season: "SEASON 1",
+    title: "EP 7. Overcoming Self-Criticism: Unfiltered Conversation",
     subtitle: "Owning the Room",
-    durationLabel: "12:10",
-    audioUrl: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3",
+    durationLabel: "17:13",
+    audioUrl: `/audios/Season 1, Episode 7.mp3`,
     hostImage: img1,
     bgColor: "#0ea5e9",
+    fullDuration: 1507, // Full length of audio in seconds (25:07 = 1507 seconds)
+    fullPodcastUrl: "https://open.spotify.com/episode/0zVcTPMRCet0ZEH16pjVa3?si=dc6fd0ef85414670",
   },
   {
-    id: "s2e6",
-    season: "SEASON 2",
-    title: "EP 6. The Craft of Listening:",
+    id: "s1e8",
+    season: "SEASON 1",
+    title: "EP 8. It’s Lonely at the Top: Unfiltered Conversation",
     subtitle: "Less Noise, More Signal",
-    durationLabel: "21:03",
-    audioUrl: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3",
-    hostImage: img2,
-    bgColor: "#334155",
-  },
-  {
-    id: "s2e8",
-    season: "SEASON 2",
-    title: "EP 69. The Craft of Listening:",
-    subtitle: "Less Noise, More Signal",
-    durationLabel: "21:03",
-    audioUrl: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3",
+    durationLabel: "38:26",
+    audioUrl: `/audios/Season 1, Episode 8.mp3`,
     hostImage: img1,
     bgColor: "#334155",
+    fullDuration: 1507, // Full length of audio in seconds (25:07 = 1507 seconds)
+    fullPodcastUrl: "https://open.spotify.com/episode/0cSp54A6SCH0vQNsbh6y9e?si=a9c9be721ab640fd",
+  },
+  {
+    id: "s1e9",
+    season: "SEASON 1",
+    title: "EP 9. Being Your Authentic Self: Unfiltered Conversation",
+    subtitle: "Less Noise, More Signal",
+    durationLabel: "25:18",
+    audioUrl: `/audios/Season 1, Episode 9.mp3`,
+    hostImage: img1,
+    bgColor: "#334155",
+    fullDuration: 1507, // Full length of audio in seconds (25:07 = 1507 seconds)
+    fullPodcastUrl: "https://open.spotify.com/episode/4PtzVXYgdbEM7h3NG7Yl6b?si=1948831e87e248b6",
+  },
+  {
+    id: "s1e10",
+    season: "SEASON 1",
+    title: "EP 10. Seeking Wisdom: Unfiltered Conversation",
+    subtitle: "Less Noise, More Signal",
+    durationLabel: "29:21",
+    audioUrl: `/audios/Season 1, Episode 10.mp3`,
+    hostImage: img1,
+    bgColor: "#334155",
+    fullDuration: 1507, // Full length of audio in seconds (25:07 = 1507 seconds)
+    fullPodcastUrl: "https://open.spotify.com/episode/2OQTBXt90ITibLeydw6TCT?si=75e715136a7841a3",
   },
 ];
 
@@ -199,7 +298,7 @@ const FriendshipCarousel = () => {
   }, [slides, startIndex, VISIBLE]);
 
   const renderCard = (ep) => {
-    const t = times[ep.id] || { current: 0, duration: 0 };
+    const t = times[ep.id] || { current: 0, duration: ep.fullDuration }; // Use fullDuration for preview
     const progressPct = t.duration ? (t.current / t.duration) * 100 : 0;
 
     return (
@@ -236,7 +335,7 @@ const FriendshipCarousel = () => {
               </div>
               <div className="timeDisplay">
                 <span>{formatTime(t.current)}</span>
-                <span>{formatTime(t.duration)}</span>
+                <span>{ep.durationLabel}</span> {/* Use fullDuration here */}
               </div>
             </div>
           </div>
@@ -253,10 +352,11 @@ const FriendshipCarousel = () => {
           />
         </div>
 
-        <button className="listenFullBtn">
+        {/* Listen to full podcast button with href */}
+        <a href={ep.fullPodcastUrl} className="listenFullBtn">
           <span>LISTEN TO FULL PODCAST</span>
           <img src={playIcon} alt="Play Icon" className="listenBtnIcon" />
-        </button>
+        </a>
       </div>
     );
   };

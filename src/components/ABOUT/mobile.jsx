@@ -1,8 +1,33 @@
+import { useEffect, useRef } from "react";
 import performance from "../../assets/Performance-Motivational.svg";
 import video from "../../assets/Dance Video .MP4";
 import border from "../../assets/mobile border.svg";
 
 export default function Mobile() {
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    const videoElement = videoRef.current;
+    if (!videoElement) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            videoElement.play().catch(() => {});
+          } else {
+            videoElement.pause();
+          }
+        });
+      },
+      { threshold: 0.5 } // plays when at least 50% visible
+    );
+
+    observer.observe(videoElement);
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <>
       {/* Background layer reversed: black to #FFAE00 */}
@@ -12,7 +37,7 @@ export default function Mobile() {
       />
 
       {/* Foreground content */}
-      <div className="relative z-10 min-h-screen w-full p-6 sm:p-8 flex flex-col items-start">
+      <div className="relative z-10 w-full p-6 sm:p-8 flex flex-col items-start">
         {/* Top Heading */}
         <div className="flex flex-wrap items-baseline">
           <h1 className="text-[clamp(2rem,6vw,3.5rem)] font-bold font-[Montserrat] leading-tight tracking-wide text-white">
@@ -38,8 +63,8 @@ export default function Mobile() {
         {/* Paragraph + Video side by side */}
         <div className="mt-6 flex flex-col lg:flex-row gap- w-full">
           {/* Paragraph Text Section */}
-          <div className="max-w-3xl text-white font-[Montserrat] text-[clamp(1rem,2vw,1.1rem)] font-semibold leading-tight tracking-normal">
-            <p className="mb-4">
+          <div className="w-full lg:w-[75%] text-white font-[Montserrat] text-[clamp(1rem,2vw,1.1rem)] font-semibold leading-tight tracking-normal mt-5 lg:mt-10">
+            <p className="mb-5">
               “Tristan’s journey began in high school, during one of the darkest
               chapters of his life. The pandemic left him battling anxiety,
               depression, intense emotions, and constant overthinking. He hit
@@ -48,7 +73,7 @@ export default function Mobile() {
               refusal to let things stay the same.
             </p>
 
-            <p className="mb-4">
+            <p className="mb-5">
               That moment sparked his personal development journey. Through
               journaling for 1,088 days (and counting), meditating daily for
               over 1,000 days, and consistently pushing beyond his comfort zone,
@@ -56,23 +81,23 @@ export default function Mobile() {
               <span className="gold-word">purpose</span>.
             </p>
 
-            <p className="mb-4">
+            <p className="mb-5">
               One of the turning points came in Grade 11, when a teacher
               discovered he was a dancer and invited him to perform for the
               class. Tristan was terrified, but said yes. That performance
               changed everything. For the first time, he connected with what he
-              was meant to do not just perform, but truly connect. To move
+              was meant to do... not just perform, but truly connect. To move
               people through movement, and then through message.
             </p>
 
-            <p className="mb-4">
+            <p className="mb-5">
               That spark is what he now carries into every stage he steps onto.
             </p>
 
             <p>
               Since then, Tristan has blended performance with motivational
               keynote speaking, delivering talks at schools, conferences, and
-              events of all sizes. Dance became more than movement it became a{" "}
+              events of all sizes. Dance became more than movement: it became a{" "}
               <span className="gold-word">bridge</span>. A way to open hearts
               before opening minds. It’s how he creates space for meaningful
               conversations around growth, resilience, and rediscovering what’s
@@ -90,32 +115,27 @@ export default function Mobile() {
               }
             `}</style>
 
-            {/* Button below paragraphs */}
             <a
               href="/book-Tristan"
-              className="mt-8 inline-block bg-[#ffae00] text-white font-bold text-base sm:text-lg 
-             px-6 sm:px-7 py-2.5 sm:py-3 rounded-full 
-             shadow-[0_5px_10px_rgba(255,174,0,0.4)] 
-             transition-transform duration-200 ease-in-out hover:-translate-y-1"
+              className="mt-10 inline-block bg-[#ffae00] text-white font-bold text-base sm:text-lg 
+              px-6 sm:px-7 py-2.5 sm:py-3 rounded-full 
+              shadow-[0_5px_10px_rgba(255,174,0,0.4)] 
+              transition-transform duration-200 ease-in-out hover:-translate-y-1"
             >
               Book Tristan
             </a>
-
           </div>
 
           {/* Video Section */}
-          <div className="flex flex-col items-center w-full lg:w-1/2">
+          <div className="flex flex-col items-center w-[25%]">
             <video
+              ref={videoRef}
               src={video}
-              controls={false}
-              muted
-              autoPlay
               loop
               playsInline
               className="w-full h-auto max-h-[500px] object-contain"
             />
 
-            {/* Caption below video */}
             <p className="mt-3 text-center font-[Poppins] font-semibold italic text-[clamp(1rem,2.5vw,1.125rem)] text-white max-w-md">
               “Live footage of the defining moment which changed everything.”
             </p>

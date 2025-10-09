@@ -23,7 +23,7 @@ const Footer = () => {
         <div className="footer__grid">
           {/* Logo Section */}
           <div className="footer__logoWrap">
-            <img src={Tk} alt="TK Logo" className="footer__logo" />
+            <img src={Tk} alt="TK Logo" className="footer__logo " />
           </div>
 
           {/* Navigation Section */}
@@ -52,7 +52,7 @@ const Footer = () => {
           {/* Media Section */}
           <div className="footer__mediaWrap">
             <div className="footer__headingImgSpacer" />
-            <div className="footer__mediaLinks">
+            <div className="footer__mediaLinks mt-14">
               <a href="media" className="footer__link">
                 Media
               </a>
@@ -79,7 +79,9 @@ const Footer = () => {
               </div>
               <div>
                 <span className="footer__label">E:</span>{" "}
-                <span className="footer__contactValue">tristanjoshuakim@gmail.com</span>
+                <span className="footer__contactValue">
+                  tristanjoshuakim@gmail.com
+                </span>
               </div>
             </div>
           </div>
@@ -87,7 +89,7 @@ const Footer = () => {
 
         {/* Social Media Icons */}
         <div className="footer__social">
-          <div className="footer__socialRow">
+          <div className="footer__socialRow mb-5">
             <a
               href="https://www.youtube.com/@tristanjoshuakim"
               className="footer__socialLink"

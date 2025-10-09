@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import leftimg from "../../../assets/Rectangle 20.png"; //just change the path of image here dont change import name
+import leftimg from "../../../assets/Top Section Sketch.      .png"; //just change the path of image here dont change import name
 import playIcon from "../../../assets/noto_play-button(2).svg";
 import { Play, Pause } from "lucide-react";
 

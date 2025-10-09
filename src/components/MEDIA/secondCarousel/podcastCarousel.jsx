@@ -24,8 +24,8 @@ const episodes = [
     audioUrl: `/audios/Season 2, Episode 1.mp3`,
     hostImage: img2,
     bgColor: "#2563eb",
-    fullDuration: 1507, // Full length of audio in seconds (25:07 = 1507 seconds)
-    fullPodcastUrl: "https://www.example.com/full-episode-2",
+    fullDuration: 2105, // Full length of audio in seconds (25:07 = 1507 seconds)
+    fullPodcastUrl: "https://open.spotify.com/episode/6OLAOHumBR9PrJpaH08uUm?si=1cf4fbfd955247d0",
   },
   {
     id: "s2e2",
@@ -36,8 +36,8 @@ const episodes = [
     audioUrl: `/audios/Season 2, Episode 2.mp3`,
     hostImage: img2,
     bgColor: "#1f2937",
-    fullDuration: 1507, // Full length of audio in seconds (25:07 = 1507 seconds)
-    fullPodcastUrl: "https://www.example.com/full-episode-2",
+    fullDuration: 1323, // Full length of audio in seconds (25:07 = 1507 seconds)
+    fullPodcastUrl: "https://open.spotify.com/episode/4gOnl4yMUgbjsFbcqk2GDy?si=8239f0594aeb4f66",
   },
   {
     id: "s2e3",
@@ -49,8 +49,8 @@ const episodes = [
     audioUrl: `/audios/Season 2, Episode 3.mp3`,
     hostImage: img2,
     bgColor: "#7c3aed",
-    fullDuration: 1507, // Full length of audio in seconds (25:07 = 1507 seconds)
-    fullPodcastUrl: "https://www.example.com/full-episode-2",
+    fullDuration: 1304, // Full length of audio in seconds (25:07 = 1507 seconds)
+    fullPodcastUrl: "https://open.spotify.com/episode/1czRPzO5eQoBk0rfBgMn7i?si=b60c8caf8a4f4ba7",
   },
   {
     id: "s2e4",
@@ -61,8 +61,8 @@ const episodes = [
     audioUrl: `/audios/Season 2, Episode 4.mp3`,
     hostImage: img2,
     bgColor: "#0ea5e9",
-    fullDuration: 1507, // Full length of audio in seconds (25:07 = 1507 seconds)
-    fullPodcastUrl: "https://www.example.com/full-episode-2",
+    fullDuration: 1110, // Full length of audio in seconds (25:07 = 1507 seconds)
+    fullPodcastUrl: "https://open.spotify.com/episode/11l2UOJvuexmsrLhxbvzxO?si=700cf568dd0f46dd",
   },
   {
     id: "s1e2",
@@ -73,8 +73,8 @@ const episodes = [
     audioUrl: `/audios/Season 1, Episode 2.mp3`,
     hostImage: img1,
     bgColor: "#334155",
-    fullDuration: 1507, // Full length of audio in seconds (25:07 = 1507 seconds)
-    fullPodcastUrl: "https://www.example.com/full-episode-2",
+    fullDuration: 1304, // Full length of audio in seconds (25:07 = 1507 seconds)
+    fullPodcastUrl: "https://open.spotify.com/episode/2ZB03lcIdrIHGFpYlc1niM?si=cb0fe3972ad34214",
   },
   {
     id: "s1e3",
@@ -86,7 +86,7 @@ const episodes = [
     hostImage: img1,
     bgColor: "#334155",
     fullDuration: 1507, // Full length of audio in seconds (25:07 = 1507 seconds)
-    fullPodcastUrl: "https://www.example.com/full-episode-2",
+    fullPodcastUrl: "https://open.spotify.com/episode/44txdsT3CwRh6UZXqDCExL?si=9db64947bfc944de",
   },
   {
     id: "s1e4",
@@ -98,7 +98,7 @@ const episodes = [
     hostImage: img1,
     bgColor: "#2563eb",
     fullDuration: 1507, // Full length of audio in seconds (25:07 = 1507 seconds)
-    fullPodcastUrl: "https://www.example.com/full-episode-2",
+    fullPodcastUrl: "https://open.spotify.com/episode/1iWq67TD1WdMaTBtvdIBbi?si=4cc36f065fea42ba",
   },
   {
     id: "s1e5",
@@ -110,7 +110,7 @@ const episodes = [
     hostImage: img1,
     bgColor: "#1f2937",
     fullDuration: 1507, // Full length of audio in seconds (25:07 = 1507 seconds)
-    fullPodcastUrl: "https://www.example.com/full-episode-2",
+    fullPodcastUrl: "https://open.spotify.com/episode/74yWSrA17OL18V6mPUWFtC?si=8e6f1ac686024aac",
   },
   {
     id: "s1e6",
@@ -123,7 +123,7 @@ const episodes = [
     hostImage: img1,
     bgColor: "#7c3aed",
     fullDuration: 1507, // Full length of audio in seconds (25:07 = 1507 seconds)
-    fullPodcastUrl: "https://www.example.com/full-episode-2",
+    fullPodcastUrl: "https://open.spotify.com/episode/5YGQgfxAlGpS5bUVTY6MxB?si=00e5e71cf21549de",
   },
   {
     id: "s1e7",
@@ -135,7 +135,7 @@ const episodes = [
     hostImage: img1,
     bgColor: "#0ea5e9",
     fullDuration: 1507, // Full length of audio in seconds (25:07 = 1507 seconds)
-    fullPodcastUrl: "https://www.example.com/full-episode-2",
+    fullPodcastUrl: "https://open.spotify.com/episode/0zVcTPMRCet0ZEH16pjVa3?si=dc6fd0ef85414670",
   },
   {
     id: "s1e8",
@@ -147,7 +147,7 @@ const episodes = [
     hostImage: img1,
     bgColor: "#334155",
     fullDuration: 1507, // Full length of audio in seconds (25:07 = 1507 seconds)
-    fullPodcastUrl: "https://www.example.com/full-episode-2",
+    fullPodcastUrl: "https://open.spotify.com/episode/0cSp54A6SCH0vQNsbh6y9e?si=a9c9be721ab640fd",
   },
   {
     id: "s1e9",
@@ -159,7 +159,7 @@ const episodes = [
     hostImage: img1,
     bgColor: "#334155",
     fullDuration: 1507, // Full length of audio in seconds (25:07 = 1507 seconds)
-    fullPodcastUrl: "https://www.example.com/full-episode-2",
+    fullPodcastUrl: "https://open.spotify.com/episode/4PtzVXYgdbEM7h3NG7Yl6b?si=1948831e87e248b6",
   },
   {
     id: "s1e10",
@@ -171,7 +171,7 @@ const episodes = [
     hostImage: img1,
     bgColor: "#334155",
     fullDuration: 1507, // Full length of audio in seconds (25:07 = 1507 seconds)
-    fullPodcastUrl: "https://www.example.com/full-episode-2",
+    fullPodcastUrl: "https://open.spotify.com/episode/2OQTBXt90ITibLeydw6TCT?si=75e715136a7841a3",
   },
 ];
 

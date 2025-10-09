@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import leftimg from "../../../assets/Rectangle 20.png";
+import leftimg from "../../../assets/Rectangle 20.png"; //just change the path of image here dont change import name
 import playIcon from "../../../assets/noto_play-button(2).svg";
 import { Play, Pause } from "lucide-react";
 
@@ -12,7 +12,7 @@ const PodcastFeature = () => {
   const audioRef = useRef(null);
 
   // Using a dummy audio file from freesound.org
-  const audioSrc = "https://www.soundjay.com/misc/sounds/bell-ringing-05.wav";
+  const audioSrc = "/podcast.mp3";
 
   useEffect(() => {
     const audio = audioRef.current;

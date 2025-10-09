@@ -82,7 +82,7 @@
 }
 .audioProgress {
   position: relative;
-  width: 50%;
+  width: 70%;
   margin-top: 8px;
 }
 
@@ -268,7 +268,7 @@
   margin-left: 5px;
   padding: clamp(8px, 1.4vw, 14px) clamp(10px, 1.6vw, 16px) 0;
   flex: 1;
-  z-index: -100;
+  /* z-index: -100; */
   margin-top: -10px;
   background: linear-gradient(180deg, #ffae00 0%, #996900 100%);
 }

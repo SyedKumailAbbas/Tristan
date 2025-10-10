@@ -65,7 +65,7 @@ export default function Mobile() {
           {/* Paragraph Text Section */}
           <div className="w-full lg:w-[75%] text-white font-[Montserrat] text-[clamp(1rem,2vw,1.1rem)] font-semibold leading-tight tracking-normal mt-5 lg:mt-10">
             <p className="mb-5">
-              “Tristan’s journey began in high school, during one of the darkest
+              Tristan’s journey began in high school, during one of the darkest
               chapters of his life. The pandemic left him battling anxiety,
               depression, intense emotions, and constant overthinking. He hit
               rock bottom. But in that struggle, he discovered something
@@ -101,7 +101,7 @@ export default function Mobile() {
               <span className="gold-word">bridge</span>. A way to open hearts
               before opening minds. It’s how he creates space for meaningful
               conversations around growth, resilience, and rediscovering what’s
-              possible.”
+              possible.
             </p>
 
             <style>{`

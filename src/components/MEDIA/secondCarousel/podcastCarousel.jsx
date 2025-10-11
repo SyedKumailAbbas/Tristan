@@ -323,11 +323,7 @@ const FriendshipCarousel = () => {
 
         <div className="podcastDetails">
           <div className="seasonHeader">{ep.season}</div>
-          <div className="episodeText">
-            {ep.title}
-            <br />
-            {ep.subtitle}
-          </div>
+          <div className="episodeText">{ep.title}</div>
 
           <div className="audioPlayer">
             <button className="audioPlayBtn" onClick={() => togglePlay(ep.id)}>

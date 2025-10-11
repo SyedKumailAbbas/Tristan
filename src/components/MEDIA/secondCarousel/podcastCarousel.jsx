@@ -68,6 +68,19 @@ const episodes = [
       "https://open.spotify.com/episode/11l2UOJvuexmsrLhxbvzxO?si=700cf568dd0f46dd",
   },
   {
+    id: "s2e5",
+    season: "SEASON 2",
+    title: " EP 5: Inside the Mindset of World Changers",
+    subtitle: "Owning the Room",
+    durationLabel: "25:07",
+    audioUrl: `/audios/Season 2, Episode 5.mp3`,
+    hostImage: img2,
+    bgColor: "#0ea5e9",
+    fullDuration: 1110, // Full length of audio in seconds (25:07 = 1507 seconds)
+    fullPodcastUrl:
+      "https://open.spotify.com/episode/5aciKx6KXenv9HRwSc751Q?si=J5d-NQslTxegFr3DNHHGQQ",
+  },
+  {
     id: "s1e2",
     season: "SEASON 1",
     title: "EP 2. Leaving Your Comfort Zone: Unfiltered Conversation",

@@ -136,7 +136,7 @@ export default function Mobile() {
               className="w-full h-auto max-h-[500px] object-contain"
             />
 
-            <p className="mt-3 text-center font-[Poppins] font-semibold italic text-[clamp(1rem,2.5vw,1.125rem)] text-white max-w-md">
+            <p className="1.5xl:pl-10 1.5xl:pr-10 mt-3 text-center   font-[Poppins] font-semibold italic text-[clamp(1rem,2.5vw,1.125rem)] text-white max-w-md">
               “Live footage of the defining moment which changed everything.”
             </p>
           </div>

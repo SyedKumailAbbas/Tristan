@@ -13,7 +13,6 @@ import { Play, Pause } from "lucide-react";
 import Heading from "../../../assets/Group 196.png";
 import img1 from "../../../assets/Frame 25.png";
 import img2 from "../../../assets/Frame 26.png";
-import aud12 from "../../../../public/podcast.mp3";
 const episodes = [
   {
     id: "s2e1",
@@ -25,7 +24,8 @@ const episodes = [
     hostImage: img2,
     bgColor: "#2563eb",
     fullDuration: 2105, // Full length of audio in seconds (25:07 = 1507 seconds)
-    fullPodcastUrl: "https://open.spotify.com/episode/6OLAOHumBR9PrJpaH08uUm?si=1cf4fbfd955247d0",
+    fullPodcastUrl:
+      "https://open.spotify.com/episode/6OLAOHumBR9PrJpaH08uUm?si=1cf4fbfd955247d0",
   },
   {
     id: "s2e2",
@@ -37,7 +37,8 @@ const episodes = [
     hostImage: img2,
     bgColor: "#1f2937",
     fullDuration: 1323, // Full length of audio in seconds (25:07 = 1507 seconds)
-    fullPodcastUrl: "https://open.spotify.com/episode/4gOnl4yMUgbjsFbcqk2GDy?si=8239f0594aeb4f66",
+    fullPodcastUrl:
+      "https://open.spotify.com/episode/4gOnl4yMUgbjsFbcqk2GDy?si=8239f0594aeb4f66",
   },
   {
     id: "s2e3",
@@ -50,7 +51,8 @@ const episodes = [
     hostImage: img2,
     bgColor: "#7c3aed",
     fullDuration: 1304, // Full length of audio in seconds (25:07 = 1507 seconds)
-    fullPodcastUrl: "https://open.spotify.com/episode/1czRPzO5eQoBk0rfBgMn7i?si=b60c8caf8a4f4ba7",
+    fullPodcastUrl:
+      "https://open.spotify.com/episode/1czRPzO5eQoBk0rfBgMn7i?si=b60c8caf8a4f4ba7",
   },
   {
     id: "s2e4",
@@ -62,7 +64,21 @@ const episodes = [
     hostImage: img2,
     bgColor: "#0ea5e9",
     fullDuration: 1110, // Full length of audio in seconds (25:07 = 1507 seconds)
-    fullPodcastUrl: "https://open.spotify.com/episode/11l2UOJvuexmsrLhxbvzxO?si=700cf568dd0f46dd",
+    fullPodcastUrl:
+      "https://open.spotify.com/episode/11l2UOJvuexmsrLhxbvzxO?si=700cf568dd0f46dd",
+  },
+  {
+    id: "s2e5",
+    season: "SEASON 2",
+    title: " EP 5: Inside the Mindset of World Changers",
+    subtitle: "Owning the Room",
+    durationLabel: "25:07",
+    audioUrl: `/audios/Season 2, Episode 5.mp3`,
+    hostImage: img2,
+    bgColor: "#0ea5e9",
+    fullDuration: 1110, // Full length of audio in seconds (25:07 = 1507 seconds)
+    fullPodcastUrl:
+      "https://open.spotify.com/episode/5aciKx6KXenv9HRwSc751Q?si=J5d-NQslTxegFr3DNHHGQQ",
   },
   {
     id: "s1e2",
@@ -74,7 +90,8 @@ const episodes = [
     hostImage: img1,
     bgColor: "#334155",
     fullDuration: 1304, // Full length of audio in seconds (25:07 = 1507 seconds)
-    fullPodcastUrl: "https://open.spotify.com/episode/2ZB03lcIdrIHGFpYlc1niM?si=cb0fe3972ad34214",
+    fullPodcastUrl:
+      "https://open.spotify.com/episode/2ZB03lcIdrIHGFpYlc1niM?si=cb0fe3972ad34214",
   },
   {
     id: "s1e3",
@@ -86,7 +103,8 @@ const episodes = [
     hostImage: img1,
     bgColor: "#334155",
     fullDuration: 1507, // Full length of audio in seconds (25:07 = 1507 seconds)
-    fullPodcastUrl: "https://open.spotify.com/episode/44txdsT3CwRh6UZXqDCExL?si=9db64947bfc944de",
+    fullPodcastUrl:
+      "https://open.spotify.com/episode/44txdsT3CwRh6UZXqDCExL?si=9db64947bfc944de",
   },
   {
     id: "s1e4",
@@ -98,7 +116,8 @@ const episodes = [
     hostImage: img1,
     bgColor: "#2563eb",
     fullDuration: 1507, // Full length of audio in seconds (25:07 = 1507 seconds)
-    fullPodcastUrl: "https://open.spotify.com/episode/1iWq67TD1WdMaTBtvdIBbi?si=4cc36f065fea42ba",
+    fullPodcastUrl:
+      "https://open.spotify.com/episode/1iWq67TD1WdMaTBtvdIBbi?si=4cc36f065fea42ba",
   },
   {
     id: "s1e5",
@@ -110,7 +129,8 @@ const episodes = [
     hostImage: img1,
     bgColor: "#1f2937",
     fullDuration: 1507, // Full length of audio in seconds (25:07 = 1507 seconds)
-    fullPodcastUrl: "https://open.spotify.com/episode/74yWSrA17OL18V6mPUWFtC?si=8e6f1ac686024aac",
+    fullPodcastUrl:
+      "https://open.spotify.com/episode/74yWSrA17OL18V6mPUWFtC?si=8e6f1ac686024aac",
   },
   {
     id: "s1e6",
@@ -123,7 +143,8 @@ const episodes = [
     hostImage: img1,
     bgColor: "#7c3aed",
     fullDuration: 1507, // Full length of audio in seconds (25:07 = 1507 seconds)
-    fullPodcastUrl: "https://open.spotify.com/episode/5YGQgfxAlGpS5bUVTY6MxB?si=00e5e71cf21549de",
+    fullPodcastUrl:
+      "https://open.spotify.com/episode/5YGQgfxAlGpS5bUVTY6MxB?si=00e5e71cf21549de",
   },
   {
     id: "s1e7",
@@ -135,7 +156,8 @@ const episodes = [
     hostImage: img1,
     bgColor: "#0ea5e9",
     fullDuration: 1507, // Full length of audio in seconds (25:07 = 1507 seconds)
-    fullPodcastUrl: "https://open.spotify.com/episode/0zVcTPMRCet0ZEH16pjVa3?si=dc6fd0ef85414670",
+    fullPodcastUrl:
+      "https://open.spotify.com/episode/0zVcTPMRCet0ZEH16pjVa3?si=dc6fd0ef85414670",
   },
   {
     id: "s1e8",
@@ -147,7 +169,8 @@ const episodes = [
     hostImage: img1,
     bgColor: "#334155",
     fullDuration: 1507, // Full length of audio in seconds (25:07 = 1507 seconds)
-    fullPodcastUrl: "https://open.spotify.com/episode/0cSp54A6SCH0vQNsbh6y9e?si=a9c9be721ab640fd",
+    fullPodcastUrl:
+      "https://open.spotify.com/episode/0cSp54A6SCH0vQNsbh6y9e?si=a9c9be721ab640fd",
   },
   {
     id: "s1e9",
@@ -159,7 +182,8 @@ const episodes = [
     hostImage: img1,
     bgColor: "#334155",
     fullDuration: 1507, // Full length of audio in seconds (25:07 = 1507 seconds)
-    fullPodcastUrl: "https://open.spotify.com/episode/4PtzVXYgdbEM7h3NG7Yl6b?si=1948831e87e248b6",
+    fullPodcastUrl:
+      "https://open.spotify.com/episode/4PtzVXYgdbEM7h3NG7Yl6b?si=1948831e87e248b6",
   },
   {
     id: "s1e10",
@@ -171,7 +195,8 @@ const episodes = [
     hostImage: img1,
     bgColor: "#334155",
     fullDuration: 1507, // Full length of audio in seconds (25:07 = 1507 seconds)
-    fullPodcastUrl: "https://open.spotify.com/episode/2OQTBXt90ITibLeydw6TCT?si=75e715136a7841a3",
+    fullPodcastUrl:
+      "https://open.spotify.com/episode/2OQTBXt90ITibLeydw6TCT?si=75e715136a7841a3",
   },
 ];
 
@@ -311,11 +336,7 @@ const FriendshipCarousel = () => {
 
         <div className="podcastDetails">
           <div className="seasonHeader">{ep.season}</div>
-          <div className="episodeText">
-            {ep.title}
-            <br />
-            {ep.subtitle}
-          </div>
+          <div className="episodeText">{ep.title}</div>
 
           <div className="audioPlayer">
             <button className="audioPlayBtn" onClick={() => togglePlay(ep.id)}>

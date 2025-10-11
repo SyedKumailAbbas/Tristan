@@ -34,8 +34,8 @@ export default function Teaching() {
     <div className="bg-black p-8 rounded-lg relative overflow-hidden">
       <div className="flex flex-col lg:flex-row items-center">
         {/* Left content */}
-        <div className="flex-1 ml-8 text-white">
-          <h1 className="text-6xl lg:text-5xl font-bold mb-6 leading-tight">
+        <div className="flex-1 ml-20 text-white">
+          <h1 className="text-6xl lg:text-6xl font-bold mb-6 leading-tight">
             HOW TEACHING
             <br />
             CHILDREN CHANGED
@@ -46,7 +46,7 @@ export default function Teaching() {
             </span>
           </h1>
 
-          <p className="mb-8 w-[410px] text-xl leading-relaxed italic-text">
+          <p className="mb-8 w-[535px] text-3xl leading-relaxed italic-text">
             <span className="quote-color">"</span>
             It's important to carry the knowledge and wisdom of someone older
             but to dream like a child who doesn't yet know what they can't do,

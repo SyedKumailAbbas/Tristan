@@ -83,6 +83,19 @@ const episodes = [
   {
     id: "s1e2",
     season: "SEASON 1",
+    title: "EP 1. Seeking Parental Approval: Unfiltered Conversation",
+    subtitle: "Less Noise, More Signal",
+    durationLabel: "15:44",
+    audioUrl: `/audios/Season 1, Episode 1.mp3`,
+    hostImage: img1,
+    bgColor: "#334155",
+    fullDuration: 1304, // Full length of audio in seconds (25:07 = 1507 seconds)
+    fullPodcastUrl:
+      "https://open.spotify.com/episode/5KxwM8Njh7RegFzsgTXdmw?si=073a7a6b5221481b",
+  },
+  {
+    id: "s1e2",
+    season: "SEASON 1",
     title: "EP 2. Leaving Your Comfort Zone: Unfiltered Conversation",
     subtitle: "Less Noise, More Signal",
     durationLabel: "14:19",

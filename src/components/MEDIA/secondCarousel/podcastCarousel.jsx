@@ -81,7 +81,7 @@ const episodes = [
       "https://open.spotify.com/episode/5aciKx6KXenv9HRwSc751Q?si=J5d-NQslTxegFr3DNHHGQQ",
   },
   {
-    id: "s1e2",
+    id: "s1e1",
     season: "SEASON 1",
     title: "EP 1. Seeking Parental Approval: Unfiltered Conversation",
     subtitle: "Less Noise, More Signal",

@@ -46,7 +46,7 @@ export default function Teaching() {
             </span>
           </h1>
 
-          <p className="mb-8 w-[535px] text-3xl leading-relaxed italic-text">
+          <p className="mb-8 w-[500px] text-2xl leading-relaxed italic-text">
             <span className="quote-color">"</span>
             It's important to carry the knowledge and wisdom of someone older
             but to dream like a child who doesn't yet know what they can't do,

@@ -8,14 +8,14 @@ export default function Podcast() {
       <div className="flex justify-between items-center max-w-7xl mx-auto">
         <div className="space-y-4 max-w-md">
           <h1
-            className="text-4xl w-[650px] [word-spacing:0.2em] leading-normal	 font-bold tracking-[0.5%] uppercase"
+            className="text-5xl w-[690px] [word-spacing:0.1em] leading-normal	 font-bold tracking-[0.5%] uppercase"
             style={{ fontFamily: "Montserrat", fontWeight: 700 }}
           >
             Tristan’s Podcast That <br /> Helps You Step Into <br /> Your{" "}
             <img
               src={LimitlessLogo}
               alt="LimitLess Logo"
-              className="inline h-13 ml-[115px] mt-[-75px]"
+              className="inline h-13 ml-[145px] mt-[-135px]"
             />
           </h1>
           {/* First normal line */}

@@ -35,7 +35,7 @@ export default function Teaching() {
       <div className="flex flex-col lg:flex-row items-center">
         {/* Left content */}
         <div className="flex-1 ml-20 text-white">
-          <h1 className="text-6xl lg:text-6xl font-bold mb-6 leading-tight">
+          <h1 className="text-6xl lg:text-5xl font-bold mb-6 leading-tight">
             HOW TEACHING
             <br />
             CHILDREN CHANGED

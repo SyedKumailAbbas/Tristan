@@ -19,12 +19,12 @@ export default function Podcast() {
             />
           </h1>
           {/* First normal line */}
-          <p className="text-[16px] font-[Montserrat] font-semibold text-white leading-normal">
+          <p className="text-[16px] w-[650px] font-[Montserrat] font-semibold text-white leading-normal">
             Everyone has a story. This podcast gives those stories a voice.
           </p>
 
           {/* Bold + Normal */}
-          <p className="text-sm w-[550px] text-white font-[Montserrat] font-medium">
+          <p className="text-sm w-[650px] text-white font-[Montserrat] font-medium">
             <span className="font-extrabold">Enhancing Awareness:</span> The
             Power of Stories creates a safe space for honest, emotional
             conversations that bring out the resilience, wisdom, and strength in
@@ -34,7 +34,7 @@ export default function Podcast() {
           </p>
 
           {/* Italic emphasis */}
-          <p className="text-md  text-white font-[Montserrat]">
+          <p className="text-md w-[650px]  text-white font-[Montserrat]">
             <span
               className="font-extrabold  italic
              "

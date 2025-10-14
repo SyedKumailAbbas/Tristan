@@ -8,23 +8,23 @@ export default function Podcast() {
       <div className="flex justify-between items-center max-w-7xl mx-auto">
         <div className="space-y-4 max-w-md">
           <h1
-            className="text-3xl  [word-spacing:0.3em] leading-normal	 font-bold tracking-[0.5%] uppercase"
+            className="text-4xl w-[650px] [word-spacing:0.2em] leading-normal	 font-bold tracking-[0.5%] uppercase"
             style={{ fontFamily: "Montserrat", fontWeight: 700 }}
           >
-            Tristan’s Podcast That Helps You Step Into Your{" "}
+            Tristan’s Podcast That <br /> Helps You Step Into <br /> Your{" "}
             <img
               src={LimitlessLogo}
               alt="LimitLess Logo"
-              className="inline h-13 ml-[95px] mt-[-70px]"
+              className="inline h-13 ml-[115px] mt-[-75px]"
             />
           </h1>
           {/* First normal line */}
-          <p className="text-[16px] w-[650px] font-[Montserrat] font-semibold text-white leading-normal">
+          <p className="text-[18px] w-[650px] font-[Montserrat] font-semibold text-white leading-normal">
             Everyone has a story. This podcast gives those stories a voice.
           </p>
 
           {/* Bold + Normal */}
-          <p className="text-sm w-[650px] text-white font-[Montserrat] font-medium">
+          <p className="text-md w-[650px] text-white font-[Montserrat] font-medium leading-tight	">
             <span className="font-extrabold">Enhancing Awareness:</span> The
             Power of Stories creates a safe space for honest, emotional
             conversations that bring out the resilience, wisdom, and strength in

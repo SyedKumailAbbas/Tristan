@@ -103,7 +103,14 @@ export default function Keynotes() {
       </div>
 
       {/* cards */}
-      <div className="grid grid-cols-1 md:grid-cols-3 p-5 w-full gap-20 mx-auto">
+      <div
+        className="
+    grid gap-8 sm:gap-12 lg:gap-20
+    grid-cols-1 md:grid-cols-1 lg:grid-cols-3
+    w-full mx-auto
+    max-w-5xl md:max-w-6xl lg:max-w-none
+  "
+      >
         <Card
           iconsrc={corp}
           title="Corporations"

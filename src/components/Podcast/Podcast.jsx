@@ -27,10 +27,17 @@ export default function Podcast() {
             </h1>
 
             {/* Mobile/tablet: show a neat logo under the title (no desktop change) */}
+            {/* Mobile/Tablet: responsive sizing to track the heading size */}
             <img
               src={LimitlessLogo}
               alt="LimitLess Logo"
-              className="block lg:hidden h-10 mt-3"
+              className="
+    block lg:hidden
+    
+    sm:h-15
+    md:h-15
+    mt-3
+  "
             />
 
             {/* First normal line */}

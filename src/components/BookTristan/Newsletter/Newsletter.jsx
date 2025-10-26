@@ -72,7 +72,7 @@ export default function Newsletter() {
 
         {/* Form container */}
         <div
-          className="gold-form ml-5 rounded-lg p-8 shadow-2xl w-[929px] h-[348] relative overflow-hidden"
+          className="gold-form lg:ml-20 rounded-lg p-8 shadow-2xl w-[929px] h-[348] relative overflow-hidden"
           style={{ backgroundImage: `url(${yellowFormBg})` }}
         >
           <i className="gold-form__vec gold-form__vec--8"></i>

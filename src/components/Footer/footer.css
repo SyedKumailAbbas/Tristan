@@ -188,6 +188,9 @@
 .footer__contactValue {
   text-decoration: underline;
 }
+.footer__headingImg--contact {
+  margin-left: 180px;
+}
 
 /* Social row */
 .footer__social {
@@ -249,5 +252,8 @@
   .footer__socialLink {
     width: 40px;
     height: 40px;
+  }
+  .footer__headingImg--contact {
+    margin-left: 35px;
   }
 }

@@ -1,11 +1,36 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import performance from "../../assets/Performance-Motivational.svg";
 import video from "../../assets/Dance Video .MP4";
 import border from "../../assets/mobile border.svg";
 
 export default function Mobile() {
   const videoRef = useRef(null);
+  const counterRef = useRef(null);
+  const [displayCount, setDisplayCount] = useState(0);
+  const [daysSinceStart, setDaysSinceStart] = useState(0);
+  const [hasAnimated, setHasAnimated] = useState(false);
+  
+  useEffect(() => {
+    // 🗓 Define Tristan’s journaling start date
+    const startDate = new Date("2022-11-09");
+    const today = new Date();
+    const diffTime = today - startDate;
+    const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+    setDaysSinceStart(diffDays);
 
+    // ✨ Animate count from 0 to diffDays
+    let start = 0;
+    const duration = 1500; // 1.5 seconds
+    const stepTime = Math.max(Math.floor(duration / diffDays), 1);
+
+    const counter = setInterval(() => {
+      start += 1;
+      setDisplayCount(start);
+      if (start >= diffDays) clearInterval(counter);
+    }, stepTime);
+
+    return () => clearInterval(counter);
+  }, []);
   useEffect(() => {
     const videoElement = videoRef.current;
     if (!videoElement) return;
@@ -74,11 +99,13 @@ export default function Mobile() {
             </p>
 
             <p className="mb-5">
-              That moment sparked his personal development journey. Through
-              journaling for 1,088 days (and counting), meditating daily for
-              over 1,000 days, and consistently pushing beyond his comfort zone,
-              Tristan began to rebuild not just his mindset, but his sense of{" "}
-              <span className="gold-word">purpose</span>.
+              That moment sparked his personal development journey. Through journaling for{" "}
+              <span className="text-[#FFAE00] ">
+                {displayCount.toLocaleString()}
+              </span>{" "}
+              days (and counting), meditating daily for over 1,000 days, and consistently
+              pushing beyond his comfort zone, Tristan began to rebuild not just his
+              mindset, but his sense of <span className="gold-word">purpose</span>.
             </p>
 
             <p className="mb-5">

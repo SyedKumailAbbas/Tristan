@@ -6,10 +6,13 @@ import spotify from "../../../assets/spotify.png";
 import youtube from "../../../assets/youtube.png";
 import medium from "../../../assets/medium.png";
 import arrow from "../../../assets/arrow.png";
-import "./Form.css";
 import { submitContact } from "../../../services/form";
+import "./Form.css";
 
 const ContactForm = () => {
+  const SCRIPT_URL =
+    "https://script.google.com/macros/s/AKfycbwCnI3kcEoe80UrMuD7jujoU98d3m6FT08LgKSh1jJrAb9I4ECX1glBzSkOWnsQ8Xj_/exec";
+
   const [formData, setFormData] = useState({
     fname: "",
     lname: "",
@@ -45,7 +48,9 @@ const ContactForm = () => {
     }
 
     setSubmitting(true);
+
     try {
+      // // Send form data to your backend
       await submitContact({
         fname,
         lname,
@@ -54,6 +59,27 @@ const ContactForm = () => {
         serviceDetails: formData.serviceDetails.trim(),
         audienceGoal: formData.audienceGoal.trim(),
       });
+      const fd = new FormData();
+      fd.append("fname", fname);
+      fd.append("lname", lname);
+      fd.append("email", email);
+      fd.append("eventDetails", formData.eventDetails.trim());
+      fd.append("serviceDetails", formData.serviceDetails.trim());
+      fd.append("audienceGoal", formData.audienceGoal.trim());
+      fd.append(
+        "_origin",
+        typeof window !== "undefined" ? window.location.origin : ""
+      );
+
+      const response = await fetch(SCRIPT_URL, {
+        method: "POST",
+        body: fd,
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to submit form");
+      }
+
       alert("✅ Thanks! We received your request.");
       setFormData({
         fname: "",
@@ -72,7 +98,7 @@ const ContactForm = () => {
   };
 
   return (
-    <section className="bg-black relative isolate ">
+    <section className="bg-black relative isolate">
       <div className="px-4 sm:px-6">
         <div className="flex justify-end arrow">
           <img src={arrow} alt="Arrow" />
@@ -239,7 +265,6 @@ const ContactForm = () => {
             </div>
           </div>
         </div>
-        {/* /card */}
       </div>
     </section>
   );

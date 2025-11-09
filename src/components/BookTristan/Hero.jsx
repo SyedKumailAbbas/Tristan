@@ -36,7 +36,7 @@ export default function Hero() {
             "
           >
             Thank you for being here! If you're looking to book a speaker who
-            moves with purpose (as stage soul in life) you're in the right
+            moves with purpose (on stage and in life) you're in the right
             place. I speak, perform, and serve to help audiences realize their
             limitless potential regardless of age or background. If you're
             interested in something entirely new, I'd love to hear your vision.

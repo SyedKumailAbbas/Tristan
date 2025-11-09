@@ -25,7 +25,7 @@ const Card = ({ iconsrc: iconsrc, title, tags }) => {
 
   return (
     <div
-      className="pt-5 pb-5 relative shadow-2xl backdrop-blur-sm flex flex-col items-center "
+      className="w-full max-w-[320px] sm:max-w-[360px] mx-auto rounded-2xl pt-5 pb-5 relative shadow-2xl backdrop-blur-sm flex flex-col items-center"
       style={{
         backgroundColor: "#6E530C",
         boxShadow:
@@ -103,7 +103,15 @@ export default function Keynotes() {
       </div>
 
       {/* cards */}
-      <div className="grid grid-cols-1 md:grid-cols-3 p-5 w-full gap-20 mx-auto">
+      <div
+        className="
+          grid gap-8 sm:gap-12 lg:gap-20
+          grid-cols-1 md:grid-cols-1 lg:grid-cols-3
+          justify-items-center
+          px-4 sm:px-6
+          mx-auto max-w-7xl
+        "
+      >
         <Card
           iconsrc={corp}
           title="Corporations"

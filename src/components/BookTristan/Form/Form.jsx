@@ -6,10 +6,13 @@ import spotify from "../../../assets/spotify.png";
 import youtube from "../../../assets/youtube.png";
 import medium from "../../../assets/medium.png";
 import arrow from "../../../assets/arrow.png";
-import "./Form.css";
 import { submitContact } from "../../../services/form";
+import "./Form.css";
 
 const ContactForm = () => {
+  const SCRIPT_URL =
+    "https://script.google.com/macros/s/AKfycbwCnI3kcEoe80UrMuD7jujoU98d3m6FT08LgKSh1jJrAb9I4ECX1glBzSkOWnsQ8Xj_/exec";
+
   const [formData, setFormData] = useState({
     fname: "",
     lname: "",
@@ -45,7 +48,9 @@ const ContactForm = () => {
     }
 
     setSubmitting(true);
+
     try {
+      // // Send form data to your backend
       await submitContact({
         fname,
         lname,
@@ -54,6 +59,27 @@ const ContactForm = () => {
         serviceDetails: formData.serviceDetails.trim(),
         audienceGoal: formData.audienceGoal.trim(),
       });
+      const fd = new FormData();
+      fd.append("fname", fname);
+      fd.append("lname", lname);
+      fd.append("email", email);
+      fd.append("eventDetails", formData.eventDetails.trim());
+      fd.append("serviceDetails", formData.serviceDetails.trim());
+      fd.append("audienceGoal", formData.audienceGoal.trim());
+      fd.append(
+        "_origin",
+        typeof window !== "undefined" ? window.location.origin : ""
+      );
+
+      const response = await fetch(SCRIPT_URL, {
+        method: "POST",
+        body: fd,
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to submit form");
+      }
+
       alert("✅ Thanks! We received your request.");
       setFormData({
         fname: "",
@@ -72,7 +98,7 @@ const ContactForm = () => {
   };
 
   return (
-    <section className="bg-black relative isolate ">
+    <section className="bg-black relative isolate">
       <div className="px-4 sm:px-6">
         <div className="flex justify-end arrow">
           <img src={arrow} alt="Arrow" />
@@ -93,19 +119,34 @@ const ContactForm = () => {
                   <p className="detail">E: tristanjoshuakim@gmail.com</p>
                 </div>
                 <div className="flex space-x-1 mt-4">
-                  <a href="https://www.youtube.com/@tristanjoshuakim" className="w-12 h-12">
+                  <a
+                    href="https://www.youtube.com/@tristanjoshuakim"
+                    className="w-12 h-12"
+                  >
                     <img src={youtube} alt="YouTube" className="w-10 h-10" />
                   </a>
-                  <a href="https://open.spotify.com/show/1vBg44ZWW4mstqVCJD2oio?si=95a112a26aae42ac" className="w-12 h-12">
+                  <a
+                    href="https://open.spotify.com/show/1vBg44ZWW4mstqVCJD2oio?si=95a112a26aae42ac"
+                    className="w-12 h-12"
+                  >
                     <img src={spotify} alt="Spotify" className="w-10 h-10" />
                   </a>
-                  <a href="https://www.linkedin.com/in/tristanjoshuakim/" className="w-12 h-12">
+                  <a
+                    href="https://www.linkedin.com/in/tristanjoshuakim/"
+                    className="w-12 h-12"
+                  >
                     <img src={linkedin} alt="LinkedIn" className="w-10 h-10" />
                   </a>
-                  <a href="https://www.instagram.com/tdawgtalks/" className="w-12 h-12">
+                  <a
+                    href="https://www.instagram.com/tdawgtalks/"
+                    className="w-12 h-12"
+                  >
                     <img src={insta} alt="Instagram" className="w-10 h-10" />
                   </a>
-                  <a href="https://medium.com/@tristanjoshuakim" className="w-15 h-10">
+                  <a
+                    href="https://medium.com/@tristanjoshuakim"
+                    className="w-15 h-10"
+                  >
                     <img src={medium} alt="Medium" className="w-15 h-10" />
                   </a>
                 </div>
@@ -116,7 +157,9 @@ const ContactForm = () => {
                 <form onSubmit={handleSubmit} className="space-y-4" noValidate>
                   {/* Name */}
                   <div>
-                    <label className="form-label">Name (required)</label>
+                    <label className="form-label">
+                      Name <span className="label-note">(required)</span>
+                    </label>
                     <input
                       type="text"
                       name="fname"
@@ -141,7 +184,9 @@ const ContactForm = () => {
 
                   {/* Email */}
                   <div>
-                    <label className="form-label">Email (required)</label>
+                    <label className="form-label">
+                      Email <span className="label-note">(required)</span>
+                    </label>
                     <input
                       type="email"
                       name="email"
@@ -188,10 +233,11 @@ const ContactForm = () => {
                     <label className="form-label">
                       What do you hope your audience feels empowered to do after
                       hearing from me?
-                      <span className="optional-text">(Optional, but encouraged)</span>
-
+                      <span className="optional-text">
+                        (Optional, but encouraged)
+                      </span>
                     </label>
-                    
+
                     <textarea
                       name="audienceGoal"
                       value={formData.audienceGoal}
@@ -201,7 +247,6 @@ const ContactForm = () => {
                       placeholder="Share what you envision..."
                       disabled={submitting}
                     />
-                    
                   </div>
 
                   {/* Submit */}
@@ -220,7 +265,6 @@ const ContactForm = () => {
             </div>
           </div>
         </div>
-        {/* /card */}
       </div>
     </section>
   );

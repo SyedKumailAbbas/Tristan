@@ -66,12 +66,31 @@
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }
-
-/* Logo */
 .footer__logoWrap {
   margin-top: -10px;
-  margin-left: 40px;
+  margin-left: 0; /* avoid pushing past viewport */
 }
+
+/* Base: no layout-affecting offset */
+.footer__headingImg--navigate,
+.footer__headingImg--contact {
+  margin-left: 0;
+}
+
+/* Use transform for subtle visual nudges on larger screens */
+@media (min-width: 768px) {
+  .footer__headingImg--navigate {
+    transform: translateX(
+      -12px
+    ); /* similar visual effect to small negative margin */
+  }
+
+  .footer__headingImg--contact {
+    transform: translateX(12px); /* instead of huge 180px margin */
+  }
+}
+
+/* Remove the max-width: 360px special margin: no longer needed */
 
 .footer__logo {
   height: var(--logo-height);
@@ -92,14 +111,6 @@
   margin-bottom: var(--space-5);
   height: 60px; /* approximates 'h-15' */
   width: auto;
-}
-
-.footer__headingImg--navigate {
-  margin-left: -25px;
-}
-
-.footer__headingImg--contact {
-  margin-left: -20px;
 }
 
 /* Navigation links */
@@ -188,9 +199,6 @@
 .footer__contactValue {
   text-decoration: underline;
 }
-.footer__headingImg--contact {
-  margin-left: 180px;
-}
 
 /* Social row */
 .footer__social {
@@ -253,7 +261,25 @@
     width: 40px;
     height: 40px;
   }
+}
+/* @media (max-width: 770px) {
   .footer__headingImg--contact {
-    margin-left: 35px;
+    margin-left: 220px;
+  }
+}
+@media (max-width: 700px) {
+  .footer__headingImg--contact {
+    margin-left: 180px;
+  }
+}
+@media (max-width: 580px) {
+  .footer__headingImg--contact {
+    margin-left: 140px;
+  }
+} */
+@media (max-width: 770px) {
+  .footer__headingImg--contact {
+    /* margin-left: 220px; */
+    margin: auto;
   }
 }

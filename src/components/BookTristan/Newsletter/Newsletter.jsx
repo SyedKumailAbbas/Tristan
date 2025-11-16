@@ -17,7 +17,6 @@ export default function Newsletter() {
     setFormData((s) => ({ ...s, [name]: value }));
   };
 
-  // Simple client-side validation
   const isValidEmail = (email) =>
     /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(email).toLowerCase());
 
@@ -52,10 +51,11 @@ export default function Newsletter() {
 
   return (
     <div className="min-h-screen bg-black text-white flex items-center justify-center px-4">
-      <div className="w-[70%] ">
+      {/* wrapper is full width on mobile/tablet, 70% only on large */}
+      <div className="newsletter-wrapper w-full lg:w-[70%]">
         {/* Main heading */}
-        <div className="text-center mb-20">
-          <h1 className="text-4xl font-semibold leading-relaxed mb-6">
+        <div className="text-center mb-10 md:mb-16">
+          <h1 className="text-2xl md:text-3xl lg:text-4xl font-semibold leading-relaxed mb-6">
             I believe every person has something{" "}
             <span className="font-semibold underline-thick">extraordinary</span>{" "}
             within them, and every event is a chance to{" "}
@@ -67,19 +67,19 @@ export default function Newsletter() {
         <img
           src={styledText}
           alt="Let's make it powerful, real, and unforgettable"
-          className="mx-auto w-50 mb-20"
+          className="mx-auto mb-10 md:mb-16 max-w-xs md:max-w-sm lg:max-w-none"
         />
 
         {/* Form container */}
         <div
-          className="gold-form lg:ml-20 rounded-lg p-8 shadow-2xl w-[929px] h-[348] relative overflow-hidden"
+          className="gold-form rounded-lg p-6 md:p-8 shadow-2xl w-full lg:w-[929px] relative overflow-hidden lg:ml-20"
           style={{ backgroundImage: `url(${yellowFormBg})` }}
         >
           <i className="gold-form__vec gold-form__vec--8"></i>
           <i className="gold-form__vec gold-form__vec--9"></i>
           <i className="gold-form__vec gold-form__vec--7"></i>
 
-          <div className="relative z-10 space-y-2 p-5">
+          <div className="relative z-10 space-y-2 p-1 md:p-5">
             <div className="form-container">
               <form className="form-inner" onSubmit={handleSubmit} noValidate>
                 <label className="form-label required">
@@ -140,7 +140,6 @@ export default function Newsletter() {
           </div>
 
           {/* Blue accent border effect */}
-          <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 to-cyan-400 rounded-lg opacity-20 blur-sm -z-10"></div>
         </div>
       </div>
     </div>

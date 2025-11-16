@@ -15,6 +15,7 @@
   /* transform: translateX(-380px); */
   z-index: 10000;
 }
+
 .sub-btn {
   width: 250;
   height: 100;
@@ -135,5 +136,8 @@
     min-height: 108px;
   }
 }
-
-/* (No desktop overrides — your original desktop styles remain exactly as-is) */
+@media (max-width: 850px) {
+  .arrow {
+    opacity: 0;
+  }
+}

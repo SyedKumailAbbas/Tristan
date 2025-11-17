@@ -1,0 +1,21 @@
+/* styles.css or Headtristan.module.css */
+@media screen and (min-width: 400px) and (max-width: 640px) {
+  /* Top Left Button */
+  .btn-top-left {
+    top: 91% !important;
+    left: 9% !important;
+  }
+
+  /* Center Button */
+  .btn-center {
+    top: 91% !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+  }
+
+  /* Bottom Right Button */
+  .btn-bottom-right {
+    bottom: 6% !important;
+    right: 9% !important;
+  }
+}

@@ -81,6 +81,25 @@
   font-weight: 600;
 }
 
+/* Responsive positioning classes */
+.responsive-top-sub {
+  top: 2rem;
+}
+
+.responsive-top-button {
+  top: 3rem;
+}
+
+@media (min-width: 768px) {
+  .responsive-top-sub {
+    top: 5rem;
+  }
+
+  .responsive-top-button {
+    top: 9.5rem;
+  }
+}
+
 .highlight-help {
   color: #FFAE00;
   font-weight: 700;
@@ -131,6 +150,14 @@
   animation: float 3s ease-in-out infinite;
 }
 
+.media-icon img {
+  width: 72px;
+  height: 72px;
+}
+.clapperboard-icon img {
+  width: 92px;
+  height: 92px;
+}
 .media-icon:nth-child(odd) {
   animation-delay: 1s;
 }
@@ -183,7 +210,70 @@
   animation-delay: 3s;
 }
 
-/* Responsive design */
+/* Responsive design - Tablet */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .header-container {
+    min-height: 70vh;
+  }
+
+  .header-left,
+  .header-right {
+    padding: 1.5rem;
+    min-height: 70vh;
+  }
+
+  .main-headline {
+    font-size: 3rem;
+  }
+
+  .sub-headline {
+    font-size: 1.3rem;
+  }
+
+  .tristan-image-container {
+    max-width: 400px;
+    height: 500px;
+    top: 105px;
+  }
+
+  .camera-icon {
+    top: 30%;
+    left: -5%;
+  }
+
+  .microphone-icon {
+    top: 12%;
+    left: 2%;
+  }
+
+  .video-icon {
+    top: 50%;
+    left: -5%;
+  }
+
+  .clapperboard-icon {
+    top: 18%;
+    right: 2%;
+  }
+
+  .diploma-icon {
+    top: 55%;
+    right: -5%;
+  }
+
+  .music-icon {
+    bottom: 18%;
+    left: -7%;
+  }
+
+  /* Medium icon size for tablet */
+  .media-icon img {
+    width: 42px;
+    height: 42px;
+  }
+}
+
+/* Responsive design - Mobile */
 @media (max-width: 768px) {
   .header-container {
     flex-direction: column;
@@ -196,88 +286,238 @@
   .header-left,
   .header-right {
     flex: none;
-    min-height: 50vh;
+    min-height: auto;
     width: 100vw;
-    padding: 1rem;
+    padding: 1.5rem 1rem;
     margin: 0;
   }
 
+  .header-left {
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+  }
+
+  .header-right {
+    padding-top: 1rem;
+    padding-bottom: 0;
+    overflow: visible;
+    display: flex;
+    align-items: flex-end;
+  }
+
   .main-headline {
-    font-size: 2.5rem;
+    font-size: 2rem;
+    margin-bottom: 1rem;
   }
 
   .highlight-name {
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
 
   .sub-headline {
-    font-size: 1.2rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
   }
 
   .tristan-image-container {
-    height: 400px;
+    height: 350px;
     position: relative;
-    top: 122px;
+    top: 0;
     width: 100%;
     max-width: none;
+    margin: 0 auto;
+    overflow: visible;
+    display: flex;
+    align-items: flex-end;
   }
 
+  .tristan-image {
+    align-self: flex-end;
+    object-position: bottom;
+  }
+
+  /* Responsive icon sizing for mobile */
+  .media-icon img {
+    width: 32px;
+    height: 32px;
+  }
+
+  /* Subtle animation for mobile */
   .media-icon {
-    display: none;
-    /* Hide icons on mobile for cleaner look */
+    animation: float-mobile 3s ease-in-out infinite;
+  }
+
+  @keyframes float-mobile {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-6px);
+    }
+  }
+
+  /* Reposition icons for mobile - keep them within viewport */
+  .camera-icon {
+    top: 25%;
+    left: 5%;
+  }
+
+  .microphone-icon {
+    top: 10%;
+    left: 10%;
+  }
+
+  .video-icon {
+    top: 50%;
+    left: 5%;
+  }
+
+  .clapperboard-icon {
+    top: 15%;
+    right: 10%;
+  }
+
+  .diploma-icon {
+    top: 55%;
+    right: 5%;
+  }
+
+  .music-icon {
+    bottom: 15%;
+    left: 8%;
   }
 
   .header-content {
     max-width: 100%;
-    padding: 1rem;
+    padding: 0;
     width: 100%;
-  }
-
-  .find-text-image {
-    max-height: 150px;
-    width: 100%;
-  }
-}
-
-@media (max-width: 480px) {
-  .main-headline {
-    font-size: 2rem;
-  }
-
-  .highlight-name {
-    font-size: 2.5rem;
-  }
-
-  .sub-headline {
-    font-size: 1rem;
-  }
-
-  .cta-button {
-    padding: 0.8rem 1.5rem;
-    font-size: 1rem;
-  }
-
-  .header-left,
-  .header-right {
-    padding: 0.5rem;
-    width: 100vw;
-  }
-
-  .header-content {
-    padding: 0.5rem;
-    width: 100%;
+    text-align: center;
   }
 
   .find-text-image {
     max-height: 120px;
     width: 100%;
+    margin: 0 auto;
+  }
+
+  .sub-text {
+    display: block;
+    margin-bottom: 0.3rem;
+  }
+}
+
+/* Responsive design - Small Mobile */
+@media (max-width: 480px) {
+  .header-left,
+  .header-right {
+    padding: 1rem 0.75rem;
+    width: 100vw;
+  }
+
+  .header-left {
+    padding-top: 1.5rem;
+  }
+
+  .header-right {
+    padding-bottom: 0;
+    display: flex;
+    align-items: flex-end;
+  }
+
+  .main-headline {
+    font-size: 1.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .highlight-name {
+    font-size: 2rem;
+  }
+
+  .sub-headline {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+
+  .header-content {
+    padding: 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  .find-text-image {
+    max-height: 100px;
+    width: 100%;
   }
 
   .tristan-image-container {
-    height: 300px;
+    height: 280px;
     position: relative;
-    top: 122px;
+    top: 0;
     width: 100%;
     max-width: none;
+    overflow: visible;
+    display: flex;
+    align-items: flex-end;
+  }
+
+  .tristan-image {
+    align-self: flex-end;
+    object-position: bottom;
+  }
+
+  /* Even smaller icons for small mobile */
+  .media-icon img {
+    width: 24px;
+    height: 24px;
+  }
+
+  /* Even more subtle animation for small mobile */
+  .media-icon {
+    animation: float-small-mobile 3s ease-in-out infinite;
+  }
+
+  @keyframes float-small-mobile {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-4px);
+    }
+  }
+
+  /* Tighter positioning for small mobile */
+  .camera-icon {
+    top: 20%;
+    left: 3%;
+  }
+
+  .microphone-icon {
+    top: 8%;
+    left: 8%;
+  }
+
+  .video-icon {
+    top: 45%;
+    left: 3%;
+  }
+
+  .clapperboard-icon {
+    top: 12%;
+    right: 8%;
+  }
+
+  .diploma-icon {
+    top: 50%;
+    right: 3%;
+  }
+
+  .music-icon {
+    bottom: 12%;
+    left: 5%;
+  }
+
+  .sub-text {
+    margin-bottom: 0.25rem;
   }
 }

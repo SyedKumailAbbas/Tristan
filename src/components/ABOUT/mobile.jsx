@@ -64,17 +64,17 @@ export default function Mobile() {
       {/* Foreground content */}
       <div className="relative z-10 w-full p-6 sm:p-8 flex flex-col items-start">
         {/* Top Heading */}
-        <div className="flex flex-wrap items-baseline justify-center sm:justify-start mb-3 sm:mb-0">
+        <div className="flex flex-wrap items-baseline justify-center lg:justify-start mb-3 sm:mb-0">
           <h1 className="text-[clamp(1.8rem,6vw,3.5rem)] font-bold font-[Montserrat] leading-tight tracking-wide text-white">
-            How
+            How 
           </h1>
-          <h1 className="-ml-2 sm:ml-3  -mt-1 sm:mt-0 text-[clamp(1.5rem,8vw,4.5rem)] font-bold font-[Caveat] leading-tight tracking-wide text-[#FFAE00]">
+          <h1 className="-ml-2 lg:ml-3  -mt-1 sm:mt-0 text-[clamp(1.5rem,8vw,4.5rem)] font-bold font-[Caveat] leading-tight tracking-wide text-[#FFAE00]">
             Performance-Motivational
           </h1>
         </div>
 
         {/* Keynote Speaking + Came About */}
-        <div className="relative -mt-3 sm:-mt-4 flex flex-wrap items-baseline justify-center sm:justify-start  gap-x-2">
+        <div className="relative -mt-3 sm:-mt-4 flex flex-wrap items-baseline justify-center lg:justify-start  gap-x-2">
           <span className="border-b-[0.15em] border-[#FFAE00] pb-[0.05em]   font-bold font-[Montserrat] leading-tight tracking-wide text-[clamp(1.8rem,5vw,3rem)] text-white mr-3">
             Keynote Speaking
           </span>
@@ -144,7 +144,7 @@ export default function Mobile() {
 
             <a
               href="/book-Tristan"
-              className="hidden sm:inline-block mt-10 inline-block bg-[#ffae00] text-white font-bold text-base sm:text-lg 
+              className="hidden lg:inline-block mt-10 inline-block bg-[#ffae00] text-white font-bold text-base sm:text-lg 
               px-6 sm:px-7 py-2.5 sm:py-3 rounded-full 
               shadow-[0_5px_10px_rgba(255,174,0,0.4)] 
               transition-transform duration-200 ease-in-out hover:-translate-y-1"
@@ -154,7 +154,7 @@ export default function Mobile() {
           </div>
 
           {/* Video Section */}
-          <div className="flex flex-col items-center w-full sm:w-1/2 lg:w-1/3 xl:w-1/4">
+          <div className="flex flex-col items-center  md:items-center w-full sm:w-1/2 lg:w-1/3 xl:w-1/4 mx-auto">
             <video
               ref={videoRef}
               src={video}
@@ -169,7 +169,7 @@ export default function Mobile() {
             {/* Mobile button */}
             <a
               href="/book-Tristan"
-              className="inline-block sm:hidden mt-6 bg-[#ffae00]  font-[Montserrat] text-white font-bold text-base px-6 py-2.5 rounded-full
+              className="inline-block lg:hidden mt-6 bg-[#ffae00]  font-[Montserrat] text-white font-bold text-base px-6 py-2.5 rounded-full
       shadow-[0_5px_10px_rgba(255,174,0,0.4)]
       transition-transform duration-200 ease-in-out hover:-translate-y-1"
             >

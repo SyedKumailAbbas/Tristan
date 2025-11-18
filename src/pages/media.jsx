@@ -32,7 +32,7 @@ export default function Media() {
       <PanelistSection />
       <Heading imgSrc={Img} altText="heading imgs" />
       <PodcastFeature />
-       <Podcast />
+      <Podcast />
       <div id="podcast-carousel-section">
         <PodcastCarousel />
       </div>

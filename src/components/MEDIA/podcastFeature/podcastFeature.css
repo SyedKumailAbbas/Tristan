@@ -312,7 +312,21 @@ body {
   }
 
   .play-icon {
-    padding: 12px;
+    padding: clamp(7px, 1vw, 18px);
+  }
+}
+.listenText--short {
+  display: none;
+}
+
+/* On small screens, show only "LISTEN" */
+@media (max-width: 450px) {
+  .listenText--full {
+    display: none;
+  }
+
+  .listenText--short {
+    display: inline;
   }
 }
 
@@ -333,7 +347,7 @@ body {
   }
 
   .play-icon {
-    padding: 10px;
+    padding: clamp(4px, 0.5vw, 12px);
   }
 }
 

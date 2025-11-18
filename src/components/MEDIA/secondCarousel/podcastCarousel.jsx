@@ -388,7 +388,10 @@ const FriendshipCarousel = () => {
 
         {/* Listen to full podcast button with href */}
         <a href={ep.fullPodcastUrl} className="listenFullBtn">
-          <span>LISTEN TO FULL PODCAST</span>
+          <span className="listenText listenText--full">
+            LISTEN TO FULL PODCAST
+          </span>
+          <span className="listenText listenText--short">LISTEN</span>
           <img src={playIcon} alt="Play Icon" className="listenBtnIcon" />
         </a>
       </div>

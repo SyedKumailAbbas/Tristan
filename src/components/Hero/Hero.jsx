@@ -4,7 +4,7 @@ import playIcon from "../../assets/noto_play-button.svg";
 
 export default function Hero() {
   return (
-    <div className="video-container">
+    <div className="relative w-full aspect-video overflow-hidden">
       {/* ✅ Background GIF */}
       <img
         src="https://pub-94f7f5d00cd94150915de158d63cafdd.r2.dev/Runnning%20(1).gif"

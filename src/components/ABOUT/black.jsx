@@ -1,11 +1,11 @@
 // src/components/ABOUT/black.jsx
 export default function Black() {
   return (
-    <section className="w-full bg-black text-white  sm:px-10 lg:px-16 py-16 min-h-[250px] flex items-center justify-center">
+    <section className="w-full bg-black text-white  px-3 sm:px-10 lg:px-16 py-16 min-h-[150px] sm:min-h-[250px] flex items-center justify-center">
       <p
         className="
           italic
-          text-[22px] sm:text-[24px] lg:text-[26px] 
+          text-[12px] sm:text-[24px] lg:text-[26px] 
           leading-relaxed
           text-center
           max-w-[70ch]   /* consistent line length column */

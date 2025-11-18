@@ -11,7 +11,7 @@ import "./Form.css";
 
 const ContactForm = () => {
   const SCRIPT_URL =
-    "https://script.google.com/macros/s/AKfycbwCnI3kcEoe80UrMuD7jujoU98d3m6FT08LgKSh1jJrAb9I4ECX1glBzSkOWnsQ8Xj_/exec";
+    "https://script.google.com/macros/s/AKfycby5gYgN3Z18S_qz69-lEBzJnaEKI7iRUd8BzZB9C2UiGzjxEjZYuhFA6vZqU1GTUY65/exec";
 
   const [formData, setFormData] = useState({
     fname: "",

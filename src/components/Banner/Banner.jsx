@@ -38,8 +38,8 @@ export default function Banner() {
             className="speaker-img"
           />
         </div>
-        <img src={rectBack} alt="Back rectangle" className="rect-back " />
-        <img src={rectFront} alt="Front rectangle" className="rect-front" />
+        <img src={rectBack} alt="Back rectangle" className="rect-back hidden md:block " />
+        <img src={rectFront} alt="Front rectangle" className="rect-front hidden md:block" />
       </div>
     </div>
   );

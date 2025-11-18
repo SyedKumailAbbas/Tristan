@@ -96,7 +96,7 @@
   }
 
   .responsive-top-button {
-    top: 9.5rem;
+    top: 7rem;
   }
 }
 
@@ -211,7 +211,7 @@
 }
 
 /* Responsive design - Tablet */
-@media (max-width: 1024px) and (min-width: 769px) {
+@media (max-width: 1279px) and (min-width: 769px) {
   .header-container {
     min-height: 70vh;
   }

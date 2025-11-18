@@ -16,6 +16,8 @@ export default function Newsletter() {
     const { name, value } = e.target;
     setFormData((s) => ({ ...s, [name]: value }));
   };
+  const SCRIPT_URL =
+    "https://script.google.com/macros/s/AKfycbwn8mLg8tWID4XPFBa-CgJcXJ8vwyY3WoiqWdsgKO3X9ZKTkNrwsQbwKipuj4Twrrdk/exec";
 
   const isValidEmail = (email) =>
     /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(email).toLowerCase());
@@ -39,6 +41,24 @@ export default function Newsletter() {
     setSubmitting(true);
     try {
       await submitNewsletter({ fname, lname, email });
+      const fd = new FormData();
+      fd.append("fname", fname);
+      fd.append("lname", lname);
+      fd.append("email", email);
+
+      fd.append(
+        "_origin",
+        typeof window !== "undefined" ? window.location.origin : ""
+      );
+
+      const response = await fetch(SCRIPT_URL, {
+        method: "POST",
+        body: fd,
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to submit form");
+      }
       alert("✅ Newsletter signup submitted!");
       setFormData({ fname: "", lname: "", email: "" });
     } catch (err) {

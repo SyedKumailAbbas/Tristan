@@ -15,6 +15,7 @@ import mindset from "../../assets/Group 27.svg";
 import momentum from "../../assets/Group 26.svg";
 import courage from "../../assets/Group 27 (1).png";
 import playIcon from "../../assets/noto_play-button(2).svg";
+import "./keynotes.css";
 const Card = ({ iconsrc: iconsrc, title, tags }) => {
   const anchorMap = {
     Corporations: "#corp",
@@ -91,13 +92,13 @@ export default function Keynotes() {
     >
       {/* Keynotes heading with hand-drawn oval */}
       <div className="mb-10 relative flex justify-start">
-        <div className="relative">
+        <div className="relative keynote-heading">
           {/* Hand-drawn oval background */}
 
           <img
             src={keynoteheader}
             alt="Keynotes"
-            className="relative z-10 h-[150px] object-contain "
+            className="relative z-10 h-[150px] object-contain  "
           />
         </div>
       </div>

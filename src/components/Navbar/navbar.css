@@ -11,12 +11,25 @@
 
 /* Wrapper */
 .navbar {
-  position: fixed;
+  position: relative; /* mobile: NOT fixed */
   top: 0;
   width: 100%;
   height: var(--navbar-height);
-  backdrop-filter: var(--navbar-bg-blur);
+  background-color: #000; /* black bg on mobile */
   z-index: 50;
+  /* remove backdrop-filter here so it only applies on desktop */
+}
+
+/* Desktop: keep existing fixed / blurred style */
+@media (min-width: 768px) {
+  .navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: var(--navbar-height);
+    backdrop-filter: var(--navbar-bg-blur);
+    background-color: transparent; /* or rgba(0,0,0,0.4) if you want a tint */
+  }
 }
 
 /* Inner container */
@@ -172,5 +185,23 @@
 @media (min-width: 768px) {
   .navbar__mobileMenu {
     display: none !important;
+  }
+}
+/* Mobile-only sizing tweaks */
+@media (max-width: 767px) {
+  /* Smaller navbar height on mobile */
+  :root {
+    --navbar-height: 72px; /* adjust to taste (60–80px usually looks good) */
+  }
+
+  /* Reduce top padding so it doesn't look too tall */
+  .navbar__inner {
+    padding: 1rem 1.25rem 0 1.25rem; /* smaller than desktop */
+  }
+
+  /* Smaller logo on mobile */
+  .navbar__logo {
+    height: 60px;
+    width: 60px;
   }
 }

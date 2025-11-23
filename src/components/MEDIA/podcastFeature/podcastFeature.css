@@ -267,7 +267,7 @@ body {
 @media (max-width: 768px) {
   .podcast-container {
     padding: 20px 10px;
-    border-radius: 15px;
+    /* border-radius: 15px; */
   }
 
   .image-content {
@@ -390,5 +390,12 @@ body {
   .image-content {
     width: 650px;
     height: 650px;
+  }
+}
+/* Mobile: keep buttons in layout but invisible & non-interactive */
+@media (max-width: 768px) {
+  .friendship-carousel .nav {
+    opacity: 0;
+    pointer-events: none;
   }
 }

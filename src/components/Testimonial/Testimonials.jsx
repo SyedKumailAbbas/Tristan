@@ -48,7 +48,7 @@ const Testimonials = ({ title = "TESTIMONIALS", videoIds = [], seeMore }) => {
       {/* Paint brush header (clamped) */}
       <div
         className={`relative bg-black w-full mb-12 overflow-x-hidden ${
-          title === "keynotes" ? "mt-40" : "mt-10"
+          title === "keynotes" ? "mt-10 md:mt-40" : "mt-10"
         }`}
       >
         {" "}

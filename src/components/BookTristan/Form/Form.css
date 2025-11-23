@@ -73,6 +73,12 @@
   line-height: 100%;
   letter-spacing: 0.5%;
 }
+@media (max-width: 768px) {
+  .detail {
+    font-size: 13px; /* or 12px if you want even smaller */
+    line-height: 130%;
+  }
+}
 
 .optional-text {
   font-family: "Inter", sans-serif;

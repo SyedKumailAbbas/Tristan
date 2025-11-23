@@ -6,13 +6,14 @@ import React, {
   useCallback,
 } from "react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
+import { Play, Pause } from "lucide-react";
 import FINDBOX from "../../../assets/Rectangle 9.png";
 import playIcon from "../../../assets/noto_play-button(2).svg";
 import "./podcastcarousel.css";
-import { Play, Pause } from "lucide-react";
 import Heading from "../../../assets/Group 196.png";
 import img1 from "../../../assets/Frame 25.png";
 import img2 from "../../../assets/Frame 26.png";
+
 const episodes = [
   {
     id: "s2e1",
@@ -23,7 +24,7 @@ const episodes = [
     audioUrl: `/audios/Season 2, Episode 1.mp3`,
     hostImage: img2,
     bgColor: "#2563eb",
-    fullDuration: 2105, // Full length of audio in seconds (25:07 = 1507 seconds)
+    fullDuration: 2105,
     fullPodcastUrl:
       "https://open.spotify.com/episode/6OLAOHumBR9PrJpaH08uUm?si=1cf4fbfd955247d0",
   },
@@ -36,7 +37,7 @@ const episodes = [
     audioUrl: `/audios/Season 2, Episode 2.mp3`,
     hostImage: img2,
     bgColor: "#1f2937",
-    fullDuration: 1323, // Full length of audio in seconds (25:07 = 1507 seconds)
+    fullDuration: 1323,
     fullPodcastUrl:
       "https://open.spotify.com/episode/4gOnl4yMUgbjsFbcqk2GDy?si=8239f0594aeb4f66",
   },
@@ -50,7 +51,7 @@ const episodes = [
     audioUrl: `/audios/Season 2, Episode 3.mp3`,
     hostImage: img2,
     bgColor: "#7c3aed",
-    fullDuration: 1304, // Full length of audio in seconds (25:07 = 1507 seconds)
+    fullDuration: 1304,
     fullPodcastUrl:
       "https://open.spotify.com/episode/1czRPzO5eQoBk0rfBgMn7i?si=b60c8caf8a4f4ba7",
   },
@@ -63,7 +64,7 @@ const episodes = [
     audioUrl: `/audios/Season 2, Episode 4.mp3`,
     hostImage: img2,
     bgColor: "#0ea5e9",
-    fullDuration: 1110, // Full length of audio in seconds (25:07 = 1507 seconds)
+    fullDuration: 1110,
     fullPodcastUrl:
       "https://open.spotify.com/episode/11l2UOJvuexmsrLhxbvzxO?si=700cf568dd0f46dd",
   },
@@ -76,7 +77,7 @@ const episodes = [
     audioUrl: `/audios/Season 2, Episode 5.mp3`,
     hostImage: img2,
     bgColor: "#0ea5e9",
-    fullDuration: 1110, // Full length of audio in seconds (25:07 = 1507 seconds)
+    fullDuration: 1110,
     fullPodcastUrl:
       "https://open.spotify.com/episode/5aciKx6KXenv9HRwSc751Q?si=J5d-NQslTxegFr3DNHHGQQ",
   },
@@ -89,7 +90,7 @@ const episodes = [
     audioUrl: `/audios/Season 1, Episode 1.mp3`,
     hostImage: img1,
     bgColor: "#334155",
-    fullDuration: 1304, // Full length of audio in seconds (25:07 = 1507 seconds)
+    fullDuration: 1304,
     fullPodcastUrl:
       "https://open.spotify.com/episode/5KxwM8Njh7RegFzsgTXdmw?si=073a7a6b5221481b",
   },
@@ -102,7 +103,7 @@ const episodes = [
     audioUrl: `/audios/Season 1, Episode 2.mp3`,
     hostImage: img1,
     bgColor: "#334155",
-    fullDuration: 1304, // Full length of audio in seconds (25:07 = 1507 seconds)
+    fullDuration: 1304,
     fullPodcastUrl:
       "https://open.spotify.com/episode/2ZB03lcIdrIHGFpYlc1niM?si=cb0fe3972ad34214",
   },
@@ -115,7 +116,7 @@ const episodes = [
     audioUrl: `/audios/Season 1, Episode 3.mp3`,
     hostImage: img1,
     bgColor: "#334155",
-    fullDuration: 1507, // Full length of audio in seconds (25:07 = 1507 seconds)
+    fullDuration: 1507,
     fullPodcastUrl:
       "https://open.spotify.com/episode/44txdsT3CwRh6UZXqDCExL?si=9db64947bfc944de",
   },
@@ -128,7 +129,7 @@ const episodes = [
     audioUrl: `/audios/Season 1, Episode 4.mp3`,
     hostImage: img1,
     bgColor: "#2563eb",
-    fullDuration: 1507, // Full length of audio in seconds (25:07 = 1507 seconds)
+    fullDuration: 1507,
     fullPodcastUrl:
       "https://open.spotify.com/episode/1iWq67TD1WdMaTBtvdIBbi?si=4cc36f065fea42ba",
   },
@@ -141,7 +142,7 @@ const episodes = [
     audioUrl: `/audios/Season 1, Episode 5.mp3`,
     hostImage: img1,
     bgColor: "#1f2937",
-    fullDuration: 1507, // Full length of audio in seconds (25:07 = 1507 seconds)
+    fullDuration: 1507,
     fullPodcastUrl:
       "https://open.spotify.com/episode/74yWSrA17OL18V6mPUWFtC?si=8e6f1ac686024aac",
   },
@@ -155,7 +156,7 @@ const episodes = [
     audioUrl: `/audios/Season 1, Episode 6.mp3`,
     hostImage: img1,
     bgColor: "#7c3aed",
-    fullDuration: 1507, // Full length of audio in seconds (25:07 = 1507 seconds)
+    fullDuration: 1507,
     fullPodcastUrl:
       "https://open.spotify.com/episode/5YGQgfxAlGpS5bUVTY6MxB?si=00e5e71cf21549de",
   },
@@ -168,7 +169,7 @@ const episodes = [
     audioUrl: `/audios/Season 1, Episode 7.mp3`,
     hostImage: img1,
     bgColor: "#0ea5e9",
-    fullDuration: 1507, // Full length of audio in seconds (25:07 = 1507 seconds)
+    fullDuration: 1507,
     fullPodcastUrl:
       "https://open.spotify.com/episode/0zVcTPMRCet0ZEH16pjVa3?si=dc6fd0ef85414670",
   },
@@ -181,7 +182,7 @@ const episodes = [
     audioUrl: `/audios/Season 1, Episode 8.mp3`,
     hostImage: img1,
     bgColor: "#334155",
-    fullDuration: 1507, // Full length of audio in seconds (25:07 = 1507 seconds)
+    fullDuration: 1507,
     fullPodcastUrl:
       "https://open.spotify.com/episode/0cSp54A6SCH0vQNsbh6y9e?si=a9c9be721ab640fd",
   },
@@ -194,7 +195,7 @@ const episodes = [
     audioUrl: `/audios/Season 1, Episode 9.mp3`,
     hostImage: img1,
     bgColor: "#334155",
-    fullDuration: 1507, // Full length of audio in seconds (25:07 = 1507 seconds)
+    fullDuration: 1507,
     fullPodcastUrl:
       "https://open.spotify.com/episode/4PtzVXYgdbEM7h3NG7Yl6b?si=1948831e87e248b6",
   },
@@ -207,29 +208,32 @@ const episodes = [
     audioUrl: `/audios/Season 1, Episode 10.mp3`,
     hostImage: img1,
     bgColor: "#334155",
-    fullDuration: 1507, // Full length of audio in seconds (25:07 = 1507 seconds)
+    fullDuration: 1507,
     fullPodcastUrl:
       "https://open.spotify.com/episode/2OQTBXt90ITibLeydw6TCT?si=75e715136a7841a3",
   },
 ];
 
 const useMediaQuery = (query) => {
-  const [matches, setMatches] = useState(
-    () => window.matchMedia(query).matches
-  );
+  const [matches, setMatches] = useState(() => {
+    if (typeof window === "undefined") return false;
+    return window.matchMedia(query).matches;
+  });
+
   useEffect(() => {
+    if (typeof window === "undefined") return;
     const media = window.matchMedia(query);
     const listener = () => setMatches(media.matches);
     media.addEventListener("change", listener);
     return () => media.removeEventListener("change", listener);
   }, [query]);
+
   return matches;
 };
 
 const FriendshipCarousel = () => {
   const [index, setIndex] = useState(0);
   const [direction, setDirection] = useState(null);
-
   const [pendingIndex, setPendingIndex] = useState(null);
 
   const isMobile = useMediaQuery("(max-width: 768px)");
@@ -237,6 +241,14 @@ const FriendshipCarousel = () => {
 
   const slides = useMemo(() => episodes, []);
   const [startIndex, setStartIndex] = useState(0);
+
+  const audioRefs = useRef(new Map());
+  const [playingId, setPlayingId] = useState(null);
+  const [times, setTimes] = useState({});
+
+  // swipe
+  const touchStartXRef = useRef(null);
+  const touchEndXRef = useRef(null);
 
   const formatTime = (time) => {
     if (!Number.isFinite(time)) return "00:00";
@@ -247,10 +259,6 @@ const FriendshipCarousel = () => {
       "0"
     )}`;
   };
-
-  const audioRefs = useRef(new Map());
-  const [playingId, setPlayingId] = useState(null);
-  const [times, setTimes] = useState({});
 
   const visibleIds = useMemo(() => {
     let ids = [];
@@ -308,25 +316,26 @@ const FriendshipCarousel = () => {
       setPlayingId(null);
     }
   }, [playingId, visibleIds]);
-  const prev = () => {
+
+  const prev = useCallback(() => {
     setDirection("prev");
     setPendingIndex((index - 1 + slides.length) % slides.length);
-  };
+  }, [index, slides.length]);
 
-  const next = () => {
+  const next = useCallback(() => {
     setDirection("next");
     setPendingIndex((index + 1) % slides.length);
-  };
+  }, [index, slides.length]);
+
   const onAnimEnd = () => {
     if (pendingIndex !== null) {
       setStartIndex(pendingIndex);
-      setIndex(pendingIndex); // ✅ keep index in sync
+      setIndex(pendingIndex);
       setPendingIndex(null);
     }
     setDirection(null);
   };
 
-  // Visible episodes
   const visibleEpisodes = useMemo(() => {
     let list = [];
     for (let i = 0; i < VISIBLE; i++) {
@@ -336,7 +345,7 @@ const FriendshipCarousel = () => {
   }, [slides, startIndex, VISIBLE]);
 
   const renderCard = (ep) => {
-    const t = times[ep.id] || { current: 0, duration: ep.fullDuration }; // Use fullDuration for preview
+    const t = times[ep.id] || { current: 0, duration: ep.fullDuration };
     const progressPct = t.duration ? (t.current / t.duration) * 100 : 0;
 
     return (
@@ -364,12 +373,12 @@ const FriendshipCarousel = () => {
               <div className="progressTrack">
                 <div
                   className="progressBarDot"
-                  style={{ left: `${progressPct}%` }} // Moves the dot based on the progress
+                  style={{ left: `${progressPct}%` }}
                 />
               </div>
               <div className="timeDisplay">
                 <span>{formatTime(t.current)}</span>
-                <span>{ep.durationLabel}</span> {/* Use fullDuration here */}
+                <span>{ep.durationLabel}</span>
               </div>
             </div>
           </div>
@@ -386,7 +395,6 @@ const FriendshipCarousel = () => {
           />
         </div>
 
-        {/* Listen to full podcast button with href */}
         <a href={ep.fullPodcastUrl} className="listenFullBtn">
           <span className="listenText listenText--full">
             LISTEN TO FULL PODCAST
@@ -398,19 +406,69 @@ const FriendshipCarousel = () => {
     );
   };
 
-  const leftIdx = (index - 1 + slides.length) % slides.length;
-  const rightIdx = (index + 1) % slides.length;
+  // swipe handlers (mobile)
+  const handleTouchStart = (e) => {
+    if (!isMobile) return;
+    touchStartXRef.current = e.touches[0].clientX;
+    touchEndXRef.current = null;
+  };
+
+  const handleTouchMove = (e) => {
+    if (!isMobile) return;
+    touchEndXRef.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = () => {
+    if (!isMobile) return;
+    if (touchStartXRef.current === null || touchEndXRef.current === null) {
+      return;
+    }
+
+    const diff = touchStartXRef.current - touchEndXRef.current;
+    const threshold = 50;
+
+    if (Math.abs(diff) > threshold) {
+      if (diff > 0) {
+        next(); // swipe left → next
+      } else {
+        prev(); // swipe right → prev
+      }
+    }
+
+    touchStartXRef.current = null;
+    touchEndXRef.current = null;
+  };
+
+  // auto play (mobile only)
+  useEffect(() => {
+    if (!isMobile) return;
+    const interval = setInterval(() => {
+      next();
+    }, 4000);
+    return () => clearInterval(interval);
+  }, [isMobile, next]);
 
   return (
     <>
       <div className="maindiv-med">
-        <img className="heading-med" src={Heading} />
+        <img className="heading-med" src={Heading} alt="Heading" />
         <div className="friendship-carousel">
-          <button className="nav left" onClick={prev} aria-label="Previous">
+          {/* Buttons ALWAYS rendered so layout is stable.
+              On mobile they become invisible & non-clickable via CSS. */}
+          <button
+            className="nav left"
+            onClick={!isMobile ? prev : undefined}
+            aria-label="Previous"
+          >
             <ArrowLeft />
           </button>
 
-          <div className="deck">
+          <div
+            className="deck"
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
+          >
             {/* Prev preview */}
             <article
               className={`card prev ${
@@ -431,6 +489,7 @@ const FriendshipCarousel = () => {
                 {visibleEpisodes.map((ep) => renderCard(ep))}
               </div>
             </article>
+
             {/* Next preview */}
             <article
               className={`card next ${
@@ -441,7 +500,11 @@ const FriendshipCarousel = () => {
             </article>
           </div>
 
-          <button className="nav right" onClick={next} aria-label="Next">
+          <button
+            className="nav right"
+            onClick={!isMobile ? next : undefined}
+            aria-label="Next"
+          >
             <ArrowRight />
           </button>
         </div>

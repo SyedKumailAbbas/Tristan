@@ -267,7 +267,7 @@ body {
 @media (max-width: 768px) {
   .podcast-container {
     padding: 20px 10px;
-    border-radius: 15px;
+    /* border-radius: 15px; */
   }
 
   .image-content {

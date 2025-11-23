@@ -1,11 +1,11 @@
 import React, { useEffect, useState, useCallback } from "react";
 import { Link, NavLink } from "react-router-dom";
 import "./navbar.css";
+
 import Tk from "../../assets/TK logo.png";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
 
   const toggleMenu = () => setIsOpen((v) => !v);
   const closeMenu = useCallback(() => setIsOpen(false), []);
@@ -28,25 +28,12 @@ export default function Navbar() {
     }
   }, [isOpen]);
 
-  // 🔥 Detect scroll to change navbar background
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10); // 10px threshold
-    };
-
-    handleScroll(); // run once on mount
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   // Utility: adds "active" class to current route
   const linkClass = ({ isActive }) =>
     `navbar__link${isActive ? " active" : ""}`;
 
   return (
-    <div
-      className={`navbar ${isScrolled ? "navbar--scrolled" : "navbar--top"}`}
-    >
+    <div className="navbar">
       <div className="navbar__inner">
         {/* Logo/Brand */}
         <div className="navbar__brand">

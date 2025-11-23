@@ -217,18 +217,8 @@
     font-size: 0.9rem;
   }
 }
-
-/* below is the css for app.jsx */
-
-:root {
-  /* make this match your actual navbar height */
-  --navbar-height: 120px;
-}
-
-.app-shell {
-  min-height: 100vh;
-}
-
-.app-main {
-  padding-top: var(--navbar-height); /* 👈 pushes content below navbar */
+@media (min-width: 768px) {
+  body {
+    padding-top: var(--navbar-height); /* shift content below fixed navbar */
+  }
 }

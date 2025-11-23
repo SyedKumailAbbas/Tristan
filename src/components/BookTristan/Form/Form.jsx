@@ -160,26 +160,28 @@ const ContactForm = () => {
                     <label className="form-label">
                       Name <span className="label-note">(required)</span>
                     </label>
-                    <input
-                      type="text"
-                      name="fname"
-                      placeholder="First Name*"
-                      value={formData.fname}
-                      onChange={handleInputChange}
-                      className="name-input margin-right placeholder-black placeholder-opacity-40"
-                      required
-                      disabled={submitting}
-                    />
-                    <input
-                      type="text"
-                      name="lname"
-                      placeholder="Last Name*"
-                      value={formData.lname}
-                      onChange={handleInputChange}
-                      className="name-input placeholder-black placeholder-opacity-40"
-                      required
-                      disabled={submitting}
-                    />
+                    <div className=" flex gap-2">
+                      <input
+                        type="text"
+                        name="fname"
+                        placeholder="First Name*"
+                        value={formData.fname}
+                        onChange={handleInputChange}
+                        className="name-input margin-right placeholder-black placeholder-opacity-40"
+                        required
+                        disabled={submitting}
+                      />
+                      <input
+                        type="text"
+                        name="lname"
+                        placeholder="Last Name*"
+                        value={formData.lname}
+                        onChange={handleInputChange}
+                        className="name-input placeholder-black placeholder-opacity-40"
+                        required
+                        disabled={submitting}
+                      />
+                    </div>
                   </div>
 
                   {/* Email */}

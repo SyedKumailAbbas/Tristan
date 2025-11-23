@@ -1,12 +1,17 @@
 :root {
-  --navbar-height: 115px;
+  --navbar-height: 120px; /* or 130 if you want it a bit taller */
   --navbar-bg-blur: blur(2px);
   --navbar-text: #ffffff;
-  --navbar-hover: #d1d5db; /* gray-300 */
-  --cta-from: #facc15; /* yellow-400 */
-  --cta-to: #fb923c; /* orange-400 */
-  --cta-hover-from: #fde047; /* yellow-300 */
-  --cta-hover-to: #fdba74; /* orange-300 */
+  --navbar-hover: #d1d5db;
+  --cta-from: #facc15;
+  --cta-to: #fb923c;
+  --cta-hover-from: #fde047;
+  --cta-hover-to: #fdba74;
+}
+
+/* Make sure page content starts BELOW navbar */
+body {
+  padding-top: var(--navbar-height);
 }
 
 /* Wrapper */
@@ -15,8 +20,24 @@
   top: 0;
   width: 100%;
   height: var(--navbar-height);
-  backdrop-filter: var(--navbar-bg-blur);
+  margin-bottom: 100px;
   z-index: 50;
+  transition: background 220ms ease, box-shadow 220ms ease,
+    backdrop-filter 220ms ease;
+}
+
+/* 🔹 Initial state: solid black */
+.navbar--top {
+  background: #000000;
+  box-shadow: none;
+  backdrop-filter: none;
+}
+
+/* 🔹 After scroll: your “current” blurred / translucent look */
+.navbar--scrolled {
+  background: rgba(0, 0, 0, 0.55); /* tweak opacity as you like */
+  backdrop-filter: var(--navbar-bg-blur);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.6);
 }
 
 /* Inner container */
@@ -26,7 +47,7 @@
   justify-content: space-between;
   height: 100%;
   width: 100%;
-  padding: 2.5rem 2rem 0 2rem; /* pt-10 px-8 */
+  padding: 2.5rem 2rem 0 2rem;
   margin: 0 auto;
   overflow: hidden;
 }
@@ -53,19 +74,19 @@
   .navbar__menu {
     display: flex;
     align-items: center;
-    gap: 2.5rem; /* space-x-10 */
+    gap: 2.5rem;
   }
 }
 
 .navbar__link {
   font-family: "Montserrat", sans-serif;
   font-size: 19px;
-  font-weight: 700; /* bold */
+  font-weight: 700;
   color: var(--navbar-text);
   text-decoration: none;
-  position: relative; /* needed for underline */
+  position: relative;
   transition: color 200ms ease-in-out;
-  padding-bottom: 4px; /* spacing for underline */
+  padding-bottom: 4px;
 }
 
 .navbar__link:hover,
@@ -80,9 +101,9 @@
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 5px; /* underline thickness */
+  height: 5px;
   background-color: #ffae00;
-  border-radius: 2px; /* makes it smoother */
+  border-radius: 2px;
 }
 
 /* CTA Button */
@@ -140,9 +161,7 @@
   height: 28px;
 }
 
-/* ----------------------- */
-/* Mobile Menu Panel       */
-/* ----------------------- */
+/* Mobile Menu Panel */
 .navbar__mobileMenu {
   position: fixed;
   top: var(--navbar-height);
@@ -155,7 +174,7 @@
   background: rgba(0, 0, 0, 0.7);
   backdrop-filter: var(--navbar-bg-blur);
   border-top: 1px solid rgba(255, 255, 255, 0.08);
-  z-index: 49; /* just under the header */
+  z-index: 49;
   transform: translateY(-8px);
   opacity: 0;
   pointer-events: none;

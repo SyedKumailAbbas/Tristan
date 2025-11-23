@@ -10,20 +10,26 @@ import Footer from "./components/Footer/Footer.jsx";
 import Testimonial from "./pages/testimonials.jsx";
 import Media from "./pages/media.jsx";
 import ScrollToTop from "./services/scrollToTop.js";
+
 function App() {
   return (
     <Router>
       <ScrollToTop />
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/keynotes" element={<Keynote />} />
-        <Route path="/book-tristan" element={<BookTristan />} />
-        <Route path="/testimonial" element={<Testimonial />} />
-        <Route path="/media" element={<Media />} />
-      </Routes>
-      <Footer />
+      <div className="app-shell">
+        <Navbar />
+        {/* 🔥 everything below the navbar goes inside this */}
+        <main className="app-main">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/keynotes" element={<Keynote />} />
+            <Route path="/book-tristan" element={<BookTristan />} />
+            <Route path="/testimonial" element={<Testimonial />} />
+            <Route path="/media" element={<Media />} />
+          </Routes>
+          <Footer />
+        </main>
+      </div>
     </Router>
   );
 }

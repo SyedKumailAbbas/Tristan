@@ -9,7 +9,7 @@
   grid-template-columns: 100px 1fr 100px;
   align-items: center;
   justify-items: center;
-  padding: 30px 0;
+  /* padding: 0px 0; */
   overflow-x: visible;
   overflow-y: hidden;
 }
@@ -295,8 +295,9 @@
 /* Responsiveness */
 @media (max-width: 1024px) {
   .friendshipCarousel {
-    grid-template-columns: 72px 1fr 72px;
-    padding: 25px 0;
+    grid-template-columns: 42px 1fr 42px;
+    /* padding: 12px 0; */
+    overflow-x: hidden;
   }
   .nav {
     width: 56px;
@@ -330,9 +331,9 @@
 
 @media (max-width: 768px) {
   .friendshipCarousel {
-    grid-template-columns: 60px 1fr 60px;
-    padding: 20px 0;
-    overflow-x: visible;
+    grid-template-columns: 35px 1fr 35px;
+    /* padding: 20px 0; */
+    overflow-x: hidden;
     overflow-y: hidden;
   }
   .nav {
@@ -410,8 +411,8 @@
 @media (max-width: 480px) {
   .friendshipCarousel {
     grid-template-columns: 1fr;
-    padding: 15px 0;
-    overflow-x: visible;
+    /* padding: 15px 0; */
+    overflow-x: hidden;
     overflow-y: hidden;
     width: 100vw;
     max-width: 100%;
@@ -507,8 +508,8 @@
 @media (max-width: 360px) {
   .friendshipCarousel {
     grid-template-columns: 1fr;
-    padding: 12px 0;
-    overflow-x: visible;
+    /* padding: 0px 0; */
+    overflow-x: hidden;
     overflow-y: hidden;
     width: 100vw;
     max-width: 100%;
@@ -543,7 +544,7 @@
     margin: 0 auto;
   }
   .title {
-    font-size: 16px;
+    font-size: 14px;
     margin: 3px 0 8px;
   }
   .content {
@@ -568,4 +569,9 @@
     width: 18px;
     height: 18px;
   }
+
+.underlineGold::after {
+  bottom: -3px;
+  height: 4px;
+}
 }

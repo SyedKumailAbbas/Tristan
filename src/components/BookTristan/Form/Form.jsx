@@ -160,7 +160,7 @@ const ContactForm = () => {
                     <label className="form-label">
                       Name <span className="label-note">(required)</span>
                     </label>
-                    <div className=" flex gap-2">
+                    <div className="space-y-2 md:space-y-0 ">
                       <input
                         type="text"
                         name="fname"

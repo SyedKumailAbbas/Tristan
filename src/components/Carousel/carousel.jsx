@@ -142,7 +142,15 @@ challenges as opportunities. I’m truly grateful for the impact they’ve had o
               <div className="slide-overlay" />
 
               <div className="slide-content">
-                <p className="testimonial-text">{testimonial.text}</p>
+                <p
+                  className={`testimonial-text ${
+                    testimonial.text.split(/\s+/).length > 40
+                      ? "testimonial-text--long"
+                      : ""
+                  }`}
+                >
+                  {testimonial.text}
+                </p>
                 <div className="author-section">
                   <div className="author-info">
                     <div className="author-role">{testimonial.role}</div>

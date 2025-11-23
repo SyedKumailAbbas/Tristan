@@ -558,3 +558,52 @@ body {
     }
   }
 }
+
+/* Smaller text on mobile screens */
+@media (max-width: 768px) {
+  .testimonial-text {
+    font-size: 18px;
+    line-height: 135%;
+  }
+}
+
+@media (max-width: 480px) {
+  .testimonial-text {
+    font-size: 16px;
+    line-height: 140%;
+  }
+}
+
+@media (max-width: 320px) {
+  .testimonial-text {
+    font-size: 14px;
+    line-height: 145%;
+  }
+}
+/* Hide nav arrows on mobile */
+@media (max-width: 768px) {
+  .nav-button {
+    display: none;
+  }
+}
+/* Long testimonials: smaller on mobile */
+@media (max-width: 768px) {
+  .testimonial-text--long {
+    font-size: 14px;
+    line-height: 150%;
+  }
+}
+
+@media (max-width: 480px) {
+  .testimonial-text--long {
+    font-size: 13px;
+    line-height: 155%;
+  }
+}
+
+@media (max-width: 320px) {
+  .testimonial-text--long {
+    font-size: 12px;
+    line-height: 160%;
+  }
+}

@@ -5,7 +5,7 @@ import "./headimage.css";
 export default function Headtristan() {
   return (
     <div className="relative">
-      <img src={image} alt="" className="w-full" />
+      <img src="https://pub-94f7f5d00cd94150915de158d63cafdd.r2.dev/Group%20248.svg" alt="" className="w-full" />
 
       {/* Button 1 - Top Left */}
       <a href="#corp">

@@ -1,9 +1,9 @@
 import React, { Suspense, lazy, useEffect } from "react";
 
-const High = lazy(() => import("../components/Keynotes/HighImage"));
+import High from "../components/Keynotes/HighImage";
+import Headtristan from "../components/Keynotes/headimage";
 const Secondary = lazy(() => import("../components/Keynotes/secondaryimage"));
 const CORPORATION = lazy(() => import("../components/Keynotes/CorpImage"));
-const Headtristan = lazy(() => import("../components/Keynotes/headimage"));
 
 export default function Keynote() {
   useEffect(() => {

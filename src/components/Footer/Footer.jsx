@@ -51,7 +51,7 @@ const Footer = () => {
 
           {/* Media Section */}
           <div className="footer__mediaWrap">
-            <div className="footer__headingImgSpacer" />
+            <div className="footer__headingImgSpacerMedia" />
             <div className="footer__mediaLinks mt-14">
               <a href="media" className="footer__link">
                 Media

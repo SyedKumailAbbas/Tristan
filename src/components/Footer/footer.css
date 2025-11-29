@@ -148,7 +148,9 @@
 
 /* Media section */
 .footer__mediaWrap {
-  margin-top: var(--space-10);
+  /* margin-top: var(--space-10); */
+  /* height: fit-content; */
+  margin-top: -50px;
   text-align: center;
 }
 
@@ -156,6 +158,7 @@
   .footer__mediaWrap {
     text-align: left;
     margin-top: 0;
+    height: fit-content;
   }
 }
 
@@ -163,11 +166,19 @@
   display: inline-block;
   margin-bottom: var(--space-6);
 }
-
+.footer__headingImgSpacerMedia {
+  display: inline-block;
+  margin-bottom: var(--space-6);
+}
+@media (max-width: 767px) {
+  .footer__headingImgSpacerMedia {
+    display: hidden;
+  }
+}
 .footer__mediaLinks {
   display: flex;
   flex-direction: column;
-  gap: var(--space-3);
+  /* gap: var(--space-3); */
 }
 
 /* Contact section */

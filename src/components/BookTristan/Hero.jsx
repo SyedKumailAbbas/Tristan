@@ -9,7 +9,7 @@ export default function Hero() {
         {/* Left: image */}
         <div className="w-fit mx-auto lg:mx-0">
           <img
-            src={heroimg}
+            src="/imgs/bookhero.png"
             alt=""
             className="w-[min(92vw,680px)] h-auto lg:w-auto"
           />
@@ -36,8 +36,8 @@ export default function Hero() {
             "
           >
             Thank you for being here! If you're looking to book a speaker who
-            moves with purpose (on stage and in life) you're in the right
-            place. I speak, perform, and serve to help audiences realize their
+            moves with purpose (on stage and in life) you're in the right place.
+            I speak, perform, and serve to help audiences realize their
             limitless potential regardless of age or background. If you're
             interested in something entirely new, I'd love to hear your vision.
           </p>

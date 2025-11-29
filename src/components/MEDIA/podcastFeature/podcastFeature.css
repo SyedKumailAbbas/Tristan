@@ -179,7 +179,7 @@ body {
   /* font-size: clamp(14px, 2vw, 20px); ✅ scales */
   font-weight: 600;
   font-size: 22px;
-  margin-bottom: -20px;
+  margin-bottom: -5px;
   color: white;
   margin-left: 70px;
 }
@@ -390,12 +390,5 @@ body {
   .image-content {
     width: 650px;
     height: 650px;
-  }
-}
-/* Mobile: keep buttons in layout but invisible & non-interactive */
-@media (max-width: 768px) {
-  .friendship-carousel .nav {
-    opacity: 0;
-    pointer-events: none;
   }
 }

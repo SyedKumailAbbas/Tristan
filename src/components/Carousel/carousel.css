@@ -580,12 +580,7 @@ body {
     line-height: 145%;
   }
 }
-/* Hide nav arrows on mobile */
-@media (max-width: 768px) {
-  .nav-button {
-    display: none;
-  }
-}
+
 /* Long testimonials: smaller on mobile */
 @media (max-width: 768px) {
   .testimonial-text--long {

@@ -1,80 +1,81 @@
-import React, { useState, useEffect, useRef } from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState, useCallback } from "react";
+import { Link, NavLink } from "react-router-dom";
 import "./navbar.css";
-import { NavLink } from "react-router-dom";
+
 import Tk from "../../assets/TK logo.png";
 
 export default function Navbar() {
-  // State to manage mobile menu visibility
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
-  // Reference to the menu to check if the click is outside it
-  const menuRef = useRef(null);
+  const toggleMenu = () => setIsOpen((v) => !v);
+  const closeMenu = useCallback(() => setIsOpen(false), []);
 
-  // Toggle mobile menu
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
-
-  // Close the menu when clicking on a menu item
-  const closeMenu = () => {
-    setIsMenuOpen(false);
-  };
-
-  // Close the menu if clicked outside of the menu
+  // Close on ESC
   useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (menuRef.current && !menuRef.current.contains(event.target)) {
-        setIsMenuOpen(false);
+    const onKeyDown = (e) => {
+      if (e.key === "Escape") closeMenu();
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [closeMenu]);
+
+  // Prevent background scroll when menu is open (mobile)
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+  }, [isOpen]);
+
+  // Detect scroll to apply background
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 0) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
       }
     };
 
-    // Add event listener for clicks outside the menu
-    document.addEventListener("mousedown", handleClickOutside);
-
-    // Cleanup the event listener when the component unmounts
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
+    handleScroll(); // run once on mount
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Utility: adds "active" class to current route
+  const linkClass = ({ isActive }) =>
+    `navbar__link${isActive ? " active" : ""}`;
+
   return (
-    <div className="navbar">
+    <div className={`navbar ${scrolled ? "navbar--scrolled" : ""}`}>
       <div className="navbar__inner">
         {/* Logo/Brand */}
         <div className="navbar__brand">
-          <Link to="/">
+          <Link to="/" onClick={closeMenu}>
             <img src={Tk} alt="TK Logo" className="navbar__logo" />
           </Link>
         </div>
 
-        {/* Navigation Menu */}
-        <div
-          className={`navbar__menu ${isMenuOpen ? "navbar__menu--open" : ""}`}
-          ref={menuRef}
-        >
-          <NavLink to="/about" className="navbar__link" onClick={closeMenu}>
+        {/* Desktop Navigation */}
+        <div className="navbar__menu">
+          <NavLink to="/about" className={linkClass} onClick={closeMenu}>
             About
           </NavLink>
-          <NavLink to="/media" className="navbar__link" onClick={closeMenu}>
+          <NavLink to="/media" className={linkClass} onClick={closeMenu}>
             Media
           </NavLink>
-          <NavLink to="/keynotes" className="navbar__link" onClick={closeMenu}>
+          <NavLink to="/keynotes" className={linkClass} onClick={closeMenu}>
             Keynotes
           </NavLink>
-          <NavLink
-            to="/testimonial"
-            className="navbar__link"
-            onClick={closeMenu}
-          >
+          <NavLink to="/testimonial" className={linkClass} onClick={closeMenu}>
             Testimonials
           </NavLink>
 
           {/* CTA */}
-          <NavLink to="/book-Tristan">
-            <button className="navbar__cta" onClick={closeMenu}>
-              Book Tristan
-            </button>
+          <NavLink to="/book-Tristan" onClick={closeMenu}>
+            <button className="navbar__cta">Book Tristan</button>
           </NavLink>
         </div>
 
@@ -83,6 +84,8 @@ export default function Navbar() {
           <button
             aria-label="Menu"
             className="navbar__hamburger"
+            aria-expanded={isOpen}
+            aria-controls="mobile-menu"
             onClick={toggleMenu}
           >
             <svg
@@ -95,11 +98,37 @@ export default function Navbar() {
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth={2}
-                d="M4 6h16M4 12h16M4 18h16"
+                d={isOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"}
               />
             </svg>
           </button>
         </div>
+      </div>
+
+      {/* Mobile Menu Panel */}
+      <div
+        id="mobile-menu"
+        className={`navbar__mobileMenu ${isOpen ? "open" : ""}`}
+        role="dialog"
+        aria-modal="true"
+      >
+        <NavLink to="/about" className={linkClass} onClick={closeMenu}>
+          About
+        </NavLink>
+        <NavLink to="/media" className={linkClass} onClick={closeMenu}>
+          Media
+        </NavLink>
+        <NavLink to="/keynotes" className={linkClass} onClick={closeMenu}>
+          Keynotes
+        </NavLink>
+        <NavLink to="/testimonial" className={linkClass} onClick={closeMenu}>
+          Testimonials
+        </NavLink>
+        <NavLink to="/book-Tristan" onClick={closeMenu}>
+          <button className="navbar__cta navbar__cta--full">
+            Book Tristan
+          </button>
+        </NavLink>
       </div>
     </div>
   );

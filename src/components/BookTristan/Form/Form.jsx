@@ -110,7 +110,7 @@ const ContactForm = () => {
               {/* Left - Person Image & Socials */}
               <div className="flex-shrink-0">
                 <img
-                  src={formimg}
+                  src="/imgs/image.png"
                   alt="Speaker"
                   className="w-45 object-cover"
                 />

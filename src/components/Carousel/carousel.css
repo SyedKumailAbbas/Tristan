@@ -602,3 +602,69 @@ body {
     line-height: 160%;
   }
 }
+/* === Extra-small nav buttons on mobile === */
+/* Ultra-compact nav buttons & lower position on mobile */
+@media (max-width: 768px) {
+  .nav-button {
+    width: 32px;
+    height: 32px;
+    top: auto; /* no longer vertically centered */
+    bottom: 80px; /* place above pagination/text */
+    transform: none; /* reset translateY(-50%) */
+  }
+
+  .nav-button svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  /* override hover/active transforms so they don't re-add translateY */
+  .nav-button:hover {
+    transform: scale(1.05);
+  }
+
+  .nav-button:active {
+    transform: scale(0.95);
+  }
+
+  .nav-button.prev {
+    left: 10px;
+  }
+
+  .nav-button.next {
+    right: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-button {
+    width: 26px;
+    height: 26px;
+    bottom: 70px; /* a bit closer to pagination on very small screens */
+  }
+
+  .nav-button svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .nav-button.prev {
+    left: 8px;
+  }
+
+  .nav-button.next {
+    right: 8px;
+  }
+}
+
+@media (max-width: 320px) {
+  .nav-button {
+    width: 28px;
+    height: 28px;
+  }
+
+  .nav-button svg {
+    width: 16px;
+    height: 16px;
+  }
+}

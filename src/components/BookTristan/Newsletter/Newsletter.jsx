@@ -70,7 +70,14 @@ export default function Newsletter() {
   };
 
   return (
-    <div className="min-h-screen bg-black text-white flex items-center justify-center px-4">
+    <div
+      className="
+        min-h-screen bg-black text-white flex items-center justify-center px-4 mainDiv
+        relative z-20         
+        -mt-40 md:mt-0        
+      "
+    >
+      {" "}
       {/* wrapper is full width on mobile/tablet, 70% only on large */}
       <div className="newsletter-wrapper w-full lg:w-[70%]">
         {/* Main heading */}

@@ -1,42 +1,93 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState, useCallback } from "react";
+import { Link, NavLink } from "react-router-dom";
 import "./navbar.css";
 
 import Tk from "../../assets/TK logo.png";
 
 export default function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  const toggleMenu = () => setIsOpen((v) => !v);
+  const closeMenu = useCallback(() => setIsOpen(false), []);
+
+  // Close on ESC
+  useEffect(() => {
+    const onKeyDown = (e) => {
+      if (e.key === "Escape") closeMenu();
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [closeMenu]);
+
+  // Prevent background scroll when menu is open (mobile)
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+  }, [isOpen]);
+
+  // Detect scroll to apply background
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 0) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    handleScroll(); // run once on mount
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Utility: adds "active" class to current route
+  const linkClass = ({ isActive }) =>
+    `navbar__link${isActive ? " active" : ""}`;
+
   return (
-    <div className="navbar">
+    <div className={`navbar ${scrolled ? "navbar--scrolled" : ""}`}>
       <div className="navbar__inner">
         {/* Logo/Brand */}
         <div className="navbar__brand">
-          <img src={Tk} alt="TK Logo" className="navbar__logo" />
+          <Link to="/" onClick={closeMenu}>
+            <img src={Tk} alt="TK Logo" className="navbar__logo" />
+          </Link>
         </div>
 
-        {/* Navigation Menu */}
+        {/* Desktop Navigation */}
         <div className="navbar__menu">
-          <Link to="/about" className="navbar__link">
+          <NavLink to="/about" className={linkClass} onClick={closeMenu}>
             About
-          </Link>
-          <Link to="/media" className="navbar__link">
+          </NavLink>
+          <NavLink to="/media" className={linkClass} onClick={closeMenu}>
             Media
-          </Link>
-          <Link to="/keynotes" className="navbar__link">
+          </NavLink>
+          <NavLink to="/keynotes" className={linkClass} onClick={closeMenu}>
             Keynotes
-          </Link>
-          <Link to="/testimonial" className="navbar__link">
+          </NavLink>
+          <NavLink to="/testimonial" className={linkClass} onClick={closeMenu}>
             Testimonials
-          </Link>
+          </NavLink>
 
           {/* CTA */}
-          <Link to="/book-Tristan">
+          <NavLink to="/book-Tristan" onClick={closeMenu}>
             <button className="navbar__cta">Book Tristan</button>
-          </Link>
+          </NavLink>
         </div>
 
         {/* Mobile Menu Button */}
         <div className="navbar__mobileBtn">
-          <button aria-label="Menu" className="navbar__hamburger">
+          <button
+            aria-label="Menu"
+            className="navbar__hamburger"
+            aria-expanded={isOpen}
+            aria-controls="mobile-menu"
+            onClick={toggleMenu}
+          >
             <svg
               className="navbar__hamburgerIcon"
               fill="none"
@@ -47,11 +98,37 @@ export default function Navbar() {
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth={2}
-                d="M4 6h16M4 12h16M4 18h16"
+                d={isOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"}
               />
             </svg>
           </button>
         </div>
+      </div>
+
+      {/* Mobile Menu Panel */}
+      <div
+        id="mobile-menu"
+        className={`navbar__mobileMenu ${isOpen ? "open" : ""}`}
+        role="dialog"
+        aria-modal="true"
+      >
+        <NavLink to="/about" className={linkClass} onClick={closeMenu}>
+          About
+        </NavLink>
+        <NavLink to="/media" className={linkClass} onClick={closeMenu}>
+          Media
+        </NavLink>
+        <NavLink to="/keynotes" className={linkClass} onClick={closeMenu}>
+          Keynotes
+        </NavLink>
+        <NavLink to="/testimonial" className={linkClass} onClick={closeMenu}>
+          Testimonials
+        </NavLink>
+        <NavLink to="/book-Tristan" onClick={closeMenu}>
+          <button className="navbar__cta navbar__cta--full">
+            Book Tristan
+          </button>
+        </NavLink>
       </div>
     </div>
   );

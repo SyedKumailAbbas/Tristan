@@ -15,14 +15,15 @@
   /* transform: translateX(-380px); */
   z-index: 10000;
 }
+
 .sub-btn {
-  width: 150;
-  height: 42;
+  width: 250;
+  height: 100;
   font-family: Montserrat;
   color: white;
   font-weight: 700;
   font-style: Bold;
-  font-size: 21px;
+  font-size: 19px;
   line-height: 100%;
   letter-spacing: 0.5%;
 
@@ -32,9 +33,9 @@
   opacity: 1;
   border-radius: 200px;
   padding-top: 10px;
-  padding-right: 10px;
-  padding-bottom: 13px;
-  padding-left: 10px;
+  padding-right: 28px;
+  padding-bottom: 10px;
+  padding-left: 28px;
   gap: 12px;
 }
 .name-input {
@@ -71,4 +72,78 @@
   leading-trim: NONE;
   line-height: 100%;
   letter-spacing: 0.5%;
+}
+@media (max-width: 768px) {
+  .detail {
+    font-size: 13px; /* or 12px if you want even smaller */
+    line-height: 130%;
+  }
+}
+
+.optional-text {
+  font-family: "Inter", sans-serif;
+  font-weight: 400; /* Regular */
+  font-size: 17px;
+  color: #ffffff; /* adjust if background is light */
+  opacity: 0.8;
+}
+/* smaller font for the (required) note next to labels */
+.label-note {
+  font-size: 0.8em; /* smaller than the label */
+  opacity: 0.9;
+  margin-left: 4px;
+}
+
+/* ====== Phones ≤ 639px: stack & full width ====== */
+@media (max-width: 639px) {
+  /* Make only the form controls responsive */
+  .name-input,
+  .form-input,
+  .text-area {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    box-sizing: border-box;
+  }
+
+  /* Stack first/last name on separate lines */
+  .margin-right {
+    margin-right: 0;
+  }
+
+  /* Comfortable text area height */
+  .text-area {
+    min-height: 100px;
+  }
+}
+
+/* ====== Tablets 640–1023px: readable widths, two-up names ====== */
+@media (min-width: 640px) and (max-width: 1023px) {
+  /* Two-up name fields without changing your HTML */
+  .name-input {
+    display: inline-block; /* keep them on one line */
+    width: 48%; /* balanced halves */
+    vertical-align: top;
+  }
+  .margin-right {
+    margin-right: 4%;
+  } /* gutter between the two */
+
+  /* Cap line length so inputs don't overflow on tablet */
+  .form-input,
+  .text-area {
+    width: 620px; /* readable width on tablet */
+    max-width: 100%; /* shrink if container is smaller */
+    height: auto;
+    box-sizing: border-box;
+  }
+  .text-area {
+    min-height: 108px;
+  }
+}
+@media (max-width: 850px) {
+  .arrow {
+    opacity: 0;
+  }
 }

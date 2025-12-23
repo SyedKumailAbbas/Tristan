@@ -1,28 +1,37 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap");
 
+/* Global reset & guards */
 * {
   box-sizing: border-box;
 }
 
+html,
+body {
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+  overflow-x: hidden; /* prevent stray horizontal scroll */
+}
+
+/* Slider */
 .testimonial-slider {
   position: relative;
-  width: 100vw;
+  width: 100%; /* was 100vw */
   max-width: 100%;
   height: 493px;
   margin: 0;
   padding: 0;
-  overflow: hidden;
+  overflow: clip; /* clips transformed children without creating scrollbars */
   opacity: 1;
   transform: rotate(0deg);
-  left: 0;
-  right: 0;
+  /* left/right removed to avoid width quirks */
 }
 
 .slider-container {
   position: relative;
   width: 100%;
   height: 100%;
-  overflow: hidden;
+  overflow: hidden; /* ensure children never cause horizontal scroll */
 }
 
 .slide {
@@ -159,7 +168,7 @@
 
 .nav-button:hover {
   background-color: #8a6b1a;
-  transform: translateY(-50%) scale(1.1);
+  transform: translateY(-50%) scale(1.1); /* clipped by container */
   box-shadow: 0px 6px 8px 0px #ffae00;
 }
 
@@ -271,7 +280,8 @@
   z-index: 10;
 }
 
-/* .progress-bar {
+/* If you re-enable the progress bar, it won't cause overflow */
+.progress-bar {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -280,8 +290,9 @@
   transition: width 0.3s ease;
   z-index: 10;
   box-shadow: 0px 1px 2px 0px rgba(255, 174, 0, 0.5);
-} */
+}
 
+/* Animations */
 @keyframes slideInUp {
   from {
     opacity: 0;
@@ -308,7 +319,7 @@
 /* Responsive Design */
 @media (max-width: 1440px) {
   .testimonial-slider {
-    width: 100vw;
+    width: 100%; /* was 100vw */
     max-width: none;
     margin: 0;
     padding: 0;
@@ -318,7 +329,7 @@
 @media (max-width: 1024px) {
   .testimonial-slider {
     height: 400px;
-    width: 100vw;
+    width: 100%; /* was 100vw */
     margin: 0;
     padding: 0;
   }
@@ -345,7 +356,7 @@
 @media (max-width: 768px) {
   .testimonial-slider {
     height: 350px;
-    width: 100vw;
+    width: 100%; /* was 100vw */
     margin: 0;
     padding: 0;
   }
@@ -407,7 +418,7 @@
 @media (max-width: 480px) {
   .testimonial-slider {
     height: 320px;
-    width: 100vw;
+    width: 100%; /* was 100vw */
     margin: 0;
     padding: 0;
   }
@@ -545,5 +556,115 @@
     to {
       transform: none;
     }
+  }
+}
+
+/* Smaller text on mobile screens */
+@media (max-width: 768px) {
+  .testimonial-text {
+    font-size: 18px;
+    line-height: 135%;
+  }
+}
+
+@media (max-width: 480px) {
+  .testimonial-text {
+    font-size: 16px;
+    line-height: 140%;
+  }
+}
+
+@media (max-width: 320px) {
+  .testimonial-text {
+    font-size: 14px;
+    line-height: 145%;
+  }
+}
+
+/* Long testimonials: smaller on mobile */
+@media (max-width: 768px) {
+  .testimonial-text--long {
+    font-size: 14px;
+    line-height: 150%;
+  }
+}
+
+@media (max-width: 480px) {
+  .testimonial-text--long {
+    font-size: 13px;
+    line-height: 155%;
+  }
+}
+
+@media (max-width: 320px) {
+  .testimonial-text--long {
+    font-size: 12px;
+    line-height: 160%;
+  }
+}
+/* === Extra-small nav buttons on mobile === */
+/* Ultra-compact nav buttons & lower position on mobile */
+@media (max-width: 768px) {
+  .nav-button {
+    width: 32px;
+    height: 32px;
+    top: auto; /* no longer vertically centered */
+    bottom: 80px; /* place above pagination/text */
+    transform: none; /* reset translateY(-50%) */
+  }
+
+  .nav-button svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  /* override hover/active transforms so they don't re-add translateY */
+  .nav-button:hover {
+    transform: scale(1.05);
+  }
+
+  .nav-button:active {
+    transform: scale(0.95);
+  }
+
+  .nav-button.prev {
+    left: 10px;
+  }
+
+  .nav-button.next {
+    right: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-button {
+    width: 26px;
+    height: 26px;
+    bottom: 70px; /* a bit closer to pagination on very small screens */
+  }
+
+  .nav-button svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .nav-button.prev {
+    left: 8px;
+  }
+
+  .nav-button.next {
+    right: 8px;
+  }
+}
+
+@media (max-width: 320px) {
+  .nav-button {
+    width: 28px;
+    height: 28px;
+  }
+
+  .nav-button svg {
+    width: 16px;
+    height: 16px;
   }
 }

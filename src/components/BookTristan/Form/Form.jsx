@@ -6,10 +6,13 @@ import spotify from "../../../assets/spotify.png";
 import youtube from "../../../assets/youtube.png";
 import medium from "../../../assets/medium.png";
 import arrow from "../../../assets/arrow.png";
-import "./Form.css";
 import { submitContact } from "../../../services/form";
+import "./Form.css";
 
 const ContactForm = () => {
+  const SCRIPT_URL =
+    "https://script.google.com/macros/s/AKfycby5gYgN3Z18S_qz69-lEBzJnaEKI7iRUd8BzZB9C2UiGzjxEjZYuhFA6vZqU1GTUY65/exec";
+
   const [formData, setFormData] = useState({
     fname: "",
     lname: "",
@@ -45,7 +48,9 @@ const ContactForm = () => {
     }
 
     setSubmitting(true);
+
     try {
+      // // Send form data to your backend
       await submitContact({
         fname,
         lname,
@@ -54,6 +59,27 @@ const ContactForm = () => {
         serviceDetails: formData.serviceDetails.trim(),
         audienceGoal: formData.audienceGoal.trim(),
       });
+      const fd = new FormData();
+      fd.append("fname", fname);
+      fd.append("lname", lname);
+      fd.append("email", email);
+      fd.append("eventDetails", formData.eventDetails.trim());
+      fd.append("serviceDetails", formData.serviceDetails.trim());
+      fd.append("audienceGoal", formData.audienceGoal.trim());
+      fd.append(
+        "_origin",
+        typeof window !== "undefined" ? window.location.origin : ""
+      );
+
+      const response = await fetch(SCRIPT_URL, {
+        method: "POST",
+        body: fd,
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to submit form");
+      }
+
       alert("✅ Thanks! We received your request.");
       setFormData({
         fname: "",
@@ -72,7 +98,7 @@ const ContactForm = () => {
   };
 
   return (
-    <section className="bg-black relative isolate ">
+    <section className="bg-black relative isolate">
       <div className="px-4 sm:px-6">
         <div className="flex justify-end arrow">
           <img src={arrow} alt="Arrow" />
@@ -84,7 +110,7 @@ const ContactForm = () => {
               {/* Left - Person Image & Socials */}
               <div className="flex-shrink-0">
                 <img
-                  src={formimg}
+                  src="/imgs/image.png"
                   alt="Speaker"
                   className="w-45 object-cover"
                 />
@@ -93,19 +119,34 @@ const ContactForm = () => {
                   <p className="detail">E: tristanjoshuakim@gmail.com</p>
                 </div>
                 <div className="flex space-x-1 mt-4">
-                  <a href="#youtube" className="w-12 h-12">
+                  <a
+                    href="https://www.youtube.com/@tristanjoshuakim"
+                    className="w-12 h-12"
+                  >
                     <img src={youtube} alt="YouTube" className="w-10 h-10" />
                   </a>
-                  <a href="#spotify" className="w-12 h-12">
+                  <a
+                    href="https://open.spotify.com/show/1vBg44ZWW4mstqVCJD2oio?si=95a112a26aae42ac"
+                    className="w-12 h-12"
+                  >
                     <img src={spotify} alt="Spotify" className="w-10 h-10" />
                   </a>
-                  <a href="#linkedin" className="w-12 h-12">
+                  <a
+                    href="https://www.linkedin.com/in/tristanjoshuakim/"
+                    className="w-12 h-12"
+                  >
                     <img src={linkedin} alt="LinkedIn" className="w-10 h-10" />
                   </a>
-                  <a href="#instagram" className="w-12 h-12">
+                  <a
+                    href="https://www.instagram.com/tdawgtalks/"
+                    className="w-12 h-12"
+                  >
                     <img src={insta} alt="Instagram" className="w-10 h-10" />
                   </a>
-                  <a href="#medium" className="w-15 h-10">
+                  <a
+                    href="https://medium.com/@tristanjoshuakim"
+                    className="w-15 h-10"
+                  >
                     <img src={medium} alt="Medium" className="w-15 h-10" />
                   </a>
                 </div>
@@ -116,32 +157,38 @@ const ContactForm = () => {
                 <form onSubmit={handleSubmit} className="space-y-4" noValidate>
                   {/* Name */}
                   <div>
-                    <label className="form-label">Name (required)</label>
-                    <input
-                      type="text"
-                      name="fname"
-                      placeholder="Firstname"
-                      value={formData.fname}
-                      onChange={handleInputChange}
-                      className="name-input margin-right"
-                      required
-                      disabled={submitting}
-                    />
-                    <input
-                      type="text"
-                      name="lname"
-                      placeholder="Lastname"
-                      value={formData.lname}
-                      onChange={handleInputChange}
-                      className="name-input"
-                      required
-                      disabled={submitting}
-                    />
+                    <label className="form-label">
+                      Name <span className="label-note">(required)</span>
+                    </label>
+                    <div className="space-y-2 md:space-y-0 ">
+                      <input
+                        type="text"
+                        name="fname"
+                        placeholder="First Name*"
+                        value={formData.fname}
+                        onChange={handleInputChange}
+                        className="name-input margin-right placeholder-black placeholder-opacity-40"
+                        required
+                        disabled={submitting}
+                      />
+                      <input
+                        type="text"
+                        name="lname"
+                        placeholder="Last Name*"
+                        value={formData.lname}
+                        onChange={handleInputChange}
+                        className="name-input placeholder-black placeholder-opacity-40"
+                        required
+                        disabled={submitting}
+                      />
+                    </div>
                   </div>
 
                   {/* Email */}
                   <div>
-                    <label className="form-label">Email (required)</label>
+                    <label className="form-label">
+                      Email <span className="label-note">(required)</span>
+                    </label>
                     <input
                       type="email"
                       name="email"
@@ -188,13 +235,17 @@ const ContactForm = () => {
                     <label className="form-label">
                       What do you hope your audience feels empowered to do after
                       hearing from me?
+                      <span className="optional-text">
+                        (Optional, but encouraged)
+                      </span>
                     </label>
+
                     <textarea
                       name="audienceGoal"
                       value={formData.audienceGoal}
                       onChange={handleInputChange}
                       rows="3"
-                      className="text-area"
+                      className="text-area placeholder-black placeholder-opacity-40"
                       placeholder="Share what you envision..."
                       disabled={submitting}
                     />
@@ -216,7 +267,6 @@ const ContactForm = () => {
             </div>
           </div>
         </div>
-        {/* /card */}
       </div>
     </section>
   );

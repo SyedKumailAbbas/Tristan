@@ -1,0 +1,523 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+.header-container {
+  display: flex;
+  min-height: 80vh;
+  width: 100vw;
+  position: relative;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  left: 0;
+  right: 0;
+  top: 0;
+  background: linear-gradient(to left, #FFAE00 0%, rgba(114, 77, 0, 0.58) 49%, rgba(0, 0, 0, 0.25) 100%);
+}
+
+/* Left side styling */
+.header-left {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  position: relative;
+  z-index: 2;
+  min-height: 80vh;
+  box-sizing: border-box;
+}
+
+.header-content {
+  max-width: 500px;
+  color: white;
+}
+
+.main-headline {
+  font-size: 3.5rem;
+  font-weight: 400;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+
+.find-text-image {
+  max-width: 100%;
+  height: auto;
+  max-height: 200px;
+}
+
+.script-text {
+  font-family: 'Dancing Script', 'Brush Script MT', cursive;
+  font-style: italic;
+  font-weight: 400;
+}
+
+.highlight-name {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  color: #FFAE00;
+  font-size: 4rem;
+  display: inline-block;
+  margin: 0 0.2rem;
+  -webkit-text-stroke: 1px #E5B80B;
+  text-shadow: 0 0 0 #E5B80B;
+}
+
+.sub-headline {
+  font-size: 1.4rem;
+  font-weight: 300;
+  line-height: 1.4;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.sub-text {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+}
+
+/* Responsive positioning classes */
+.responsive-top-sub {
+  top: 2rem;
+}
+
+.responsive-top-button {
+  top: 3rem;
+}
+
+@media (min-width: 768px) {
+  .responsive-top-sub {
+    top: 5rem;
+  }
+
+  .responsive-top-button {
+    top: 7rem;
+  }
+}
+
+.highlight-help {
+  color: #FFAE00;
+  font-weight: 700;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Button styles are now handled by Tailwind classes */
+/* Right side styling */
+.header-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+  min-height: 80vh;
+  box-sizing: border-box;
+}
+
+.tristan-image-container {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 80px;
+  /* pushes it 50px down */
+}
+
+.tristan-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  z-index: 2;
+  position: relative;
+}
+
+/* Media icons styling */
+.media-icon {
+  position: absolute;
+  color: #FFD700;
+  stroke-width: 2.5;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+  z-index: 3;
+  animation: float 3s ease-in-out infinite;
+}
+
+.media-icon img {
+  width: 72px;
+  height: 72px;
+}
+.clapperboard-icon img {
+  width: 92px;
+  height: 92px;
+}
+.media-icon:nth-child(odd) {
+  animation-delay: 1s;
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.camera-icon {
+  top: 35%;
+  left: -15%;
+  animation-delay: 0s;
+}
+
+.microphone-icon {
+  top: 15%;
+  left: 0%;
+  animation-delay: 0.5s;
+}
+
+.video-icon {
+  top: 55%;
+  left: -10%;
+  animation-delay: 1.5s;
+}
+
+.clapperboard-icon {
+  top: 20%;
+  right: 4%;
+  animation-delay: 2s;
+}
+
+.diploma-icon {
+  top: 60%;
+  right: -10%;
+  animation-delay: 2.5s;
+}
+
+.music-icon {
+  bottom: 10%;
+  left: -15%;
+  animation-delay: 3s;
+}
+
+/* Responsive design - Tablet */
+@media (max-width: 1279px) and (min-width: 769px) {
+  .header-container {
+    min-height: 70vh;
+  }
+
+  .header-left,
+  .header-right {
+    padding: 1.5rem;
+    min-height: 70vh;
+  }
+
+  .main-headline {
+    font-size: 3rem;
+  }
+
+  .sub-headline {
+    font-size: 1.3rem;
+  }
+
+  .tristan-image-container {
+    max-width: 400px;
+    height: 500px;
+    top: 105px;
+  }
+
+  .camera-icon {
+    top: 30%;
+    left: -5%;
+  }
+
+  .microphone-icon {
+    top: 12%;
+    left: 2%;
+  }
+
+  .video-icon {
+    top: 50%;
+    left: -5%;
+  }
+
+  .clapperboard-icon {
+    top: 18%;
+    right: 2%;
+  }
+
+  .diploma-icon {
+    top: 55%;
+    right: -5%;
+  }
+
+  .music-icon {
+    bottom: 18%;
+    left: -7%;
+  }
+
+  /* Medium icon size for tablet */
+  .media-icon img {
+    width: 42px;
+    height: 42px;
+  }
+}
+
+/* Responsive design - Mobile */
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    min-height: auto;
+    width: 100vw;
+    padding: 0;
+    margin: 0;
+  }
+
+  .header-left,
+  .header-right {
+    flex: none;
+    min-height: auto;
+    width: 100vw;
+    padding: 1.5rem 1rem;
+    margin: 0;
+  }
+
+  .header-left {
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+  }
+
+  .header-right {
+    padding-top: 1rem;
+    padding-bottom: 0;
+    overflow: visible;
+    display: flex;
+    align-items: flex-end;
+  }
+
+  .main-headline {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .highlight-name {
+    font-size: 2.5rem;
+  }
+
+  .sub-headline {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+  }
+
+  .tristan-image-container {
+    height: 350px;
+    position: relative;
+    top: 0;
+    width: 100%;
+    max-width: none;
+    margin: 0 auto;
+    overflow: visible;
+    display: flex;
+    align-items: flex-end;
+  }
+
+  .tristan-image {
+    align-self: flex-end;
+    object-position: bottom;
+  }
+
+  /* Responsive icon sizing for mobile */
+  .media-icon img {
+    width: 32px;
+    height: 32px;
+  }
+
+  /* Subtle animation for mobile */
+  .media-icon {
+    animation: float-mobile 3s ease-in-out infinite;
+  }
+
+  @keyframes float-mobile {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-6px);
+    }
+  }
+
+  /* Reposition icons for mobile - keep them within viewport */
+  .camera-icon {
+    top: 25%;
+    left: 5%;
+  }
+
+  .microphone-icon {
+    top: 10%;
+    left: 10%;
+  }
+
+  .video-icon {
+    top: 50%;
+    left: 5%;
+  }
+
+  .clapperboard-icon {
+    top: 15%;
+    right: 10%;
+  }
+
+  .diploma-icon {
+    top: 55%;
+    right: 5%;
+  }
+
+  .music-icon {
+    bottom: 15%;
+    left: 8%;
+  }
+
+  .header-content {
+    max-width: 100%;
+    padding: 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  .find-text-image {
+    max-height: 120px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .sub-text {
+    display: block;
+    margin-bottom: 0.3rem;
+  }
+}
+
+/* Responsive design - Small Mobile */
+@media (max-width: 480px) {
+  .header-left,
+  .header-right {
+    padding: 1rem 0.75rem;
+    width: 100vw;
+  }
+
+  .header-left {
+    padding-top: 1.5rem;
+  }
+
+  .header-right {
+    padding-bottom: 0;
+    display: flex;
+    align-items: flex-end;
+  }
+
+  .main-headline {
+    font-size: 1.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .highlight-name {
+    font-size: 2rem;
+  }
+
+  .sub-headline {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+
+  .header-content {
+    padding: 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  .find-text-image {
+    max-height: 100px;
+    width: 100%;
+  }
+
+  .tristan-image-container {
+    height: 280px;
+    position: relative;
+    top: 0;
+    width: 100%;
+    max-width: none;
+    overflow: visible;
+    display: flex;
+    align-items: flex-end;
+  }
+
+  .tristan-image {
+    align-self: flex-end;
+    object-position: bottom;
+  }
+
+  /* Even smaller icons for small mobile */
+  .media-icon img {
+    width: 24px;
+    height: 24px;
+  }
+
+  /* Even more subtle animation for small mobile */
+  .media-icon {
+    animation: float-small-mobile 3s ease-in-out infinite;
+  }
+
+  @keyframes float-small-mobile {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-4px);
+    }
+  }
+
+  /* Tighter positioning for small mobile */
+  .camera-icon {
+    top: 20%;
+    left: 3%;
+  }
+
+  .microphone-icon {
+    top: 8%;
+    left: 8%;
+  }
+
+  .video-icon {
+    top: 45%;
+    left: 3%;
+  }
+
+  .clapperboard-icon {
+    top: 12%;
+    right: 8%;
+  }
+
+  .diploma-icon {
+    top: 50%;
+    right: 3%;
+  }
+
+  .music-icon {
+    bottom: 12%;
+    left: 5%;
+  }
+
+  .sub-text {
+    margin-bottom: 0.25rem;
+  }
+}

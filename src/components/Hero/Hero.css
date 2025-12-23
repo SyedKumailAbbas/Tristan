@@ -1,9 +1,12 @@
 /* hero.css */
 .video-container {
-  position: relative;      /* ✅ was fixed */
+  position: relative;
+  /* ✅ was fixed */
   width: 100%;
-  height: 100vh;           /* still fills the first screen */
-  overflow: hidden;        /* keep it tidy */
+  height: 100vh;
+  /* still fills the first screen */
+  overflow: hidden;
+  /* keep it tidy */
 }
 
 .bg-video {
@@ -13,40 +16,50 @@
   transform: translate(-50%, -50%);
   min-width: 100%;
   min-height: 100%;
-  object-fit: cover;       /* or contain if you prefer */
-  z-index: -1;             /* stays behind overlay & banner */
+  object-fit: cover;
+  /* or contain if you prefer */
+  z-index: -1;
+  /* stays behind overlay & banner */
 }
 
 .video-overlay {
   position: relative;
   z-index: 1;
-  text-align: left;         /* keep left‑aligned */
-  padding: 15vh 4vw;        /* top & side breathing room */
+  text-align: left;
+  /* keep left‑aligned */
+  padding: 15vh 4vw;
+  /* top & side breathing room */
   color: #fff;
 }
 
 /* --------------- headline “YOU HAVE” --------------- */
 .tag-top {
   font-family: 'Montserrat', sans-serif;
-  font-weight: 700;               /* Bold */
-  font-size: 65px;
-  line-height: 100%;              /* Line height = font size */
-  letter-spacing: 0.5%;           /* Slight spacing */
-  font-style: normal;             /* not italic */
-  
+  font-weight: 700;
+  /* Bold */
+  font-size: clamp(1.25rem, 7vw, 4rem);
+  line-height: 1;
+  /* Line height = font size */
+  letter-spacing: 0.5%;
+  /* Slight spacing */
+  font-style: normal;
+  /* not italic */
 }
 
 /* --------------- stroke + script text -------------- */
 .tag-bottom {
   position: relative;
-  display: inline-block;    /* sizes to its content */
+  display: inline-block;
+  /* sizes to its content */
 }
 
 .brush {
-  width: clamp(16rem, 40vw, 40rem);   /* responsive width */
+  width: clamp(12rem, 55vw, 40rem);
+  /* responsive width */
   height: auto;
-  display: block;          /* remove inline gap */
-  margin-top: -0.9rem;
+  display: block;
+  /* remove inline gap */
+  margin-top: clamp(-0.75rem, -1vw, -0.25rem);
 }
 
 .brush-text {
@@ -54,29 +67,38 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-family: 'Pacifico', cursive;  /* or your script font */
+  font-family: 'Pacifico', cursive;
+  /* or your script font */
   font-size: clamp(2rem, 6vw, 5rem);
   color: #fff;
   white-space: nowrap;
-  pointer-events: none;    /* so img gets clicks if needed */
+  pointer-events: none;
+  /* so img gets clicks if needed */
 }
 
-.cta {
+.hero-cta {
   margin-top: 30px;
-  background: #ffae00; /* bright yellow */
+  background: #ffae00;
+  /* bright yellow */
   border: none;
-  color: #fff; /* white text */
+  color: #fff;
+  /* white text */
   padding: 12px 28px;
   font-size: 1rem;
   font-family: 'Montserrat', sans-serif;
-  font-weight: 500;
-  border-radius: 999px; /* full pill shape */
+  font-weight: 700;
+  border-radius: 999px;
+  /* full pill shape */
   cursor: pointer;
   transition: transform 0.2s ease;
   font-style: normal;
 
   /* drop shadow */
-  box-shadow: 0 5px 10px rgb(245, 245, 245);
+  box-shadow: 0 5px 10px rgba(255, 174, 0, 0.4);
+}
+
+.hero-cta:hover {
+  transform: translateY(-3px);
 }
 
 /* --- PLAY CTA ----------------------------------- */
@@ -98,20 +120,24 @@
   border: 2px solid transparent;
   border-radius: 999px;
   cursor: pointer;
+  box-shadow: none;
 
   transition: background 0.25s, color 0.25s, border-color 0.25s;
-  margin-left: 0rem;  /* move right */
-  margin-top: 2.1rem; /* move down slightly if stacked */
+  margin-left: 0rem;
+  /* move right */
+  margin-top: 2.1rem;
+  /* move down slightly if stacked */
 }
 
 .play-cta:hover {
   box-shadow: none;
 }
-/* SVG icon size */
-.play-icon {
-  width: 1.5rem;
-  height: 1.5rem;
-  flex-shrink: 0;
+
+.play-cta:focus,
+.play-cta:active {
+  outline: none;
+  box-shadow: none;
+  /* removes the yellow shadow */
 }
 
 /* optional underline on text only */
@@ -124,29 +150,105 @@
 .hero-content {
   display: flex;
   flex-direction: column;
-  gap: 1.2rem; /* space between items */
-  align-items: flex-start; /* keep left aligned */
+  gap: 1.2rem;
+  /* space between items */
+  align-items: flex-start;
+  /* keep left aligned */
 }
 
 .hero-text {
   position: absolute;
-  top: 25rem;
-  left: 5rem;
-  transform: translateY(-50%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   display: flex;
   flex-direction: column;
   gap: 0.6rem;
+  width: min(90vw, 32rem);
+  align-items: flex-start;
+  text-align: left;
+}
+@media (min-width: 400px) {
+  .hero-text {
+    top: 10rem;
+    left: 5%;
+    transform: translateY(-50%);
+    width: min(70vw, 36rem);
+    align-items: flex-start;
+    text-align: left;
+  }
+}
+@media (min-width: 520px) {
+  .hero-text {
+    top: 13rem;
+    left: 5%;
+    transform: translateY(-50%);
+    width: min(70vw, 36rem);
+    align-items: flex-start;
+    text-align: left;
+  }
+}
+@media (min-width: 640px) {
+  .hero-text {
+    top:  17rem;
+    left: 5%;
+    transform: translateY(-50%);
+    width: min(70vw, 36rem);
+    align-items: flex-start;
+    text-align: left;
+  }
+}
+@media (min-width: 768px) {
+  .hero-text {
+    top: 17rem;
+    left: 5%;
+    transform: translateY(-50%);
+    width: min(70vw, 36rem);
+    align-items: flex-start;
+    text-align: left;
+  }
 }
 
-.hero-buttons {
-  display: flex;
-  gap: 1rem;              /* Space between buttons */
-  flex-direction: row;    /* Horizontal layout by default */
-  justify-content: flex-start; /* Align buttons to the left */
-  align-items: center;    /* Align buttons vertically */
-  margin-top: 25rem;      /* Adds space from the top */
-  margin-left: 3rem;      /* Adds space from the left */
+@media (min-width: 1024px) {
+  .hero-text {
+    top: 23rem;
+    left: 4rem;
+  }
 }
+/* @media (min-width: 1024px) and (min-height: 850px) {
+  .hero-text {
+    top: 90%;
+  }
+}
+
+@media (min-width: 1024px) and (max-height: 849px) {
+  .hero-text {
+    top: 190%;
+  }
+} */
+
+.hero-buttons {
+  position: absolute;
+  bottom: -25rem;
+  /* distance from bottom */
+  left: 4rem;
+  /* distance from left */
+  gap: 1rem;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.hero-buttons {
+  display: none;
+}
+
+/* Show buttons on large screens and above */
+@media (min-width: 1024px) {
+  .hero-buttons {
+    display: flex;
+  }
+}
+
 
 .svg-overlay {
   position: absolute;
@@ -154,14 +256,17 @@
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 999; /* Above the video but below other elements */
-  pointer-events: none; /* Make sure it doesn't block clicks */
+  z-index: 999;
+  /* Above the video but below other elements */
+  pointer-events: none;
+  /* Make sure it doesn't block clicks */
 }
 
 .overlay-svg {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Ensures the SVG covers the whole area */
+  object-fit: cover;
+  /* Ensures the SVG covers the whole area */
 }
 
 .video-container::after {

@@ -15,96 +15,74 @@ import mindset from "../../assets/Group 27.svg";
 import momentum from "../../assets/Group 26.svg";
 import courage from "../../assets/Group 27 (1).png";
 import playIcon from "../../assets/noto_play-button(2).svg";
-const Card = ({ iconsrc: iconsrc, title, tags }) => (
-  <div
-    className="pt-5 pb-5 relative shadow-2xl backdrop-blur-sm flex flex-col items-center "
-    style={{
-      backgroundColor: "#6E530C",
-      boxShadow:
-        "0 30px 60px rgba(0,0,0,.35), 0 0 0 2px rgba(247,126,0,.2) inset, 0 25px 80px rgba(247,126,0,.25)",
-    }}
-  >
-    <div className="flex items-center gap-3 mb-6">
-      <h2 className="text-3xl font-semibold text-yellow-200">{title}</h2>
-      <img src={iconsrc} alt="" className="w-7 h-7" />
-    </div>
-    <ul className="items-center mb-8 p-0">
-      <li className="relative w-fit text-2xl items-center align-middle mx-2 my-2 list-none">
-        {title.toLowerCase() === "high schools" && (
-          <>
-            <img
-              src={identity}
-              alt="Polygon background"
-              
-            />
-            <img
-              src={courage}
-              alt="Polygon background"
-              
-            />
-            <img
-              src={connection}
-              alt="Polygon background"
-              
-            />
-          </>
-        )}
+import "./keynotes.css";
+const Card = ({ iconsrc: iconsrc, title, tags }) => {
+  const anchorMap = {
+    Corporations: "#corp",
+    "High Schools": "#highschool",
+    University: "#university",
+  };
+  const anchorHref = anchorMap[title] || "/keynotes";
 
-        {title.toLowerCase() === "university" && (
-          <>
-            <img
-              src={purpose}
-              alt="Polygon background"
-              
-            />
-            <img
-              src={presence}
-              alt="Polygon background"
-              
-            />
-            <img
-              src={possiblity}
-              alt="Polygon background"
-              className="w-[180px]"
-              
-            />
-          </>
-        )}
-
-        {title.toLowerCase() === "corporations" && (
-          <>
-            <img
-              src={resilence}
-              alt="Polygon background"
-              
-            />
-            <img
-              src={mindset}
-              alt="Polygon background"
-              
-            />
-            <img
-              src={momentum}
-              alt="Polygon background"
-              
-            />
-          </>
-        )}
-      </li>
-    </ul>
-        <button
-      className="group inline-flex items-center gap-2 rounded-full px-4 py-2 font-['Montserrat'] text-[18px] font-bold tracking-[0.5px]"
+  return (
+    <div
+      className="w-full max-w-[320px] sm:max-w-[360px] mx-auto rounded-2xl pt-5 pb-5 relative shadow-2xl backdrop-blur-sm flex flex-col items-center"
       style={{
-        background: "#ffae00",
-        color: "#ffffff",
-        boxShadow: "0 6px 18px rgba(247,126,0,.35)",
+        backgroundColor: "#6E530C",
+        boxShadow:
+          "0 30px 60px rgba(0,0,0,.35), 0 0 0 2px rgba(247,126,0,.2) inset, 0 25px 80px rgba(247,126,0,.25)",
       }}
     >
-      <span>Click to learn more</span>
-      <img src={playIcon} alt="Play Icon" className="w-6 h-6" />
-    </button>
-  </div>
-);
+      <div className="flex items-center gap-3 mb-6">
+        <h2 className="text-3xl font-semibold text-yellow-200">{title}</h2>
+        <img src={iconsrc} alt="" className="w-7 h-7" />
+      </div>
+      <ul className="items-center mb-8 p-0">
+        <li className="relative w-fit text-2xl items-center align-middle mx-2 my-2 list-none">
+          {title.toLowerCase() === "high schools" && (
+            <>
+              <img src={identity} alt="Polygon background" />
+              <img src={courage} alt="Polygon background" />
+              <img src={connection} alt="Polygon background" />
+            </>
+          )}
+
+          {title.toLowerCase() === "university" && (
+            <>
+              <img src={purpose} alt="Polygon background" />
+              <img src={presence} alt="Polygon background" />
+              <img
+                src={possiblity}
+                alt="Polygon background"
+                className="w-[180px]"
+              />
+            </>
+          )}
+
+          {title.toLowerCase() === "corporations" && (
+            <>
+              <img src={resilence} alt="Polygon background" />
+              <img src={mindset} alt="Polygon background" />
+              <img src={momentum} alt="Polygon background" />
+            </>
+          )}
+        </li>
+      </ul>
+      <a
+        href={`/keynotes${anchorHref}`}
+        className="group inline-flex items-center gap-2 rounded-full px-4 py-2 font-['Montserrat'] text-[18px] font-bold tracking-[0.5px]"
+        style={{
+          background: "#ffae00",
+          color: "#ffffff",
+          boxShadow: "0 6px 18px rgba(247,126,0,.35)",
+        }}
+      >
+        <span>Click to learn more</span>
+        <img src={playIcon} alt="Play Icon" className="w-6 h-6" />
+      </a>
+    </div>
+  );
+};
 
 export default function Keynotes() {
   return (
@@ -114,24 +92,32 @@ export default function Keynotes() {
     >
       {/* Keynotes heading with hand-drawn oval */}
       <div className="mb-10 relative flex justify-start">
-        <div className="relative">
+        <div className="relative keynote-heading">
           {/* Hand-drawn oval background */}
 
           <img
             src={keynoteheader}
             alt="Keynotes"
-            className="relative z-10 h-[150px] object-contain "
+            className="relative z-10 h-[150px] object-contain  "
           />
         </div>
       </div>
 
       {/* cards */}
-      <div className="grid grid-cols-1 md:grid-cols-3 p-5 w-full gap-20 mx-auto">
+      <div
+        className="
+          grid gap-8 sm:gap-12 lg:gap-20
+          grid-cols-1 md:grid-cols-1 lg:grid-cols-3
+          justify-items-center
+          px-4 sm:px-6
+          mx-auto max-w-7xl
+        "
+      >
         <Card
           iconsrc={corp}
           title="Corporations"
           tags={["Resilience", "Mindset", "Momentum"]}
-        />  
+        />
         <Card
           iconsrc={school}
           title="High Schools"

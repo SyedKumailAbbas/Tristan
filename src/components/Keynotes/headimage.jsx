@@ -1,112 +1,69 @@
-import image from "../../assets/Group 248.svg";
+import image from "../../assets/Group 248.webp";
 import playIcon from "../../assets/noto_play-button(2).svg";
+import "./headimage.css";
 
 export default function Headtristan() {
-    return (
-        <div style={{ position: 'relative' }}>
-            <img src={image} alt="" style={{ width: '100%' }} />
-            
-            {/* Button 1 - Positioned on top left */}
-            <button
-                className="group inline-flex items-center gap-2 rounded-full px-4 py-2 font-['Montserrat'] text-[18px] font-bold tracking-[0.5px]"
-                style={{
-                    background: "#ffae00",
-                    color: "#ffffff",
-                    boxShadow: "0 6px 18px rgba(247,126,0,.35)",
-                    position: 'absolute',
-                    top: '90%',
-                    left: '7.5%',
-                }}
-            >
-                <span>Click to learn more</span>
-                <img src={playIcon} alt="Play Icon" className="w-6 h-6" />
-            </button>
+  return (
+    <div className="relative">
+      <img src={image} alt="" className="w-full" />
 
-            {/* Button 2 - Positioned on top center */}
-            <button
-                className="group inline-flex items-center gap-2 rounded-full px-4 py-2 font-['Montserrat'] text-[18px] font-bold tracking-[0.5px]"
-                style={{
-                    background: "#ffae00",
-                    color: "#ffffff",
-                    boxShadow: "0 6px 18px rgba(247,126,0,.35)",
-                    position: 'absolute',
-                    top: '90%',
-                    left: '50%',
-                    transform: 'translateX(-50%)',
-                }}
-            >
-                <span>Click to learn more</span>
-                <img src={playIcon} alt="Play Icon" className="w-6 h-6" />
-            </button>
+      {/* Button 1 - Top Left */}
+      <a href="#corp">
+        <button
+          className="
+            absolute 
+            btn-top-left
+            top-[89%] left-[6%] 
+            lg:top-[90%] lg:left-[7%]
+            group inline-flex items-center gap-2 rounded-full  px-0.5 py-0.25
+            lg:px-4 lg:py-2
+            font-['Montserrat'] text-[5px] sm:text-[13px] lg:text-[18px] font-bold tracking-[0.5px]
+            bg-[#ffae00] text-white shadow-lg
+          "
+        >
+          Click to learn more
+          <img src={playIcon} className="w-2 h-2 sm:w-4 sm:h-4 md:w-6 md:h-6" />
+        </button>
+      </a>
 
-            {/* Button 3 - Positioned on bottom right */}
-            <button
-                className="group inline-flex items-center gap-2 rounded-full px-4 py-2 font-['Montserrat'] text-[18px] font-bold tracking-[0.5px]"
-                style={{
-                    background: "#ffae00",
-                    color: "#ffffff",
-                    boxShadow: "0 6px 18px rgba(247,126,0,.35)",
-                    position: 'absolute',
-                    bottom: '5%',
-                    right: '7.5%',
-                }}
-            >
-                <span>Click to learn more</span>
-                <img src={playIcon} alt="Play Icon" className="w-6 h-6" />
-            </button>
+      {/* Button 2 - Center */}
+      <a href="#highschool">
+        <button
+          className="
+            absolute 
+            btn-center 
+            top-[89%] left-1/2 -translate-x-1/2
+            lg:top-[90%]
+            group inline-flex items-center gap-2 rounded-full  px-0.5 py-0.25
+            lg:px-4 lg:py-2
+            font-['Montserrat'] text-[5px] sm:text-[13px] lg:text-[18px] font-bold tracking-[0.5px]
+            bg-[#ffae00] text-white shadow-lg
+          "
+        >
+          Click to learn more
+          <img src={playIcon} className="w-2 h-2  sm:w-4 sm:h-4 md:w-6 md:h-6" />
+        </button>
+      </a>
 
-            {/* Mobile responsive styling */}
-            <style jsx>{`
-                @media (max-width: 768px) {
-                    /* For smaller screens */
-                    button {
-                        font-size: 14px; /* Reduce font size on mobile */
-                        padding: 10px 14px; /* Reduce padding */
-                    }
-
-                    /* Position buttons for mobile */
-                    button:nth-child(1) {
-                        top: 80%;
-                        left: 5%;
-                    }
-
-                    button:nth-child(2) {
-                        top: 80%;
-                        left: 50%;
-                        transform: translateX(-50%);
-                    }
-
-                    button:nth-child(3) {
-                        bottom: 10%;
-                        right: 5%;
-                    }
-                }
-
-                @media (max-width: 480px) {
-                    /* For very small screens like phones in portrait mode */
-                    button {
-                        font-size: 12px; /* Further reduce font size */
-                        padding: 8px 12px; /* Reduce padding more */
-                    }
-
-                    /* Adjust button positioning further */
-                    button:nth-child(1) {
-                        top: 75%;
-                        left: 5%;
-                    }
-
-                    button:nth-child(2) {
-                        top: 75%;
-                        left: 50%;
-                        transform: translateX(-50%);
-                    }
-
-                    button:nth-child(3) {
-                        bottom: 15%;
-                        right: 5%;
-                    }
-                }
-            `}</style>
-        </div>
-    );
+      {/* Button 3 - Bottom Right */}
+      <a href="#university">
+        <button
+          className="
+            absolute 
+            btn-bottom-right
+            bottom-[7%] right-[6%]
+            lg:bottom-[5%] lg:right-[7%]
+            group inline-flex items-center gap-2 rounded-full  px-0.5 py-0.25
+            lg:px-4 lg:py-2
+            font-['Montserrat'] text-[5px] sm:text-[13px] lg:text-[18px] font-bold tracking-[0.5px]
+            bg-[#ffae00] text-white shadow-lg
+          "
+        >
+          Click to learn more
+          <img src={playIcon} className="w-2 h-2   sm:w-4 sm:h-4 md:w-6 md:h-6" />
+        </button>
+      </a>
+    </div>
+  );
 }
+//https://pub-94f7f5d00cd94150915de158d63cafdd.r2.dev/Group%20248.svg

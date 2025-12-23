@@ -1,0 +1,577 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&family=Poppins:ital,wght@0,400;0,600;1,500&display=swap");
+
+.friendshipCarousel {
+  position: relative;
+  width: 100vw;
+  max-width: 100%;
+  background: #0f0f0f;
+  display: grid;
+  grid-template-columns: 100px 1fr 100px;
+  align-items: center;
+  justify-items: center;
+  /* padding: 0px 0; */
+  overflow-x: visible;
+  overflow-y: hidden;
+}
+
+/* Deck */
+.deck {
+  position: relative;
+  width: min(920px, 92vw);
+  aspect-ratio: 559 / 395;
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  justify-items: center;
+}
+
+/* Card States */
+.card {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 6px;
+  display: grid;
+  place-items: center;
+  transform: translate3d(0, 0, 0) scale(0.6);
+  transition: transform 450ms cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 450ms ease;
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
+
+.prev,
+.next {
+  z-index: 2;
+  filter: blur(30px);
+  opacity: 0.9;
+}
+.prev {
+  transform: translate3d(-50%, 0, 0) scale(0.37);
+}
+.next {
+  transform: translate3d(50%, 0, 0) scale(0.37);
+}
+.active {
+  z-index: 3;
+}
+
+/* Animations */
+.active.toRight {
+  animation: friendship-activeToLeft 420ms cubic-bezier(0.4, 0, 0.2, 1) both;
+  will-change: transform;
+}
+.active.toLeft {
+  animation: friendship-activeToRight 420ms cubic-bezier(0.4, 0, 0.2, 1) both;
+  will-change: transform;
+}
+.prev.becomingActive {
+  animation: friendship-previewToCenterFromLeft 420ms cubic-bezier(0.4, 0, 0.2, 1) both;
+  filter: none;
+  will-change: transform;
+}
+.next.becomingActive {
+  animation: friendship-previewToCenterFromRight 420ms cubic-bezier(0.4, 0, 0.2, 1) both;
+  filter: none;
+  will-change: transform;
+}
+
+@keyframes friendship-activeToRight {
+  from {
+    transform: translate3d(0, 0, 0) scale(0.6);
+  }
+  to {
+    transform: translate3d(50%, 0, 0) scale(0.37);
+  }
+}
+@keyframes friendship-activeToLeft {
+  from {
+    transform: translate3d(0, 0, 0) scale(0.6);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0) scale(0.37);
+  }
+}
+@keyframes friendship-previewToCenterFromRight {
+  from {
+    transform: translate3d(50%, 0, 0) scale(0.37);
+  }
+  to {
+    transform: translate3d(0, 0, 0) scale(0.6);
+  }
+}
+@keyframes friendship-previewToCenterFromLeft {
+  from {
+    transform: translate3d(-50%, 0, 0) scale(0.37);
+  }
+  to {
+    transform: translate3d(0, 0, 0) scale(0.6);
+  }
+}
+
+/* Mobile-specific keyframe animations */
+@keyframes friendship-activeToRight-mobile {
+  from {
+    transform: translate3d(0, 0, 0) scale(0.65);
+  }
+  to {
+    transform: translate3d(50%, 0, 0) scale(0.4);
+  }
+}
+@keyframes friendship-activeToLeft-mobile {
+  from {
+    transform: translate3d(0, 0, 0) scale(0.65);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0) scale(0.4);
+  }
+}
+@keyframes friendship-previewToCenterFromRight-mobile {
+  from {
+    transform: translate3d(50%, 0, 0) scale(0.4);
+  }
+  to {
+    transform: translate3d(0, 0, 0) scale(0.65);
+  }
+}
+@keyframes friendship-previewToCenterFromLeft-mobile {
+  from {
+    transform: translate3d(-50%, 0, 0) scale(0.4);
+  }
+  to {
+    transform: translate3d(0, 0, 0) scale(0.65);
+  }
+}
+
+@keyframes friendship-activeToRight-small {
+  from {
+    transform: translate3d(0, 0, 0) scale(0.7);
+  }
+  to {
+    transform: translate3d(50%, 0, 0) scale(0.45);
+  }
+}
+@keyframes friendship-activeToLeft-small {
+  from {
+    transform: translate3d(0, 0, 0) scale(0.7);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0) scale(0.45);
+  }
+}
+@keyframes friendship-previewToCenterFromRight-small {
+  from {
+    transform: translate3d(50%, 0, 0) scale(0.45);
+  }
+  to {
+    transform: translate3d(0, 0, 0) scale(0.7);
+  }
+}
+@keyframes friendship-previewToCenterFromLeft-small {
+  from {
+    transform: translate3d(-50%, 0, 0) scale(0.45);
+  }
+  to {
+    transform: translate3d(0, 0, 0) scale(0.7);
+  }
+}
+
+/* Frame */
+.frameBg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Content */
+.content {
+  position: relative;
+  z-index: 2;
+  width: 78%;
+  color: #ffffff;
+  font-family: "Montserrat", sans-serif;
+  display: flex;
+  flex-direction: column;
+  max-height: 90%;
+  overflow: hidden;
+}
+.title {
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 1.2;
+  margin: 8px 0 14px;
+  flex-shrink: 0;
+}
+.quote {
+  font-family: "Poppins", sans-serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 25px;
+  line-height: 1.6;
+  opacity: 0.95;
+  max-width: 860px;
+  flex: 1 1 auto;
+  overflow-y: auto;
+  min-height: 0;
+}
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 18px;
+  padding: 14px 20px;
+  background: #ff9800;
+  color: #ffffff;
+  border-radius: 999px;
+  text-decoration: none;
+  box-shadow: 0 6px 18px rgba(247, 126, 0, 0.35);
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  flex-shrink: 0;
+  align-self: flex-start;
+}
+.playIcon {
+  width: 32px;
+  height: 32px;
+}
+
+/* Gold underline */
+.underlineGold {
+  position: relative;
+  font-weight: 700;
+}
+.underlineGold::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -6px;
+  height: 7px;
+  background: #ffae00;
+}
+
+/* Ghost frames */
+.ghostFrame {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0.75;
+  filter: blur(8px) saturate(0.9) brightness(0.9);
+}
+
+/* Navigation */
+.nav {
+  display: grid;
+  place-items: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: #6e530c;
+  box-shadow: 0px 4px 4px 0px #ffae00;
+  border: none;
+  color: #ffae00;
+  cursor: pointer;
+  z-index: 10;
+}
+.left {
+  justify-self: start;
+  margin-left: 24px;
+}
+.right {
+  justify-self: end;
+  margin-right: 24px;
+}
+.nav svg {
+  width: 32px;
+  height: 32px;
+}
+
+/* Responsiveness */
+@media (max-width: 1024px) {
+  .friendshipCarousel {
+    grid-template-columns: 42px 1fr 42px;
+    /* padding: 12px 0; */
+    overflow-x: hidden;
+  }
+  .nav {
+    width: 56px;
+    height: 56px;
+  }
+  .nav svg {
+    width: 28px;
+    height: 28px;
+  }
+  .deck {
+    width: min(850px, 90vw);
+  }
+  .title {
+    font-size: 36px;
+  }
+  .quote {
+    font-size: 22px;
+  }
+  .content {
+    width: 80%;
+  }
+  .cta {
+    font-size: 18px;
+    padding: 12px 18px;
+  }
+  .playIcon {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+@media (max-width: 768px) {
+  .friendshipCarousel {
+    grid-template-columns: 35px 1fr 35px;
+    /* padding: 20px 0; */
+    overflow-x: hidden;
+    overflow-y: hidden;
+  }
+  .nav {
+    width: 48px;
+    height: 48px;
+    position: relative;
+  }
+  .nav svg {
+    width: 24px;
+    height: 24px;
+  }
+  .left {
+    margin-left: 8px;
+    justify-self: start;
+  }
+  .right {
+    margin-right: 8px;
+    justify-self: end;
+  }
+  .deck {
+    width: min(85vw, 600px);
+  }
+  .title {
+    font-size: 24px;
+    margin: 6px 0 12px;
+  }
+  .quote {
+    font-size: 14px;
+    line-height: 1.5;
+    max-height: 55vh;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .content {
+    width: 85%;
+    max-height: 90%;
+    padding: 2% 0;
+  }
+  .cta {
+    font-size: 16px;
+    padding: 10px 16px;
+    margin-top: 14px;
+  }
+  .playIcon {
+    width: 24px;
+    height: 24px;
+  }
+  .card {
+    transform: translate3d(0, 0, 0) scale(0.65);
+  }
+  .prev {
+    transform: translate3d(-50%, 0, 0) scale(0.4);
+  }
+  .next {
+    transform: translate3d(50%, 0, 0) scale(0.4);
+  }
+  .active.toRight {
+    animation: friendship-activeToLeft-mobile 420ms cubic-bezier(0.4, 0, 0.2, 1) both;
+    will-change: transform;
+  }
+  .active.toLeft {
+    animation: friendship-activeToRight-mobile 420ms cubic-bezier(0.4, 0, 0.2, 1) both;
+    will-change: transform;
+  }
+  .prev.becomingActive {
+    animation: friendship-previewToCenterFromLeft-mobile 420ms cubic-bezier(0.4, 0, 0.2, 1) both;
+    will-change: transform;
+  }
+  .next.becomingActive {
+    animation: friendship-previewToCenterFromRight-mobile 420ms cubic-bezier(0.4, 0, 0.2, 1) both;
+    will-change: transform;
+  }
+}
+
+@media (max-width: 480px) {
+  .friendshipCarousel {
+    grid-template-columns: 1fr;
+    /* padding: 15px 0; */
+    overflow-x: hidden;
+    overflow-y: hidden;
+    width: 100vw;
+    max-width: 100%;
+    box-sizing: border-box;
+    position: relative;
+  }
+  .nav {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    z-index: 10;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .nav svg {
+    width: 20px;
+    height: 20px;
+  }
+  .left {
+    left: 8px;
+    margin-left: 0;
+    justify-self: unset;
+  }
+  .right {
+    right: 8px;
+    margin-right: 0;
+    justify-self: unset;
+  }
+  .deck {
+    width: 85vw;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+  .title {
+    font-size: 18px;
+    margin: 4px 0 10px;
+    line-height: 1.3;
+  }
+  .content {
+    width: 88%;
+    max-height: 85%;
+    padding: 2% 0;
+  }
+  .quote {
+    font-size: 12px;
+    line-height: 1.4;
+    max-height: 50vh;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .cta {
+    font-size: 13px;
+    padding: 8px 14px;
+    margin-top: 10px;
+    gap: 8px;
+    flex-shrink: 0;
+  }
+  .playIcon {
+    width: 20px;
+    height: 20px;
+  }
+  .card {
+    transform: translate3d(0, 0, 0) scale(0.7);
+  }
+  .prev {
+    transform: translate3d(-50%, 0, 0) scale(0.45);
+  }
+  .next {
+    transform: translate3d(50%, 0, 0) scale(0.45);
+  }
+  .prev,
+  .next {
+    filter: blur(20px);
+  }
+  .active.toRight {
+    animation: friendship-activeToLeft-small 420ms cubic-bezier(0.4, 0, 0.2, 1) both;
+    will-change: transform;
+  }
+  .active.toLeft {
+    animation: friendship-activeToRight-small 420ms cubic-bezier(0.4, 0, 0.2, 1) both;
+    will-change: transform;
+  }
+  .prev.becomingActive {
+    animation: friendship-previewToCenterFromLeft-small 420ms cubic-bezier(0.4, 0, 0.2, 1) both;
+    will-change: transform;
+  }
+  .next.becomingActive {
+    animation: friendship-previewToCenterFromRight-small 420ms cubic-bezier(0.4, 0, 0.2, 1) both;
+    will-change: transform;
+  }
+}
+
+@media (max-width: 360px) {
+  .friendshipCarousel {
+    grid-template-columns: 1fr;
+    /* padding: 0px 0; */
+    overflow-x: hidden;
+    overflow-y: hidden;
+    width: 100vw;
+    max-width: 100%;
+    box-sizing: border-box;
+    position: relative;
+  }
+  .nav {
+    width: 36px;
+    height: 36px;
+    position: absolute;
+    z-index: 10;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .nav svg {
+    width: 18px;
+    height: 18px;
+  }
+  .left {
+    left: 6px;
+    margin-left: 0;
+    justify-self: unset;
+  }
+  .right {
+    right: 6px;
+    margin-right: 0;
+    justify-self: unset;
+  }
+  .deck {
+    width: 80vw;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+  .title {
+    font-size: 14px;
+    margin: 3px 0 8px;
+  }
+  .content {
+    width: 90%;
+    max-height: 85%;
+    padding: 2% 0;
+  }
+  .quote {
+    font-size: 11px;
+    line-height: 1.35;
+    max-height: 45vh;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .cta {
+    font-size: 12px;
+    padding: 7px 12px;
+    margin-top: 8px;
+    flex-shrink: 0;
+  }
+  .playIcon {
+    width: 18px;
+    height: 18px;
+  }
+
+.underlineGold::after {
+  bottom: -3px;
+  height: 4px;
+}
+}

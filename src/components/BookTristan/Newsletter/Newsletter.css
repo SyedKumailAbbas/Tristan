@@ -49,12 +49,13 @@
   padding: 10px;
   gap: 12px;
   background: #ffae00;
-  font-family: "Times New Roman", Times, serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 700;
   font-style: Bold;
   font-size: 19px;
   line-height: 100%;
   letter-spacing: 0.5%;
+  border-radius: 0;
 
   box-shadow: 0px 4px 4px 0px #f77e004d;
 
@@ -137,3 +138,173 @@
 .gold-card__vec--7 { left: 1178px; top: 1959px; }
 (Keep the widths/heights/borders/rotations the same.)
 */
+/* =========================
+   MOBILE + TABLET ONLY OVERRIDES
+   (Desktop unchanged)
+   ========================= */
+
+/* Phones (≤ 639px) */
+@media (max-width: 639px) {
+  /* Let the gold form fill the screen width gracefully */
+  .gold-form {
+    width: 100% !important; /* override w-[929px] */
+    max-width: 100% !important;
+    padding: 16px !important; /* tighter padding on phones */
+    margin-left: 0 !important; /* override ml-5 so it centers */
+  }
+
+  /* Inner layout breathing room */
+  .form-inner {
+    gap: 12px; /* slightly tighter gap */
+    padding: 0;
+  }
+
+  /* Stack first/last name */
+  .name-row {
+    display: grid;
+    grid-template-columns: 1fr; /* stack */
+    gap: 12px;
+  }
+
+  /* Inputs: take full width */
+  .news-input,
+  .news-email-input {
+    width: 100% !important; /* override fixed widths (265px / 719px) */
+    height: 40px;
+    box-sizing: border-box;
+  }
+
+  /* Button: full width CTA on mobile */
+  .custom-btn {
+    width: 100% !important;
+    height: 42px;
+    font-size: 17px;
+    border-radius: 4px; /* subtle radius for mobile touch target */
+  }
+}
+
+/* Small tablets (640px–767px) */
+@media (min-width: 640px) and (max-width: 767px) {
+  .gold-form {
+    width: 100% !important;
+    max-width: 680px !important;
+    padding: 24px !important;
+    margin-left: 0 !important; /* center it */
+  }
+
+  /* Two-up names, balanced */
+  .name-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 columns */
+    gap: 16px;
+  }
+
+  /* Inputs: comfortable line length */
+  .news-input {
+    width: 100% !important; /* grid handles the halves */
+    height: 40px;
+    box-sizing: border-box;
+  }
+  .news-email-input {
+    width: 520px !important; /* readable width */
+    max-width: 100% !important; /* shrink if needed */
+    height: 40px;
+    box-sizing: border-box;
+  }
+
+  .custom-btn {
+    width: auto !important; /* natural width looks better on tablet */
+    min-width: 220px;
+    height: 42px;
+    font-size: 18px;
+    border-radius: 2px;
+  }
+}
+
+/* Tablets (768px–1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .gold-form {
+    width: 100% !important;
+    max-width: 860px !important; /* close to your desktop width but fluid */
+    padding: 28px !important;
+    margin-left: 0 !important;
+  }
+
+  .name-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 columns */
+    gap: 16px;
+  }
+
+  .news-input {
+    width: 100% !important;
+    height: 40px;
+    box-sizing: border-box;
+  }
+  .news-email-input {
+    width: 620px !important; /* comfortable width on md */
+    max-width: 100% !important;
+    height: 40px;
+    box-sizing: border-box;
+  }
+
+  .custom-btn {
+    width: auto !important;
+    min-width: 233px;
+    height: 40px;
+    font-size: 18px;
+  }
+}
+
+/* Optional niceties on small screens: keep headings readable */
+@media (max-width: 767px) {
+  .form-label.required span[aria-hidden="true"] {
+    font-size: 0.8em; /* a touch smaller star */
+    opacity: 0.9;
+  }
+}
+/* Phones (≤ 639px) — allow wrapping + auto height/width */
+@media (max-width: 639px) {
+  .custom-btn {
+    width: 100% !important; /* fill container */
+    max-width: 100%;
+    height: auto; /* let height grow with text */
+    padding: 12px 14px; /* tighter padding on tiny screens */
+    font-size: 16px; /* a bit smaller to prevent overflow */
+    line-height: 1.25; /* comfy line height if wraps */
+    text-align: center;
+
+    /* allow text to wrap instead of overflowing */
+    white-space: normal;
+    overflow-wrap: anywhere; /* modern wrap */
+    word-break: break-word; /* fallback */
+    box-sizing: border-box;
+  }
+}
+
+/* Small tablets (640–767px) — natural width, still wrap-safe */
+@media (min-width: 640px) and (max-width: 767px) {
+  .custom-btn {
+    width: auto !important; /* don’t stretch unless you want to */
+    min-width: 220px;
+    max-width: 100%;
+    height: auto;
+    padding: 12px 18px;
+    font-size: 18px;
+    line-height: 1.2;
+    text-align: center;
+
+    white-space: normal;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+    box-sizing: border-box;
+  }
+}
+
+/* Ultra-narrow devices (≤ 360px) — one more safeguard */
+@media (max-width: 360px) {
+  .custom-btn {
+    font-size: 15px;
+    padding: 12px 12px;
+  }
+}

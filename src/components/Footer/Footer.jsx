@@ -1,6 +1,6 @@
 import React from "react";
 import "./footer.css";
-
+import { Link } from "react-router-dom";
 import Tk from "../../assets/TK logo.png";
 import TopBorder from "../Borders/TopBorder";
 import navigate from "../../assets/Group 29.svg";
@@ -23,7 +23,7 @@ const Footer = () => {
         <div className="footer__grid">
           {/* Logo Section */}
           <div className="footer__logoWrap">
-            <img src={Tk} alt="TK Logo" className="footer__logo" />
+            <img src={Tk} alt="TK Logo" className="footer__logo " />
           </div>
 
           {/* Navigation Section */}
@@ -37,13 +37,13 @@ const Footer = () => {
             </div>
 
             <nav className="footer__nav">
-              <a href="#about" className="footer__link">
+              <a href="about" className="footer__link">
                 About
               </a>
-              <a href="#keynotes" className="footer__link">
+              <a href="keynotes" className="footer__link">
                 Keynotes
               </a>
-              <a href="#testimonials" className="footer__link">
+              <a href="testimonial" className="footer__link">
                 Testimonials
               </a>
             </nav>
@@ -51,12 +51,12 @@ const Footer = () => {
 
           {/* Media Section */}
           <div className="footer__mediaWrap">
-            <div className="footer__headingImgSpacer" />
-            <div className="footer__mediaLinks">
-              <a href="#media" className="footer__link">
+            <div className="footer__headingImgSpacerMedia" />
+            <div className="footer__mediaLinks mt-5">
+              <a href="media" className="footer__link">
                 Media
               </a>
-              <a href="#book" className="footer__link">
+              <a href="book-Tristan" className="footer__link">
                 Book Tristan
               </a>
             </div>
@@ -74,11 +74,14 @@ const Footer = () => {
 
             <div className="footer__contact">
               <div>
-                <span className="footer__label">P:</span> (647) 324-8747
+                <span className="footer__label">P:</span>{" "}
+                <span className="footer__contactValue">(647) 324-8747</span>
               </div>
               <div>
                 <span className="footer__label">E:</span>{" "}
-                tristanjoshuakim@gmail.com
+                <span className="footer__contactValue">
+                  tristanjoshuakim@gmail.com
+                </span>
               </div>
             </div>
           </div>
@@ -86,37 +89,37 @@ const Footer = () => {
 
         {/* Social Media Icons */}
         <div className="footer__social">
-          <div className="footer__socialRow">
+          <div className="footer__socialRow mb-5">
             <a
-              href="#youtube"
+              href="https://www.youtube.com/@tristanjoshuakim"
               className="footer__socialLink"
               aria-label="YouTube"
             >
               <img src={youtube} alt="" className="footer__socialIcon" />
             </a>
             <a
-              href="#spotify"
+              href="https://open.spotify.com/show/1vBg44ZWW4mstqVCJD2oio?si=95a112a26aae42ac"
               className="footer__socialLink"
               aria-label="Spotify"
             >
               <img src={spotify} alt="" className="footer__socialIcon" />
             </a>
             <a
-              href="#linkedin"
+              href="https://www.linkedin.com/in/tristanjoshuakim/"
               className="footer__socialLink"
               aria-label="LinkedIn"
             >
               <img src={linkedin} alt="" className="footer__socialIcon" />
             </a>
             <a
-              href="#instagram"
+              href="https://www.instagram.com/tdawgtalks/"
               className="footer__socialLink"
               aria-label="Instagram"
             >
               <img src={insta} alt="" className="footer__socialIcon" />
             </a>
             <a
-              href="#medium"
+              href="https://medium.com/@tristanjoshuakim"
               className="footer__socialLink"
               aria-label="Medium"
             >

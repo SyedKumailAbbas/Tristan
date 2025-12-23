@@ -18,8 +18,8 @@ export default function Home() {
       <Podcast />
       <Testimonials
         title="testimonial"
-        videoIds={["s2qwHgwpnrA", "VUCJHNkDIhM"]}
-        seeMore={{ label: "See All", href: "/testimonials" }}
+        videoIds={["VuWUFknHzQo", "yYDFslKVzAw"]}
+        seeMore={{ label: "See All", href: "/testimonial" }}
       />
     </>
   );
